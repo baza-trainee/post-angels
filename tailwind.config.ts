@@ -1,20 +1,49 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      sm: '420px',
+      md: '768px',
+      xl: '1240px',
+      smOnly: { max: '767.98px' },
+      mdOnly: { min: '768px', max: '1239.98px' },
+      notXl: { max: '1239.98px' },
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1.25rem',
+          sm: '1.25rem',
+          md: '1.25rem',
+          xl: '1.25rem',
+        },
+      },
+      colors: {
+        grey: {
+          100: '#303030',
+          80: '#43444A',
+          60: '#B1B0B0',
+          40: '#E1E1E4',
+          20: '#F5F5F5',
+          0: '#F9FAFF',
+        },
+        accent: {
+          primary: '#0D36C9',
+          hover: '#1A48ED',
+          pressed: '#0C31B4',
+        },
+        orang: ' #FF551A',
+        error: '#E50E0E',
+      },
+      fontFamily: {
+        eUkraine: ['e-Ukraine', 'sans-serif'],
+        eUkraineHead: ['e-UkraineHead', 'sans-serif'],
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;

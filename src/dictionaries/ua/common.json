@@ -1,0 +1,20 @@
+{
+  "common": {
+    "header": {
+      "nav": [
+        {
+          "name": "Головна",
+          "href": "/"
+        }
+      ]
+    },
+    "footer": {
+      "footerNav": [
+        {
+          "name": "Головна",
+          "href": "/"
+        }
+      ]
+    }
+  }
+}

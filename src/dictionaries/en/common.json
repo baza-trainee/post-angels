@@ -1,0 +1,20 @@
+{
+  "common": {
+    "header": {
+      "nav": [
+        {
+          "name": "Main",
+          "href": "/"
+        }
+      ]
+    },
+    "footer": {
+      "footerNav": [
+        {
+          "name": "Main",
+          "href": "/"
+        }
+      ]
+    }
+  }
+}
