@@ -35,7 +35,7 @@ const config: Config = {
           hover: '#1A48ED',
           pressed: '#0C31B4',
         },
-        orang: ' #FF551A',
+        orange: ' #FF551A',
         error: '#E50E0E',
       },
       fontFamily: {
