@@ -6,6 +6,8 @@ import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
 
 import './globals.css';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,9 +31,11 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body>
-        <Header data={header} />
-        {children}
-        <Footer data={footer} />
+        <Suspense fallback={<Loading />}>
+          <Header data={header} />
+          {children}
+          <Footer data={footer} />
+        </Suspense>
       </body>
     </html>
   );
