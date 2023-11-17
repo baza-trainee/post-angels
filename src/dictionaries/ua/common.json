@@ -5,6 +5,22 @@
         {
           "name": "Головна",
           "href": "/"
+        },
+        {
+          "name": "Про нас",
+          "href": "/aboutUs"
+        },
+        {
+          "name": "Партнерам",
+          "href": "/partners"
+        },
+        {
+          "name": "Волонтерам",
+          "href": "/volunteers"
+        },
+        {
+          "name": "Контакти",
+          "href": "/contacts"
         }
       ]
     },

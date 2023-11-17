@@ -1,15 +1,17 @@
+import { LinkButton } from '@/components/buttons/LinkButton';
 import { ICONS } from '@/components/icons';
 import Link from 'next/link';
+import { Logo } from '../Logo';
 import { HeaderProps } from './Header.props';
 
 export const Header: React.FC<HeaderProps> = ({ data }) => {
   const { nav } = data;
   return (
-    <header className="font-eUkraine">
+    <header className="font-eUkraine text-base font-normal">
       <div className="container">
         <div className="flex h-auto items-center justify-between border-b py-4">
           {/* Upper Nav */}
-          <Link className="flex text-base font-normal" href="/">
+          <Link className="flex" href="/">
             <ICONS.HEADER_LOCATION className="mr-2 h-6 w-6" />
             816 North Normandie ave., Los Angeles
           </Link>
@@ -24,7 +26,30 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
         </div>
 
         {/* Top Nav */}
-        <div className="flex h-6 items-center border-b">dwedefe</div>
+        <div className="flex h-auto items-center justify-between border-b py-6 text-grey-80">
+          <Link href="/" className="mr-auto flex shrink-0 items-center justify-center">
+            <Logo />
+          </Link>
+
+          <div className=" flex shrink-0 items-center gap-6 text-grey-100">
+            <div className="flex items-center justify-between gap-5 uppercase">
+              {nav.map(link => (
+                <Link href={link.href}>{link.name}</Link>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-8">
+              <LinkButton href="#" className="">
+                Зробити внесок
+              </LinkButton>
+
+              <div className="flex cursor-pointer items-center">
+                UA
+                <ICONS.HEADER_CHEVRON className="mr-2 h-6 w-6" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );
