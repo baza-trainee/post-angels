@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
 import { Locale, i18n } from '@/i18n.config';
+import { Suspense } from 'react';
 
 import './globals.css';
-import { Suspense } from 'react';
+
+import { Header } from '@/layout/Header';
+import { Footer } from '@/layout/Footer';
 import Loading from './loading';
+import { getDictionary } from '@/lib/dictionary';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,10 +25,17 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: Locale };
 }) {
+  const { common } = await getDictionary(lang);
+  const { header, footer } = common;
+
   return (
     <html lang={lang}>
       <body>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Suspense fallback={<Loading />}>
+          <Header data={header} />
+          {children}
+          <Footer data={footer} />
+        </Suspense>
       </body>
     </html>
   );
