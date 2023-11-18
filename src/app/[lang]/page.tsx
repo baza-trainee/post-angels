@@ -8,13 +8,12 @@ import { LinkButton } from '@/components/buttons/LinkButton';
 export default function Home() {
   return (
     <main className="">
-      <div className="font-eUkraine">
+      <div className="">
         <Title tag="h1" className="" colorVariant="orange">
-          Головна
-          <span> сторінка</span>
+          Майбутнє в наших руках
         </Title>
         <Title tag="h4" className="" colorVariant="orange">
-          Якийсь заголовок
+          Якийсь <span> заголовок</span>
         </Title>
 
         <Paragraph variantFontWeight="medium">
