@@ -42,8 +42,8 @@ const config: Config = {
         error: '#E50E0E',
       },
       fontFamily: {
-        eUkraine: ['e-Ukraine', 'sans-serif'],
-        eUkraineHead: ['e-UkraineHead', 'sans-serif'],
+        eUkraine: ['var(--font-eUkraine)'],
+        eUkraineHead: ['var(--font-eUkraineHead)'],
       },
     },
   },
