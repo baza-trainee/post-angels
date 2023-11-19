@@ -4,5 +4,9 @@ export interface FooterProps {
       name: string;
       href: string;
     }[];
+    footerDoc: {
+      name: string;
+      href: string;
+    }[];
   };
 }
