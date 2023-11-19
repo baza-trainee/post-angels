@@ -4,7 +4,23 @@
       "nav": [
         {
           "name": "Main",
-          "href": "/"
+          "href": "/en"
+        },
+        {
+          "name": "About us",
+          "href": "/en/aboutUs"
+        },
+        {
+          "name": "Partners",
+          "href": "/en/partners"
+        },
+        {
+          "name": "Volunteers",
+          "href": "/en/volunteers"
+        },
+        {
+          "name": "Contacts",
+          "href": "/en/contacts"
         }
       ]
     },

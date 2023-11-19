@@ -1,16 +1,77 @@
+'use client';
+
 import { LinkButton } from '@/components/buttons/LinkButton';
 import { ICONS } from '@/components/icons';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import { Logo } from '../Logo';
 import { HeaderProps } from './Header.props';
 
 export const Header: React.FC<HeaderProps> = ({ data }) => {
   const { nav } = data;
+  const pathname = usePathname();
+
+  const Dropdown = () => {
+    const options = ['ua', 'en'];
+    const [isOpen, setIsOpen] = useState(false);
+    const [selected, setSelected] = useState('ua');
+
+    const onChangeSelected = (selectedOption: string) => {
+      setSelected(selectedOption);
+      setIsOpen(false);
+    };
+
+    return (
+      <div className="relative">
+        <button
+          className="flex cursor-pointer items-center gap-2 uppercase"
+          onClick={() => setIsOpen(prev => !prev)}
+        >
+          {selected}
+          {isOpen ? (
+            <ICONS.HEADER_CHEVRON_UP className="h-6 w-6" />
+          ) : (
+            <ICONS.HEADER_CHEVRON_DOWN className="h-6 w-6" />
+          )}
+        </button>
+
+        {isOpen && (
+          <div className="absolute top-7 flex w-full flex-col rounded-md border bg-white">
+            {options.map(item => (
+              <div
+                className={`flex w-full justify-between p-0.5 uppercase hover:bg-grey-40 ${
+                  selected === item
+                    ? 'rounded bg-accent-primary text-white hover:bg-accent-primary'
+                    : ''
+                }`}
+                key={item}
+                onClick={() => onChangeSelected(item)}
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const navItems = nav.map(link => (
+    <Link
+      key={link.name}
+      href={link.href}
+      className={pathname === link.href ? 'text-accent-primary' : ''}
+    >
+      {link.name}
+    </Link>
+  ));
+
   return (
-    <header className="font-eUkraine text-base font-normal">
+    <header className="font-eUkraineHead text-base font-normal">
       <div className="container">
-        <div className="flex h-auto items-center justify-between border-b py-4">
-          {/* Upper Nav */}
+        {/* Upper Nav */}
+        <div className="flex h-auto items-center justify-between border-b py-4 text-grey-80">
           <Link className="flex" href="/">
             <ICONS.HEADER_LOCATION className="mr-2 h-6 w-6" />
             816 North Normandie ave., Los Angeles
@@ -26,27 +87,22 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
         </div>
 
         {/* Top Nav */}
-        <div className="flex h-auto items-center justify-between border-b py-6 text-grey-80">
-          <Link href="/" className="mr-auto flex shrink-0 items-center justify-center">
-            <Logo />
-          </Link>
+        <div className="flex h-auto items-center justify-between border-b py-6">
+          <Logo />
 
-          <div className=" flex shrink-0 items-center gap-6 text-grey-100">
-            <div className="flex items-center justify-between gap-5 uppercase">
-              {nav.map(link => (
-                <Link href={link.href}>{link.name}</Link>
-              ))}
-            </div>
+          <div className=" flex items-center gap-6 ">
+            <div className="flex items-center justify-between gap-5 uppercase">{navItems}</div>
 
-            <div className="flex items-center gap-8">
-              <LinkButton href="#" className="">
+            <div className="flex items-center">
+              <LinkButton href="#" className="mr-8">
                 Зробити внесок
               </LinkButton>
 
-              <div className="flex cursor-pointer items-center">
-                UA
-                <ICONS.HEADER_CHEVRON className="mr-2 h-6 w-6" />
-              </div>
+              <Dropdown
+              // options={['ua', 'en']}
+              // selectedOption={selectedLang}
+              // onSelect={handleLangChange}
+              />
             </div>
           </div>
         </div>

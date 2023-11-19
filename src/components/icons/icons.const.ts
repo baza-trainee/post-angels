@@ -1,4 +1,5 @@
-import HeaderChevron from '../../../public/icons/header/header-chevron.svg';
+import HeaderChevronDown from '../../../public/icons/header/header-chevronDown.svg';
+import HeaderChevronUp from '../../../public/icons/header/header-chevronUp.svg';
 import HeaderLocation from '../../../public/icons/header/header-location.svg';
 import HeaderMail from '../../../public/icons/header/header-mail.svg';
 import HeaderPhone from '../../../public/icons/header/header-phone.svg';
@@ -9,5 +10,6 @@ export const ICONS = {
   HEADER_LOCATION: HeaderLocation,
   HEADER_MAIL: HeaderMail,
   HEADER_PHONE: HeaderPhone,
-  HEADER_CHEVRON: HeaderChevron,
+  HEADER_CHEVRON_DOWN: HeaderChevronDown,
+  HEADER_CHEVRON_UP: HeaderChevronUp,
 };

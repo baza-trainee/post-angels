@@ -4,23 +4,23 @@
       "nav": [
         {
           "name": "Головна",
-          "href": "/"
+          "href": "/ua"
         },
         {
           "name": "Про нас",
-          "href": "/aboutUs"
+          "href": "/ua/aboutUs"
         },
         {
           "name": "Партнерам",
-          "href": "/partners"
+          "href": "/ua/partners"
         },
         {
           "name": "Волонтерам",
-          "href": "/volunteers"
+          "href": "/ua/volunteers"
         },
         {
           "name": "Контакти",
-          "href": "/contacts"
+          "href": "/ua/contacts"
         }
       ]
     },
