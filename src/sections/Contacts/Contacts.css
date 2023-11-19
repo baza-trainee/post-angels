@@ -1,0 +1,11 @@
+.mb-50px {
+  margin-bottom: 50px;
+}
+
+.mt-50px {
+  margin-top: 50px;
+}
+
+.svg:hover * {
+  fill: #1a48ed;
+}

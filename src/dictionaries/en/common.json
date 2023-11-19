@@ -8,6 +8,15 @@
         }
       ]
     },
+    "contacts": {
+      "contactsSection": [
+        {
+          "title": "OUR",
+          "title1": "CONTACTS",
+          "href": "/"
+        }
+      ]
+    },
     "footer": {
       "footerNav": [
         {
