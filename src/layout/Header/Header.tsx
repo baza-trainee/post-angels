@@ -1,6 +1,5 @@
 'use client';
 
-import { LinkButton } from '@/components/buttons/LinkButton';
 import { ICONS } from '@/components/icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -9,7 +8,7 @@ import { Logo } from '../Logo';
 import { HeaderProps } from './Header.props';
 
 export const Header: React.FC<HeaderProps> = ({ data }) => {
-  const { nav } = data;
+  const { nav, button } = data;
   const pathname = usePathname();
 
   const Dropdown = () => {
@@ -58,13 +57,15 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
   };
 
   const navItems = nav.map(link => (
-    <Link
-      key={link.name}
-      href={link.href}
-      className={pathname === link.href ? 'text-accent-primary' : ''}
-    >
-      {link.name}
-    </Link>
+    <li>
+      <Link
+        key={link.name}
+        href={link.href}
+        className={pathname === link.href ? 'text-accent-primary' : ''}
+      >
+        {link.name}
+      </Link>
+    </li>
   ));
 
   return (
@@ -87,25 +88,21 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
         </div>
 
         {/* Top Nav */}
-        <div className="flex h-auto items-center justify-between border-b py-6">
+        <nav className="flex h-auto items-center justify-between border-b py-6">
           <Logo />
 
           <div className=" flex items-center gap-6 ">
-            <div className="flex items-center justify-between gap-5 uppercase">{navItems}</div>
+            <ul className="flex items-center justify-between gap-5 uppercase">{navItems}</ul>
 
             <div className="flex items-center">
-              <LinkButton href="#" className="mr-8">
-                Зробити внесок
-              </LinkButton>
+              <button className="mr-8 flex items-center justify-center rounded-full bg-accent-primary p-[14px] font-eUkraine text-base font-medium text-grey-0 hover:bg-accent-hover focus:bg-accent-pressed">
+                {button.name}
+              </button>
 
-              <Dropdown
-              // options={['ua', 'en']}
-              // selectedOption={selectedLang}
-              // onSelect={handleLangChange}
-              />
+              <Dropdown />
             </div>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );

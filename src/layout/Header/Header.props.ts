@@ -4,5 +4,8 @@ export interface HeaderProps {
       name: string;
       href: string;
     }[];
+    button: {
+      name: string;
+    };
   };
 }

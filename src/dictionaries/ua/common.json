@@ -22,7 +22,10 @@
           "name": "Контакти",
           "href": "/ua/contacts"
         }
-      ]
+      ],
+      "button": {
+        "name": "Зробити внесок"
+      }
     },
     "footer": {
       "footerNav": [

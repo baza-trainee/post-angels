@@ -22,7 +22,10 @@
           "name": "Contacts",
           "href": "/en/contacts"
         }
-      ]
+      ],
+      "button": {
+        "name": "Donate"
+      }
     },
     "footer": {
       "footerNav": [
