@@ -58,12 +58,8 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
   };
 
   const navLinks = headerNav.map(link => (
-    <li>
-      <Link
-        key={link.name}
-        href={link.href}
-        className={pathname === link.href ? 'text-accent-primary' : ''}
-      >
+    <li key={link.name}>
+      <Link href={link.href} className={pathname === link.href ? 'text-accent-primary' : ''}>
         {link.name}
       </Link>
     </li>
@@ -92,15 +88,17 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
         <div className="flex h-auto items-center justify-between border-b py-6">
           <Logo type="dark" label={headerLogoLabel.name} />
 
-          <nav className=" flex items-center gap-6 ">
-            <ul className="flex items-center justify-between gap-5 uppercase">{navLinks}</ul>
+          <div className="flex items-center gap-6 ">
+            <nav>
+              <ul className="flex items-center justify-between gap-5 uppercase">{navLinks}</ul>
+            </nav>
 
             <div className="flex items-center">
               <Button className="mr-8">{headerButton.name}</Button>
 
               <Dropdown />
             </div>
-          </nav>
+          </div>
         </div>
       </div>
     </header>
