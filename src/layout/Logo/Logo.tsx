@@ -1,6 +1,6 @@
-import Link from '../../../node_modules/next/link';
+import Link from 'next/link';
 
-import { ICONS } from '../../components/icons/icons.const';
+import { ICONS } from '@/components/icons/icons.const';
 import { LogoProps } from './Logo.props';
 
 export const Logo: React.FC<LogoProps> = ({ type, label }) => {
