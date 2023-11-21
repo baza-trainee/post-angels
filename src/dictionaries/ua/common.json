@@ -1,12 +1,37 @@
 {
   "common": {
     "header": {
-      "nav": [
+      "headerNav": [
         {
           "name": "Головна",
-          "href": "/"
+          "href": "/ua"
+        },
+        {
+          "name": "Про нас",
+          "href": "/ua/aboutUs"
+        },
+        {
+          "name": "Партнерам",
+          "href": "/ua/partners"
+        },
+        {
+          "name": "Волонтерам",
+          "href": "/ua/volunteers"
+        },
+        {
+          "name": "Контакти",
+          "href": "/ua/contacts"
         }
-      ]
+      ],
+      "headerButton": {
+        "name": "Зробити внесок"
+      },
+      "headerLogoLabel": {
+        "name": "Логотип компанії"
+      },
+      "headerLanguageLabel": {
+        "name": "Зміна мови"
+      }
     },
     "footer": {
       "footerNav": [

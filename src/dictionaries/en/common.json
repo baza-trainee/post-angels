@@ -1,12 +1,37 @@
 {
   "common": {
     "header": {
-      "nav": [
+      "headerNav": [
         {
           "name": "Main",
-          "href": "/"
+          "href": "/en"
+        },
+        {
+          "name": "About us",
+          "href": "/en/aboutUs"
+        },
+        {
+          "name": "Partners",
+          "href": "/en/partners"
+        },
+        {
+          "name": "Volunteers",
+          "href": "/en/volunteers"
+        },
+        {
+          "name": "Contacts",
+          "href": "/en/contacts"
         }
-      ]
+      ],
+      "headerButton": {
+        "name": "Donate"
+      },
+      "headerLogoLabel": {
+        "name": "Company logo"
+      },
+      "headerLanguageLabel": {
+        "name": "Change language"
+      }
     },
     "footer": {
       "footerNav": [
@@ -48,10 +73,9 @@
       "footerCop": {
         "name": "Development of Baza Trainee Ukraine 2023 © All rights reserved"
       },
-      "footerLabel": 
-        {
-          "name": "Company logo"
-        }
+      "footerLabel": {
+        "name": "Company logo"
+      }
     }
   }
 }

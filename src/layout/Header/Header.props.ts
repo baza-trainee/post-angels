@@ -1,8 +1,11 @@
 export interface HeaderProps {
   data: {
-    nav: {
+    headerNav: {
       name: string;
       href: string;
     }[];
+    headerButton: { name: string };
+    headerLogoLabel: { name: string };
+    headerLanguageLabel: { name: string };
   };
 }
