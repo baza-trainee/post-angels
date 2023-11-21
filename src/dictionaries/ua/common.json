@@ -13,8 +13,44 @@
         {
           "name": "Головна",
           "href": "/"
+        },
+        {
+          "name": "Про нас",
+          "href": "/aboutUs"
+        },
+        {
+          "name": "Волонтерам",
+          "href": "/volunteers"
+        },
+        {
+          "name": "Партнерам",
+          "href": "/partners"
+        },
+        {
+          "name": "Контакти",
+          "href": "/contacts"
+        },
+        {
+          "name": "Звітність",
+          "href": "/"
         }
-      ]
+      ],
+      "footerDoc": [
+        {
+          "name": "Політика конфіденційності",
+          "href": "/"
+        },
+        {
+          "name": "Правила користування сайтом",
+          "href": "/"
+        }
+      ],
+      "footerCop": {
+        "name": "Розробка Baza Trainee Ukraine 2023 © Усі права захищені"
+      },
+      "footerLabel": {
+        "name": "Логотип компанії"
+      }
     }
   }
 }

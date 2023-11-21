@@ -1,15 +1,16 @@
-import Link from '../../../node_modules/next/link';
+import Link from 'next/link';
 
-import { ICONS } from '../../components/icons/icons.const';
+import { ICONS } from '@/components/icons/icons.const';
 import { LogoProps } from './Logo.props';
 
-export const Logo: React.FC<LogoProps> = ({ type }) => {
+export const Logo: React.FC<LogoProps> = ({ type, label }) => {
   return (
     <Link href="/">
-   {type === 'dark' ? (
-        <ICONS.LOGODARK className="h-10" />
+      {type === 'dark' ? (
+        <ICONS.LOGODARK className="h-10" aria-label={label} />
       ) : (
-        <ICONS.LOGOLIGHT className="h-10" />
-      )}    </Link>
+        <ICONS.LOGOLIGHT className="h-10" aria-label={label} />
+      )}{' '}
+    </Link>
   );
 };
