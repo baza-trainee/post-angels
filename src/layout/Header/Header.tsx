@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from '@/components/buttons/Button';
 import { ICONS } from '@/components/icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -8,7 +9,7 @@ import { Logo } from '../Logo';
 import { HeaderProps } from './Header.props';
 
 export const Header: React.FC<HeaderProps> = ({ data }) => {
-  const { nav, button } = data;
+  const { headerNav, headerButton, headerLogoLabel, headerLanguageLabel } = data;
   const pathname = usePathname();
 
   const Dropdown = () => {
@@ -29,14 +30,14 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
         >
           {selected}
           {isOpen ? (
-            <ICONS.HEADER_CHEVRON_UP className="h-6 w-6" />
+            <ICONS.HEADER_CHEVRON_UP className="h-6 w-6" aria-label={headerLanguageLabel.name} />
           ) : (
-            <ICONS.HEADER_CHEVRON_DOWN className="h-6 w-6" />
+            <ICONS.HEADER_CHEVRON_DOWN className="h-6 w-6" aria-label={headerLanguageLabel.name} />
           )}
         </button>
 
         {isOpen && (
-          <div className="absolute top-7 flex w-full flex-col rounded-md border bg-white">
+          <div className="absolute top-7 flex w-full cursor-pointer flex-col rounded-md border bg-white">
             {options.map(item => (
               <div
                 className={`flex w-full justify-between p-0.5 uppercase hover:bg-grey-40 ${
@@ -56,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
     );
   };
 
-  const navItems = nav.map(link => (
+  const navLinks = headerNav.map(link => (
     <li>
       <Link
         key={link.name}
@@ -73,36 +74,34 @@ export const Header: React.FC<HeaderProps> = ({ data }) => {
       <div className="container">
         {/* Upper Nav */}
         <div className="flex h-auto items-center justify-between border-b py-4 text-grey-80">
-          <Link className="flex" href="/">
-            <ICONS.HEADER_LOCATION className="mr-2 h-6 w-6" />
+          <Link className="flex gap-x-2" href="/">
+            <ICONS.HEADER_LOCATION className="h-6 w-6" />
             816 North Normandie ave., Los Angeles
           </Link>
-          <Link className="flex" href="tel:+16572140272">
-            <ICONS.HEADER_PHONE className="mr-2 h-6 w-6" />
+          <Link className="flex gap-x-2" href="tel:+16572140272">
+            <ICONS.HEADER_PHONE className="h-6 w-6" />
             +1 657-214-0272
           </Link>
-          <Link className="flex" href="mailto:post.angeles.info@gmail.com">
-            <ICONS.HEADER_MAIL className="mr-2 h-6 w-6" />
+          <Link className="flex gap-x-2" href="mailto:post.angeles.info@gmail.com">
+            <ICONS.HEADER_MAIL className="h-6 w-6" />
             post.angeles.info@gmail.com
           </Link>
         </div>
 
         {/* Top Nav */}
-        <nav className="flex h-auto items-center justify-between border-b py-6">
-          <Logo />
+        <div className="flex h-auto items-center justify-between border-b py-6">
+          <Logo type="dark" label={headerLogoLabel.name} />
 
-          <div className=" flex items-center gap-6 ">
-            <ul className="flex items-center justify-between gap-5 uppercase">{navItems}</ul>
+          <nav className=" flex items-center gap-6 ">
+            <ul className="flex items-center justify-between gap-5 uppercase">{navLinks}</ul>
 
             <div className="flex items-center">
-              <button className="mr-8 flex items-center justify-center rounded-full bg-accent-primary p-[14px] font-eUkraine text-base font-medium text-grey-0 hover:bg-accent-hover focus:bg-accent-pressed">
-                {button.name}
-              </button>
+              <Button className="mr-8">{headerButton.name}</Button>
 
               <Dropdown />
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
   );
