@@ -13,7 +13,10 @@
         {
           "title": "OUR",
           "title1": "CONTACTS",
-          "href": "/"
+          "href": "/",
+          "img": {
+            "alt": "Contacts"
+          }
         }
       ]
     },

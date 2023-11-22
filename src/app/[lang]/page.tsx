@@ -4,17 +4,21 @@ import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { Button } from '@/components/buttons/Button/Button';
 import { IconButton } from '@/components/buttons/IconButton/IconButton';
 import { LinkButton } from '@/components/buttons/LinkButton';
+import { Contacts } from '@/sections/Contacts/Contacts';
+import { getDictionary } from '@/lib/dictionary';
+import { Locale, i18n } from '@/i18n.config';
 
-export default function Home() {
+export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+  const { common } = await getDictionary(lang);
+  const { contacts } = common;
   return (
     <main className="">
-      <div className="font-eUkraine">
+      <div className="">
         <Title tag="h1" className="" colorVariant="orange">
-          Головна
-          <span> сторінка</span>
+          Майбутнє в наших руках
         </Title>
         <Title tag="h4" className="" colorVariant="orange">
-          Якийсь заголовок
+          Якийсь <span> заголовок</span>
         </Title>
 
         <Paragraph variantFontWeight="medium">
@@ -32,6 +36,7 @@ export default function Home() {
         <LinkButton href="#">Посилання</LinkButton>
 
         <ICONS.VERSEL className="h-20 w-20" />
+        <Contacts data={contacts} />
       </div>
     </main>
   );
