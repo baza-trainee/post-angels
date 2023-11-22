@@ -5,6 +5,7 @@ import HeaderMail from '../../../public/icons/header/header-mail.svg';
 import HeaderPhone from '../../../public/icons/header/header-phone.svg';
 import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
+import ModalClose from '../../../public/icons/modalClose.svg';
 import VerselIcon from '../../../public/vercel.svg';
 
 export const ICONS = {
@@ -16,4 +17,5 @@ export const ICONS = {
   HEADER_CHEVRON_UP: HeaderChevronUp,
   LOGODARK: LogoDark,
   LOGOLIGHT: LogoLight,
+  MODAL_CLOSE: ModalClose,
 };

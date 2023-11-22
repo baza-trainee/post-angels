@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
 import { Locale, i18n } from '@/i18n.config';
-import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { Suspense } from 'react';
 
-import './globals.css';
-import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
-import Loading from './loading';
+import { Header } from '@/layout/Header';
 import { getDictionary } from '@/lib/dictionary';
+import './globals.css';
+import Loading from './loading';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -95,6 +95,8 @@ export default async function RootLayout({
           <Header data={header} />
           {children}
           <Footer data={footer} />
+
+          <div id="modal" />
         </Suspense>
       </body>
     </html>
