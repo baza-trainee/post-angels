@@ -5,7 +5,7 @@ export interface HeaderProps {
       href: string;
     }[];
     headerButton: { name: string };
-    headerLogoLabel: { name: string };
     headerLanguageLabel: { name: string };
   };
+  lang: 'ua' | 'en';
 }

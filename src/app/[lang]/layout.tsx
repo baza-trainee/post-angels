@@ -92,9 +92,9 @@ export default async function RootLayout({
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body>
         <Suspense fallback={<Loading />}>
-          <Header data={header} />
+          <Header data={header} lang={lang} />
           {children}
-          <Footer data={footer} />
+          <Footer data={footer} lang={lang} />
         </Suspense>
       </body>
     </html>
