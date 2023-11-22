@@ -9,16 +9,14 @@
       ]
     },
     "contacts": {
-      "contactsSection": [
-        {
-          "title": "OUR",
-          "title1": "CONTACTS",
-          "href": "/",
-          "img": {
-            "alt": "Contacts"
-          }
+      "contactsSection": {
+        "title": "OUR",
+        "title1": "CONTACTS",
+        "href": "/",
+        "img": {
+          "alt": "Contacts"
         }
-      ]
+      }
     },
     "footer": {
       "footerNav": [

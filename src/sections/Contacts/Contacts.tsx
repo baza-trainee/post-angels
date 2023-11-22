@@ -1,23 +1,32 @@
-'use client';
 import Image from 'next/image';
 
-import { ContactsProps } from '../../sections/Contacts/Contacts.props';
-import { ContactList } from '@/components/СontactList/ContactList';
+import { ContactsProps } from './Contacts.props';
+import { ContactList } from '@/components/ContactList/';
+import { Title } from '@/components/typography/Title';
 
-import Partners from '../../../public/images/Contacts.jpg';
+import Partners from '../../../public/images/contacts.jpg';
 
 export const Contacts: React.FC<ContactsProps> = ({ data }) => {
   const { contactsSection } = data;
   return (
-    <section className="container flex pt-[100px]">
-      <ContactList data={data} />
-      <div className="mx-auto flex pl-[140px]">
+    <section className="py-[100px]">
+      <div className="container flex justify-between	">
+        <div>
+          <Title tag="h2" colorVariant="accent" className="pb-[50px] ">
+            {contactsSection.title}
+            <span>
+              <br /> {contactsSection.title1}
+            </span>
+          </Title>
+          <ContactList />
+        </div>
+
         <Image
           className="rounded-2xl"
           src={Partners}
           width={688}
           height={458}
-          alt={contactsSection[0].alt}
+          alt={contactsSection.img.alt}
         />
       </div>
     </section>

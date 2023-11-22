@@ -9,14 +9,14 @@
       ]
     },
     "contacts": {
-      "contactsSection": [
-        {
-          "title": "НАШІ",
-          "title1": "КОНТАКТИ",
-          "href": "/",
+      "contactsSection": {
+        "title": "НАШІ",
+        "title1": "КОНТАКТИ",
+        "href": "/",
+        "img": {
           "alt": "Контакти"
         }
-      ]
+      }
     },
     "footer": {
       "footerNav": [
