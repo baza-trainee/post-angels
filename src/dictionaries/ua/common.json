@@ -37,6 +37,16 @@
       "href": "/ua"
     },
 
+    "contacts": {
+      "contactsSection": [
+        {
+          "title": "НАШІ",
+          "title1": "КОНТАКТИ",
+          "href": "/"
+        }
+      ]
+    },
+
     "footer": {
       "footerNav": [
         {
