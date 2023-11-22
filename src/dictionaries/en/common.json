@@ -37,15 +37,15 @@
       "label": "Company logo",
       "href": "/en"
     },
-
     "contacts": {
-      "contactsSection": [
-        {
-          "title": "OUR",
-          "title1": "CONTACTS",
-          "href": "/"
+      "contactsSection": {
+        "title": "OUR",
+        "title1": "CONTACTS",
+        "href": "/",
+        "img": {
+          "alt": "Contacts"
         }
-      ]
+      }
     },
 
     "footer": {

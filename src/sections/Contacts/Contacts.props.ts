@@ -4,6 +4,9 @@ export interface ContactsProps {
       title: string;
       title1: string;
       href: string;
-    }[];
+      img: {
+        alt: string;
+      };
+    };
   };
 }
