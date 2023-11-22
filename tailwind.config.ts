@@ -11,6 +11,9 @@ const config: Config = {
       mdOnly: { min: '768px', max: '1239.98px' },
       notXl: { max: '1239.98px' },
     },
+    // spacing: {
+    //   6.375: '6.375rem',
+    // },
     extend: {
       container: {
         center: true,
@@ -23,6 +26,7 @@ const config: Config = {
       },
       colors: {
         grey: {
+          120: '#010617',
           100: '#303030',
           80: '#43444A',
           60: '#B1B0B0',
@@ -39,8 +43,8 @@ const config: Config = {
         error: '#E50E0E',
       },
       fontFamily: {
-        eUkraine: ['e-Ukraine', 'sans-serif'],
-        eUkraineHead: ['e-UkraineHead', 'sans-serif'],
+        eUkraine: ['var(--font-eUkraine)'],
+        eUkraineHead: ['var(--font-eUkraineHead)'],
       },
     },
   },

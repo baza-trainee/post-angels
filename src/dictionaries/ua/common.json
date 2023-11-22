@@ -1,13 +1,42 @@
 {
   "common": {
     "header": {
-      "nav": [
+      "headerNav": [
         {
           "name": "Головна",
-          "href": "/"
+          "href": "/ua"
+        },
+        {
+          "name": "Про нас",
+          "href": "/ua/aboutUs"
+        },
+        {
+          "name": "Партнерам",
+          "href": "/ua/partners"
+        },
+        {
+          "name": "Волонтерам",
+          "href": "/ua/volunteers"
+        },
+        {
+          "name": "Контакти",
+          "href": "/ua/contacts"
         }
-      ]
+      ],
+      "headerButton": {
+        "name": "Зробити внесок"
+      },
+
+      "headerLanguageLabel": {
+        "name": "Зміна мови"
+      }
     },
+
+    "logo": {
+      "label": "Логотип компанії",
+      "href": "/ua"
+    },
+
     "contacts": {
       "contactsSection": [
         {
@@ -17,13 +46,50 @@
         }
       ]
     },
+
     "footer": {
       "footerNav": [
         {
           "name": "Головна",
+          "href": "/ua/"
+        },
+        {
+          "name": "Про нас",
+          "href": "/ua/aboutUs"
+        },
+        {
+          "name": "Волонтерам",
+          "href": "/ua/volunteers"
+        },
+        {
+          "name": "Партнерам",
+          "href": "/ua/partners"
+        },
+        {
+          "name": "Контакти",
+          "href": "/ua/contacts"
+        },
+        {
+          "name": "Звітність",
+          "href": "/ua/"
+        }
+      ],
+      "footerDoc": [
+        {
+          "name": "Політика конфіденційності",
+          "href": "/"
+        },
+        {
+          "name": "Правила користування сайтом",
           "href": "/"
         }
-      ]
+      ],
+      "footerCop": {
+        "name": "Розробка Baza Trainee Ukraine 2023 © Усі права захищені"
+      },
+      "footerLabel": {
+        "name": "Логотип компанії"
+      }
     }
   }
 }

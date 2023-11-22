@@ -1,13 +1,43 @@
 {
   "common": {
     "header": {
-      "nav": [
+      "headerNav": [
         {
           "name": "Main",
-          "href": "/"
+          "href": "/en"
+        },
+        {
+          "name": "About us",
+          "href": "/en/aboutUs"
+        },
+        {
+          "name": "Partners",
+          "href": "/en/partners"
+        },
+        {
+          "name": "Volunteers",
+          "href": "/en/volunteers"
+        },
+        {
+          "name": "Contacts",
+          "href": "/en/contacts"
         }
-      ]
+      ],
+      "headerButton": {
+        "name": "Donate"
+      },
+      "headerLogoLabel": {
+        "name": "Company logo"
+      },
+      "headerLanguageLabel": {
+        "name": "Change language"
+      }
     },
+    "logo": {
+      "label": "Company logo",
+      "href": "/en"
+    },
+
     "contacts": {
       "contactsSection": [
         {
@@ -17,13 +47,50 @@
         }
       ]
     },
+
     "footer": {
       "footerNav": [
         {
           "name": "Main",
+          "href": "/en/"
+        },
+        {
+          "name": "About Us",
+          "href": "/en/aboutUs"
+        },
+        {
+          "name": "Volunteers",
+          "href": "/en/volunteers"
+        },
+        {
+          "name": "Partners",
+          "href": "/en/partners"
+        },
+        {
+          "name": "Сontacts",
+          "href": "/en/contacts"
+        },
+        {
+          "name": "Reporting",
+          "href": "/en/"
+        }
+      ],
+      "footerDoc": [
+        {
+          "name": "Privacy Policy",
+          "href": "/"
+        },
+        {
+          "name": "Rules of use of the site",
           "href": "/"
         }
-      ]
+      ],
+      "footerCop": {
+        "name": "Development of Baza Trainee Ukraine 2023 © All rights reserved"
+      },
+      "footerLabel": {
+        "name": "Company logo"
+      }
     }
   }
 }
