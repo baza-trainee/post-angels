@@ -1,4 +1,4 @@
 export interface LogoProps {
   type: 'dark' | 'light';
-  label: string;
+  lang: 'ua' | 'en';
 }

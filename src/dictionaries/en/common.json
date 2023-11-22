@@ -33,31 +33,46 @@
         "name": "Change language"
       }
     },
+    "logo": {
+      "label": "Company logo",
+      "href": "/en"
+    },
+    "contacts": {
+      "contactsSection": {
+        "title": "OUR",
+        "title1": "CONTACTS",
+        "href": "/",
+        "img": {
+          "alt": "Contacts"
+        }
+      }
+    },
+
     "footer": {
       "footerNav": [
         {
           "name": "Main",
-          "href": "/"
+          "href": "/en/"
         },
         {
           "name": "About Us",
-          "href": "/aboutUs"
+          "href": "/en/aboutUs"
         },
         {
           "name": "Volunteers",
-          "href": "/volunteers"
+          "href": "/en/volunteers"
         },
         {
           "name": "Partners",
-          "href": "/partners"
+          "href": "/en/partners"
         },
         {
           "name": "Сontacts",
-          "href": "/contacts"
+          "href": "/en/contacts"
         },
         {
           "name": "Reporting",
-          "href": "/"
+          "href": "/en/"
         }
       ],
       "footerDoc": [
