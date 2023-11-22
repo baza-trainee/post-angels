@@ -26,38 +26,42 @@
       "headerButton": {
         "name": "Зробити внесок"
       },
-      "headerLogoLabel": {
-        "name": "Логотип компанії"
-      },
+
       "headerLanguageLabel": {
         "name": "Зміна мови"
       }
     },
+
+    "logo": {
+      "label": "Логотип компанії",
+      "href": "/ua"
+    },
+
     "footer": {
       "footerNav": [
         {
           "name": "Головна",
-          "href": "/"
+          "href": "/ua/"
         },
         {
           "name": "Про нас",
-          "href": "/aboutUs"
+          "href": "/ua/aboutUs"
         },
         {
           "name": "Волонтерам",
-          "href": "/volunteers"
+          "href": "/ua/volunteers"
         },
         {
           "name": "Партнерам",
-          "href": "/partners"
+          "href": "/ua/partners"
         },
         {
           "name": "Контакти",
-          "href": "/contacts"
+          "href": "/ua/contacts"
         },
         {
           "name": "Звітність",
-          "href": "/"
+          "href": "/ua/"
         }
       ],
       "footerDoc": [

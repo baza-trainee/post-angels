@@ -13,4 +13,5 @@ export interface FooterProps {
     };
     footerLabel: { name: string };
   };
+  lang: 'ua' | 'en';
 }
