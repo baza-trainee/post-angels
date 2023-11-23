@@ -7,7 +7,6 @@ import { Footer } from '@/layout/Footer';
 import { Header } from '@/layout/Header';
 import { getDictionary } from '@/lib/dictionary';
 import './globals.css';
-import Loading from './loading';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -91,11 +90,10 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={null}>
           <Header data={header} lang={lang} />
           {children}
           <Footer data={footer} lang={lang} />
-
           <div id="modal" />
         </Suspense>
       </body>

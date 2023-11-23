@@ -7,17 +7,17 @@ import Link from 'next/link';
 import { Dropdown } from '@/components/header/Dropdown';
 import { Navigation } from '@/components/header/Navigation';
 import Modal from '@/components/modal/Modal';
-import ModalDonate from '@/layout/ModalDonate/ModalDonate';
+import ModalChildDonate from '@/layout/ModalChildDonate/ModalChildDonate';
 import { useState } from 'react';
 import { Logo } from '../Logo';
 import { HeaderProps } from './Header.props';
 
 export const Header: React.FC<HeaderProps> = ({ data, lang }) => {
   const { headerNav, headerButton, headerLanguageLabel } = data;
-  const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
-    setShowModal(true);
+    setIsModalOpen(true);
   };
 
   return (
@@ -55,16 +55,17 @@ export const Header: React.FC<HeaderProps> = ({ data, lang }) => {
             </div>
           </div>
         </div>
-      </div>
 
-      {showModal && (
-        <Modal
-          children={<ModalDonate />}
-          onClose={() => {
-            setShowModal(false);
-          }}
-        />
-      )}
+        {isModalOpen && (
+          <Modal
+            modalClose={() => {
+              setIsModalOpen(false);
+            }}
+          >
+            <ModalChildDonate />
+          </Modal>
+        )}
+      </div>
     </header>
   );
 };
