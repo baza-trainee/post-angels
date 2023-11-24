@@ -15,4 +15,9 @@ export interface FooterProps {
     };
   };
   lang: Locale;
+  modal: {
+    button: {
+      label: string;
+    };
+  };
 }
