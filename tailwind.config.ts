@@ -34,6 +34,7 @@ const config: Config = {
           20: '#F5F5F5',
           0: '#F9FAFF',
         },
+        backdrop: ' rgba(177, 176, 176, 0.50)',
         accent: {
           primary: '#0D36C9',
           hover: '#1A48ED',

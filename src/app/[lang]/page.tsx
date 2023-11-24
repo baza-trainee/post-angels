@@ -1,16 +1,17 @@
-import { Title } from '@/components/typography/Title';
-import { ICONS } from '@/components/icons';
-import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { Button } from '@/components/buttons/Button/Button';
 import { IconButton } from '@/components/buttons/IconButton/IconButton';
 import { LinkButton } from '@/components/buttons/LinkButton';
-import { Contacts } from '@/sections/Contacts/Contacts';
+import { ICONS } from '@/components/icons';
+import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
+import { Title } from '@/components/typography/Title';
+import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
-import { Locale, i18n } from '@/i18n.config';
+import { Contacts } from '@/sections/Contacts/Contacts';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
   const { contacts } = common;
+
   return (
     <main className="">
       <div className="">

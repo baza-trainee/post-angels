@@ -1,13 +1,13 @@
-import { Button } from '@/components/buttons/Button';
 import { ICONS } from '@/components/icons';
 import Link from 'next/link';
 
-import { Logo } from '../Logo';
-import { HeaderProps } from './Header.props';
-import { Dropdown } from '@/components/header/Dropdown';
 import { Navigation } from '@/components/header/Navigation';
 
-export const Header: React.FC<HeaderProps> = ({ data, lang }) => {
+import { Logo } from '@/layout/Logo';
+import { HeaderProps } from './Header.props';
+import { ButtonList } from '@/components/header/ButtonList';
+
+export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
   const { headerNav, headerButton, headerLanguageLabel } = data;
 
   return (
@@ -35,12 +35,12 @@ export const Header: React.FC<HeaderProps> = ({ data, lang }) => {
 
           <div className="flex items-center gap-6 ">
             <Navigation headerNav={headerNav} />
-
-            <div className="flex items-center">
-              <Button className="mr-8">{headerButton.name}</Button>
-
-              <Dropdown headerLanguageLabel={headerLanguageLabel} lang={lang} />
-            </div>
+            <ButtonList
+              lang={lang}
+              headerButton={headerButton}
+              headerLanguageLabel={headerLanguageLabel}
+              modal={modal}
+            />
           </div>
         </div>
       </div>

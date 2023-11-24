@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
 import { Locale, i18n } from '@/i18n.config';
-import { Suspense } from 'react';
+import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-
-import './globals.css';
-import { Header } from '@/layout/Header';
-import { Footer } from '@/layout/Footer';
+import { Suspense } from 'react';
 import Loading from './loading';
+
+import { Footer } from '@/layout/Footer';
+import { Header } from '@/layout/Header';
 import { getDictionary } from '@/lib/dictionary';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -86,15 +86,16 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const { common } = await getDictionary(lang);
-  const { header, footer } = common;
+  const { header, footer, modal } = common;
 
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body>
         <Suspense fallback={<Loading />}>
-          <Header data={header} lang={lang} />
+          <Header data={header} lang={lang} modal={modal} />
           {children}
           <Footer data={footer} lang={lang} />
+          <div id="modal" />
         </Suspense>
       </body>
     </html>
