@@ -2,6 +2,7 @@ import { Locale, i18n } from '@/i18n.config';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Suspense } from 'react';
+import Loading from './loading';
 
 import { Footer } from '@/layout/Footer';
 import { Header } from '@/layout/Header';
@@ -90,7 +91,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body>
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <Header data={header} lang={lang} modal={modal} />
           {children}
           <Footer data={footer} lang={lang} />
