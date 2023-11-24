@@ -59,7 +59,7 @@ export const Dropdown = ({
         {lang}
 
         <ICONS.HEADER_CHEVRON_UP
-          className={`h-6 w-6 duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          className={`h-6 w-6 duration-300 ${isOpen ? 'rotate-0' : 'rotate-180'}`}
           aria-label={headerLanguageLabel.name}
         />
       </button>

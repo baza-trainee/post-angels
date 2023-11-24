@@ -1,3 +1,5 @@
+import { Locale } from '@/i18n.config';
+
 export interface HeaderProps {
   data: {
     headerNav: {
@@ -7,5 +9,10 @@ export interface HeaderProps {
     headerButton: { name: string };
     headerLanguageLabel: { name: string };
   };
-  lang: 'ua' | 'en';
+  lang: Locale;
+  modal: {
+    button: {
+      label: string;
+    };
+  };
 }

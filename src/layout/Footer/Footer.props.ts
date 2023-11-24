@@ -1,3 +1,5 @@
+import { Locale } from '@/i18n.config';
+
 export interface FooterProps {
   data: {
     footerNav: {
@@ -11,7 +13,6 @@ export interface FooterProps {
     footerCop: {
       name: string;
     };
-    footerLabel: { name: string };
   };
-  lang: 'ua' | 'en';
+  lang: Locale;
 }

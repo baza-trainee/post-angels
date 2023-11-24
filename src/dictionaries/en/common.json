@@ -87,9 +87,11 @@
       ],
       "footerCop": {
         "name": "Development of Baza Trainee Ukraine 2023 © All rights reserved"
-      },
-      "footerLabel": {
-        "name": "Company logo"
+      }
+    },
+    "modal": {
+      "button": {
+        "label": "close modal button"
       }
     }
   }

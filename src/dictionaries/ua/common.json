@@ -87,9 +87,11 @@
       ],
       "footerCop": {
         "name": "Розробка Baza Trainee Ukraine 2023 © Усі права захищені"
-      },
-      "footerLabel": {
-        "name": "Логотип компанії"
+      }
+    },
+    "modal": {
+      "button": {
+        "label": "кнопка закриття модального вікна"
       }
     }
   }

@@ -85,13 +85,13 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const { common } = await getDictionary(lang);
-  const { header, footer } = common;
+  const { header, footer, modal } = common;
 
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body>
         <Suspense fallback={null}>
-          <Header data={header} lang={lang} />
+          <Header data={header} lang={lang} modal={modal} />
           {children}
           <Footer data={footer} lang={lang} />
           <div id="modal" />

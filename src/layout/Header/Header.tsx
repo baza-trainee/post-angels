@@ -1,24 +1,14 @@
-'use client';
-
-import { Button } from '@/components/buttons/Button';
 import { ICONS } from '@/components/icons';
 import Link from 'next/link';
 
-import { Dropdown } from '@/components/header/Dropdown';
 import { Navigation } from '@/components/header/Navigation';
-import Modal from '@/components/modal/Modal';
-import ModalChildDonate from '@/layout/ModalChildDonate/ModalChildDonate';
-import { useState } from 'react';
-import { Logo } from '../Logo';
+
+import { Logo } from '@/layout/Logo';
 import { HeaderProps } from './Header.props';
+import { ButtonList } from '@/components/header/ButtonList';
 
-export const Header: React.FC<HeaderProps> = ({ data, lang }) => {
+export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
   const { headerNav, headerButton, headerLanguageLabel } = data;
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsModalOpen(true);
-  };
 
   return (
     <header className="font-eUkraineHead text-base font-normal">
@@ -45,26 +35,14 @@ export const Header: React.FC<HeaderProps> = ({ data, lang }) => {
 
           <div className="flex items-center gap-6 ">
             <Navigation headerNav={headerNav} />
-
-            <div className="flex items-center">
-              <Button className="mr-8" onClick={handleClick}>
-                {headerButton.name}
-              </Button>
-
-              <Dropdown headerLanguageLabel={headerLanguageLabel} lang={lang} />
-            </div>
+            <ButtonList
+              lang={lang}
+              headerButton={headerButton}
+              headerLanguageLabel={headerLanguageLabel}
+              modal={modal}
+            />
           </div>
         </div>
-
-        {isModalOpen && (
-          <Modal
-            modalClose={() => {
-              setIsModalOpen(false);
-            }}
-          >
-            <ModalChildDonate />
-          </Modal>
-        )}
       </div>
     </header>
   );
