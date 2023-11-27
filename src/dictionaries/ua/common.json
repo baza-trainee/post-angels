@@ -78,11 +78,13 @@
       "footerDoc": [
         {
           "name": "Політика конфіденційності",
-          "href": "?document=policy.pdf"
+          "href": "?document=policy.pdf",
+          "doc": "policy.pdf"
         },
         {
           "name": "Правила користування сайтом",
-          "href": "?document=rules.pdf"
+          "href": "?document=rules.pdf",
+          "doc": "rules.pdf"
         }
       ],
       "footerCop": {

@@ -9,6 +9,7 @@ export interface FooterProps {
     footerDoc: {
       name: string;
       href: string;
+      doc: string;
     }[];
     footerCop: {
       name: string;
