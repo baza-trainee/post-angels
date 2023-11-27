@@ -36,7 +36,7 @@ const Modal = ({ modalClose, children, modal }: ModalProps) => {
           <IconButton
             className="absolute right-12 top-12 h-5 w-5"
             onClick={modalClose}
-            label={modal.button.label}
+            // label={modal.button.label}
           >
             <ICONS.MODAL_CLOSE />
           </IconButton>

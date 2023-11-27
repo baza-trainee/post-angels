@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  webpack(config) {
+  webpack(config, { buildId, dev, isServer, defaultLoaders, webpack }) {
+    config.resolve.alias.canvas = false;
+    config.resolve.alias.encoding = false;
+
     const fileLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'));
     config.module.rules.push(
       {
@@ -8,7 +11,6 @@ module.exports = {
         test: /\.svg$/i,
         resourceQuery: /url/,
       },
-
       {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,

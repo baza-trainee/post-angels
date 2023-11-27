@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from 'react';
 
 import Link from 'next/link';
@@ -12,9 +12,11 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
   const { footerNav, footerDoc, footerCop } = data;
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [docToShow, setDocToShow] = useState<string>('');
 
-  const openDocument = () => {
-    setIsModalOpen(false);
+  const openDocument = (document: string) => {
+    setIsModalOpen(true);
+    setDocToShow(document);
   }
 
   return (
@@ -40,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
           <ul className="flex gap-[91px] text-sm underline">
             {footerDoc.map(ell => (
               <li key={ell.name}>
-                <Link href={ell.href} onClick={openDocument}>{ell.name}</Link>
+                <Link href={ell.href} onClick={openDocument} rel="nofollow noreferrer">{ell.name}</Link>
               </li>
             ))}
           </ul>
@@ -51,9 +53,13 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
           modal={modal}
           modalClose={() => {
             setIsModalOpen(false);
+            setDocToShow('');
+
           }}
-        >llll
-          {/* <PDFView /> */}
+      >
+            {docToShow && <PDFView document={docToShow} lang={lang} />}
+
+        {/* <PDFView lang={lang} /> */}
         </Modal>
       }
       </>
