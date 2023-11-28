@@ -11,7 +11,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
   const { headerNav, headerButton, headerLanguageLabel } = data;
 
   return (
-    <header className="sticky top-0 font-eUkraineHead text-base font-normal">
+    <header className="sticky top-0 font-eUkraineHead text-base font-normal backdrop-blur-sm">
       <div className="container">
         {/* Upper Nav */}
         <div className="flex h-auto items-center justify-between border-b py-4 text-grey-80">
