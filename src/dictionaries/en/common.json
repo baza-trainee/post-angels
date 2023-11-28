@@ -48,6 +48,15 @@
       }
     },
 
+    "cookie": {
+      "popupCookie": {
+        "text": "This website uses cookies for the proper functioning and improvement of the service. If you agree to their use, click OK.",
+        "text1": "More information in",
+        "linkText": "Privacy Policy.",
+        "href": "/"
+      }
+    },
+
     "footer": {
       "footerNav": [
         {
