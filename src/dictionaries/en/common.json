@@ -78,11 +78,13 @@
       "footerDoc": [
         {
           "name": "Privacy Policy",
-          "href": "/"
+          "href": "?document=policy.pdf",
+          "doc": "policy.pdf"
         },
         {
           "name": "Rules of use of the site",
-          "href": "/"
+          "href": "?document=rules.pdf",
+          "doc": "rules.pdf"
         }
       ],
       "footerCop": {
