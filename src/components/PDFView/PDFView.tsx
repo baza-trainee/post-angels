@@ -1,20 +1,30 @@
 'use client';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import pdf1 from '../../../public/docs/policy.pdf';
+import pdf2 from '../../../public/docs/statut.pdf';
 
-import { PDFViewProps } from './PDFView.props';
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+
+const options = {
+  standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${pdfjs.version}/standard_fonts`,
+};
+
+// import { PDFViewProps } from './PDFView.props';
 
 // import pdf from '../../../public/docs/policy.pdf';
 // import pdf from './policy.pdf';
 
- pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-'pdfjs-dist/legacy/build/pdf.worker.min.js',
-   import.meta.url,
- ).toString();
+//  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+// 'pdfjs-dist/legacy/build/pdf.worker.min.js',
+//    import.meta.url,
+//  ).toString();
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
-export const PDFView: React.FC<PDFViewProps> = ({ document, lang }) => {
+export const PDFView: React.FC<PDFViewProps> = ({ document }) => {
   const [numPages, setNumPages] = useState<number>(0);
   const [width, setWidth] = useState<number>(0);
 
@@ -44,25 +54,27 @@ export const PDFView: React.FC<PDFViewProps> = ({ document, lang }) => {
   }, [pdfWrapperRef]);
 
   return (
-    <div>
-      <div className="flex h-full w-full flex-col items-center justify-center" ref={pdfWrapperRef}>
-        <Document
-          className="flex w-full flex-col items-center justify-center p-5 "
-          file={`/docs/${document}`}
-          onLoadSuccess={onDocumentLoadSuccess}
-          error={<div className="text-3xl font-bold">Error loading PDF</div>}
-        >
-          {[...Array(numPages)].map((ell, i) => (
-            <Page
-              key={`page_${i + 1}`}
-              pageNumber={i + 1}
-              renderAnnotationLayer={false}
-              renderTextLayer={false}
-              width={width}
-            ></Page>
-          ))}
-        </Document>
-      </div>
+    <div className="flex h-full w-full flex-col items-center justify-start " ref={pdfWrapperRef}>
+      <Document
+        options={options}
+        className="flex w-full flex-col items-center justify-center p-5 "
+        file={document === 'policy' ? pdf2 : pdf1}
+        onLoadSuccess={onDocumentLoadSuccess}
+        error={<div className="text-3xl font-bold">Error loading PDF</div>}
+      >
+        {[...Array(numPages)].map((ell, i) => (
+          <Page
+            key={`page_${i + 1}`}
+            pageNumber={i + 1}
+            renderAnnotationLayer={false}
+            renderTextLayer={false}
+            width={width}
+            scale={6}
+          ></Page>
+        ))}
+      </Document>
     </div>
   );
 };
+
+export default PDFView;

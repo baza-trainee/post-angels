@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  webpack(config, { buildId, dev, isServer, defaultLoaders, webpack }) {
+  webpack(config) {
     config.resolve.alias.canvas = false;
-    config.resolve.alias.encoding = false;
+    config.module.rules.push({
+      test: /\.(pdf)$/,
+      type: 'asset/resource',
+    });
 
     const fileLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'));
     config.module.rules.push(

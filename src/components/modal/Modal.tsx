@@ -6,7 +6,7 @@ import { ModalProps } from './Modal.props';
 import { IconButton } from '@/components/buttons/IconButton';
 import { ICONS } from '@/components/icons';
 
-const Modal = ({ modalClose, children, modal }: ModalProps) => {
+const Modal = ({ modalClose, children, modal, scroll = false }: ModalProps) => {
   const handleBackdropClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       modalClose();
@@ -31,16 +31,21 @@ const Modal = ({ modalClose, children, modal }: ModalProps) => {
 
   return (
     <ClientOnlyPortal selector="#modal">
-      <div className="bg-backdrop fixed inset-0" onClick={handleBackdropClick}>
-        <div className="fixed left-1/2 top-1/2 h-auto -translate-x-1/2 -translate-y-1/2 bg-white px-24 py-20">
+      <div
+        className="flex-center fixed inset-0 flex bg-backdrop p-10"
+        onClick={handleBackdropClick}
+      >
+        <div className={`relative h-auto max-h-[1000px]  bg-white px-24 py-20 `}>
           <IconButton
             className="absolute right-12 top-12 h-5 w-5"
             onClick={modalClose}
-            // label={modal.button.label}
+            label={modal.button.label}
           >
             <ICONS.MODAL_CLOSE />
           </IconButton>
-          {children}
+          <div className={` ${scroll ? 'scrollbar h-[600px] overflow-y-scroll' : ''}`}>
+            {children}
+          </div>
         </div>
       </div>
     </ClientOnlyPortal>
