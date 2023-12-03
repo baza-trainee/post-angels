@@ -1,17 +1,17 @@
-import { ICONS } from '@/components/icons'
-import Link from 'next/link'
+import { ICONS } from '@/components/icons';
+import Link from 'next/link';
 
-import { Navigation } from '@/components/header/Navigation'
+import { Navigation } from '@/components/header/Navigation';
 
-import { ButtonList } from '@/components/header/ButtonList'
-import { Logo } from '@/layout/Logo'
-import { HeaderProps } from './Header.props'
+import { ButtonList } from '@/components/header/ButtonList';
+import { Logo } from '@/layout/Logo';
+import { HeaderProps } from './Header.props';
 
 export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
   const { headerNav, headerButton, headerLanguageLabel } = data;
 
   return (
-    <header className="sticky top-0 font-eUkraineHead text-base font-normal backdrop-blur-sm">
+    <header className="sticky top-0 font-eUkraineHead text-base font-normal backdrop-blur-lg">
       <div className="container">
         {/* Upper Nav */}
         <div className="flex h-auto items-center justify-between border-b py-4 text-grey-80">
@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
         </div>
 
         {/* Top Nav */}
-        <div className=" flex h-auto items-center justify-between border-b py-6">
+        <div className="flex h-auto items-center justify-between border-b py-6">
           <Logo type="dark" lang={lang} />
 
           <div className="flex items-center gap-6 ">
