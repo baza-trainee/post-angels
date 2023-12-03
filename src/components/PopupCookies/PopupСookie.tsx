@@ -7,7 +7,7 @@ import { PopupCookieProps } from './PopupCookie.props';
 const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
   const { popupCookie } = data;
   return (
-    <div className="">
+    <div className="relative flex w-full  items-center">
       <CookieConsent
         location="bottom"
         buttonText="OK"
@@ -16,8 +16,11 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
           background: '#F9FAFF',
           color: '#303030',
           alignItems: 'center',
+          left: '50%',
+          transform: 'translateX(-50%)',
         }}
-        containerClasses="rounded-2xl"
+        contentClasses=""
+        containerClasses="!w-[1200px] flex items-center !bottom-2 rounded-2xl justify-center p-[32px]"
         expires={150}
         overlay={true}
         hideOnAccept={true}
@@ -29,13 +32,18 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
           padding: '12px',
         }}
       >
-        <Paragraph variant="dark" variantFontSize="14" variantFontWeight="regular">
+        <Paragraph className="mb-1" variant="dark" variantFontSize="14" variantFontWeight="regular">
           {popupCookie.text}
         </Paragraph>
-        <br className="font-eUkraine text-sm leading-[160%]" /> {popupCookie.text1}
-        <Link className="pl-1 font-eUkraine text-base leading-[160%] text-orange" href="/">
-          {popupCookie.linkText}
-        </Link>
+        <Paragraph variant="dark" variantFontSize="14" variantFontWeight="regular">
+          {popupCookie.text1}
+          <Link
+            className="pl-1 font-eUkraine text-sm font-medium leading-[160%] text-orange"
+            href="/"
+          >
+            {popupCookie.linkText}
+          </Link>
+        </Paragraph>
       </CookieConsent>
     </div>
   );

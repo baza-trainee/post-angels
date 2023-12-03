@@ -6,7 +6,7 @@ import Loading from './loading';
 
 import { Footer } from '@/layout/Footer';
 import { Header } from '@/layout/Header';
-import PopupCookie from '@/components/PopupCookies/popupСookie';
+import PopupCookie from '@/components/PopupCookies/PopupСookie';
 import { getDictionary } from '@/lib/dictionary';
 import './globals.css';
 
