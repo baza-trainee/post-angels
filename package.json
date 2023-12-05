@@ -16,8 +16,8 @@
     "negotiator": "^0.6.3",
     "next": "14.0.2",
     "react": "^18",
-    "react-dom": "^18",
-    "react-pdf": "^7.5.1"
+    "react-cookie-consent": "^9.0.0",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

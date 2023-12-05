@@ -6,6 +6,7 @@ import Loading from './loading';
 
 import { Footer } from '@/layout/Footer';
 import { Header } from '@/layout/Header';
+import PopupCookie from '@/components/PopupCookies/PopupСookie';
 import { getDictionary } from '@/lib/dictionary';
 import './globals.css';
 
@@ -86,7 +87,7 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const { common } = await getDictionary(lang);
-  const { header, footer, modal } = common;
+  const { header, footer, modal, cookie } = common;
 
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
@@ -94,7 +95,7 @@ export default async function RootLayout({
         <Suspense fallback={<Loading />}>
           <Header data={header} lang={lang} modal={modal} />
           {children}
-          <Footer data={footer} lang={lang} modal={modal} />
+          <Footer data={footer} lang={lang} />
           <div id="modal" />
         </Suspense>
       </body>
