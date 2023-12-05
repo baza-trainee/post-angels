@@ -95,6 +95,7 @@ export default async function RootLayout({
         <Suspense fallback={<Loading />}>
           <Header data={header} lang={lang} modal={modal} />
           {children}
+          <PopupCookie data={cookie} />
           <Footer data={footer} lang={lang} modal={modal} />
           <div id="modal" />
         </Suspense>
