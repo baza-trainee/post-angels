@@ -9,10 +9,16 @@ export interface FooterProps {
     footerDoc: {
       name: string;
       href: string;
+      doc?: string;
     }[];
     footerCop: {
       name: string;
     };
   };
   lang: Locale;
+  modal: {
+    button: {
+      label: string;
+    };
+  };
 }
