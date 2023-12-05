@@ -35,7 +35,7 @@ const Modal = ({ modalClose, children, modal, scroll = false }: ModalProps) => {
         className="flex-center fixed inset-0 flex bg-backdrop p-10"
         onClick={handleBackdropClick}
       >
-        <div className={`relative h-auto max-h-[1000px]  bg-white px-24 py-20 `}>
+        <div className={`modal-animation relative h-auto max-h-[1000px]  bg-white px-24 py-20 `}>
           <IconButton
             className="absolute right-12 top-12 h-5 w-5"
             onClick={modalClose}

@@ -3,11 +3,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Modal from '@/components/modal/Modal';
-import dynamic from 'next/dynamic';
-
-import { PDFView } from '../PDFView/PDFView';
-
-// const PDFView = dynamic(() => import('../PDFView/PDFView'), { ssr: false });
+import { PDFView } from '@/components/PDFView/PDFView';
 
 export const FooterDoc = ({
   footerDoc,

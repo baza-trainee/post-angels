@@ -48,3 +48,21 @@ body {
     @apply bg-grey-60;
   }
 }
+
+#pdf-controls {
+  display: none;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-animation {
+  animation: modal 0.5s ease-in-out;
+}
