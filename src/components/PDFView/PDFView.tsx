@@ -1,5 +1,7 @@
 import React from 'react';
 import DocViewer, { DocViewerRenderers } from '@cyntler/react-doc-viewer';
+import { PDFViewProps } from './PDFView.props';
+
 
 export const PDFView: React.FC<PDFViewProps> = ({ document }) => {
   const docs = Array.isArray(document)

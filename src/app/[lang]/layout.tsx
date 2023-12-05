@@ -95,7 +95,7 @@ export default async function RootLayout({
         <Suspense fallback={<Loading />}>
           <Header data={header} lang={lang} modal={modal} />
           {children}
-          <Footer data={footer} lang={lang} />
+          <Footer data={footer} lang={lang} modal={modal} />
           <div id="modal" />
         </Suspense>
       </body>
