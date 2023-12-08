@@ -12,6 +12,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 
 import { Textarea } from '@/components/form/Textarea/Textarea';
+import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 
 const schema = yup
   .object({
@@ -62,6 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
           register={register}
           errors={errors}
         />
+        <Checkbox />
         <button type="submit">Submit</button>
       </form>
       <div className="container flex flex-col gap-[109px] font-eUkraine">
