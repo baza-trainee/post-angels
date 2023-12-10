@@ -1,9 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { FooterProps } from './Footer.props';
 import { Logo } from '../Logo/Logo';
+import { FooterDoc } from '@/components/footer/FooterDoc/FooterDoc';
 
-export const Footer: React.FC<FooterProps> = ({ data, lang }) => {
+export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
   const { footerNav, footerDoc, footerCop } = data;
 
   return (
@@ -25,13 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ data, lang }) => {
           <Paragraph variantFontSize="12" variant="white">
             {footerCop.name}
           </Paragraph>
-          <ul className="flex gap-[91px] text-sm underline">
-            {footerDoc.map(ell => (
-              <li key={ell.name}>
-                <Link href={ell.href}>{ell.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <FooterDoc footerDoc={footerDoc} modal={modal} />
         </div>
       </div>
     </footer>
