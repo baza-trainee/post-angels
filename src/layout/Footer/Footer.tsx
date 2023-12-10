@@ -9,7 +9,7 @@ import { FooterDoc } from '@/components/footer/FooterDoc/FooterDoc';
 import { Input } from '@/components/form/Input/Input';
 import * as yup from '../../../node_modules/yup/index';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
 
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
@@ -18,7 +18,8 @@ const schema = yup
   .object({
     name: yup.string().required(),
     no: yup.string().required('rrrrr'),
-    discr: yup.string().required(),
+    subscribe: yup.boolean().required(),
+    discr: yup.string().required('aaaaa'),
   })
   .required();
 
@@ -27,45 +28,36 @@ type FormData = yup.InferType<typeof schema>;
 export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
   const { footerNav, footerDoc, footerCop } = data;
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>({ resolver: yupResolver(schema) });
-
   const onSubmit = (data: FormData) => console.log(data);
+
+  const methods = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
+
+  const { handleSubmit } = methods;
 
   return (
     <footer className="bg-grey-120 pb-[43px] pt-12 ">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          title="Ваше ім’я"
-          name="name"
-          type="text"
-          placeholder="Placeholder"
-          register={register}
-          errors={errors}
-          lang={lang}
-        />
-        <Input
-          name="no"
-          type="text"
-          placeholder="Placeholder"
-          register={register}
-          errors={errors}
-          lang={lang}
-        />
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Input title="Ваше ім’я" name="name" type="text" placeholder="Placeholder" lang={lang} />
+          <Input title="Ваше fkfkkf" name="no" type="text" placeholder="Placeholder" lang={lang} />
 
-        <Textarea
-          name="discr"
-          title="Опишіть вашу проблему"
-          placeholder="Введіть вашу відповідь"
-          register={register}
-          errors={errors}
-        />
-        <Checkbox />
-        <button type="submit">Submit</button>
-      </form>
+          <Textarea
+            name="discr"
+            title="Опишіть вашу проблему"
+            placeholder="Введіть вашу відповідь"
+            lang={lang}
+          />
+          <Checkbox
+            name="subscribe"
+            description="Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
+          lang={lang}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </FormProvider>
+
       <div className="container flex flex-col gap-[109px] font-eUkraine">
         <div className="flex items-center justify-between text-base font-normal uppercase text-grey-0">
           <Logo type="light" lang={lang} />
