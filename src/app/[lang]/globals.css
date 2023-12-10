@@ -25,10 +25,10 @@ body {
 
 .background-404 {
   margin-top: -10rem;
-  background-image: linear-gradient(black, black), url('../../../public/images/404.png');
+  /* background-image: url('/images/404.png'); */
+  background-color: theme('colors.grey.80');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  background-blend-mode: saturation;
-  /* background-blend-mode: luminosity; !!!!!!!  ЦЕ НЕ ПРАЦЮЄ */
+  background-blend-mode: luminosity;
 }
