@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
           <Checkbox
             name="subscribe"
             description="Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
-          lang={lang}
+            lang={lang}
           />
           <button type="submit">Submit</button>
         </form>

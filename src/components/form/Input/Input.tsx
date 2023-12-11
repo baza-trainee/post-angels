@@ -8,6 +8,7 @@ export const Input: React.FC<InputProps> = ({ name, title, type, placeholder }) 
 
   return (
     <Controller
+      defaultValue=""
       name={name}
       control={control}
       render={({ field, fieldState }) => (
@@ -19,7 +20,9 @@ export const Input: React.FC<InputProps> = ({ name, title, type, placeholder }) 
             type={type}
             {...field}
           />
-          {fieldState.error && <p className="text-sm font-normal text-[#E50E0E]">{fieldState.error.message}</p>}
+          {fieldState.error && (
+            <p className="text-sm font-normal text-[#E50E0E]">{fieldState.error.message}</p>
+          )}
         </label>
       )}
     ></Controller>
