@@ -104,6 +104,10 @@
       "button": {
         "label": "close modal button"
       }
+    },
+    "notfound": {
+      "subtitle": "Sorry, the page you are looking for has been moved or deleted",
+      "label": "Go main"
     }
   }
 }
