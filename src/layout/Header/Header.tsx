@@ -11,7 +11,9 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
   const { headerNav, headerButton, headerLanguageLabel } = data;
 
   return (
-    <header className="sticky top-0 font-eUkraineHead text-base font-normal backdrop-blur-lg">
+    <header
+      className={` fixed inset-x-0 top-0 font-eUkraineHead text-base font-normal backdrop-blur-[3px]`}
+    >
       <div className="container">
         {/* Upper Nav */}
         <div className="flex h-auto items-center justify-between border-b py-4 text-grey-80">
@@ -47,4 +49,3 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
     </header>
   );
 };
-// shadow-[0px_8px_6px_-6px_#333]

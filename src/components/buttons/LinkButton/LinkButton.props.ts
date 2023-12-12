@@ -7,4 +7,5 @@ export interface LinkButtonProps
   size?: 'big' | 'small';
   disabled?: boolean;
   href?: string;
+  centered?: boolean;
 }

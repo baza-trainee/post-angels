@@ -1,24 +1,31 @@
-import { LinkButton } from '@/components/buttons/LinkButton'
-import { Locale } from '@/i18n.config'
-import { getDictionary } from '@/lib/dictionary'
+import { LinkButton } from '@/components/buttons/LinkButton';
+import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
+import { Title } from '@/components/typography/Title';
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/lib/dictionary';
 
 const NotFound = async ({ params: { lang = 'ua' } }: { params: { lang: Locale } }) => {
-  console.log(lang);
+  const { notfound } = (await getDictionary(lang)).common;
 
-  const { notfound } = (await getDictionary(lang)).common; //! не знаю чи так можна саме з цією сторінкою :(
-  console.log(notfound);
   return (
-    <div className="background-404">
-      <div className=" flex flex-col items-center gap-12 pb-24 text-center text-grey-20/80">
-        {/* Using the dictionary by selected language: */}
-        <h1 className="mt-40 text-[240px] font-bold">404</h1>
-        <h2 className="w-[680px] text-3xl">{notfound.subtitle}</h2>
+    <section className="background-404 h-[calc(100vh_-_260px)] min-h-[765px] py-40">
+      <div className="container text-center">
+        <Title tag="h1" className="mb-[52px] text-center !text-[240px] font-bold text-white">
+          404
+        </Title>
+        <Paragraph
+          className="mx-auto mb-[95px] w-[680px] text-3xl font-bold"
+          variant="white"
+          centered
+        >
+          {notfound.subtitle}
+        </Paragraph>
 
-        <LinkButton href="/" className="mt-10 h-14 w-64">
+        <LinkButton href="/" className="mt-10 h-14 w-64" centered>
           {notfound.label}
         </LinkButton>
       </div>
-    </div>
+    </section>
   );
 };
 
