@@ -13,6 +13,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
+import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 
 const schema = yup
   .object({
@@ -54,6 +55,18 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
             description="Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
             lang={lang}
           />
+
+          <SelectInput
+            title='Яка вам потрібна допомога?'
+            options={[
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ]}
+            // placeholder={Оберіть відповідне}
+            // lang={lang}
+          />
+
           <button type="submit">Submit</button>
         </form>
       </FormProvider>

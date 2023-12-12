@@ -12,8 +12,11 @@ import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
 import ModalClose from '../../../public/icons/modalClose.svg';
 import VerselIcon from '../../../public/vercel.svg';
-import CheckTrue from '../../../public/icons/checkTrue.svg';
-import CheckFalse from '../../../public/icons/checkFalse.svg';
+import CheckTrue from '../../../public/icons/form/checkTrue.svg';
+import CheckFalse from '../../../public/icons/form/checkFalse.svg';
+import ArrowDown from '../../../public/icons/form/arrowDown.svg';
+import ArrowUp from '../../../public/icons/form/arrowUp.svg';
+
 
 
 export const ICONS = {
@@ -33,4 +36,6 @@ export const ICONS = {
   MODAL_CLOSE: ModalClose,
   CHECK_TRUE: CheckTrue,
   CHECK_FALSE: CheckFalse,
+  ARROW_DOWN: ArrowDown,
+  ARROW_UP: ArrowUp
 };
