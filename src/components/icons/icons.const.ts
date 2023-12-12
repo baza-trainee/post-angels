@@ -11,7 +11,10 @@ import HeaderPhone from '../../../public/icons/header/header-phone.svg';
 import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
 import ModalClose from '../../../public/icons/modalClose.svg';
-import NotFound404 from '../../../public/images/404.png';
+import NotFound1xJpg from '../../../public/images/404/img1x.jpg';
+import NotFound1xWebp from '../../../public/images/404/img1x.webp';
+import NotFound2xJpg from '../../../public/images/404/img2x.jpg';
+import NotFound2xWebp from '../../../public/images/404/img2x.webp';
 import VerselIcon from '../../../public/vercel.svg';
 
 export const ICONS = {
@@ -29,5 +32,8 @@ export const ICONS = {
   HEADER_CHEVRON_DOWN: HeaderChevronDown,
   HEADER_CHEVRON_UP: HeaderChevronUp,
   MODAL_CLOSE: ModalClose,
-  NOTFOUND404: NotFound404,
+  NOTFOUND1XJPG: NotFound1xJpg,
+  NOTFOUND1XWEBP: NotFound1xWebp,
+  NOTFOUND2XJPG: NotFound2xJpg,
+  NOTFOUND2XWEBP: NotFound2xWebp,
 };

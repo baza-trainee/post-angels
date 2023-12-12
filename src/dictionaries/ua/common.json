@@ -48,6 +48,15 @@
       }
     },
 
+    "cookie": {
+      "popupCookie": {
+        "text": "Цей сайт використовує файли cookies для правильної роботи і покращення сервісу. Якщо ви погоджуєтесь з їхнім використанням, натисніть ОК.",
+        "text1": "Більше інформації в",
+        "linkText": "Політика конфіденційності.",
+        "href": "/"
+      }
+    },
+
     "footer": {
       "footerNav": [
         {
@@ -78,11 +87,13 @@
       "footerDoc": [
         {
           "name": "Політика конфіденційності",
-          "href": "/"
+          "href": "?document=policy.pdf",
+          "doc": "policy.pdf"
         },
         {
           "name": "Правила користування сайтом",
-          "href": "/"
+          "href": "?document=statut.pdf",
+          "doc": "statut.pdf"
         }
       ],
       "footerCop": {
