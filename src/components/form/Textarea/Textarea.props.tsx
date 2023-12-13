@@ -5,5 +5,4 @@ export interface TextareaProps {
   name: string;
   placeholder: string;
   title: string;
-  // register:
 }

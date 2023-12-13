@@ -15,11 +15,13 @@ export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder }) 
         <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
           {title}
           <textarea
-            className="h-[366px] resize-none rounded-2xl border border-grey-60 px-3.5 py-4 text-sm font-normal text-grey-60"
+            className="h-[366px] resize-none rounded-2xl border border-grey-60 px-3.5 py-4 text-sm font-normal text-grey-60 outline-none focus:border-[#1A48ED]"
             placeholder={placeholder}
             {...field}
           />
-          {fieldState.error && <p className="text-sm font-normal text-[#E50E0E]">{fieldState.error.message}</p>}
+          {fieldState.error && (
+            <p className="text-sm font-normal text-[#E50E0E]">{fieldState.error.message}</p>
+          )}
         </label>
       )}
     />
