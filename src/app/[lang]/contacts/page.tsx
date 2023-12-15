@@ -25,8 +25,8 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         <Image
           className="rounded-2xl"
           src={Partners}
-          width={688}
-          height={458}
+          width={790}
+          height={540}
           alt={contactsSection.img.alt}
         />
       </div>
