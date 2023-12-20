@@ -21,19 +21,18 @@ const values = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-const schema = yup
-  .object({
-    name: yup.string().required(),
-    no: yup.string().required('rrrrr'),
-    subscribe: yup.boolean().required(),
-    discr: yup.string().required('aaaaa'),
-    a: yup.object({
-      label: yup.string().required('jjjj'),
-      value: yup.string().required('ppp'),
-      })
-    .required('jjjj'),
-  })
-  .required();
+const schema = yup.object({
+  name: yup.string().required("Поле обов'язкове для заповнення").min(4, 'Мінімальна довжина 4 символа'),
+  no: yup.string().required("Поле обов'язкове для заповнення").min(4, 'Мінімальна довжина 4 символа'),
+  subscribe: yup.boolean().default(false).oneOf([true], "Поле обов'язкове для заповнення"),
+  discr: yup.string().required("Поле обов'язкове для заповнення").min(4, 'Мінімальна довжина 4 символа'),
+  a: yup
+    .object({
+      label: yup.string().required("Поле обов'язкове для заповнення"),
+      value: yup.string().required("Поле обов'язкове для заповнення"),
+    })
+    .required("Поле обов'язкове для заповнення"),
+});
 
 type FormData = yup.InferType<typeof schema>;
 
@@ -50,10 +49,10 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
 
   return (
     <>
-    <FormProvider {...methods}>
+      <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input title="Ваше ім’я" name="name" type="text" placeholder="Placeholder" lang={lang} />
-          <Input title="Ваше fkfkkf" name="no" type="text" placeholder="Placeholder" lang={lang} />
+          <Input title="Ваше прізвище" name="no" type="text" placeholder="Placeholder" lang={lang} />
 
           <Textarea
             name="discr"
@@ -71,37 +70,35 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
             name="a"
             title="Яка вам потрібна допомога?"
             options={values}
-            placeholder='Оберіть відповідне'
+            placeholder="Оберіть відповідне"
             lang={lang}
           />
 
           <button type="submit">Submit</button>
         </form>
       </FormProvider>
-    <footer className="bg-grey-120 pb-[43px] pt-12 ">
-      
+      <footer className="bg-grey-120 pb-[43px] pt-12 ">
+        <div className="container flex flex-col gap-[109px] font-eUkraine">
+          <div className="flex items-center justify-between text-base font-normal uppercase text-grey-0">
+            <Logo type="light" lang={lang} />
 
-      <div className="container flex flex-col gap-[109px] font-eUkraine">
-        <div className="flex items-center justify-between text-base font-normal uppercase text-grey-0">
-          <Logo type="light" lang={lang} />
+            <ul className="flex gap-[58px]">
+              {footerNav.map(ell => (
+                <li key={ell.name}>
+                  <Link href={ell.href}>{ell.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <ul className="flex gap-[58px]">
-            {footerNav.map(ell => (
-              <li key={ell.name}>
-                <Link href={ell.href}>{ell.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex items-center justify-start gap-[231px] font-normal text-grey-0">
+            <Paragraph variantFontSize="12" variant="white">
+              {footerCop.name}
+            </Paragraph>
+            <FooterDoc footerDoc={footerDoc} modal={modal} />
+          </div>
         </div>
-
-        <div className="flex items-center justify-start gap-[231px] font-normal text-grey-0">
-          <Paragraph variantFontSize="12" variant="white">
-            {footerCop.name}
-          </Paragraph>
-          <FooterDoc footerDoc={footerDoc} modal={modal} />
-        </div>
-      </div>
-    </footer>
+      </footer>
     </>
   );
 };

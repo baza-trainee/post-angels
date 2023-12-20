@@ -15,7 +15,11 @@ export const Input: React.FC<InputProps> = ({ name, title, type, placeholder }) 
         <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
           {title}
           <input
-            className="rounded-2xl border border-grey-60 px-3.5 py-4 text-sm font-normal text-grey-60 outline-none focus:border-[#1A48ED]"
+            className={`rounded-2xl border border-grey-60 px-3.5 py-4 text-sm font-normal  outline-none focus:border-[#1A48ED] ${
+              fieldState.error
+                ? 'text-[#E50E0E] placeholder:text-[#E50E0E]'
+                : 'text-grey-60 placeholder:text-grey-60'
+            }`}
             placeholder={placeholder}
             type={type}
             {...field}

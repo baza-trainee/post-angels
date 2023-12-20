@@ -39,6 +39,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       ...provided,
       color: '#B1B0B0',
     }),
+
     dropdownIndicator: provided => ({
       ...provided,
       svg: {
@@ -71,6 +72,13 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
     }),
   };
 
+  const errorStyles = {
+    placeholder: provided => ({
+      ...provided,
+      color: '#E50E0E',
+    }),
+  };
+
   const DropdownIndicator = props => {
     return (
       <div className="h-6 w-6" {...props.innerProps}>
@@ -92,7 +100,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
             name={name}
             options={options}
             placeholder={placeholder}
-            styles={customStyles}
+            styles={fieldState.error ? { ...customStyles, ...errorStyles } : customStyles}
             components={{ DropdownIndicator }}
             onChange={selectedOption => {
               setValue(name, selectedOption);
