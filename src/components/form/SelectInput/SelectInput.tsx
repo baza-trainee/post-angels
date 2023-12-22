@@ -11,6 +11,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
   const { control, setValue } = useFormContext();
 
   const customStyles = {
+    // @ts-ignore
     control: (provided, state) => ({
       ...provided,
       display: 'flex',
@@ -31,21 +32,24 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
         borderColor: '#1A48ED',
       },
     }),
+    // @ts-ignore
     indicatorSeparator: provided => ({
       ...provided,
       display: 'none',
     }),
+    // @ts-ignore
     placeholder: provided => ({
       ...provided,
       color: '#B1B0B0',
     }),
-
+    // @ts-ignore
     dropdownIndicator: provided => ({
       ...provided,
       svg: {
         transition: 'fill 0.2s ease-in-out',
       },
     }),
+    // @ts-ignore
     menu: provided => ({
       ...provided,
       display: 'flex',
@@ -57,6 +61,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       padding: '32px',
       boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
     }),
+    // @ts-ignore
     option: (provided, state) => ({
       ...provided,
       margin: '0',
@@ -73,12 +78,13 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
   };
 
   const errorStyles = {
+    // @ts-ignore
     placeholder: provided => ({
       ...provided,
       color: '#E50E0E',
     }),
   };
-
+  // @ts-ignore
   const DropdownIndicator = props => {
     return (
       <div className="h-6 w-6" {...props.innerProps}>
@@ -92,6 +98,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       defaultValue=""
       name={name}
       control={control}
+      // @ts-ignore
       render={({ field, fieldState }) => (
         <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
           {title}
@@ -102,6 +109,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
             placeholder={placeholder}
             styles={fieldState.error ? { ...customStyles, ...errorStyles } : customStyles}
             components={{ DropdownIndicator }}
+            // @ts-ignore
             onChange={selectedOption => {
               setValue(name, selectedOption);
               field.onChange(selectedOption);

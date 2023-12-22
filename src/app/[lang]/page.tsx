@@ -7,6 +7,7 @@ import { Title } from '@/components/typography/Title';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import { Contacts } from '@/sections/Contacts/Contacts';
+import { Form } from '@/components/form/Form/Form';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
@@ -38,6 +39,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
         <ICONS.VERSEL className="h-20 w-20" />
         <Contacts data={contacts} />
+        <Form />
       </div>
     </main>
   );
