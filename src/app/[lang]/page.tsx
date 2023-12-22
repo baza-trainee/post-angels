@@ -43,7 +43,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       </section>
       <Contacts data={contacts} />
       <Form />
-      </div>
     </main>
   );
 }
