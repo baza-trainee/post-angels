@@ -23,43 +23,76 @@ body {
   font-weight: 400;
 }
 
-@layer utilities {
-  .flex-center {
-    @apply flex items-center justify-center;
+.background-404 {
+  background-image: url('/images/404/img1x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .background-404 {
+    background-image: url('/images/404/img2x.jpg');
   }
-
-  .block-center {
-    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
+}
+@supports (background-image: url('/images/404/img1x.webp')) {
+  .background-404 {
+    background-image: url('/images/404/img1x.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-
-  .scrollbar::-webkit-scrollbar {
-    @apply w-2;
-  }
-
-  .scrollbar::-webkit-scrollbar-track {
-    @apply rounded-md bg-white;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    @apply rounded-md bg-grey-60;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-grey-60;
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .background-404 {
+      background-image: url('/images/404/img2x.webp');
+    }
   }
 }
 
-#pdf-controls {
-  display: none;
-}
-
-@keyframes modal {
-  from {
-    opacity: 0;
+@media screen and (min-width: 768px) {
+  .background-404 {
+    background-image: url('/images/404/img1x.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .background-404 {
+      background-image: url('/images/404/img2x.jpg');
+    }
   }
 
-  to {
-    opacity: 1;
+  @supports (background-image: url('/images/404/img1x.webp')) {
+    .background-404 {
+      background-image: url('/images/404/img1x.webp');
+      background-size: cover;
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .background-404 {
+        background-image: url('/images/404/img2x.webp');
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .background-404 {
+    background-image: url('/images/404/img1x.jpg');
+    background-size: cover;
+    background-position: top -50px center;
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .background-404 {
+      background-image: url('/images/404/img2x.jpg');
+    }
+  }
+  @supports (background-image: url('/images/404/img1x.webp')) {
+    .background-404 {
+      background-image: url('/images/404/img1x.webp');
+      background-size: cover;
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .background-404 {
+        background-image: url('/images/404/img2x.webp');
+      }
+    }
   }
 }
 

@@ -11,6 +11,10 @@ import HeaderPhone from '../../../public/icons/header/header-phone.svg';
 import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
 import ModalClose from '../../../public/icons/modalClose.svg';
+import NotFound1xJpg from '../../../public/images/404/img1x.jpg';
+import NotFound1xWebp from '../../../public/images/404/img1x.webp';
+import NotFound2xJpg from '../../../public/images/404/img2x.jpg';
+import NotFound2xWebp from '../../../public/images/404/img2x.webp';
 import VerselIcon from '../../../public/vercel.svg';
 import CheckTrue from '../../../public/icons/form/checkTrue.svg';
 import CheckFalse from '../../../public/icons/form/checkFalse.svg';
@@ -37,5 +41,9 @@ export const ICONS = {
   CHECK_TRUE: CheckTrue,
   CHECK_FALSE: CheckFalse,
   ARROW_DOWN: ArrowDown,
-  ARROW_UP: ArrowUp
+  ARROW_UP: ArrowUp,
+  NOTFOUND1XJPG: NotFound1xJpg,
+  NOTFOUND1XWEBP: NotFound1xWebp,
+  NOTFOUND2XJPG: NotFound2xJpg,
+  NOTFOUND2XWEBP: NotFound2xWebp,
 };

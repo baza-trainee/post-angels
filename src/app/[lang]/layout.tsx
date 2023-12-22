@@ -91,7 +91,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
-      <body>
+      <body className="relative">
         <Suspense fallback={<Loading />}>
           <Header data={header} lang={lang} modal={modal} />
           {children}

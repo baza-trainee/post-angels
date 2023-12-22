@@ -11,9 +11,6 @@ const config: Config = {
       mdOnly: { min: '768px', max: '1239.98px' },
       notXl: { max: '1239.98px' },
     },
-    // spacing: {
-    //   6.375: '6.375rem',
-    // },
     extend: {
       container: {
         center: true,

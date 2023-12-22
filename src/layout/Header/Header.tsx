@@ -3,15 +3,17 @@ import Link from 'next/link';
 
 import { Navigation } from '@/components/header/Navigation';
 
+import { ButtonList } from '@/components/header/ButtonList';
 import { Logo } from '@/layout/Logo';
 import { HeaderProps } from './Header.props';
-import { ButtonList } from '@/components/header/ButtonList';
 
 export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
   const { headerNav, headerButton, headerLanguageLabel } = data;
 
   return (
-    <header className="font-eUkraineHead text-base font-normal">
+    <header
+      className={` fixed inset-x-0 top-0 font-eUkraineHead text-base font-normal backdrop-blur-[3px]`}
+    >
       <div className="container">
         {/* Upper Nav */}
         <div className="flex h-auto items-center justify-between border-b py-4 text-grey-80">

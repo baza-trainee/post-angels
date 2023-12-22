@@ -47,7 +47,6 @@
         }
       }
     },
-
     "cookie": {
       "popupCookie": {
         "text": "This website uses cookies for the proper functioning and improvement of the service. If you agree to their use, click OK.",
@@ -56,7 +55,6 @@
         "href": "/"
       }
     },
-
     "footer": {
       "footerNav": [
         {
@@ -104,6 +102,10 @@
       "button": {
         "label": "close modal button"
       }
+    },
+    "notfound": {
+      "subtitle": "Sorry, the page you are looking for has been moved or deleted",
+      "label": "Go main"
     }
   }
 }
