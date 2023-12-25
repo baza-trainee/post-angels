@@ -16,6 +16,12 @@ import NotFound1xWebp from '../../../public/images/404/img1x.webp';
 import NotFound2xJpg from '../../../public/images/404/img2x.jpg';
 import NotFound2xWebp from '../../../public/images/404/img2x.webp';
 import VerselIcon from '../../../public/vercel.svg';
+import CheckTrue from '../../../public/icons/form/checkTrue.svg';
+import CheckFalse from '../../../public/icons/form/checkFalse.svg';
+import ArrowDown from '../../../public/icons/form/arrowDown.svg';
+import ArrowUp from '../../../public/icons/form/arrowUp.svg';
+
+
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -32,6 +38,10 @@ export const ICONS = {
   HEADER_CHEVRON_DOWN: HeaderChevronDown,
   HEADER_CHEVRON_UP: HeaderChevronUp,
   MODAL_CLOSE: ModalClose,
+  CHECK_TRUE: CheckTrue,
+  CHECK_FALSE: CheckFalse,
+  ARROW_DOWN: ArrowDown,
+  ARROW_UP: ArrowUp,
   NOTFOUND1XJPG: NotFound1xJpg,
   NOTFOUND1XWEBP: NotFound1xWebp,
   NOTFOUND2XJPG: NotFound2xJpg,

@@ -95,3 +95,9 @@ body {
     }
   }
 }
+
+.modal-animation {
+  animation: modal 0.5s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}

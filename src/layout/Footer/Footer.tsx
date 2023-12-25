@@ -24,8 +24,8 @@ export const Footer: React.FC<FooterProps> = ({ data, lang, modal }) => {
           </ul>
         </div>
 
-        <div className="flex items-center justify-start gap-[231px] font-normal text-grey-0">
-          <Paragraph variantFontSize="12" variant="white">
+        <div className="flex items-center justify-start gap-[159px] font-normal text-grey-0">
+          <Paragraph variantFontSize="14" variant="white">
             {footerCop.name}
           </Paragraph>
           <FooterDoc footerDoc={footerDoc} modal={modal} />
