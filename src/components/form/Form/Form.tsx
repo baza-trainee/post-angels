@@ -8,6 +8,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
+import { Locale } from '@/i18n.config';
 
 const values = [
   { value: 'chocolate', label: 'Chocolate' },
@@ -40,7 +41,7 @@ const schema = yup.object({
 
 type FormData = yup.InferType<typeof schema>;
 
-export const Form: React.FC<FormProps> = ({ lang }) => {
+export const Form = ({ lang }: { lang: Locale }) => {
   const onSubmit = (data: FormData) => console.log(data);
 
   const methods = useForm<FormData>({
@@ -51,13 +52,7 @@ export const Form: React.FC<FormProps> = ({ lang }) => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex w-1/2 flex-col gap-4">
-        <Input
-          title="Ваше ім’я"
-          name="name"
-          type="text"
-          placeholder="Ваше ім’я"
-          lang={lang}
-        />
+        <Input title="Ваше ім’я" name="name" type="text" placeholder="Ваше ім’я" lang={lang} />
 
         <Input
           title="Ваше прізвище"

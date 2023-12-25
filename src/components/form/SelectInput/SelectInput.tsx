@@ -107,6 +107,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
           <Select
             id={id}
             name={name}
+            // @ts-ignore
             options={options}
             placeholder={placeholder}
             styles={fieldState.error ? { ...customStyles, ...errorStyles } : customStyles}
