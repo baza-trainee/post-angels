@@ -29,11 +29,12 @@ const schema = yup.object({
     .string()
     .required("Поле обов'язкове для заповнення")
     .min(4, 'Мінімальна довжина 4 символа'),
-  a: yup
+  select: yup
     .object({
       label: yup.string().required("Поле обов'язкове для заповнення"),
       value: yup.string().required("Поле обов'язкове для заповнення"),
     })
+    .nullable(false)
     .required("Поле обов'язкове для заповнення"),
 });
 
@@ -79,7 +80,7 @@ export const Form: React.FC<FormProps> = ({ lang }) => {
         />
 
         <SelectInput
-          name="a"
+          name="select"
           title="Яка вам потрібна допомога?"
           options={values}
           placeholder="Оберіть відповідне"
