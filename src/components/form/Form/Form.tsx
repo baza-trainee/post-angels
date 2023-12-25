@@ -42,17 +42,26 @@ const schema = yup.object({
 type FormData = yup.InferType<typeof schema>;
 
 export const Form = ({ lang }: { lang: Locale }) => {
-  const onSubmit = (data: FormData) => console.log(data);
-
   const methods = useForm<FormData>({
     resolver: yupResolver(schema),
   });
-  const { handleSubmit } = methods;
+  const { handleSubmit, reset } = methods;
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    reset();
+  };
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex w-1/2 flex-col gap-4">
-        <Input title="Ваше ім’я" name="name" type="text" placeholder="Ваше ім’я" lang={lang} />
+        <Input
+          title="Ваше ім’я"
+          name="name"
+          type="text"
+          placeholder="Ваше ім’я"
+          lang={lang}
+        />
 
         <Input
           title="Ваше прізвище"
