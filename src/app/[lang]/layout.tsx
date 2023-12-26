@@ -81,11 +81,12 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params: { lang },
+  params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: { lang: Locale; project?: string };
 }) {
+  const lang = params.lang;
   const { common } = await getDictionary(lang);
   const { header, footer, modal, cookie } = common;
 
@@ -93,7 +94,6 @@ export default async function RootLayout({
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body className="relative">
         <Suspense fallback={<Loading />}>
-          <Header data={header} lang={lang} modal={modal} />
           {children}
           <PopupCookie data={cookie} />
           <Footer data={footer} lang={lang} modal={modal} />
