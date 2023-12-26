@@ -55,13 +55,7 @@ export const Form = ({ lang }: { lang: Locale }) => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex w-1/2 flex-col gap-4">
-        <Input
-          title="Ваше ім’я"
-          name="name"
-          type="text"
-          placeholder="Ваше ім’я"
-          lang={lang}
-        />
+        <Input title="Ваше ім’я" name="name" type="text" placeholder="Ваше ім’я" lang={lang} />
 
         <Input
           title="Ваше прізвище"
