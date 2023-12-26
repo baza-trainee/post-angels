@@ -30,28 +30,38 @@ const schema = yup.object({
     .string()
     .required("Поле обов'язкове для заповнення")
     .min(4, 'Мінімальна довжина 4 символа'),
-  a: yup
+  select: yup
     .object({
       label: yup.string().required("Поле обов'язкове для заповнення"),
       value: yup.string().required("Поле обов'язкове для заповнення"),
     })
+    .nullable(false)
     .required("Поле обов'язкове для заповнення"),
 });
 
 type FormData = yup.InferType<typeof schema>;
 
 export const Form = ({ lang }: { lang: Locale }) => {
-  const onSubmit = (data: FormData) => console.log(data);
-
   const methods = useForm<FormData>({
     resolver: yupResolver(schema),
   });
-  const { handleSubmit } = methods;
+  const { handleSubmit, reset } = methods;
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    reset();
+  };
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex w-1/2 flex-col gap-4">
-        <Input title="Ваше ім’я" name="name" type="text" placeholder="Ваше ім’я" lang={lang} />
+        <Input
+          title="Ваше ім’я"
+          name="name"
+          type="text"
+          placeholder="Ваше ім’я"
+          lang={lang}
+        />
 
         <Input
           title="Ваше прізвище"
@@ -74,7 +84,7 @@ export const Form = ({ lang }: { lang: Locale }) => {
         />
 
         <SelectInput
-          name="a"
+          name="select"
           title="Яка вам потрібна допомога?"
           options={values}
           placeholder="Оберіть відповідне"

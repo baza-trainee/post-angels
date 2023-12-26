@@ -93,11 +93,13 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
     );
   };
   const id = useId();
+
   return (
     <Controller
-      defaultValue=""
+      defaultValue={null}
       name={name}
       control={control}
+      isClearable
       // @ts-ignore
       render={({ field, fieldState }) => (
         <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
