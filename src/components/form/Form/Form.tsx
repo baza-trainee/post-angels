@@ -35,7 +35,7 @@ const schema = yup.object({
       label: yup.string().required("Поле обов'язкове для заповнення"),
       value: yup.string().required("Поле обов'язкове для заповнення"),
     })
-    .nullable(false)
+    .nullable()
     .required("Поле обов'язкове для заповнення"),
 });
 

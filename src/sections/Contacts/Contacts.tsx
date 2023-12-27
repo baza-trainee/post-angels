@@ -12,7 +12,7 @@ export const Contacts: React.FC<ContactsProps> = ({ data }) => {
     <section className="py-[100px]">
       <div className="container flex justify-between	">
         <div>
-          <Title tag="h2" colorVariant="accent" className="pb-[50px] ">
+          <Title tag="h2" variantSize="h2" colorVariant="accent" className="pb-[50px] ">
             {contactsSection.title}
             <span>
               <br /> {contactsSection.title1}
