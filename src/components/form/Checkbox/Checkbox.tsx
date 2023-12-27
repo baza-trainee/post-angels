@@ -25,7 +25,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ name, description }) => {
             <p>{description}</p>
           </div>
           {fieldState.error && (
-            <p className="text-sm font-normal text-[#E50E0E]">{fieldState.error.message}</p>
+            <p className="text-sm font-normal text-error">{fieldState.error.message}</p>
           )}
         </label>
       )}
