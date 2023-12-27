@@ -18,10 +18,10 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
     <main className="">
       <section className=" py-[190px]">
         <div className="container">
-          <Title tag="h1" className="" colorVariant="orange">
+          <Title tag="h1" variantSize="h1" className="" colorVariant="orange">
             Майбутнє в наших руках
           </Title>
-          <Title tag="h4" className="" colorVariant="orange">
+          <Title tag="h4" variantSize="h4" className="" colorVariant="orange">
             Якийсь <span> заголовок</span>
           </Title>
 
