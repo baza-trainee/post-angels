@@ -4,12 +4,16 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      sm: '420px',
+      xs: '360px',
+      sm: '480px',
       md: '768px',
-      xl: '1240px',
+      lg: '1000px',
+      xl: '1280px',
+      '2xl': '1440px',
+      '3xl': '1920px',
       smOnly: { max: '767.98px' },
-      mdOnly: { min: '768px', max: '1239.98px' },
-      notXl: { max: '1239.98px' },
+      mdOnly: { min: '768px', max: '1279.98px' },
+      notXl: { max: '1279.98px' },
     },
     extend: {
       container: {

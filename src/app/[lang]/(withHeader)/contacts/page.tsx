@@ -3,7 +3,7 @@ import { Title } from '@/components/typography/Title';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import Image from 'next/image';
-import Partners from '../../../../public/images/contacts-map.jpg';
+import Partners from '../../../../../public/images/contacts-map.jpg';
 
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);

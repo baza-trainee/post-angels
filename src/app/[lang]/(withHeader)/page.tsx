@@ -8,6 +8,7 @@ import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import { Contacts } from '@/sections/Contacts/Contacts';
 import { Form } from '@/components/form/Form/Form';
+import Link from 'next/link';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
@@ -17,10 +18,10 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
     <main className="">
       <section className=" py-[190px]">
         <div className="container">
-          <Title tag="h1" className="" colorVariant="orange">
+          <Title tag="h1" variantSize="h1" className="" colorVariant="orange">
             Майбутнє в наших руках
           </Title>
-          <Title tag="h4" className="" colorVariant="orange">
+          <Title tag="h4" variantSize="h4" className="" colorVariant="orange">
             Якийсь <span> заголовок</span>
           </Title>
 
@@ -39,10 +40,11 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           <LinkButton href="#">Посилання</LinkButton>
 
           <ICONS.VERSEL className="h-20 w-20" />
-          </div>
+          <Link href={`/projects/${1}`}>title</Link>
+        </div>
       </section>
       <Contacts data={contacts} />
-      <Form />
+      <Form lang={lang} />
     </main>
   );
 }

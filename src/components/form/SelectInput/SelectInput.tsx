@@ -99,6 +99,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       defaultValue={null}
       name={name}
       control={control}
+      // @ts-ignore
       isClearable
       // @ts-ignore
       render={({ field, fieldState }) => (

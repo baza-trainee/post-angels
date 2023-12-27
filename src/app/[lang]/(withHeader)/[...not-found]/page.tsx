@@ -10,7 +10,11 @@ const NotFound = async ({ params: { lang = 'ua' } }: { params: { lang: Locale } 
   return (
     <section className="background-404 h-[calc(100vh_-_260px)] min-h-[765px] py-40">
       <div className="container text-center">
-        <Title tag="h1" className="mb-[52px] text-center !text-[240px] font-bold text-white">
+        <Title
+          tag="h1"
+          variantSize="h1"
+          className="mb-[52px] text-center !text-[240px] font-bold text-white"
+        >
           404
         </Title>
         <Paragraph
