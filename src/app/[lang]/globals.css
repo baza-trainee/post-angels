@@ -17,10 +17,56 @@
 }
 
 body {
-  background-color: 255, 255, 255;
+  background-color: theme('colors.white');
   color: theme('colors.grey.80');
   font-family: var(--font-eUkraineHead);
   font-weight: 400;
+}
+
+/* Hero Slider */
+
+#swiper .swiper-pagination-bullet {
+  background-color: theme('colors.grey.60');
+  width: 10px;
+  height: 10px;
+}
+
+#swiper .swiper-pagination-bullet-active {
+  background-color: theme('colors.accent.primary') !important;
+}
+
+#swiper .swiper-pagination {
+  position: static;
+  margin-top: 30px;
+}
+
+#swiper .swiper-button-prev,
+#swiper .swiper-button-next {
+  transition: all 300ms ease-in-out;
+  width: 70px;
+  height: 70px;
+}
+
+#swiper .swiper-button-prev {
+  /* left: 10px; */
+}
+
+#swiper .swiper-button-next {
+  /* right: 12px; */
+}
+
+#swiper .swiper-button-prev::after,
+#swiper .swiper-button-next::after {
+  height: 70px;
+  width: 70px;
+  content: url('/icons/right.svg') !important;
+}
+
+#swiper .swiper-button-prev::after {
+  transform: rotate(180deg) !important;
+}
+
+#swiper .swiper-button-next::after {
 }
 
 .background-404 {
