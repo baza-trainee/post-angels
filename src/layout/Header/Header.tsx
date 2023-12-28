@@ -12,11 +12,11 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
 
   return (
     <header
-      className={` fixed inset-x-0 top-0 font-eUkraineHead text-base font-normal backdrop-blur-[3px]`}
+      className={` fixed inset-x-0 top-0 z-50 font-eUkraineHead text-base font-normal backdrop-blur-[3px]`}
     >
       <div className="container">
         {/* Upper Nav */}
-        <div className="flex h-auto items-center justify-between border-b py-4 text-grey-80">
+        <div className="flex h-auto items-center justify-between border-b border-grey-60 py-4 text-grey-80">
           <Link className="flex gap-x-2" href="/">
             <ICONS.HEADER_LOCATION className="h-6 w-6" />
             816 North Normandie ave., Los Angeles
@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
         </div>
 
         {/* Top Nav */}
-        <div className="flex h-auto items-center justify-between border-b py-6">
+        <div className="flex h-auto items-center justify-between border-b   border-grey-60 py-6">
           <Logo type="dark" lang={lang} />
 
           <div className="flex items-center gap-6 ">

@@ -9,14 +9,15 @@ import { getDictionary } from '@/lib/dictionary';
 import { Contacts } from '@/sections/Contacts/Contacts';
 import { Form } from '@/components/form/Form/Form';
 import Link from 'next/link';
+import { Hero } from '@/sections/Hero/Hero';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
-  const { contacts } = common;
+  const { contacts, hero } = common;
 
   return (
     <main className="">
-      <section className=" py-[190px]">
+      {/* <section className=" py-[190px]">
         <div className="container">
           <Title tag="h1" variantSize="h1" className="" colorVariant="orange">
             Майбутнє в наших руках
@@ -42,9 +43,10 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           <ICONS.VERSEL className="h-20 w-20" />
           <Link href={`/projects/${1}`}>title</Link>
         </div>
-      </section>
+      </section> */}
+      <Hero data={hero} />
       <Contacts data={contacts} />
-      <Form lang={lang} />
+      {/* <Form lang={lang} /> */}
     </main>
   );
 }
