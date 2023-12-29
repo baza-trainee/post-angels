@@ -43,6 +43,14 @@
         "href": "/aboutUs"
       }
     },
+    "partners": {
+      "title": "наші",
+      "title1": "Партнери",
+      "button": {
+        "text": "Приєднатись",
+        "href": "/partners"
+      }
+    },
     "contacts": {
       "contactsSection": {
         "title": "НАШІ",

@@ -45,6 +45,14 @@
         "href": "/aboutUs"
       }
     },
+    "partners": {
+      "title": "Our",
+      "title1": "partners",
+      "button": {
+        "text": "join",
+        "href": "/partners"
+      }
+    },
     "contacts": {
       "contactsSection": {
         "title": "OUR",

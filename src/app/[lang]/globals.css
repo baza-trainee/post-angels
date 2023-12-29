@@ -25,6 +25,12 @@ body {
 
 /* Hero Slider */
 
+#swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #swiper .swiper-pagination-bullet {
   background-color: theme('colors.grey.60');
   width: 10px;

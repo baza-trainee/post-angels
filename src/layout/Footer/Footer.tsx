@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { FooterProps } from './Footer.props';
