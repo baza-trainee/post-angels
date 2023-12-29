@@ -23,6 +23,8 @@ export const Slider: React.FC<SliderProps> = ({
   isAutoplay = false,
   isPagination = false,
   isNavigation = false,
+  slidesPerViewDef = 1,
+  slidesPerView,
   navigationBreakpoints = {
     isMobile: true,
     isTablet: true,
@@ -60,9 +62,21 @@ export const Slider: React.FC<SliderProps> = ({
       allowTouchMove={isInteractive}
       grabCursor={isInteractive}
       effect={isFadeEffect ? 'fade' : ''}
-      autoplay={isAutoplay ? { disableOnInteraction: false } : false}
+      autoplay={isAutoplay ? { delay: 2000, disableOnInteraction: false } : false}
       loop={isLoop}
       navigation={isNavigation}
+      slidesPerView={slidesPerViewDef}
+      breakpoints={{
+        360: {
+          slidesPerView: slidesPerView?.mobile || slidesPerViewDef,
+        },
+        768: {
+          slidesPerView: slidesPerView?.tablet || slidesPerViewDef,
+        },
+        1280: {
+          slidesPerView: slidesPerView?.desktop || slidesPerViewDef,
+        },
+      }}
       pagination={{
         enabled: isPagination,
         clickable: true,

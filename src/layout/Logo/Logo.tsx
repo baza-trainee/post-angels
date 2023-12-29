@@ -13,7 +13,7 @@ export const Logo: React.FC<LogoProps> = async ({ type, lang }) => {
         <ICONS.LOGODARK className="h-10" aria-label={logo.label} />
       ) : (
         <ICONS.LOGOLIGHT className="h-10" aria-label={logo.label} />
-      )}{' '}
+      )}
     </Link>
   );
 };

@@ -8,6 +8,8 @@ export interface SliderProps {
   isAutoplay?: boolean;
   isPagination?: boolean;
   isNavigation?: boolean;
+  slidesPerView?: { mobile: number; tablet: number; desktop: number };
+  slidesPerViewDef?: number;
   navigationBreakpoints?: {
     isMobile: boolean;
     isTablet: boolean;
