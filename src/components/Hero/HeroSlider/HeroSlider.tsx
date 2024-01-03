@@ -7,8 +7,8 @@ import { BannerSliderProps } from './HeroSlider.props';
 import useBreakpoints from '@/utils/useBreakpoints';
 
 export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '' }) => {
-  const { less768px } = useBreakpoints();
-  const wrapSliderClasses = classNames('h-auto', className);
+  const { less768px, less1000px } = useBreakpoints();
+  const wrapSliderClasses = classNames('h-auto md:w-[349px]', className);
   const wrapDesktopClasses = classNames(
     'h-auto n	grid grid-cols-2  gap-y-[30px] relative',
     className
@@ -16,7 +16,7 @@ export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '
 
   return (
     <>
-      {less768px ? (
+      {less1000px ? (
         <div className={wrapSliderClasses}>
           <Slider
             id="homepage-hero"
@@ -30,7 +30,7 @@ export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '
             isNavigation={true}
             navigationBreakpoints={{
               isMobile: false,
-              isTablet: true,
+              isTablet: false,
               isDesktop: true,
             }}
           />

@@ -30,7 +30,7 @@ export const Hero = ({ data }: HeroProps) => {
     <section className="pt-[125px] xl:pt-[190px] ">
       <div className="container">
         <div className="flex flex-col gap-y-[30px] border-b border-grey-60 pb-10 md:flex-row md:justify-between xl:pb-[126px]">
-          <div className="flex flex-col gap-y-[30px] xl:w-[383px] ">
+          <div className="flex flex-col gap-y-[30px] md:w-[349px] xl:w-[383px] ">
             <Title tag="h1" variantSize="h1" className="whitespace-pre-wrap ">
               {data.title}
             </Title>
