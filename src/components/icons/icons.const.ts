@@ -3,11 +3,18 @@ import InstagramIcon from '../../../public/icons/contacts/Instagram.svg';
 import LocationIcon from '../../../public/icons/contacts/Location.svg';
 import MailIcon from '../../../public/icons/contacts/Mail.svg';
 import PhoneIcon from '../../../public/icons/contacts/Phone.svg';
+import ArrowDown from '../../../public/icons/form/arrowDown.svg';
+import ArrowUp from '../../../public/icons/form/arrowUp.svg';
+import CheckFalse from '../../../public/icons/form/checkFalse.svg';
+import CheckTrue from '../../../public/icons/form/checkTrue.svg';
 import HeaderChevronDown from '../../../public/icons/header/header-chevronDown.svg';
 import HeaderChevronUp from '../../../public/icons/header/header-chevronUp.svg';
 import HeaderLocation from '../../../public/icons/header/header-location.svg';
 import HeaderMail from '../../../public/icons/header/header-mail.svg';
 import HeaderPhone from '../../../public/icons/header/header-phone.svg';
+import HamburgerClose from '../../../public/icons/header/mobile/hamburger-close.svg';
+import HamburgerMenu from '../../../public/icons/header/mobile/hamburger-menu.svg';
+import LogoIcon from '../../../public/icons/header/mobile/logoIcon.svg';
 import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
 import ModalClose from '../../../public/icons/modalClose.svg';
@@ -16,12 +23,6 @@ import NotFound1xWebp from '../../../public/images/404/img1x.webp';
 import NotFound2xJpg from '../../../public/images/404/img2x.jpg';
 import NotFound2xWebp from '../../../public/images/404/img2x.webp';
 import VerselIcon from '../../../public/vercel.svg';
-import CheckTrue from '../../../public/icons/form/checkTrue.svg';
-import CheckFalse from '../../../public/icons/form/checkFalse.svg';
-import ArrowDown from '../../../public/icons/form/arrowDown.svg';
-import ArrowUp from '../../../public/icons/form/arrowUp.svg';
-
-
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -46,4 +47,7 @@ export const ICONS = {
   NOTFOUND1XWEBP: NotFound1xWebp,
   NOTFOUND2XJPG: NotFound2xJpg,
   NOTFOUND2XWEBP: NotFound2xWebp,
+  HAMBURGER_MENU: HamburgerMenu,
+  HAMBURGER_CLOSE: HamburgerClose,
+  LOGO_ICON: LogoIcon,
 };
