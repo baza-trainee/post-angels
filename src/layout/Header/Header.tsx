@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
     >
       <div className="container">
         {/* Upper Nav */}
-        <div className="flex h-auto items-center justify-between border-b border-grey-60 py-4 text-grey-80">
+        <div className="flex h-auto items-center justify-between border-b border-grey-60 py-4 text-grey-80 hover:[&>*]:text-accent-hover focus:[&>*]:text-accent-hover">
           {/* icon before 1000px */}
           <div className="h-10 w-10 lg:hidden">
             <ICONS.LOGO_ICON />
@@ -42,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
         </div>
 
         {/* Top Nav */}
-        <div className="hidden h-auto items-center justify-between border-b border-grey-60 py-6 lg:flex">
+        <div className="hidden h-auto items-center justify-between border-b border-grey-60 py-6 lg:flex ">
           <div className="hidden lg:flex">
             <Logo type="dark" lang={lang} />
           </div>

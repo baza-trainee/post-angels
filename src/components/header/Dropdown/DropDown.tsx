@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { ICONS } from '@/components/icons';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 import { i18n } from '@/i18n.config';
 import Link from 'next/link';
@@ -53,7 +53,7 @@ export const Dropdown = ({
   return (
     <div className="relative">
       <button
-        className="flex cursor-pointer items-center gap-2 uppercase"
+        className="flex cursor-pointer items-center gap-2 uppercase hover:text-accent-hover focus:text-accent-hover"
         onClick={() => setIsOpen(prev => !prev)}
       >
         {lang}
