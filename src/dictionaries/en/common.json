@@ -37,6 +37,22 @@
       "label": "Company logo",
       "href": "/en"
     },
+    "hero": {
+      "title": "The future is in our hands",
+      "subtitle": "Together we will achieve a bright tomorrow: this is our contribution to shaping the future.",
+      "button": {
+        "text": "Read more",
+        "href": "/aboutUs"
+      }
+    },
+    "partners": {
+      "title": "Our",
+      "title1": "partners",
+      "button": {
+        "text": "join",
+        "href": "/partners"
+      }
+    },
     "contacts": {
       "contactsSection": {
         "title": "OUR",
