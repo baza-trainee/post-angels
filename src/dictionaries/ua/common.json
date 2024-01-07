@@ -29,6 +29,10 @@
 
       "headerLanguageLabel": {
         "name": "Зміна мови"
+      },
+
+      "headerLanguageName": {
+        "name": "Українська"
       }
     },
     "logo": {

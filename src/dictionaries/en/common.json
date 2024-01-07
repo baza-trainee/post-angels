@@ -31,6 +31,9 @@
       },
       "headerLanguageLabel": {
         "name": "Change language"
+      },
+      "headerLanguageName": {
+        "name": "English"
       }
     },
     "logo": {

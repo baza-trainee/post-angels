@@ -3,13 +3,14 @@ import Link from 'next/link';
 
 import { Navigation } from '@/components/header/Navigation';
 
-import { ButtonList } from '@/components/header/ButtonList';
+import { ButtonDonate } from '@/components/header/ButtonDonate';
+import { Dropdown } from '@/components/header/Dropdown';
 import MobileNav from '@/components/header/MobileNav/MobileNav';
 import { Logo } from '@/layout/Logo';
 import { HeaderProps } from './Header.props';
 
 export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
-  const { headerNav, headerButton, headerLanguageLabel } = data;
+  const { headerNav, headerButton, headerLanguageLabel, headerLanguageName } = data;
 
   return (
     <header
@@ -17,7 +18,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
     >
       <div className="container">
         {/* Upper Nav */}
-        <div className="flex h-auto items-center justify-between border-b border-grey-60 py-4 text-grey-80 hover:[&>*]:text-accent-hover focus:[&>*]:text-accent-hover">
+        <div className="flex h-auto items-center justify-between border-b border-grey-60 py-4 text-grey-80 hover:[&>*]:text-orange focus:[&>*]:text-orange">
           {/* icon before 1000px */}
           <div className="h-10 w-10 lg:hidden">
             <ICONS.LOGO_ICON />
@@ -38,7 +39,14 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
             post.angeles.info@gmail.com
           </Link>
           {/* mobile nav before 1000px */}
-          <MobileNav lang={lang} headerNav={headerNav} />
+          <MobileNav
+            lang={lang}
+            headerNav={headerNav}
+            headerLanguageName={headerLanguageName}
+            headerButton={headerButton}
+            headerLanguageLabel={headerLanguageLabel}
+            modal={modal}
+          />
         </div>
 
         {/* Top Nav */}
@@ -49,12 +57,10 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal }) => {
 
           <div className="flex items-center gap-6 ">
             <Navigation headerNav={headerNav} />
-            <ButtonList
-              lang={lang}
-              headerButton={headerButton}
-              headerLanguageLabel={headerLanguageLabel}
-              modal={modal}
-            />
+            <div className="flex items-center">
+              <ButtonDonate headerButton={headerButton} modal={modal} buttonClassName="mr-8" />
+              <Dropdown headerLanguageLabel={headerLanguageLabel} lang={lang} />
+            </div>
           </div>
         </div>
       </div>

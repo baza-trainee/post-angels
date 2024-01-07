@@ -1,14 +1,13 @@
 'use client';
 
 import { Button } from '@/components/buttons/Button';
-import { Dropdown } from '@/components/header/Dropdown';
 import { useState } from 'react';
 
 import ModalChildDonate from '@/components/ModalChildDonate/ModalChildDonate';
 import Modal from '@/components/modal/Modal';
-import { ButtonListProps } from './ButtonList.props';
+import { ButtonDonateProps } from './ButtonDonate.props';
 
-export const ButtonList = ({ lang, headerButton, headerLanguageLabel, modal }: ButtonListProps) => {
+export const ButtonDonate = ({ headerButton, modal, buttonClassName }: ButtonDonateProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
@@ -16,12 +15,10 @@ export const ButtonList = ({ lang, headerButton, headerLanguageLabel, modal }: B
   };
 
   return (
-    <div className="flex items-center">
-      <Button className="mr-8" onClick={handleClick}>
+    <>
+      <Button className={buttonClassName} onClick={handleClick}>
         {headerButton.name}
       </Button>
-
-      <Dropdown headerLanguageLabel={headerLanguageLabel} lang={lang} />
 
       {isModalOpen && (
         <Modal
@@ -33,6 +30,6 @@ export const ButtonList = ({ lang, headerButton, headerLanguageLabel, modal }: B
           <ModalChildDonate />
         </Modal>
       )}
-    </div>
+    </>
   );
 };

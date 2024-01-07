@@ -53,7 +53,7 @@ export const Dropdown = ({
   return (
     <div className="relative">
       <button
-        className="flex cursor-pointer items-center gap-2 uppercase hover:text-accent-hover focus:text-accent-hover"
+        className="flex cursor-pointer items-center gap-2 uppercase hover:text-orange focus:text-orange"
         onClick={() => setIsOpen(prev => !prev)}
       >
         {lang}

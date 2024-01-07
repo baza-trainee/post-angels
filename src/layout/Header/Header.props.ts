@@ -8,6 +8,7 @@ export interface HeaderProps {
     }[];
     headerButton: { name: string };
     headerLanguageLabel: { name: string };
+    headerLanguageName: { name: string };
   };
   lang: Locale;
   modal: {
