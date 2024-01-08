@@ -88,7 +88,7 @@ export default async function RootLayout({
 }) {
   const lang = params.lang;
   const { common } = await getDictionary(lang);
-  const { header, footer, modal, cookie } = common;
+  const { footer, modal, cookie, logo } = common;
 
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
@@ -96,7 +96,7 @@ export default async function RootLayout({
         <Suspense fallback={<Loading />}>
           {children}
           <PopupCookie data={cookie} />
-          <Footer data={footer} lang={lang} modal={modal} />
+          <Footer data={footer} modal={modal} logo={logo} />
           <div id="modal" />
         </Suspense>
       </body>

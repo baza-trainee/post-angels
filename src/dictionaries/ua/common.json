@@ -23,12 +23,24 @@
           "href": "/ua/contacts"
         }
       ],
-      "headerButton": {
-        "name": "Зробити внесок"
-      },
+      "buttons": {
+        "headerButton": {
+          "name": "Зробити внесок"
+        },
 
-      "headerLanguageLabel": {
-        "name": "Зміна мови"
+        "headerLanguageLabel": {
+          "name": "Кнопка зміни мови"
+        },
+
+        "headerLanguageName": {
+          "name": "Українська"
+        },
+        "menuOpen": {
+          "label": "кнопка відкриття мобільного меню"
+        },
+        "menuClose": {
+          "label": "Кнопка закриття мобільного меню"
+        }
       }
     },
     "logo": {

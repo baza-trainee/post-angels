@@ -78,7 +78,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       <Projects projects={projects} lang={lang} />
       <FinishedProjects projects={projects} lang={lang} />
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
-      <Contacts data={contacts} />
+      {/* <Contacts data={contacts} /> */}
       {/* <Form lang={lang} /> */}
     </main>
   );

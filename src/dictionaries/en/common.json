@@ -23,14 +23,23 @@
           "href": "/en/contacts"
         }
       ],
-      "headerButton": {
-        "name": "Donate"
-      },
-      "headerLogoLabel": {
-        "name": "Company logo"
-      },
-      "headerLanguageLabel": {
-        "name": "Change language"
+      "buttons": {
+        "headerButton": {
+          "name": "Donate"
+        },
+
+        "headerLanguageLabel": {
+          "name": "Change language button"
+        },
+        "headerLanguageName": {
+          "name": "English"
+        },
+        "menuOpen": {
+          "label": "open mobile menu"
+        },
+        "menuClose": {
+          "label": "close mobile menu"
+        }
       }
     },
     "logo": {

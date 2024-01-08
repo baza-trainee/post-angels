@@ -11,10 +11,10 @@ export default async function DashboardLayout({
   params: { lang: Locale };
 }) {
   const { common } = await getDictionary(lang);
-  const { header, modal } = common;
+  const { header, modal, logo } = common;
   return (
     <>
-      <Header data={header} lang={lang} modal={modal} />
+      <Header data={header} lang={lang} modal={modal} logo={logo} />
       {children}
     </>
   );

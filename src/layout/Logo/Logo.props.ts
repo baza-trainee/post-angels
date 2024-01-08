@@ -1,4 +1,8 @@
 export interface LogoProps {
   type: 'dark' | 'light';
-  lang: 'ua' | 'en';
+  logo: {
+    label: string;
+    href: string;
+  };
+  variantSize?: 'big' | 'small';
 }
