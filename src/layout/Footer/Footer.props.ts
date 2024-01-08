@@ -15,10 +15,14 @@ export interface FooterProps {
       name: string;
     };
   };
-  lang: Locale;
+
   modal: {
     button: {
       label: string;
     };
+  };
+  logo: {
+    label: string;
+    href: string;
   };
 }

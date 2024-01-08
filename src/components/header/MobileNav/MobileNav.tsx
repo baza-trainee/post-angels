@@ -8,17 +8,12 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ButtonDonate } from '../ButtonDonate';
 import { MobileNavProps } from './MobileNav.props';
+import { IconButton } from '@/components/buttons/IconButton';
 
-const MobileNav = ({
-  lang,
-  headerNav,
-  headerButton,
-  headerLanguageLabel,
-  headerLanguageName,
-  modal,
-}: MobileNavProps) => {
+const MobileNav = ({ lang, buttons, headerNav, modal, logo }: MobileNavProps) => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const pathname = usePathname();
+  const { headerLanguageName, headerButton, headerLanguageLabel, menuOpen, menuClose } = buttons;
 
   // overflow-y-hidden while menu is opened
   useEffect(() => {
@@ -43,7 +38,7 @@ const MobileNav = ({
       <Link
         href={link.href}
         onClick={() => setOpenMobileMenu(false)}
-        className={`flex h-[60px] items-center border-b border-grey-40 ${
+        className={`flex h-[60px] items-center border-b border-grey-40 font-eUkraine ${
           pathname === link.href ? 'text-accent-primary' : ''
         }`}
       >
@@ -54,9 +49,13 @@ const MobileNav = ({
 
   return (
     <>
-      <div className="flex h-10 w-10 lg:hidden" onClick={() => setOpenMobileMenu(true)}>
+      <IconButton
+        className="flex h-10 w-10 xl:hidden"
+        onClick={() => setOpenMobileMenu(true)}
+        label={menuOpen.label}
+      >
         {!openMobileMenu && <ICONS.HAMBURGER_MENU />}
-      </div>
+      </IconButton>
 
       {openMobileMenu && (
         <div
@@ -65,26 +64,29 @@ const MobileNav = ({
         >
           <div
             onClick={e => e.stopPropagation()}
-            className="z-90 absolute right-0 top-0 flex h-screen w-[320px] flex-col gap-8 overflow-y-hidden bg-grey-100 p-5"
+            className=" absolute right-0 top-0 flex h-screen w-[320px] flex-col gap-8 overflow-y-hidden bg-grey-100 p-5"
           >
             {/* logo and close icon */}
             <div className="flex h-10 items-center justify-between">
               <div onClick={() => setOpenMobileMenu(false)}>
-                <Logo type="light" lang={lang} />
+                <Logo type="light" logo={logo} />
               </div>
-              <div className="flex h-8 w-8" onClick={() => setOpenMobileMenu(false)}>
+              <IconButton
+                className="flex h-8 w-8"
+                onClick={() => setOpenMobileMenu(false)}
+                label={menuClose.label}
+              >
                 {openMobileMenu && <ICONS.HAMBURGER_CLOSE />}
-              </div>
+              </IconButton>
             </div>
             {/* links & language */}
             <nav>
               <ul className="flex flex-col border-t border-grey-40 font-normal uppercase text-grey-40">
                 {mobileNavLinks}
-                <div className="flex h-[60px] items-center justify-between border-b border-grey-40">
+                <li className="flex h-[60px] items-center justify-between border-b border-grey-40 font-eUkraine">
                   {headerLanguageName.name}
                   <Dropdown headerLanguageLabel={headerLanguageLabel} lang={lang} />
-                </div>
-                <div></div>
+                </li>
               </ul>
             </nav>
             {/* donate button*/}
