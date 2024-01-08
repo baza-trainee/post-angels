@@ -12,6 +12,8 @@ import Link from 'next/link';
 import { Hero } from '@/sections/Hero/Hero';
 import { PartnersTop } from '@/sections/PartnersTop';
 import { Partners } from '@/sections/Partners';
+import { Projects } from '@/sections/Projects';
+import { FinishedProjects } from '@/sections/FinishedProjects';
 
 const getPartners = async (lang: Locale) => {
   // запит до базиданних за партнерами.
@@ -39,7 +41,7 @@ const getPartners = async (lang: Locale) => {
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
-  const { contacts, hero, partners } = common;
+  const { contacts, hero, partners, projects } = common;
   const partnersData = await getPartners(lang);
 
   return (
@@ -73,6 +75,8 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       </section> */}
       <Hero data={hero} />
       {partnersData && <PartnersTop partnersData={partnersData} data={partners} />}
+      <Projects projects={projects} lang={lang} />
+      <FinishedProjects projects={projects} lang={lang} />
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
       <Contacts data={contacts} />
       {/* <Form lang={lang} /> */}

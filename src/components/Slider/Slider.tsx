@@ -16,18 +16,21 @@ import 'swiper/css/navigation';
 export const Slider: React.FC<SliderProps> = ({
   id,
   data = [],
+  cardData = [],
   element: Element,
   isInteractive = false,
   isFadeEffect = false,
   isLoop = false,
   isAutoplay = false,
+  isFinished = false,
   isPagination = false,
   isNavigation = false,
   slidesPerViewDef = 1,
   slidesPerView,
+  className,
   navigationBreakpoints = {
-    isMobile: true,
-    isTablet: true,
+    isMobile: false,
+    isTablet: false,
     isDesktop: true,
   },
 }) => {
@@ -45,13 +48,14 @@ export const Slider: React.FC<SliderProps> = ({
 
       const buttonPrev = document.querySelector('.swiper-button-prev');
       const buttonNext = document.querySelector('.swiper-button-next');
-
+      console.log('buttonPrev', className, buttonPrev);
       if (navButtonsClasses) {
         const parsedClasses = navButtonsClasses.split(' ');
 
         if (buttonPrev) buttonPrev.classList.add(...parsedClasses);
         if (buttonNext) buttonNext.classList.add(...parsedClasses);
       }
+      console.log('button', className, buttonPrev);
     }
   }, [isFirstRender, navigationBreakpoints]);
 
@@ -68,12 +72,15 @@ export const Slider: React.FC<SliderProps> = ({
       slidesPerView={slidesPerViewDef}
       breakpoints={{
         360: {
+          spaceBetween: 20,
           slidesPerView: slidesPerView?.mobile || slidesPerViewDef,
         },
         768: {
+          spaceBetween: 30,
           slidesPerView: slidesPerView?.tablet || slidesPerViewDef,
         },
         1280: {
+          spaceBetween: 30,
           slidesPerView: slidesPerView?.desktop || slidesPerViewDef,
         },
       }}
@@ -86,7 +93,7 @@ export const Slider: React.FC<SliderProps> = ({
     >
       {data.map((props, index) => (
         <SwiperSlide key={index}>
-          <Element {...props} />
+          <Element {...props} cardData={cardData} isFinished={isFinished} />
         </SwiperSlide>
       ))}
     </Swiper>

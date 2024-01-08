@@ -51,6 +51,53 @@
         "href": "/partners"
       }
     },
+    "projects": {
+      "filter": {
+        "title": "Фільтри",
+        "filters": [
+          { "name": "Збори", "mod": "fundraising" },
+          { "name": "Усі", "mod": "all" },
+          { "name": "Нові", "mod": "new" },
+          { "name": "Завершені", "mod": "completed" }
+        ]
+      },
+      "sorting": [
+        { "name": "Спочатку нові", "sort": "newFirst" },
+        { "name": "Спочатку старі", "sort": "oldFirst" },
+        { "name": "Найбільше зібраних коштів", "sort": "moreFunds" },
+        { "name": "Найменше зібраних коштів", "sort": "lessFunds" }
+      ],
+      "ourProjects": {
+        "title": "Наші",
+        "title1": "проекти"
+      },
+      "finishedProjects2023": {
+        "title": "Завершені",
+        "title1": "проекти 2023"
+      },
+      "projectCard": {
+        "collected": "Зібрано, грн",
+        "starts": "Дата початку збору",
+        "buttons": {
+          "fundBtn": {
+            "text": "Зробити внесок",
+            "link": "/payments/"
+          },
+          "moreBtn": {
+            "text": "Дізнатися більше",
+            "link": "/projects/"
+          },
+          "finishedBtn": {
+            "text": "Завершений",
+            "link": "/"
+          }
+        }
+      },
+      "archiveBtn": {
+        "text": "Архів",
+        "link": "/archive"
+      }
+    },
     "contacts": {
       "contactsSection": {
         "title": "НАШІ",

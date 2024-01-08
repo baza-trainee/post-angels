@@ -53,6 +53,53 @@
         "href": "/partners"
       }
     },
+    "projects": {
+      "filter": {
+        "title": "Filters",
+        "filters": [
+          { "name": "Fundraising", "mod": "fundraising" },
+          { "name": "All", "mod": "all" },
+          { "name": "New", "mod": "new" },
+          { "name": "Completed", "mod": "completed" }
+        ]
+      },
+      "sorting": [
+        { "name": "New first", "sort": "newFirst" },
+        { "name": "Old first", "sort": "oldFirst" },
+        { "name": "More funds", "sort": "moreFunds" },
+        { "name": "Less funds", "sort": "lessFunds" }
+      ],
+      "ourProjects": {
+        "title": "OUR",
+        "title1": "Projects"
+      },
+      "finishedProjects2023": {
+        "title": "Finished",
+        "title1": "projects 2023"
+      },
+      "projectCard": {
+        "collected": "Collected, UAH",
+        "starts": "Start date of collection",
+        "buttons": {
+          "fundBtn": {
+            "text": "Donate",
+            "link": "/payments/"
+          },
+          "moreBtn": {
+            "text": "Read more",
+            "link": "/projects/"
+          },
+          "finishedBtn": {
+            "text": "Completed",
+            "link": "/"
+          }
+        }
+      },
+      "archiveBtn": {
+        "text": "Archive",
+        "link": "/archive"
+      }
+    },
     "contacts": {
       "contactsSection": {
         "title": "OUR",
