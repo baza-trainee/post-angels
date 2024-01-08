@@ -8,7 +8,10 @@ export const Navigation = ({ headerNav }: { headerNav: { name: string; href: str
 
   const navLinks = headerNav.map(link => (
     <li key={link.name}>
-      <Link href={link.href} className={pathname === link.href ? 'text-accent-primary' : ''}>
+      <Link
+        href={link.href}
+        className={pathname === link.href ? 'text-accent-primary' : 'focus:text-orange'}
+      >
         {link.name}
       </Link>
     </li>
@@ -16,7 +19,9 @@ export const Navigation = ({ headerNav }: { headerNav: { name: string; href: str
 
   return (
     <nav>
-      <ul className="flex items-center justify-between gap-5 uppercase">{navLinks}</ul>
+      <ul className="flex items-center justify-between gap-5 uppercase hover:[&>*]:text-orange">
+        {navLinks}
+      </ul>
     </nav>
   );
 };
