@@ -24,7 +24,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
     return () => {
       window.removeEventListener('resize', updateBlockWidth);
     };
-  }, []);
+  }, [blockWidth]);
 
   const getPercent = (collected: number, all: number) => {
     return Math.round((collected / all) * 100);
@@ -39,7 +39,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
   return (
     <article className={`${afterclassname}`}>
       <div
-        className={`mb-[10px] h-[243px] w-full rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px]  xl:h-full xl:w-full ${afterclassname}`}
+        className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px]  xl:h-full xl:w-full `}
       >
         <Image
           src={image.src}
@@ -70,11 +70,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
         <div className="flex items-center	justify-between gap-x-2">
           <div
             ref={blockRef}
-            className="bg-progressBar h-[10px] w-full overflow-hidden rounded-full"
+            className="h-[10px] w-full overflow-hidden rounded-full bg-progressBar"
           >
             <div
               style={{ width: getPercentWidth(blockWidth, collected, all) + 'px' }}
-              className={`${isFinished ? 'bg-grey-50' : 'bg-green'} h-full rounded-full`}
+              className={`${isFinished ? 'hidden' : 'bg-green'} h-full rounded-full`}
             ></div>
           </div>
           <Paragraph

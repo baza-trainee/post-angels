@@ -45,23 +45,23 @@ export const Slider: React.FC<SliderProps> = ({
         'mdOnly:!hidden': !navigationBreakpoints.isTablet,
         'xl:!hidden': !navigationBreakpoints.isDesktop,
       });
+      const slider = document.querySelector(`#${id}`);
+      const swiper = slider?.querySelector(`.swiper`);
+      const buttonPrev = swiper?.querySelector('.swiper-button-prev');
+      const buttonNext = swiper?.querySelector('.swiper-button-next');
 
-      const buttonPrev = document.querySelector('.swiper-button-prev');
-      const buttonNext = document.querySelector('.swiper-button-next');
-      console.log('buttonPrev', className, buttonPrev);
       if (navButtonsClasses) {
         const parsedClasses = navButtonsClasses.split(' ');
 
         if (buttonPrev) buttonPrev.classList.add(...parsedClasses);
         if (buttonNext) buttonNext.classList.add(...parsedClasses);
       }
-      console.log('button', className, buttonPrev);
     }
   }, [isFirstRender, navigationBreakpoints]);
 
   return isFirstRender ? null : (
     <Swiper
-      id={'swiper'}
+      id={id}
       modules={[Autoplay, Pagination, EffectFade, Navigation]}
       allowTouchMove={isInteractive}
       grabCursor={isInteractive}

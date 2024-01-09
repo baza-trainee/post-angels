@@ -16,7 +16,7 @@ export const FinishedProjectSlider: React.FC<ProjectSliderProps> = ({
     <div className={wrapSliderClasses}>
       <Slider
         id="finishedProjects"
-        className="finished"
+        className="finishedProjects"
         data={projectsData}
         cardData={projects}
         element={ProjectCard}
@@ -30,7 +30,7 @@ export const FinishedProjectSlider: React.FC<ProjectSliderProps> = ({
         isFinished={true}
         navigationBreakpoints={{
           isMobile: false,
-          isTablet: true,
+          isTablet: false,
           isDesktop: true,
         }}
       />

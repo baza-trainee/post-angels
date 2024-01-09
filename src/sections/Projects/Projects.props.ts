@@ -1,19 +1,10 @@
 export interface ProjectsProps {
   filter: {
     title: string;
-    filters: [
-      { name: string; mod: string },
-      { name: string; mod: string },
-      { name: string; mod: string },
-      { name: string; mod: string },
-    ];
+    filters: { name: string; mod: string }[];
   };
-  sorting: [
-    { name: string; sort: string },
-    { name: string; sort: string },
-    { name: string; sort: string },
-    { name: string; sort: string },
-  ];
+  sorting: { name: string; sort: string }[];
+
   ourProjects: {
     title: string;
     title1: string;

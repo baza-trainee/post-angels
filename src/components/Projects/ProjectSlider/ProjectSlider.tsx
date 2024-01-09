@@ -15,8 +15,8 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
   return (
     <div className={wrapSliderClasses}>
       <Slider
-        id="homepage-projects"
-        className="project"
+        id="projectSlider"
+        className="projectSlider"
         data={projectsData}
         cardData={projects}
         element={ProjectCard}
@@ -27,6 +27,7 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
         isInteractive={true}
         isFadeEffect={false}
         isNavigation={true}
+        isFinished={false}
         navigationBreakpoints={{
           isMobile: false,
           isTablet: false,
