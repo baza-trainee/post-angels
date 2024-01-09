@@ -1,5 +1,5 @@
 import { Locale } from '@/i18n.config';
 
-export interface ParticipantTitle {
+export interface ParticipantHero {
   lang: Locale;
 }
