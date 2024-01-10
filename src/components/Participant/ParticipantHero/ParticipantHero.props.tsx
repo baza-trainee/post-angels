@@ -1,5 +1,8 @@
 import { Locale } from '@/i18n.config';
 
-export interface ParticipantHero {
-  lang: Locale;
+export interface ParticipantHeroProps {
+  accentTitle: string;
+  description: string;
+  imgPath: string;
+  imgAlt: string;
 }
