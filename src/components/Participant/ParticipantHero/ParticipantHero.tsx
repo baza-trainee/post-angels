@@ -34,19 +34,22 @@ export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
           ? 620
           : 414;
   return (
-    <div>
-      <div>
+    <div className='flex flex-col gap-[40px] 2xl:flex-row 2xl:justify-between'>
+      <div className='flex flex-col gap-[30px] 2xl:gap-4'>
+        <div className='flex flex-col lg:flex-row'>
         <Title variantSize="h2" colorVariant="accent">
           Анкета
         </Title>
         <Title variantSize="h2" colorVariant="accent">
           {accentTitle}
         </Title>
+        </div>
         <Paragraph variantFontSize="16" className="text-grey-80">
           {description}
         </Paragraph>
       </div>
       <Image
+        className='rounded-2xl'
         src={imgPath}
         alt={imgAlt}
         width={imageWidth}
