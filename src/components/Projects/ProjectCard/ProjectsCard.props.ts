@@ -12,4 +12,5 @@ export interface ProjectCardProps {
   startDate: string;
   cardData?: ProjectsProps;
   isFinished?: boolean;
+  status: string;
 }

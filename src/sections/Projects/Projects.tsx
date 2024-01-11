@@ -1,6 +1,5 @@
 import { Title } from '@/components/typography/Title';
-import { Filters } from '@/components/Projects/Filters';
-import { ProjectSlider } from '@/components/Projects/ProjectSlider';
+import { ProjectsList } from '@/components/Projects/ProjectsList';
 
 import { ProjectsProps } from './Projects.props';
 import { Locale } from '@/i18n.config';
@@ -17,7 +16,8 @@ const getProjects = async (lang: Locale) => {
       title: 'Збір на травматологічні матеріали',
       collected: 13444,
       all: 68000,
-      startDate: '18.11.23',
+      startDate: '01.01.24',
+      status: 'new',
     },
     {
       id: 2,
@@ -28,7 +28,8 @@ const getProjects = async (lang: Locale) => {
       title: 'Збір на травматологічні матеріали',
       collected: 13444,
       all: 68000,
-      startDate: '18.11.23',
+      startDate: '18.09.23',
+      status: 'new',
     },
     {
       id: 3,
@@ -39,7 +40,8 @@ const getProjects = async (lang: Locale) => {
       title: 'Збір на травматологічні матеріали',
       collected: 13444,
       all: 68000,
-      startDate: '18.11.23',
+      startDate: '18.08.23',
+      status: 'new',
     },
     {
       id: 4,
@@ -50,7 +52,8 @@ const getProjects = async (lang: Locale) => {
       title: 'Збір на травматологічні матеріали',
       collected: 13444,
       all: 68000,
-      startDate: '18.11.23',
+      startDate: '18.12.23',
+      status: 'finished',
     },
   ];
   return projects;
@@ -67,8 +70,7 @@ export const Projects = async ({ projects, lang }: { projects: ProjectsProps; la
           <br />
           <span>{projects.ourProjects.title1}</span>
         </Title>
-        <Filters />
-        <ProjectSlider projectsData={projectsData} projects={projects} />
+        <ProjectsList projects={projects} lang={lang} projectsData={projectsData} />
       </div>
     </section>
   );

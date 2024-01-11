@@ -32,6 +32,10 @@ body {
   padding: 2px 0;
 }
 
+.swiper .swiper-wrapper {
+  z-index: auto;
+}
+
 .swiper .swiper-pagination-bullet {
   background-color: theme('colors.grey.60');
 
@@ -73,10 +77,7 @@ body {
   transform: rotate(180deg) !important;
 }
 
-#swiper .swiper-button-next::after {
-}
-
-.background-404 {
+#swiper .swiper-button-next::after .background-404 {
   background-image: url('/images/404/img1x.jpg');
   background-repeat: no-repeat;
   background-size: cover;

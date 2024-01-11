@@ -70,6 +70,7 @@ export const Slider: React.FC<SliderProps> = ({
       loop={isLoop}
       navigation={isNavigation}
       slidesPerView={slidesPerViewDef}
+      style={{ zIndex: 'auto' }}
       breakpoints={{
         360: {
           spaceBetween: 20,

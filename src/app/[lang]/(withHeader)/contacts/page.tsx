@@ -13,7 +13,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
     <section className="mb-72 mt-[258px]">
       <div className="container flex justify-between border-b pb-[140px]">
         <div>
-          <Title tag="h2" colorVariant="accent" className="pb-[50px] ">
+          <Title tag="h2" variantSize="h2" className="pb-[50px] ">
             {contactsSection.title}
             <span>
               <br /> {contactsSection.title1}

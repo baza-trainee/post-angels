@@ -52,6 +52,7 @@ const getFinishedProject = (lang: Locale) => {
       collected: 68000,
       all: 68000,
       startDate: '18.11.23',
+      status: 'new',
     },
     {
       id: 2,
@@ -63,6 +64,7 @@ const getFinishedProject = (lang: Locale) => {
       collected: 68000,
       all: 68000,
       startDate: '18.11.23',
+      status: 'new',
     },
     {
       id: 3,
@@ -74,6 +76,7 @@ const getFinishedProject = (lang: Locale) => {
       collected: 68000,
       all: 68000,
       startDate: '18.11.23',
+      status: 'new',
     },
     {
       id: 4,
@@ -85,6 +88,7 @@ const getFinishedProject = (lang: Locale) => {
       collected: 68000,
       all: 68000,
       startDate: '18.11.23',
+      status: 'new',
     },
   ];
   return projects;
@@ -133,8 +137,8 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         <FinishedProjects projects={projects} lang={lang} finishedData={finishedData} />
       )}
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
-      {/* <Contacts data={contacts} /> */}
-      {/* <Form lang={lang} /> */}
+      <Contacts data={contacts} />
+      <Form lang={lang} />
     </main>
   );
 }
