@@ -19,7 +19,7 @@ export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '
       {less768px ? (
         <div className={wrapSliderClasses}>
           <Slider
-            id="homepage-hero"
+            id="heroSlider"
             data={banners}
             element={HeroBanner}
             isAutoplay={true}
@@ -27,7 +27,7 @@ export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '
             isPagination={true}
             isInteractive={true}
             isFadeEffect={true}
-            isNavigation={true}
+            isNavigation={false}
             navigationBreakpoints={{
               isMobile: false,
               isTablet: true,

@@ -12,6 +12,8 @@ import Link from 'next/link';
 import { Hero } from '@/sections/Hero/Hero';
 import { PartnersTop } from '@/sections/PartnersTop';
 import { Partners } from '@/sections/Partners';
+import { Projects } from '@/sections/Projects';
+import { FinishedProjects } from '@/sections/FinishedProjects';
 
 const getPartners = async (lang: Locale) => {
   // запит до базиданних за партнерами.
@@ -37,10 +39,66 @@ const getPartners = async (lang: Locale) => {
   return partner;
 };
 
+const getFinishedProject = (lang: Locale) => {
+  // get projects api
+  const projects = [
+    {
+      id: 1,
+      image: {
+        src: '/images/projects/finished-project-1.jpg',
+        alt: 'project1',
+      },
+      title: 'Збір на травматологічні матеріали',
+      collected: 68000,
+      all: 68000,
+      startDate: '18.11.23',
+      status: 'new',
+    },
+    {
+      id: 2,
+      image: {
+        src: '/images/projects/finished-project-2.jpg',
+        alt: 'project2',
+      },
+      title: 'Збір на травматологічні матеріали',
+      collected: 68000,
+      all: 68000,
+      startDate: '18.11.23',
+      status: 'new',
+    },
+    {
+      id: 3,
+      image: {
+        src: '/images/projects/finished-project-3.jpg',
+        alt: 'project3',
+      },
+      title: 'Збір на травматологічні матеріали',
+      collected: 68000,
+      all: 68000,
+      startDate: '18.11.23',
+      status: 'new',
+    },
+    {
+      id: 4,
+      image: {
+        src: '/images/projects/finished-project-4.jpg',
+        alt: 'project4',
+      },
+      title: 'Збір на травматологічні матеріали',
+      collected: 68000,
+      all: 68000,
+      startDate: '18.11.23',
+      status: 'new',
+    },
+  ];
+  return projects;
+};
+
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
-  const { contacts, hero, partners } = common;
+  const { contacts, hero, partners, projects } = common;
   const partnersData = await getPartners(lang);
+  const finishedData = getFinishedProject(lang);
 
   return (
     <main className="">
@@ -73,9 +131,14 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       </section> */}
       <Hero data={hero} />
       {partnersData && <PartnersTop partnersData={partnersData} data={partners} />}
+      <Projects projects={projects} lang={lang} />
+
+      {finishedData && (
+        <FinishedProjects projects={projects} lang={lang} finishedData={finishedData} />
+      )}
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
       <Contacts data={contacts} />
-      {/* <Form lang={lang} /> */}
+      <Form lang={lang} />
     </main>
   );
 }

@@ -16,18 +16,21 @@ import 'swiper/css/navigation';
 export const Slider: React.FC<SliderProps> = ({
   id,
   data = [],
+  cardData = [],
   element: Element,
   isInteractive = false,
   isFadeEffect = false,
   isLoop = false,
   isAutoplay = false,
+  isFinished = false,
   isPagination = false,
   isNavigation = false,
   slidesPerViewDef = 1,
   slidesPerView,
+  className,
   navigationBreakpoints = {
-    isMobile: true,
-    isTablet: true,
+    isMobile: false,
+    isTablet: false,
     isDesktop: true,
   },
 }) => {
@@ -42,9 +45,10 @@ export const Slider: React.FC<SliderProps> = ({
         'mdOnly:!hidden': !navigationBreakpoints.isTablet,
         'xl:!hidden': !navigationBreakpoints.isDesktop,
       });
-
-      const buttonPrev = document.querySelector('.swiper-button-prev');
-      const buttonNext = document.querySelector('.swiper-button-next');
+      const slider = document.querySelector(`#${id}`);
+      const swiper = slider?.querySelector(`.swiper`);
+      const buttonPrev = swiper?.querySelector('.swiper-button-prev');
+      const buttonNext = swiper?.querySelector('.swiper-button-next');
 
       if (navButtonsClasses) {
         const parsedClasses = navButtonsClasses.split(' ');
@@ -57,7 +61,7 @@ export const Slider: React.FC<SliderProps> = ({
 
   return isFirstRender ? null : (
     <Swiper
-      id={'swiper'}
+      id={id}
       modules={[Autoplay, Pagination, EffectFade, Navigation]}
       allowTouchMove={isInteractive}
       grabCursor={isInteractive}
@@ -66,14 +70,18 @@ export const Slider: React.FC<SliderProps> = ({
       loop={isLoop}
       navigation={isNavigation}
       slidesPerView={slidesPerViewDef}
+      style={{ zIndex: 'auto' }}
       breakpoints={{
         360: {
+          spaceBetween: 20,
           slidesPerView: slidesPerView?.mobile || slidesPerViewDef,
         },
         768: {
+          spaceBetween: 30,
           slidesPerView: slidesPerView?.tablet || slidesPerViewDef,
         },
         1280: {
+          spaceBetween: 30,
           slidesPerView: slidesPerView?.desktop || slidesPerViewDef,
         },
       }}
@@ -86,7 +94,7 @@ export const Slider: React.FC<SliderProps> = ({
     >
       {data.map((props, index) => (
         <SwiperSlide key={index}>
-          <Element {...props} />
+          <Element {...props} cardData={cardData} isFinished={isFinished} />
         </SwiperSlide>
       ))}
     </Swiper>

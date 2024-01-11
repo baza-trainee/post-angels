@@ -19,7 +19,7 @@ export const Partners = ({
             <br /> <span>{data.title1}</span>
           </Title>
           <PartnersSlider partnersData={partnersData} className="mb-[30px] xl:mb-12" />
-          <LinkButton href={data.button.href} className="inline-block xl:w-[280px]">
+          <LinkButton href={data.button.href} className="inline-block md:w-[280px]">
             {data.button.text}
           </LinkButton>
         </div>
