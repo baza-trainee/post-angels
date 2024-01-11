@@ -22,7 +22,7 @@ const config: Config = {
           DEFAULT: '1.25rem',
           sm: '1.25rem',
           md: '1.25rem',
-          xl: '1.25rem',
+          xl: '2.5rem',
         },
       },
       colors: {
