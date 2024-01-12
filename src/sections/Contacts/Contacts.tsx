@@ -21,11 +21,12 @@ export const Contacts: React.FC<ContactsProps> = ({ data }) => {
           <ContactList />
         </div>
 
-        <div className="hidden md:flex md:h-[416px] md:w-[349px] lg:w-[465px] xl:w-[687px]">
+        <div className="notMd:hidden  md:h-[416px] md:w-[349px] lg:w-[465px] xl:w-[687px]">
           <Image
-            className="hidden rounded-2xl md:flex md:h-full md:w-full"
+            className="!relative rounded-2xl object-cover"
             src={Partners}
             alt={contactsSection.img.alt}
+            fill
           />
         </div>
       </div>
