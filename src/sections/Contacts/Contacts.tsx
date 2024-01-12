@@ -10,7 +10,7 @@ export const Contacts: React.FC<ContactsProps> = ({ data }) => {
   const { contactsSection } = data;
   return (
     <section className="py-[100px]">
-      <div className="container flex justify-between md:gap-x-[30px]">
+      <div className="container flex justify-between md:gap-x-0 2xl:gap-x-[124px]">
         <div>
           <Title tag="h2" variantSize="h2" className="mb-[50px] ">
             {contactsSection.title}
@@ -21,11 +21,13 @@ export const Contacts: React.FC<ContactsProps> = ({ data }) => {
           <ContactList />
         </div>
 
-        <Image
-          className="hidden rounded-2xl md:flex md:h-auto md:w-[349px] lg:w-[465px] xl:w-[687px]"
-          src={Partners}
-          alt={contactsSection.img.alt}
-        />
+        <div className="hidden md:flex md:h-[416px] md:w-[349px] lg:w-[465px] xl:w-[687px]">
+          <Image
+            className="hidden rounded-2xl md:flex md:h-full md:w-full"
+            src={Partners}
+            alt={contactsSection.img.alt}
+          />
+        </div>
       </div>
     </section>
   );

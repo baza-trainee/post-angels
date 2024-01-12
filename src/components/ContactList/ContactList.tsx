@@ -1,18 +1,19 @@
+'use client';
 import Link from 'next/link';
 import { Paragraph } from '../typography/Paragraph/Paragraph';
 import { ICONS } from '../icons';
 
 export const ContactList = () => {
   return (
-    <ul className="flex flex-col gap-y-4">
+    <ul className="flex flex-col gap-y-4 md:w-[349px]">
       <li>
         <Link
           href="https://maps.app.goo.gl/deQbq6vrWQJQ7cud9"
           rel="nofollow noreferrer"
-          className=" group flex cursor-pointer items-center gap-2  group-hover:text-accent-primary group-focus:text-accent-primary"
+          className=" group flex cursor-pointer items-center gap-2 group-hover:text-accent-primary group-focus:text-accent-primary"
           target="_blank"
         >
-          <ICONS.LOCATION className="h-10 w-10  group-hover:fill-accent-primary group-focus:fill-accent-primary" />
+          <ICONS.LOCATION className="h-10 w-10 group-hover:fill-accent-primary group-focus:fill-accent-primary" />
           <Paragraph
             variant="dark"
             variantFontSize="16"
@@ -56,7 +57,7 @@ export const ContactList = () => {
             variant="dark"
             variantFontSize="16"
             variantFontWeight="regular"
-            className=" group-hover:text-accent-primary group-focus:text-accent-primary"
+            className="group-hover:text-accent-primary group-focus:text-accent-primary"
           >
             postangeleslwo@gmail.com
           </Paragraph>
@@ -75,7 +76,7 @@ export const ContactList = () => {
             variant="dark"
             variantFontSize="16"
             variantFontWeight="regular"
-            className=" group-hover:text-accent-primary group-focus:text-accent-primary"
+            className="group-hover:text-accent-primary group-focus:text-accent-primary"
           >
             Instagram
           </Paragraph>
@@ -86,7 +87,7 @@ export const ContactList = () => {
         <Link
           href="https://www.facebook.com/PostAngeles.Lviv"
           rel="nofollow noreferrer"
-          className="group flex cursor-pointer items-center  gap-2 group-hover:text-accent-primary group-focus:text-accent-primary"
+          className="group flex cursor-pointer items-center gap-2 group-hover:text-accent-primary group-focus:text-accent-primary"
           target="_blank"
         >
           <ICONS.FACEBOOK className="h-10 w-10 fill-none stroke-grey-100 hover:fill-none hover:stroke-accent-hover  group-hover:stroke-accent-hover group-hover:text-accent-primary group-focus:stroke-accent-primary group-focus:text-accent-primary" />
