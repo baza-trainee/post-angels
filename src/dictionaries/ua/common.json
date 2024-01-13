@@ -1,20 +1,184 @@
 {
   "common": {
     "header": {
-      "nav": [
+      "headerNav": [
         {
           "name": "Головна",
-          "href": "/"
+          "href": "/ua"
+        },
+        {
+          "name": "Про нас",
+          "href": "/ua/aboutUs"
+        },
+        {
+          "name": "Партнерам",
+          "href": "/ua/partners"
+        },
+        {
+          "name": "Волонтерам",
+          "href": "/ua/volunteers"
+        },
+        {
+          "name": "Контакти",
+          "href": "/ua/contacts"
         }
-      ]
+      ],
+      "buttons": {
+        "headerButton": {
+          "name": "Зробити внесок"
+        },
+
+        "headerLanguageLabel": {
+          "name": "Кнопка зміни мови"
+        },
+
+        "headerLanguageName": {
+          "name": "Українська"
+        },
+        "menuOpen": {
+          "label": "кнопка відкриття мобільного меню"
+        },
+        "menuClose": {
+          "label": "Кнопка закриття мобільного меню"
+        }
+      }
+    },
+    "logo": {
+      "label": "Логотип компанії",
+      "href": "/ua"
+    },
+    "hero": {
+      "title": "Майбутнє \r\nв наших руках",
+      "subtitle": "Спільними зусиллями досягнемо яскравого завтра: це наш внесок у формування майбутнього.",
+      "button": {
+        "text": "Докладніше",
+        "href": "/aboutUs"
+      }
+    },
+    "partners": {
+      "title": "наші",
+      "title1": "Партнери",
+      "button": {
+        "text": "Приєднатись",
+        "href": "/partners"
+      }
+    },
+    "projects": {
+      "filter": {
+        "title": "Фільтри",
+        "filters": [
+          { "name": "Збори", "mod": "fundraising" },
+          { "name": "Усі", "mod": "all" },
+          { "name": "Нові", "mod": "new" },
+          { "name": "Завершені", "mod": "completed" }
+        ]
+      },
+      "sorting": [
+        { "name": "Спочатку нові", "sort": "newFirst" },
+        { "name": "Спочатку старі", "sort": "oldFirst" },
+        { "name": "Найбільше зібраних коштів", "sort": "moreFunds" },
+        { "name": "Найменше зібраних коштів", "sort": "lessFunds" }
+      ],
+      "ourProjects": {
+        "title": "Наші",
+        "title1": "проекти"
+      },
+      "finishedProjects2023": {
+        "title": "Завершені",
+        "title1": "проекти 2023"
+      },
+      "projectCard": {
+        "collected": "Зібрано, грн",
+        "starts": "Дата початку збору",
+        "buttons": {
+          "fundBtn": {
+            "text": "Зробити внесок",
+            "link": "/payments/"
+          },
+          "moreBtn": {
+            "text": "Дізнатися більше",
+            "link": "/projects/"
+          },
+          "finishedBtn": {
+            "text": "Завершений",
+            "link": "/"
+          }
+        }
+      },
+      "archiveBtn": {
+        "text": "Архів",
+        "link": "/archive"
+      }
+    },
+    "contacts": {
+      "contactsSection": {
+        "title": "НАШІ",
+        "title1": "КОНТАКТИ",
+        "href": "/",
+        "img": {
+          "alt": "Контакти"
+        }
+      }
+    },
+    "cookie": {
+      "popupCookie": {
+        "text": "Цей сайт використовує файли cookies для правильної роботи і покращення сервісу. Якщо ви погоджуєтесь з їхнім використанням, натисніть ОК.",
+        "text1": "Більше інформації в",
+        "linkText": "Політика конфіденційності.",
+        "href": "/"
+      }
     },
     "footer": {
       "footerNav": [
         {
           "name": "Головна",
-          "href": "/"
+          "href": "/ua/"
+        },
+        {
+          "name": "Про нас",
+          "href": "/ua/aboutUs"
+        },
+        {
+          "name": "Волонтерам",
+          "href": "/ua/volunteers"
+        },
+        {
+          "name": "Партнерам",
+          "href": "/ua/partners"
+        },
+        {
+          "name": "Контакти",
+          "href": "/ua/contacts"
+        },
+        {
+          "name": "Звітність",
+          "href": "/ua/"
         }
-      ]
+      ],
+      "footerDoc": [
+        {
+          "name": "Політика конфіденційності",
+          "href": "?document=policy.pdf",
+          "doc": "policy.pdf"
+        },
+        {
+          "name": "Правила користування сайтом",
+          "href": "?document=statut.pdf",
+          "doc": "statut.pdf"
+        }
+      ],
+      "footerCop": {
+        "name": "Розробка Baza Trainee Ukraine 2023 © Усі права захищені"
+      }
+    },
+    "modal": {
+      "button": {
+        "label": "кнопка закриття модального вікна"
+      }
+    },
+    "notfound": {
+      "subtitle": "Вибачте, сторінка, яку ви шукаєте, переміщена або видалена",
+      "label": "На головну"
     }
   }
 }

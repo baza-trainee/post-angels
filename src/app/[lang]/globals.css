@@ -2,125 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'e-Ukraine';
-  src:
-    local('e-Ukraine Bold'),
-    local('e-Ukraine-Bold'),
-    url('/fonts/e-Ukraine-Bold.otf') format('otf');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-Ukraine';
-  src:
-    local('e-Ukraine Light'),
-    local('e-Ukraine-Light'),
-    url('/fonts/e-Ukraine-Light.otf') format('otf');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-Ukraine';
-  src:
-    local('e-Ukraine Medium'),
-    local('e-Ukraine-Medium'),
-    url('/fonts/e-Ukraine-Medium.otf') format('otf');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-Ukraine';
-  src:
-    local('e-Ukraine Regular'),
-    local('e-Ukraine-Regular'),
-    url('/fonts/e-Ukraine-Regular.otf') format('otf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-Ukraine';
-  src:
-    local('e-Ukraine Thin'),
-    local('e-Ukraine-Thin'),
-    url('/fonts/e-Ukraine-Thin.otf') format('otf');
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-Ukraine';
-  src:
-    local('e-Ukraine UltraLight'),
-    local('e-Ukraine-UltraLight'),
-    url('/fonts/e-Ukraine-UltraLight.otf') format('otf');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-UkraineHead';
-  src:
-    local('e-UkraineHead Bold'),
-    local('e-UkraineHead-Bold'),
-    url('/fonts/e-UkraineHead-Bold.otf') format('otf');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-UkraineHead';
-  src:
-    local('e-UkraineHead Light'),
-    local('e-UkraineHead-Light'),
-    url('/fonts/e-UkraineHead-Light.otf') format('otf');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-UkraineHead';
-  src:
-    local('e-UkraineHead Medium'),
-    local('e-UkraineHead-Medium'),
-    url('/fonts/e-UkraineHead-Medium.otf') format('otf');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-UkraineHead';
-  src:
-    local('e-UkraineHead Regular'),
-    local('e-UkraineHead-Regular'),
-    url('/fonts/e-UkraineHead-Regular.otf') format('otf');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-UkraineHead';
-  src:
-    local('e-UkraineHead Thin'),
-    local('e-UkraineHead-Thin'),
-    url('/fonts/e-UkraineHead-Thin.otf') format('otf');
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'e-UkraineHead';
-  src:
-    local('e-UkraineHead UltraLight'),
-    local('e-UkraineHead-UltraLight'),
-    url('/fonts/e-UkraineHead-UltraLight.otf') format('otf');
-  font-weight: 200;
-  font-style: normal;
-}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -136,8 +17,141 @@
 }
 
 body {
-  background-color: 255, 255, 255;
+  background-color: theme('colors.white');
   color: theme('colors.grey.80');
-  font-family: e-Ukraine;
+  font-family: var(--font-eUkraineHead);
   font-weight: 400;
+}
+
+/* Hero Slider */
+
+.swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.swiper .swiper-wrapper {
+  z-index: auto;
+}
+
+.swiper .swiper-pagination-bullet {
+  background-color: theme('colors.grey.60');
+
+  width: 20px;
+  height: 20px;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: theme('colors.accent.primary') !important;
+}
+
+.swiper .swiper-pagination {
+  position: static;
+  margin-top: 30px;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  transition: all 300ms ease-in-out;
+  width: 70px;
+}
+
+.swiper .swiper-button-prev {
+  /* left: 10px; */
+}
+
+.swiper .swiper-button-next {
+  /* right: 12px; */
+}
+
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+  height: 70px;
+  width: 70px;
+  content: url('/icons/right.svg') !important;
+}
+
+.swiper .swiper-button-prev::after {
+  transform: rotate(180deg) !important;
+}
+
+#swiper .swiper-button-next::after .background-404 {
+  background-image: url('/images/404/img1x.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .background-404 {
+    background-image: url('/images/404/img2x.jpg');
+  }
+}
+@supports (background-image: url('/images/404/img1x.webp')) {
+  .background-404 {
+    background-image: url('/images/404/img1x.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .background-404 {
+      background-image: url('/images/404/img2x.webp');
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .background-404 {
+    background-image: url('/images/404/img1x.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .background-404 {
+      background-image: url('/images/404/img2x.jpg');
+    }
+  }
+
+  @supports (background-image: url('/images/404/img1x.webp')) {
+    .background-404 {
+      background-image: url('/images/404/img1x.webp');
+      background-size: cover;
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .background-404 {
+        background-image: url('/images/404/img2x.webp');
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .background-404 {
+    background-image: url('/images/404/img1x.jpg');
+    background-size: cover;
+    background-position: top -50px center;
+  }
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .background-404 {
+      background-image: url('/images/404/img2x.jpg');
+    }
+  }
+  @supports (background-image: url('/images/404/img1x.webp')) {
+    .background-404 {
+      background-image: url('/images/404/img1x.webp');
+      background-size: cover;
+    }
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .background-404 {
+        background-image: url('/images/404/img2x.webp');
+      }
+    }
+  }
+}
+
+.modal-animation {
+  animation: modal 0.5s ease-in-out;
+  align-items: center;
+  justify-content: center;
 }

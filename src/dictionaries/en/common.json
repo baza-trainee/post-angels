@@ -1,20 +1,183 @@
 {
   "common": {
     "header": {
-      "nav": [
+      "headerNav": [
         {
           "name": "Main",
-          "href": "/"
+          "href": "/en"
+        },
+        {
+          "name": "About us",
+          "href": "/en/aboutUs"
+        },
+        {
+          "name": "Partners",
+          "href": "/en/partners"
+        },
+        {
+          "name": "Volunteers",
+          "href": "/en/volunteers"
+        },
+        {
+          "name": "Contacts",
+          "href": "/en/contacts"
         }
-      ]
+      ],
+      "buttons": {
+        "headerButton": {
+          "name": "Donate"
+        },
+
+        "headerLanguageLabel": {
+          "name": "Change language button"
+        },
+        "headerLanguageName": {
+          "name": "English"
+        },
+        "menuOpen": {
+          "label": "open mobile menu"
+        },
+        "menuClose": {
+          "label": "close mobile menu"
+        }
+      }
+    },
+    "logo": {
+      "label": "Company logo",
+      "href": "/en"
+    },
+    "hero": {
+      "title": "The future is in our hands",
+      "subtitle": "Together we will achieve a bright tomorrow: this is our contribution to shaping the future.",
+      "button": {
+        "text": "Read more",
+        "href": "/aboutUs"
+      }
+    },
+    "partners": {
+      "title": "Our",
+      "title1": "partners",
+      "button": {
+        "text": "join",
+        "href": "/partners"
+      }
+    },
+    "projects": {
+      "filter": {
+        "title": "Filters",
+        "filters": [
+          { "name": "Fundraising", "mod": "fundraising" },
+          { "name": "All", "mod": "all" },
+          { "name": "New", "mod": "new" },
+          { "name": "Completed", "mod": "completed" }
+        ]
+      },
+      "sorting": [
+        { "name": "New first", "sort": "newFirst" },
+        { "name": "Old first", "sort": "oldFirst" },
+        { "name": "More funds", "sort": "moreFunds" },
+        { "name": "Less funds", "sort": "lessFunds" }
+      ],
+      "ourProjects": {
+        "title": "OUR",
+        "title1": "Projects"
+      },
+      "finishedProjects2023": {
+        "title": "Finished",
+        "title1": "projects 2023"
+      },
+      "projectCard": {
+        "collected": "Collected, UAH",
+        "starts": "Start date of collection",
+        "buttons": {
+          "fundBtn": {
+            "text": "Donate",
+            "link": "/payments/"
+          },
+          "moreBtn": {
+            "text": "Read more",
+            "link": "/projects/"
+          },
+          "finishedBtn": {
+            "text": "Completed",
+            "link": "/"
+          }
+        }
+      },
+      "archiveBtn": {
+        "text": "Archive",
+        "link": "/archive"
+      }
+    },
+    "contacts": {
+      "contactsSection": {
+        "title": "OUR",
+        "title1": "CONTACTS",
+        "href": "/",
+        "img": {
+          "alt": "Contacts"
+        }
+      }
+    },
+    "cookie": {
+      "popupCookie": {
+        "text": "This website uses cookies for the proper functioning and improvement of the service. If you agree to their use, click OK.",
+        "text1": "More information in",
+        "linkText": "Privacy Policy.",
+        "href": "/"
+      }
     },
     "footer": {
       "footerNav": [
         {
           "name": "Main",
-          "href": "/"
+          "href": "/en/"
+        },
+        {
+          "name": "About Us",
+          "href": "/en/aboutUs"
+        },
+        {
+          "name": "Volunteers",
+          "href": "/en/volunteers"
+        },
+        {
+          "name": "Partners",
+          "href": "/en/partners"
+        },
+        {
+          "name": "Сontacts",
+          "href": "/en/contacts"
+        },
+        {
+          "name": "Reporting",
+          "href": "/en/"
         }
-      ]
+      ],
+      "footerDoc": [
+        {
+          "name": "Privacy Policy",
+          "href": "?document=policy.pdf",
+          "doc": "policy.pdf"
+        },
+        {
+          "name": "Rules of use of the site",
+          "href": "?document=statut.pdf",
+          "doc": "statut.pdf"
+        }
+      ],
+      "footerCop": {
+        "name": "Development of Baza Trainee Ukraine 2023 © All rights reserved"
+      }
+    },
+    "modal": {
+      "button": {
+        "label": "close modal button"
+      }
+    },
+    "notfound": {
+      "subtitle": "Sorry, the page you are looking for has been moved or deleted",
+      "label": "Go main"
     }
   }
 }
