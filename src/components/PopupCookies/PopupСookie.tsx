@@ -19,26 +19,34 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
           left: '50%',
           transform: 'translateX(-50%)',
         }}
+        contentStyle={{
+          margin: 0,
+          display: 'block',
+        }}
         contentClasses=""
-        containerClasses="!w-[1200px] flex items-center !bottom-2 rounded-2xl justify-center p-[32px]"
+        containerClasses="!w-[320px] sm:!w-[440px] lg:!w-[960px] xl:!w-[1200px] !bottom-2 rounded-2xl !block p-[15px] sm:p-[32px] xl:!flex xl:gap-x-4 2xl:!w-[1360px] 3xl:!w-[1840px]"
         expires={150}
         overlay={true}
         hideOnAccept={true}
+        buttonWrapperClasses="my-0 mx-auto"
+        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full !mt-4 xl:!mt-0 !bg-orange lg:!w-[236px]"
         buttonStyle={{
-          color: '#F9FAFF',
-          backgroundColor: '#FF551A',
-          borderRadius: '48px',
-          width: '236px',
           padding: '12px',
+          margin: 0,
         }}
       >
-        <Paragraph className="mb-1" variant="dark" variantFontSize="14" variantFontWeight="regular">
+        <Paragraph
+          className="md:mb-1 lg:mb-2"
+          variant="dark"
+          variantFontSize="16"
+          variantFontWeight="regular"
+        >
           {popupCookie.text}
         </Paragraph>
-        <Paragraph variant="dark" variantFontSize="14" variantFontWeight="regular">
+        <Paragraph variant="dark" variantFontSize="16" variantFontWeight="regular">
           {popupCookie.text1}
           <Link
-            className="pl-1 font-eUkraine text-sm font-medium leading-[160%] text-orange"
+            className="pl-1 font-eUkraine text-base font-medium leading-[160%] text-orange"
             href="/"
           >
             {popupCookie.linkText}
