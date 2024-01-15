@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: theme('colors.white');
+  background-color: theme('colors.grey.20');
   color: theme('colors.grey.80');
   font-family: var(--font-eUkraineHead);
   font-weight: 400;
@@ -83,6 +83,11 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+/* Projects */
+
+/* 404page */
+
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .background-404 {
     background-image: url('/images/404/img2x.jpg');

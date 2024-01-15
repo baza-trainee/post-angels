@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 import { ProjectCardProps } from '../ProjectCard/ProjectsCard.props';
 
 const getFilteredData = (filterName: string, data: ProjectCardProps[]) => {
-  console.log(data);
   switch (filterName) {
     case 'all':
       return data;
@@ -20,24 +19,47 @@ const getFilteredData = (filterName: string, data: ProjectCardProps[]) => {
       return data.filter(dataProject => dataProject.status === 'finished');
 
     default:
-      break;
+      return data;
   }
-
-  return data;
 };
 
 const getSortedData = (sortingMod: string, data: ProjectCardProps[]) => {
-  const sortedData = data.sort((a, b) => {
-    const dateA = new Date(a.startDate).getTime();
-    const dateB = new Date(b.startDate).getTime();
-    console.log(new Date(a.startDate));
-    return dateA - dateB;
-  });
+  switch (sortingMod) {
+    case 'newFirst':
+      return data.sort((a, b) => {
+        const dateA = new Date(a.startDate).getTime();
+        const dateB = new Date(b.startDate).getTime();
 
-  if (sortingMod === 'oldFirst') {
-    return sortedData;
+        return dateA - dateB;
+      });
+
+    case 'moreFunds':
+      return data.sort((a, b) => {
+        const percentA = a.collected / a.all;
+        const percentB = b.collected / b.all;
+        return percentA - percentB;
+      });
+
+    case 'lessFunds':
+      return data.sort((a, b) => {
+        const percentA = a.collected / a.all;
+        const percentB = b.collected / b.all;
+        return percentB - percentA;
+      });
+
+    case 'oldFirst':
+      return data.sort((a, b) => {
+        const dateA = new Date(a.startDate).getTime();
+        const dateB = new Date(b.startDate).getTime();
+
+        return dateA - dateB;
+      });
+
+    case 'default':
+      return data;
+    default:
+      return data;
   }
-  return data;
 };
 
 export const ProjectsList = ({
@@ -50,14 +72,14 @@ export const ProjectsList = ({
   projectsData: ProjectCardProps[];
 }) => {
   const [filteredProjects, setFilteredProjects] = useState<ProjectCardProps[]>(projectsData);
-  const [sortedProjects, setSortedProjects] = useState<ProjectCardProps[]>([]);
+  const [sortedProjects, setSortedProjects] = useState<ProjectCardProps[]>(filteredProjects);
   const [filterName, setFilterName] = useState<string>('all');
-  const [sortingMod, setSortingMod] = useState<string>('newFirst');
+  const [sortingMod, setSortingMod] = useState<string>('default');
 
   useEffect(() => {
     const filtered = getFilteredData(filterName, projectsData);
     setFilteredProjects(filtered);
-  }, [filterName]);
+  }, [filterName, projectsData]);
 
   useEffect(() => {
     const sorted = getSortedData(sortingMod, filteredProjects);

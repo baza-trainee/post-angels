@@ -11,7 +11,7 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
   projects,
 }) => {
   const wrapSliderClasses = classNames('h-auto', className);
-
+  console.log('slider');
   return (
     <div className={wrapSliderClasses}>
       <Slider
@@ -22,7 +22,7 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
         element={ProjectCard}
         isAutoplay={false}
         slidesPerView={{ mobile: 1, tablet: 2, desktop: 3 }}
-        isLoop={true}
+        isLoop={false}
         isPagination={true}
         isInteractive={true}
         isFadeEffect={false}

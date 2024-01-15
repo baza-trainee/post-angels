@@ -70,14 +70,14 @@
           { "name": "Збори", "mod": "fundraising" },
           { "name": "Усі", "mod": "all" },
           { "name": "Нові", "mod": "new" },
-          { "name": "Завершені", "mod": "completed" }
+          { "name": "Завершені", "mod": "finished" }
         ]
       },
       "sorting": [
-        { "name": "Спочатку нові", "sort": "newFirst" },
-        { "name": "Спочатку старі", "sort": "oldFirst" },
-        { "name": "Найбільше зібраних коштів", "sort": "moreFunds" },
-        { "name": "Найменше зібраних коштів", "sort": "lessFunds" }
+        { "name": "Спочатку нові", "mod": "newFirst" },
+        { "name": "Спочатку старі", "mod": "oldFirst" },
+        { "name": "Найбільше зібраних коштів", "mod": "moreFunds" },
+        { "name": "Найменше зібраних коштів", "mod": "lessFunds" }
       ],
       "ourProjects": {
         "title": "Наші",

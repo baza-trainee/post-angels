@@ -2,16 +2,13 @@ import { Title } from '@/components/typography/Title';
 import { FinishedProjectSlider } from '@/components/Projects/FinishedProjectSlider';
 
 import { FinishedProjectsProps } from './FinishedProjects.props';
-import { Locale } from '@/i18n.config';
 import { ProjectCardProps } from '@/components/Projects/ProjectCard/ProjectsCard.props';
 
 export const FinishedProjects = async ({
   projects,
-  lang,
   finishedData,
 }: {
   projects: FinishedProjectsProps;
-  lang: Locale;
   finishedData: ProjectCardProps[];
 }) => {
   return (

@@ -40,6 +40,7 @@ const config: Config = {
         },
         backdrop: ' rgba(177, 176, 176, 0.50)',
         progressBar: 'rgba(240, 240, 240, 1)',
+        shadow: 'rgba(0, 0, 0, 0.04)',
         accent: {
           primary: '#0D36C9',
           hover: '#1A48ED',
