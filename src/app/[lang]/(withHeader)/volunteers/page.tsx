@@ -15,7 +15,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         title={title}
         accentTitle={discription.accentTitle}
         description={discription.text}
-        img="volunteers"
+        img={discription.img}
         alt={discription.alt}
       />
     </section>

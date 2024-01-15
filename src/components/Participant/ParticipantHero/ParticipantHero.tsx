@@ -25,13 +25,7 @@ export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
         </Paragraph>
       </div>
 
-      <Image
-        className="rounded-2xl"
-        src={`/images/participant/${img}.png`}
-        alt={alt}
-        width={960}
-        height={620}
-      />
+      <Image className="rounded-2xl" src={img} alt={alt} width={960} height={620} />
     </div>
   );
 };
