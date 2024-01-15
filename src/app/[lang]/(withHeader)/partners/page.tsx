@@ -10,12 +10,13 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { discription } = common.participant.partners;
 
   return (
-    <section className="container pt-[73px] xl:pt-40">
+    <section>
       <ParticipantHero
         title={title}
         accentTitle={discription.accentTitle}
         description={discription.text}
         img="partners"
+        alt={discription.alt}
       />
     </section>
   );

@@ -5,4 +5,5 @@ export interface ParticipantHeroProps {
   accentTitle: string;
   description: string;
   img: string;
+  alt: string;
 }
