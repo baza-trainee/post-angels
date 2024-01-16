@@ -2,7 +2,6 @@
 
 import { Filters } from '@/components/Projects/Filters';
 import { ProjectSlider } from '@/components/Projects/ProjectSlider';
-import { Locale } from '@/i18n.config';
 import { ProjectsProps } from '@/sections/Projects/Projects.props';
 import { useEffect, useState } from 'react';
 import { ProjectCardProps } from '../ProjectCard/ProjectsCard.props';
@@ -15,8 +14,8 @@ const getFilteredData = (filterName: string, data: ProjectCardProps[]) => {
     case 'new':
       return data.filter(dataProject => dataProject.status === 'new');
 
-    case 'finished':
-      return data.filter(dataProject => dataProject.status === 'finished');
+    case 'completed':
+      return data.filter(dataProject => dataProject.status === 'completed');
 
     default:
       return data;
@@ -64,11 +63,9 @@ const getSortedData = (sortingMod: string, data: ProjectCardProps[]) => {
 
 export const ProjectsList = ({
   projects,
-  lang,
   projectsData,
 }: {
   projects: ProjectsProps;
-  lang: Locale;
   projectsData: ProjectCardProps[];
 }) => {
   const [filteredProjects, setFilteredProjects] = useState<ProjectCardProps[]>(projectsData);
@@ -88,12 +85,7 @@ export const ProjectsList = ({
 
   return (
     <>
-      <Filters
-        projects={projects}
-        lang={lang}
-        setFilterName={setFilterName}
-        setSortingMod={setSortingMod}
-      />
+      <Filters projects={projects} setFilterName={setFilterName} setSortingMod={setSortingMod} />
       <ProjectSlider projectsData={sortedProjects} projects={projects} />
     </>
   );

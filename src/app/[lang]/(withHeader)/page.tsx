@@ -1,14 +1,14 @@
-import { Button } from '@/components/buttons/Button/Button';
-import { IconButton } from '@/components/buttons/IconButton/IconButton';
-import { LinkButton } from '@/components/buttons/LinkButton';
-import { ICONS } from '@/components/icons';
-import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
-import { Title } from '@/components/typography/Title';
+// import { Button } from '@/components/buttons/Button/Button';
+// import { IconButton } from '@/components/buttons/IconButton/IconButton';
+// import { LinkButton } from '@/components/buttons/LinkButton';
+// import { ICONS } from '@/components/icons';
+// import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
+// import { Title } from '@/components/typography/Title';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import { Contacts } from '@/sections/Contacts/Contacts';
 import { Form } from '@/components/form/Form/Form';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { Hero } from '@/sections/Hero/Hero';
 import { PartnersTop } from '@/sections/PartnersTop';
 import { Partners } from '@/sections/Partners';
@@ -16,6 +16,7 @@ import { Projects } from '@/sections/Projects';
 import { FinishedProjects } from '@/sections/FinishedProjects';
 
 const getPartners = async (lang: Locale) => {
+  console.log(lang);
   // запит до базиданних за партнерами.
   // якщо партнерів немає повинно повертати null
   const partner = [
@@ -41,6 +42,7 @@ const getPartners = async (lang: Locale) => {
 
 const getFinishedProject = (lang: Locale) => {
   // get projects api
+  console.log(lang);
   const projects = [
     {
       id: 1,
@@ -133,9 +135,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {partnersData && <PartnersTop partnersData={partnersData} data={partners} />}
       <Projects projects={projects} lang={lang} />
 
-      {finishedData && (
-        <FinishedProjects projects={projects} lang={lang} finishedData={finishedData} />
-      )}
+      {finishedData && <FinishedProjects projects={projects} finishedData={finishedData} />}
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
       <Contacts data={contacts} />
       <Form lang={lang} />

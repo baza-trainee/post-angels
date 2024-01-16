@@ -6,6 +6,7 @@ import { Locale } from '@/i18n.config';
 
 const getProjects = async (lang: Locale) => {
   // get projects api
+  console.log(lang);
   const projects = [
     {
       id: 1,
@@ -53,7 +54,7 @@ const getProjects = async (lang: Locale) => {
       collected: 51000,
       all: 68000,
       startDate: '2023-05-15',
-      status: 'finished',
+      status: 'completed',
     },
   ];
   return projects;
@@ -63,14 +64,14 @@ export const Projects = async ({ projects, lang }: { projects: ProjectsProps; la
   const projectsData = await getProjects(lang);
 
   return (
-    <section id="projectSlider">
+    <section id="projectSlider" className="pt-10">
       <div className="container">
         <Title tag="h2" variantSize="h2" className="mb-[30px]">
           {projects.ourProjects.title}
           <br />
           <span>{projects.ourProjects.title1}</span>
         </Title>
-        <ProjectsList projects={projects} lang={lang} projectsData={projectsData} />
+        <ProjectsList projects={projects} projectsData={projectsData} />
       </div>
     </section>
   );

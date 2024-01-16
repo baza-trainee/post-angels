@@ -10,8 +10,11 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
   className = '',
   projects,
 }) => {
-  const wrapSliderClasses = classNames('h-auto', className);
-  console.log('slider');
+  const wrapSliderClasses = classNames(
+    'h-auto  border-b border-grey-60 pb-10 md:flex-row ',
+    className
+  );
+
   return (
     <div className={wrapSliderClasses}>
       <Slider
