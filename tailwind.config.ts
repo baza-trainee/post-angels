@@ -13,6 +13,7 @@ const config: Config = {
       '3xl': '1920px',
       smOnly: { max: '767.98px' },
       mdOnly: { min: '768px', max: '1279.98px' },
+      notMd: { max: '767.98px' },
       notXl: { max: '1279.98px' },
     },
     extend: {
