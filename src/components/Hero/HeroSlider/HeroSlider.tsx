@@ -39,7 +39,10 @@ export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '
         <ul className={wrapDesktopClasses}>
           {banners.map((banner, ind) => {
             return (
-              <li key={banner.url} className=" h-fit xl:relative xl:h-[200px] xl:w-[312px]">
+              <li
+                key={banner.url}
+                className=" h-fit xl:relative xl:h-[200px] xl:w-[312px] 2xl:h-[240px] 2xl:w-[432px]"
+              >
                 <HeroBanner
                   url={banner.url}
                   image_description={banner.image_description}

@@ -3,7 +3,7 @@ export interface ProjectsProps {
     title: string;
     filters: { name: string; mod: string }[];
   };
-  sorting: { name: string; sort: string }[];
+  sorting: { name: string; mod: string }[];
 
   ourProjects: {
     title: string;

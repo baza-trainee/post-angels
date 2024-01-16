@@ -7,7 +7,6 @@ import { ButtonProps } from './Button.props';
 export const Button: FC<ButtonProps> = ({
   variant = 'accent',
   disabled = false,
-  size = 'big',
   children,
   className,
   ...props
@@ -22,14 +21,15 @@ export const Button: FC<ButtonProps> = ({
         !disabled && {
           ['bg-accent-primary  text-grey-0 hover:bg-accent-hover focus:bg-accent-pressed']:
             variant == 'accent',
-          ['bg-orange  hover:bg-orange focus:bg-orange text-grey-0']: variant == 'orange',
-          ['border border-accent-primary bg-white text-accent-primary hover:border-accent-hover hover:text-accent-hover focus:border-accent-pressed focus:text-accent-pressed']:
+          ['bg-orange  text-grey-0 hover:bg-orange focus:bg-orange']: variant == 'orange',
+          ['border border-accent-primary bg-transparent text-accent-primary hover:border-accent-hover hover:text-accent-hover focus:border-accent-pressed focus:text-accent-pressed']:
             variant == 'white',
         },
         disabled && {
           ['pointer-events-none bg-grey-40   text-grey-0']: variant == 'accent',
           ['pointer-events-none  bg-grey-40 text-grey-0 ']: variant == 'orange',
-          ['pointer-events-none border border-grey-40 bg-white text-grey-40	']: variant == 'white',
+          ['pointer-events-none border border-grey-40 bg-transparent text-grey-40	']:
+            variant == 'white',
         }
       )}
       {...props}

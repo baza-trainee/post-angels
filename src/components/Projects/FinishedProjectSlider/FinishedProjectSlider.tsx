@@ -10,7 +10,7 @@ export const FinishedProjectSlider: React.FC<ProjectSliderProps> = ({
   className = 'finishedProject',
   projects,
 }) => {
-  const wrapSliderClasses = classNames('h-auto', className);
+  const wrapSliderClasses = classNames('h-auto mb-[50px]', className);
 
   return (
     <div className={wrapSliderClasses}>

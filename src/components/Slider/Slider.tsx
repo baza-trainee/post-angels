@@ -57,7 +57,7 @@ export const Slider: React.FC<SliderProps> = ({
         if (buttonNext) buttonNext.classList.add(...parsedClasses);
       }
     }
-  }, [isFirstRender, navigationBreakpoints]);
+  }, [isFirstRender, navigationBreakpoints, id]);
 
   return isFirstRender ? null : (
     <Swiper
@@ -68,6 +68,7 @@ export const Slider: React.FC<SliderProps> = ({
       effect={isFadeEffect ? 'fade' : ''}
       autoplay={isAutoplay ? { delay: 2000, disableOnInteraction: false } : false}
       loop={isLoop}
+      className={className}
       navigation={isNavigation}
       slidesPerView={slidesPerViewDef}
       style={{ zIndex: 'auto' }}
