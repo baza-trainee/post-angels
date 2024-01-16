@@ -178,6 +178,33 @@
     "notfound": {
       "subtitle": "Sorry, the page you are looking for has been moved or deleted",
       "label": "Go main"
+    },
+    "participant": {
+      "title": "Questionnaire ",
+      "partners": {
+        "discription": {
+          "accentTitle": "for partner",
+          "text": "Our foundation is looking for partners who share our mission and are ready to support our project. If you want to get involved with our work, we encourage you to fill out this form. The information posted in this questionnaire will help us identify possible forms and direct procedures. Thank you for your interest in our foundation.",
+          "img": "/images/participant/partners.jpg",
+          "alt": "Partners"
+        },
+        "form": {
+          "title": "Анкета&nbsp;",
+          "accentTitle": "партнера"
+        }
+      },
+      "volunteers": {
+        "discription": {
+          "accentTitle": "for a volunteer",
+          "text": "Our foundation would like the participation of volunteers to support our mission. If you share our mission, values and are willing to go through our system, we would like you to fill out this form. The information posted in this application form is kept confidential and will help us find the most satisfying and rewarding volunteer job for you. Thank you for your interest in our foundation.",
+          "img": "/images/participant/volunteers.jpg",
+          "alt": "Volunteers"
+        },
+        "form": {
+          "title": "Анкета&nbsp;",
+          "accentTitle": "партнера"
+        }
+      }
     }
   }
 }
