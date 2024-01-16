@@ -23,7 +23,7 @@ export const FinishedProjects = async ({
         <FinishedProjectSlider projectsData={finishedData} projects={projects} isFinished />
 
         <LinkButton
-          className="w-full md:w-[349px] lg:w-[465px] xl:w-[276px] notMd:mx-auto"
+          className="w-full md:w-[349px] lg:w-[465px]  xl:mx-auto xl:w-[276px]"
           href={projects.archiveBtn.link}
         >
           {projects.archiveBtn.text}

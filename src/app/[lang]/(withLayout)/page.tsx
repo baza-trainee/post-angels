@@ -7,7 +7,7 @@
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import { Contacts } from '@/sections/Contacts/Contacts';
-import { Form } from '@/components/form/Form/Form';
+// import { Form } from '@/components/form/Form/Form';
 // import Link from 'next/link';
 import { Hero } from '@/sections/Hero/Hero';
 import { PartnersTop } from '@/sections/PartnersTop';
@@ -138,7 +138,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {finishedData && <FinishedProjects projects={projects} finishedData={finishedData} />}
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
       <Contacts data={contacts} />
-      <Form lang={lang} />
+      {/* <Form lang={lang} /> */}
     </main>
   );
 }

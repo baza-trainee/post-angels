@@ -8,7 +8,7 @@ const NotFound = async ({ params: { lang = 'ua' } }: { params: { lang: Locale } 
   const { notfound } = (await getDictionary(lang)).common;
 
   return (
-    <section className="background-404 h-[calc(100vh_-_260px)] min-h-[765px] py-40">
+    <section className="background-404 h-[calc(100vh_-_156px)] min-h-[765px] py-40">
       <div className="container text-center">
         <Title
           tag="h1"

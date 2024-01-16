@@ -4,8 +4,6 @@ import localFont from 'next/font/local';
 import { Suspense } from 'react';
 import Loading from './loading';
 
-import { Footer } from '@/layout/Footer';
-import { Header } from '@/layout/Header';
 import PopupCookie from '@/components/PopupCookies/PopupСookie';
 import { getDictionary } from '@/lib/dictionary';
 import './globals.css';
@@ -88,7 +86,7 @@ export default async function RootLayout({
 }) {
   const lang = params.lang;
   const { common } = await getDictionary(lang);
-  const { footer, modal, cookie, logo } = common;
+  const { cookie } = common;
 
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
@@ -96,7 +94,6 @@ export default async function RootLayout({
         <Suspense fallback={<Loading />}>
           {children}
           <PopupCookie data={cookie} />
-          <Footer data={footer} modal={modal} logo={logo} />
           <div id="modal" />
         </Suspense>
       </body>
