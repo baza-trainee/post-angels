@@ -27,6 +27,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       fontWeight: '400',
       lineHeight: '160%',
       outline: 'none',
+      backgroundColor: 'transparent',
       '&:focus': {
         borderColor: '#1A48ED',
       },
