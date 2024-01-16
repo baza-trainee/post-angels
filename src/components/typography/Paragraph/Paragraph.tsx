@@ -20,6 +20,7 @@ export const Paragraph: FC<ParagraphProps> = ({
         {
           ['text-grey-100']: variant == 'dark',
           ['text-grey-50']: variant == 'light',
+          ['text-grey-80']: variant == 'dark_grey',
           ['text-grey-70']: variant == 'grey',
           ['text-white']: variant == 'white',
           ['text-center']: centered,

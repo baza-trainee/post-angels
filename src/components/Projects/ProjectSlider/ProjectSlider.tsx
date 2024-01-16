@@ -10,7 +10,10 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
   className = '',
   projects,
 }) => {
-  const wrapSliderClasses = classNames('h-auto', className);
+  const wrapSliderClasses = classNames(
+    'h-auto  border-b border-grey-60 pb-10 md:flex-row ',
+    className
+  );
 
   return (
     <div className={wrapSliderClasses}>
@@ -22,7 +25,7 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
         element={ProjectCard}
         isAutoplay={false}
         slidesPerView={{ mobile: 1, tablet: 2, desktop: 3 }}
-        isLoop={true}
+        isLoop={false}
         isPagination={true}
         isInteractive={true}
         isFadeEffect={false}

@@ -73,10 +73,10 @@
         ]
       },
       "sorting": [
-        { "name": "New first", "sort": "newFirst" },
-        { "name": "Old first", "sort": "oldFirst" },
-        { "name": "More funds", "sort": "moreFunds" },
-        { "name": "Less funds", "sort": "lessFunds" }
+        { "name": "New first", "mod": "newFirst" },
+        { "name": "Old first", "mod": "oldFirst" },
+        { "name": "More funds", "mod": "moreFunds" },
+        { "name": "Less funds", "mod": "lessFunds" }
       ],
       "ourProjects": {
         "title": "OUR",

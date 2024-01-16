@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: theme('colors.white');
+  background-color: theme('colors.grey.20');
   color: theme('colors.grey.80');
   font-family: var(--font-eUkraineHead);
   font-weight: 400;
@@ -58,6 +58,10 @@ body {
   width: 70px;
 }
 
+/* .swiper .swiper-button-disabled.swiper-button-prev::after,
+.swiper .swiper-button-disabled.swiper-button-next::after {
+  backdrop-filter: saturate(0%) !important;
+} */
 .swiper .swiper-button-prev {
   /* left: 10px; */
 }
@@ -70,7 +74,10 @@ body {
 .swiper .swiper-button-next::after {
   height: 70px;
   width: 70px;
-  content: url('/icons/right.svg') !important;
+  content: '' !important;
+  background-size: cover;
+  background-image: url('/icons/right.svg');
+  display: block;
 }
 
 .swiper .swiper-button-prev::after {
@@ -83,6 +90,51 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+/* Projects */
+@media screen and (min-width: 1280px) {
+  .swiper.projectSlider,
+  .swiper.finishedProjects {
+    padding-top: 55px;
+  }
+}
+
+.swiper.projectSlider .swiper-button-prev::after,
+.swiper.projectSlider .swiper-button-next::after,
+.swiper.finishedProjects .swiper-button-prev::after,
+.swiper.finishedProjects .swiper-button-next::after {
+  height: 40px !important;
+  width: 40px !important;
+  content: '' !important;
+  background-size: cover;
+  background-image: url('/icons/right.svg');
+  display: block;
+}
+
+.swiper.projectSlider .swiper-button-prev,
+.swiper.projectSlider .swiper-button-next,
+.swiper.finishedProjects .swiper-button-prev,
+.swiper.finishedProjects .swiper-button-next {
+  height: 40px !important;
+  width: 40px !important;
+  display: flex;
+}
+
+.swiper.projectSlider .swiper-button-prev,
+.swiper.finishedProjects .swiper-button-prev {
+  right: 80px !important;
+  top: 24px;
+  left: auto !important;
+}
+
+.swiper.projectSlider .swiper-button-next,
+.swiper.finishedProjects .swiper-button-next {
+  right: 0px;
+  top: 24px;
+}
+
+/* 404page */
+
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .background-404 {
     background-image: url('/images/404/img2x.jpg');
