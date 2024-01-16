@@ -9,12 +9,14 @@ import MobileNav from '@/components/header/MobileNav/MobileNav';
 import { Logo } from '@/layout/Logo';
 import { HeaderProps } from './Header.props';
 
-export const Header: React.FC<HeaderProps> = ({ data, lang, modal, logo }) => {
+export const Header: React.FC<HeaderProps> = ({ data, lang, modal, logo, transparent }) => {
   const { headerNav, buttons } = data;
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 font-eUkraineHead text-base font-normal backdrop-blur-[3px]`}
+      className={`fixed inset-x-0 top-0 z-50 ${
+        transparent ? 'backdrop-blur-[3px]' : 'bg-grey-20'
+      }  font-eUkraineHead text-base font-normal`}
     >
       <div className="container">
         {/* Upper Nav */}

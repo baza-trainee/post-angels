@@ -20,6 +20,7 @@ export interface HeaderProps {
     };
   };
   lang: Locale;
+  transparent?: boolean;
   modal: {
     button: {
       label: string;
