@@ -109,6 +109,23 @@
         "link": "/archive"
       }
     },
+    "cooperation": {
+      "cooperationSection": {
+        "title": "Would you like to",
+        "title1": "Cooperate with us?",
+        "text": "Choose a direction!",
+        "buttons": {
+          "partnerBtn": {
+            "text": "I am a partner",
+            "link": "/partners"
+          },
+          "volunteerBtn": {
+            "text": "I am a volunteer",
+            "link": "/volunteers"
+          }
+        }
+      }
+    },
     "contacts": {
       "contactsSection": {
         "title": "OUR",
