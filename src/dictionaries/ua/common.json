@@ -52,7 +52,7 @@
       "subtitle": "Спільними зусиллями досягнемо яскравого завтра: це наш внесок у формування майбутнього.",
       "button": {
         "text": "Докладніше",
-        "href": "/aboutUs"
+        "href": "/ua/aboutUs"
       }
     },
     "partners": {
@@ -60,7 +60,7 @@
       "title1": "Партнери",
       "button": {
         "text": "Приєднатись",
-        "href": "/partners"
+        "href": "/ua/partners"
       }
     },
     "projects": {
@@ -93,11 +93,11 @@
         "buttons": {
           "fundBtn": {
             "text": "Зробити внесок",
-            "link": "/payments/"
+            "link": "/ua/payments/"
           },
           "moreBtn": {
             "text": "Дізнатися більше",
-            "link": "/projects/"
+            "link": "/ua/projects/"
           },
           "finishedBtn": {
             "text": "Завершений",
@@ -107,7 +107,7 @@
       },
       "archiveBtn": {
         "text": "Архів",
-        "link": "/archive"
+        "link": "/ua/archive"
       }
     },
     "cooperation": {

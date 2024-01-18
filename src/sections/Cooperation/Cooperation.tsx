@@ -1,4 +1,3 @@
-'use client';
 import { Title } from '@/components/typography/Title';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
