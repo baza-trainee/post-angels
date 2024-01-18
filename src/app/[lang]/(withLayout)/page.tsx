@@ -14,7 +14,7 @@ import { PartnersTop } from '@/sections/PartnersTop';
 import { Partners } from '@/sections/Partners';
 import { Projects } from '@/sections/Projects';
 import { FinishedProjects } from '@/sections/FinishedProjects';
-import Cooperation from '@/sections/Cooperation/Cooperation';
+import { Cooperation } from '@/sections/Cooperation';
 
 const getPartners = async (lang: Locale) => {
   console.log(lang);

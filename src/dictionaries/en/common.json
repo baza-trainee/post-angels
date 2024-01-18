@@ -51,7 +51,7 @@
       "subtitle": "Together we will achieve a bright tomorrow: this is our contribution to shaping the future.",
       "button": {
         "text": "Read more",
-        "href": "/aboutUs"
+        "href": "/en/aboutUs"
       }
     },
     "partners": {
@@ -59,7 +59,7 @@
       "title1": "partners",
       "button": {
         "text": "join",
-        "href": "/partners"
+        "href": "/en/partners"
       }
     },
     "projects": {
@@ -92,11 +92,11 @@
         "buttons": {
           "fundBtn": {
             "text": "Donate",
-            "link": "/payments/"
+            "link": "/en/payments/"
           },
           "moreBtn": {
             "text": "Read more",
-            "link": "/projects/"
+            "link": "/en/projects/"
           },
           "finishedBtn": {
             "text": "Completed",
@@ -106,7 +106,7 @@
       },
       "archiveBtn": {
         "text": "Archive",
-        "link": "/archive"
+        "link": "/en/archive"
       }
     },
     "cooperation": {

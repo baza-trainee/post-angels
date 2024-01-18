@@ -24,12 +24,12 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
           display: 'block',
         }}
         contentClasses=""
-        containerClasses="!w-[320px] sm:!w-[440px] lg:!w-[960px] xl:!w-[1200px] !bottom-2 rounded-2xl !block p-[15px] sm:p-[32px] xl:!flex xl:gap-x-4 2xl:!w-[1360px] 3xl:!w-[1840px]"
+        containerClasses="!w-[320px] sm:!w-[440px] md:!w-[728px] lg:!w-[960px] xl:!w-[1200px] !bottom-2 rounded-2xl !block p-[15px] sm:p-[32px] xl:!flex xl:gap-x-6 2xl:gap-x-14 2xl:!w-[1360px] 3xl:!w-[1840px]"
         expires={150}
         overlay={true}
         hideOnAccept={true}
-        buttonWrapperClasses="my-0 mx-auto"
-        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full !mt-4 xl:!mt-0 !bg-orange lg:!w-[236px]"
+        buttonWrapperClasses="my-0 mx-auto text-center"
+        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full md:!w-[372px] lg:!w-[465px]  !mt-4 xl:!mt-0 !bg-orange xl:!w-[236px]"
         buttonStyle={{
           padding: '12px',
           margin: 0,
