@@ -9,8 +9,8 @@ export const Cooperation: React.FC<CooperationProps> = ({ data }) => {
   return (
     <section>
       <div className="container">
-        <div className="border-b border-grey-60 pb-[80px] pt-[100px]">
-          <Title tag="h2" variantSize="h2" className="mb-[30px]">
+        <div className="border-b border-grey-60 pb-[40px] pt-[80px]">
+          <Title tag="h2" variantSize="h2" className="mb-[30px] md:mb-4">
             {cooperationSection.title}
             <span>
               <br /> {cooperationSection.title1}
@@ -20,24 +20,24 @@ export const Cooperation: React.FC<CooperationProps> = ({ data }) => {
             variant="dark_grey"
             variantFontSize="16"
             variantFontWeight="regular"
-            className="mb-[30px]"
+            className="mb-[30px] md:mb-12"
           >
             {cooperationSection.text}
           </Paragraph>
-          <div className="md:flex">
-            <div>
-              <LinkButton
-                href={`/partners`}
-                className="mb-[30px] md:mr-[30px] md:w-[349px] lg:w-[465px] xl:w-[276px]"
-              >
-                {cooperationSection.buttons.partnerBtn.text}
-              </LinkButton>
-            </div>
-            <div>
-              <LinkButton href={`/volunteers`} className="md:w-[349px] lg:w-[465px] xl:w-[276px]">
-                {cooperationSection.buttons.volunteerBtn.text}
-              </LinkButton>
-            </div>
+          <div className="md:flex md:gap-x-[30px]">
+            <LinkButton
+              href={cooperationSection.buttons.partnerBtn.link}
+              className="w-full xl:w-[276px] 2xl:w-[316px] 3xl:w-[280px] smOnly:mb-[30px]"
+            >
+              {cooperationSection.buttons.partnerBtn.text}
+            </LinkButton>
+
+            <LinkButton
+              href={cooperationSection.buttons.volunteerBtn.link}
+              className="w-full xl:w-[276px] 2xl:w-[316px] 3xl:w-[280px]"
+            >
+              {cooperationSection.buttons.volunteerBtn.text}
+            </LinkButton>
           </div>
         </div>
       </div>
