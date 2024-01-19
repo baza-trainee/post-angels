@@ -64,7 +64,7 @@ export const Projects = async ({ projects, lang }: { projects: ProjectsProps; la
   const projectsData = await getProjects(lang);
 
   return (
-    <section id="projectSlider" className="pt-10">
+    <section id="projectSlider" className="pt-20 xl:pt-[100px]">
       <div className="container">
         <Title tag="h2" variantSize="h2" className="mb-[30px]">
           {projects.ourProjects.title}

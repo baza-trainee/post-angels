@@ -62,6 +62,57 @@
         "href": "/en/partners"
       }
     },
+    "whatWeDo": {
+      "title1": "What we \r\n",
+      "title2": "do",
+      "workWith": [
+        {
+          "title": "Gender Equality",
+          "subTitle": "How to achieve equality among people",
+          "text": "Ensuring full respect for women's rights is crucial for the development of a thriving society. Investments in gender equality contribute to reducing the wage gap between men and women.",
+          "img": "/images/whatwedo/what-do-1.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": "fghfh"
+        },
+        {
+          "title": "Quality Education",
+          "subTitle": "How to create an effective system of education and development",
+          "text": "The quality of education influences the level of societal well-being, and the opportunity for lifelong learning for each individual refreshes the capital of responses to the challenges of our present.",
+          "img": "/images/whatwedo/what-do-2.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": ""
+        },
+        {
+          "title": "Innovation and Infrastructure",
+          "subTitle": "How to develop quality, reliable, sustainable, and accessible infrastructure",
+          "text": "The development of infrastructure and innovation is a prerequisite for economic progress. Technological progress ensures the resolution of environmental and economic issues and can influence social factors.",
+          "img": "/images/whatwedo/what-do-3.jpg",
+          "alt": "",
+          "linkTitle": "Детальніше",
+          "href": ""
+        },
+        {
+          "title": "Partnership for Sustainable Development",
+          "subTitle": "How to develop collaborative relationships in governance",
+          "text": "Focus on achieving partnerships in the financial, technological, and trade sectors, as well as promoting collaboration between the public and private sectors.",
+          "img": "/images/whatwedo/what-do-4.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": ""
+        },
+        {
+          "title": "Peace and Justice",
+          "subTitle": "How to create a peaceful society",
+          "text": "One of the most crucial priorities of sustainable development is the creation of peaceful, just, and inclusive societies based on respect for human rights, the rule of law, and good governance.",
+          "img": "/images/whatwedo/what-do-5.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": ""
+        }
+      ]
+    },
     "projects": {
       "filter": {
         "title": "Filters",

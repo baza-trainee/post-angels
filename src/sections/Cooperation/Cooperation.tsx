@@ -26,14 +26,14 @@ export const Cooperation: React.FC<CooperationProps> = ({ data }) => {
           <div className="md:flex md:gap-x-[30px]">
             <LinkButton
               href={cooperationSection.buttons.partnerBtn.link}
-              className="w-full xl:w-[276px] 2xl:w-[316px] 3xl:w-[280px] smOnly:mb-[30px]"
+              className="flex-basis-1/2 w-full xl:w-[276px] 2xl:w-[316px] 3xl:w-[280px] smOnly:mb-[30px]"
             >
               {cooperationSection.buttons.partnerBtn.text}
             </LinkButton>
 
             <LinkButton
               href={cooperationSection.buttons.volunteerBtn.link}
-              className="w-full xl:w-[276px] 2xl:w-[316px] 3xl:w-[280px]"
+              className="flex-basis-1/2 w-full xl:w-[276px] 2xl:w-[316px] 3xl:w-[280px]"
             >
               {cooperationSection.buttons.volunteerBtn.text}
             </LinkButton>
