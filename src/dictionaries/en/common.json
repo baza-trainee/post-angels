@@ -250,27 +250,73 @@
     "participant": {
       "title": "Questionnaire ",
       "partners": {
-        "discription": {
+        "description": {
           "accentTitle": "for partner",
           "text": "Our foundation is looking for partners who share our mission and are ready to support our project. If you want to get involved with our work, we encourage you to fill out this form. The information posted in this questionnaire will help us identify possible forms and direct procedures. Thank you for your interest in our foundation.",
           "img": "/images/participant/partners.jpg",
           "alt": "Partners"
         },
         "form": {
-          "title": "Анкета&nbsp;",
-          "accentTitle": "партнера"
+          "inputFields": [
+            { "title": "Your Name", "placeholder": "Your Name", "name": "title", "type": "text" },
+            { "title": "Your Surname", "placeholder": "Your Surname", "name": "surname", "type": "text" },
+            { "title": "City", "placeholder": "Enter here", "name": "city", "type": "text" },
+            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
+            { "title": "Name of legal entity (company)", "placeholder": "Enter here", "name": "companyName", "type": "text" },
+            { "title": "EDRPOU Code", "placeholder": "Enter here", "name": "EDRPOU", "type": "text" }
+          ],
+          "titleSpheres": "Which volunteer spheres are you willing to consider?",
+          "placeholderSpheres": "Select the appropriate",
+          "spheres": [
+            { "value": "chocolate", "label": "Chocolate" },
+            { "value": "strawberry", "label": "Strawberry" },
+            { "value": "vanilla", "label": "Vanilla" }
+          ],
+          "titleReason": "Why do you want to be a volunteer? (optional)",
+          "placeholderReason": "Select the appropriate",
+          "descriptionCertificate": "Presence of a volunteer certificate",
+          "isVolunteerCertificate": "Yes",
+          "isNotVolunteerCertificate": "No",
+          "descriptionCar": "Do you have your own car?",
+          "isCar": "Yes",
+          "isNotCar": "No",
+          "descriptionTermsAgreement": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR",
+          "descriptionVolunteersAgreement": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
         }
       },
       "volunteers": {
-        "discription": {
+        "description": {
           "accentTitle": "for a volunteer",
           "text": "Our foundation would like the participation of volunteers to support our mission. If you share our mission, values and are willing to go through our system, we would like you to fill out this form. The information posted in this application form is kept confidential and will help us find the most satisfying and rewarding volunteer job for you. Thank you for your interest in our foundation.",
           "img": "/images/participant/volunteers.jpg",
           "alt": "Volunteers"
         },
         "form": {
-          "title": "Анкета&nbsp;",
-          "accentTitle": "партнера"
+          "inputFields": [
+            { "title": "Your Name", "placeholder": "Your Name", "name": "title", "type": "text" },
+            { "title": "Your Surname", "placeholder": "Your Surname", "name": "surname", "type": "text" },
+            { "title": "City", "placeholder": "Enter here", "name": "city", "type": "text" },
+            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
+            { "title": "Phone", "placeholder": "+38 (---) --- -- --", "name": "phone", "type": "text" },
+            { "title": "Your Telegram", "placeholder": "Enter here", "name": "telegram", "type": "text" }
+          ],
+          "titleSpheres": "Which volunteer spheres are you willing to consider?",
+          "placeholderSpheres": "Select the appropriate",
+          "spheres": [
+            { "value": "chocolate", "label": "Chocolate" },
+            { "value": "strawberry", "label": "Strawberry" },
+            { "value": "vanilla", "label": "Vanilla" }
+          ],
+          "titleReason": "Why do you want to be a volunteer? (optional)",
+          "placeholderReason": "Select the appropriate",
+          "descriptionCertificate": "Presence of a volunteer certificate",
+          "isVolunteerCertificate": "Yes",
+          "isNotVolunteerCertificate": "No",
+          "descriptionCar": "Do you have your own car?",
+          "isCar": "Yes",
+          "isNotCar": "No",
+          "descriptionTermsAgreement": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR",
+          "descriptionVolunteersAgreement": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
         }
       }
     }

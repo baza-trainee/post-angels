@@ -1,1 +1,1 @@
-export * from './ParticipantForm';
+export * from './PartnersForm';

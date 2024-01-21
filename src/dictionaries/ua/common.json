@@ -252,27 +252,75 @@
     "participant": {
       "title": "Анкета ",
       "partners": {
-        "discription": {
+        "description": {
           "accentTitle": "партнера",
           "text": "Наш фонд шукає партнерів, які поділяють нашу місію та готові підтримати наш проект. Якщо ви хочете долучитися до нашої роботи, ми пропонуємо вам заповнити цю анкету. Інформація, розміщена у цій анкеті, допоможе нам визначити можливі форми та напрями співпраці. Дякуємо за ваш інтерес до нашого фонду.",
           "img": "/images/participant/partners.jpg",
           "alt": "Партнери"
         },
         "form": {
-          "title": "Анкета&nbsp;",
-          "accentTitle": "партнера"
+          "inputFields": [
+            { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "title", "type": "text" },
+            { "title": "Ваше прізвище", "placeholder": "Ваше прізвище", "name": "surname", "type": "text" },
+            { "title": "Місто", "placeholder": "Введіть тут", "name": "city", "type": "text" },
+            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
+            { "title": "Телефон", "placeholder": "+38 (---) --- -- --", "name": "phone", "type": "text" },
+            { "title": "Найменування юридичної особи(компанії)", "placeholder": "Введіть тут", "name": "companyName", "type": "text" },
+            { "title": "Код ЄДРПОУ", "placeholder": "Введіть тут", "name": "EDRPOU", "type": "text" }
+
+          ],
+          "titleSpheres": "Які сфери волонтерської діяльності Ви готові розглянути?",
+          "placeholderSpheres": "Оберіть відповідне",
+          "spheres": [
+            { "value": "chocolate", "label": "Chocolate" },
+            { "value": "strawberry", "label": "Strawberry" },
+            { "value": "vanilla", "label": "Vanilla" }
+          ],
+          "titleReason": "Чому Ви хочете бути волонтером? (не обов’язково)",
+          "placeholderReason": "Оберіть відповідне",
+          "descriptionCertificate": "Наявність волонтерського посвідчення",
+          "isVolunteerCertificate": "Так",
+          "isNotVolunteerCertificate": "Ні",
+          "descriptionCar": "У Вас є власне авто?",
+          "isCar": "Так",
+          "isNotCar": "Ні",
+          "descriptionTermsAgreement": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR",
+          "descriptionVolunteersAgreement": "Як волонтёр нашої організації, я погоджуюся дотримуватися внутрішньої політики та процедур. Я погоджуюсь, що вся робота, яку я виконую, виконується на волонтерських засадах."
         }
       },
       "volunteers": {
-        "discription": {
+        "description": {
           "accentTitle": "волонтера",
           "text": "Наш фонд заохочує до участі волонтёрів, які підтримують нашу місію. Якщо ви поділяєте нашу місію, цінності та бажаєте пройти навчання за нашою системою, ми заохочуємо вас заповнити цю анкету. Інформація, розміщена у цій анкеті вважається конфеденційною та допоможе нам знайти для вас найбільш задовільну та відповідну волонтерську роботу. Дякуємо за виявлений інтерес до нашого фонду.",
           "img": "/images/participant/volunteers.jpg",
           "alt": "Волонтери"
         },
         "form": {
-          "title": "Анкета&nbsp;",
-          "accentTitle": "партнера"
+          "inputFields": [
+            { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "title", "type": "text" },
+            { "title": "Ваше прізвище", "placeholder": "Ваше прізвище", "name": "surname", "type": "text" },
+            { "title": "Місто", "placeholder": "Введіть тут", "name": "city", "type": "text" },
+            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
+            { "title": "Телефон", "placeholder": "+38 (---) --- -- --", "name": "phone", "type": "text" },
+            { "title": "Ваш телеграм", "placeholder": "Введіть тут", "name": "telegram", "type": "text" }
+          ],
+          "titleSpheres": "Які сфери волонтерської діяльності Ви готові розглянути?",
+          "placeholderSpheres": "Оберіть відповідне",
+          "spheres": [
+            { "value": "chocolate", "label": "Chocolate" },
+            { "value": "strawberry", "label": "Strawberry" },
+            { "value": "vanilla", "label": "Vanilla" }
+          ],
+          "titleReason": "Чому Ви хочете бути волонтером? (не обов’язково)",
+          "placeholderReason": "Оберіть відповідне",
+          "descriptionCertificate": "Наявність волонтерського посвідчення",
+          "isVolunteerCertificate": "Так",
+          "isNotVolunteerCertificate": "Ні",
+          "descriptionCar": "У Вас є власне авто?",
+          "isCar": "Так",
+          "isNotCar": "Ні",
+          "descriptionTermsAgreement": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR",
+          "descriptionVolunteersAgreement": "Як волонтёр нашої організації, я погоджуюся дотримуватися внутрішньої політики та процедур. Я погоджуюсь, що вся робота, яку я виконую, виконується на волонтерських засадах."
         }
       }
     }

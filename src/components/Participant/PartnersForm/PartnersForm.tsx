@@ -9,6 +9,7 @@ import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { Locale } from '@/i18n.config';
+import { PartnersFormProps } from './PartnersForm.props';
 
 const values = [
   { value: 'chocolate', label: 'Chocolate' },
@@ -41,7 +42,7 @@ const schema = yup.object({
 
 type FormData = yup.InferType<typeof schema>;
 
-export const ParticipantForm = ({ lang }: { lang: Locale }) => {
+export const PartnersForm: React.FC<PartnersFormProps> = ({ inputFields }) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(schema),
   });
@@ -55,17 +56,20 @@ export const ParticipantForm = ({ lang }: { lang: Locale }) => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex w-1/2 flex-col gap-4">
-        <Input title="Ваше ім’я" name="name" type="text" placeholder="Ваше ім’я" lang={lang} />
+        {inputFields.map(({ title, placeholder }) => (
+          <Input title={title} name="name" type="text" placeholder={placeholder} />
+        ))}
 
-        <Input
-          title="Ваше прізвище"
-          name="no"
-          type="text"
-          placeholder="Ваше прізвище"
-          lang={lang}
-        />
 
-        <Textarea
+
+        {/* //  // <Input 
+        //   title="Ваше прізвище"
+        //   name="no"
+        //   type="text"
+        //   placeholder="Ваше прізвище"
+        //   lang={lang}
+        // /> */}
+        {/* <Textarea
           name="discr"
           title="Опишіть вашу проблему"
           placeholder="Введіть вашу відповідь"
@@ -83,9 +87,8 @@ export const ParticipantForm = ({ lang }: { lang: Locale }) => {
           options={values}
           placeholder="Оберіть відповідне"
           lang={lang}
-        />
-
-        <button type="submit">Submit</button>
+        /> */}
+        // <button type="submit">Submit</button>
       </form>
     </FormProvider>
   );

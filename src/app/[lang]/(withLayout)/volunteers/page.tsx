@@ -7,16 +7,16 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
 
   const { title } = common.participant;
-  const { discription } = common.participant.volunteers;
+  const { description } = common.participant.volunteers;
 
   return (
     <section className='pt-[113px] xl:pt-[188px]'>
       <ParticipantHero
         title={title}
-        accentTitle={discription.accentTitle}
-        description={discription.text}
-        img={discription.img}
-        alt={discription.alt}
+        accentTitle={description.accentTitle}
+        description={description.text}
+        img={description.img}
+        alt={description.alt}
       />
     </section>
   );
