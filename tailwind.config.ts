@@ -13,6 +13,7 @@ const config: Config = {
       '3xl': '1920px',
       smOnly: { max: '767.98px' },
       mdOnly: { min: '768px', max: '1279.98px' },
+      notMd: { max: '767.98px' },
       notXl: { max: '1279.98px' },
     },
     extend: {
@@ -39,6 +40,7 @@ const config: Config = {
         },
         backdrop: ' rgba(177, 176, 176, 0.50)',
         progressBar: 'rgba(240, 240, 240, 1)',
+        shadow: 'rgba(0, 0, 0, 0.04)',
         accent: {
           primary: '#0D36C9',
           hover: '#1A48ED',

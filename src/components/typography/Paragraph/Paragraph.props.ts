@@ -1,7 +1,7 @@
 import { ReactNode, RefObject } from 'react';
 
 export interface ParagraphProps {
-  variant?: 'dark' | 'white' | 'light' | 'grey';
+  variant?: 'dark' | 'white' | 'light' | 'grey' | 'dark_grey';
   variantFontWeight?: 'regular' | 'medium';
   variantFontSize?: '16' | '15' | '14' | '12';
   centered?: boolean;

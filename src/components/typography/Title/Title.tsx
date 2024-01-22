@@ -18,7 +18,7 @@ export const Title: FC<TitleProps> = ({
         {
           ['text-3xl uppercase leading-[150%] text-accent-primary xl:text-[40px]']:
             variantSize === 'h1',
-          ['text-3xl uppercase leading-[150%] text-grey-100 xl:text-[32px] xl:leading-[110%] [&>span]:text-accent-primary']:
+          ['text-3xl uppercase leading-[150%] text-grey-100 xl:text-[32px]  [&>span]:text-accent-primary']:
             variantSize === 'h2',
           ['text-2xl leading-[150%] text-orange xl:text-[28px]']: variantSize == 'h3',
           [`text-2xl leading-[150%] xl:text-2xl ${

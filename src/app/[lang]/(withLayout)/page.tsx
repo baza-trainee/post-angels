@@ -1,21 +1,16 @@
-import { Button } from '@/components/buttons/Button/Button';
-import { IconButton } from '@/components/buttons/IconButton/IconButton';
-import { LinkButton } from '@/components/buttons/LinkButton';
-import { ICONS } from '@/components/icons';
-import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
-import { Title } from '@/components/typography/Title';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import { Contacts } from '@/sections/Contacts/Contacts';
-import { Form } from '@/components/form/Form/Form';
-import Link from 'next/link';
 import { Hero } from '@/sections/Hero/Hero';
 import { PartnersTop } from '@/sections/PartnersTop';
 import { Partners } from '@/sections/Partners';
 import { Projects } from '@/sections/Projects';
 import { FinishedProjects } from '@/sections/FinishedProjects';
+import { Cooperation } from '@/sections/Cooperation';
+import { WhatWeDo } from '@/sections/WhatWeDo';
 
 const getPartners = async (lang: Locale) => {
+  console.log(lang);
   // запит до базиданних за партнерами.
   // якщо партнерів немає повинно повертати null
   const partner = [
@@ -41,6 +36,7 @@ const getPartners = async (lang: Locale) => {
 
 const getFinishedProject = (lang: Locale) => {
   // get projects api
+  console.log(lang);
   const projects = [
     {
       id: 1,
@@ -96,49 +92,21 @@ const getFinishedProject = (lang: Locale) => {
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
-  const { contacts, hero, partners, projects } = common;
+  const { contacts, hero, partners, projects, cooperation, whatWeDo } = common;
   const partnersData = await getPartners(lang);
   const finishedData = getFinishedProject(lang);
 
   return (
     <main className="">
-      {/* <section className=" py-[190px]">
-        <div className="container">
-          <Title tag="h1" variantSize="h1" className="" colorVariant="orange">
-            Майбутнє в наших руках
-          </Title>
-          <Title tag="h4" variantSize="h4" className="" colorVariant="orange">
-            Якийсь <span> заголовок</span>
-          </Title>
-
-          <Paragraph variantFontWeight="medium">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui eaque voluptatum corrupti
-            quasi inventore assumenda error numquam mollitia, laborum natus modi itaque nihil omnis
-            quidem explicabo repellendus consequatur iste corporis.
-          </Paragraph>
-
-          <Button variant="orange">Кнопка</Button>
-
-          <IconButton label="кнопка">
-            <ICONS.VERSEL className="h-20 w-20 fill-inherit" />
-          </IconButton>
-
-          <LinkButton href="#">Посилання</LinkButton>
-
-          <ICONS.VERSEL className="h-20 w-20" />
-          <Link href={`/projects/${1}`}>title</Link>
-        </div>
-      </section> */}
       <Hero data={hero} />
       {partnersData && <PartnersTop partnersData={partnersData} data={partners} />}
+      <WhatWeDo lang={lang} data={whatWeDo} />
       <Projects projects={projects} lang={lang} />
 
-      {finishedData && (
-        <FinishedProjects projects={projects} lang={lang} finishedData={finishedData} />
-      )}
+      {finishedData && <FinishedProjects projects={projects} finishedData={finishedData} />}
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
+      <Cooperation data={cooperation} />
       <Contacts data={contacts} />
-      <Form lang={lang} />
     </main>
   );
 }

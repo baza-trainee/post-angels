@@ -19,6 +19,8 @@ import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
 import ModalClose from '../../../public/icons/modalClose.svg';
 import VerselIcon from '../../../public/vercel.svg';
+import FilterIcon from '../../../public/icons/projects/filter.svg';
+import SortSvg from '../../../public/icons/projects/sort.svg';
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -42,4 +44,6 @@ export const ICONS = {
   HAMBURGER_MENU: HamburgerMenu,
   HAMBURGER_CLOSE: HamburgerClose,
   LOGO_SMALL: LogoIcon,
+  FILTER: FilterIcon,
+  SORT: SortSvg,
 };

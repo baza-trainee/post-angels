@@ -6,6 +6,7 @@ import { Locale } from '@/i18n.config';
 
 const getProjects = async (lang: Locale) => {
   // get projects api
+  console.log(lang);
   const projects = [
     {
       id: 1,
@@ -14,9 +15,9 @@ const getProjects = async (lang: Locale) => {
         alt: 'project1',
       },
       title: 'Збір на травматологічні матеріали',
-      collected: 13444,
+      collected: 20000,
       all: 68000,
-      startDate: '01.01.24',
+      startDate: '2023-01-01',
       status: 'new',
     },
     {
@@ -28,7 +29,7 @@ const getProjects = async (lang: Locale) => {
       title: 'Збір на травматологічні матеріали',
       collected: 13444,
       all: 68000,
-      startDate: '18.09.23',
+      startDate: '2023-03-18',
       status: 'new',
     },
     {
@@ -38,9 +39,9 @@ const getProjects = async (lang: Locale) => {
         alt: 'project3',
       },
       title: 'Збір на травматологічні матеріали',
-      collected: 13444,
+      collected: 1444,
       all: 68000,
-      startDate: '18.08.23',
+      startDate: '2023-02-22',
       status: 'new',
     },
     {
@@ -50,10 +51,10 @@ const getProjects = async (lang: Locale) => {
         alt: 'project4',
       },
       title: 'Збір на травматологічні матеріали',
-      collected: 13444,
+      collected: 51000,
       all: 68000,
-      startDate: '18.12.23',
-      status: 'finished',
+      startDate: '2023-05-15',
+      status: 'completed',
     },
   ];
   return projects;
@@ -63,14 +64,14 @@ export const Projects = async ({ projects, lang }: { projects: ProjectsProps; la
   const projectsData = await getProjects(lang);
 
   return (
-    <section id="projectSlider">
+    <section id="projectSlider" className="pt-20 xl:pt-[100px]">
       <div className="container">
         <Title tag="h2" variantSize="h2" className="mb-[30px]">
           {projects.ourProjects.title}
           <br />
           <span>{projects.ourProjects.title1}</span>
         </Title>
-        <ProjectsList projects={projects} lang={lang} projectsData={projectsData} />
+        <ProjectsList projects={projects} projectsData={projectsData} />
       </div>
     </section>
   );

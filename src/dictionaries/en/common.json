@@ -51,7 +51,7 @@
       "subtitle": "Together we will achieve a bright tomorrow: this is our contribution to shaping the future.",
       "button": {
         "text": "Read more",
-        "href": "/aboutUs"
+        "href": "/en/aboutUs"
       }
     },
     "partners": {
@@ -59,8 +59,59 @@
       "title1": "partners",
       "button": {
         "text": "join",
-        "href": "/partners"
+        "href": "/en/partners"
       }
+    },
+    "whatWeDo": {
+      "title1": "What we \r\n",
+      "title2": "do",
+      "workWith": [
+        {
+          "title": "Gender Equality",
+          "subTitle": "How to achieve equality among people",
+          "text": "Ensuring full respect for women's rights is crucial for the development of a thriving society. Investments in gender equality contribute to reducing the wage gap between men and women.",
+          "img": "/images/whatwedo/what-do-1.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": "fghfh"
+        },
+        {
+          "title": "Quality Education",
+          "subTitle": "How to create an effective system of education and development",
+          "text": "The quality of education influences the level of societal well-being, and the opportunity for lifelong learning for each individual refreshes the capital of responses to the challenges of our present.",
+          "img": "/images/whatwedo/what-do-2.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": ""
+        },
+        {
+          "title": "Innovation and Infrastructure",
+          "subTitle": "How to develop quality, reliable, sustainable, and accessible infrastructure",
+          "text": "The development of infrastructure and innovation is a prerequisite for economic progress. Technological progress ensures the resolution of environmental and economic issues and can influence social factors.",
+          "img": "/images/whatwedo/what-do-3.jpg",
+          "alt": "",
+          "linkTitle": "Детальніше",
+          "href": ""
+        },
+        {
+          "title": "Partnership for Sustainable Development",
+          "subTitle": "How to develop collaborative relationships in governance",
+          "text": "Focus on achieving partnerships in the financial, technological, and trade sectors, as well as promoting collaboration between the public and private sectors.",
+          "img": "/images/whatwedo/what-do-4.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": ""
+        },
+        {
+          "title": "Peace and Justice",
+          "subTitle": "How to create a peaceful society",
+          "text": "One of the most crucial priorities of sustainable development is the creation of peaceful, just, and inclusive societies based on respect for human rights, the rule of law, and good governance.",
+          "img": "/images/whatwedo/what-do-5.jpg",
+          "alt": "",
+          "linkTitle": "Learn more",
+          "href": ""
+        }
+      ]
     },
     "projects": {
       "filter": {
@@ -73,10 +124,10 @@
         ]
       },
       "sorting": [
-        { "name": "New first", "sort": "newFirst" },
-        { "name": "Old first", "sort": "oldFirst" },
-        { "name": "More funds", "sort": "moreFunds" },
-        { "name": "Less funds", "sort": "lessFunds" }
+        { "name": "New first", "mod": "newFirst" },
+        { "name": "Old first", "mod": "oldFirst" },
+        { "name": "More funds", "mod": "moreFunds" },
+        { "name": "Less funds", "mod": "lessFunds" }
       ],
       "ourProjects": {
         "title": "OUR",
@@ -92,11 +143,11 @@
         "buttons": {
           "fundBtn": {
             "text": "Donate",
-            "link": "/payments/"
+            "link": "/en/payments/"
           },
           "moreBtn": {
             "text": "Read more",
-            "link": "/projects/"
+            "link": "/en/projects/"
           },
           "finishedBtn": {
             "text": "Completed",
@@ -106,7 +157,24 @@
       },
       "archiveBtn": {
         "text": "Archive",
-        "link": "/archive"
+        "link": "/en/archive"
+      }
+    },
+    "cooperation": {
+      "cooperationSection": {
+        "title": "Would you like to",
+        "title1": "Cooperate with us?",
+        "text": "Choose a direction!",
+        "buttons": {
+          "partnerBtn": {
+            "text": "I am a partner",
+            "link": "en/partners"
+          },
+          "volunteerBtn": {
+            "text": "I am a volunteer",
+            "link": "en/volunteers"
+          }
+        }
       }
     },
     "contacts": {
@@ -178,6 +246,33 @@
     "notfound": {
       "subtitle": "Sorry, the page you are looking for has been moved or deleted",
       "label": "Go main"
+    },
+    "participant": {
+      "title": "Questionnaire ",
+      "partners": {
+        "discription": {
+          "accentTitle": "for partner",
+          "text": "Our foundation is looking for partners who share our mission and are ready to support our project. If you want to get involved with our work, we encourage you to fill out this form. The information posted in this questionnaire will help us identify possible forms and direct procedures. Thank you for your interest in our foundation.",
+          "img": "/images/participant/partners.jpg",
+          "alt": "Partners"
+        },
+        "form": {
+          "title": "Анкета&nbsp;",
+          "accentTitle": "партнера"
+        }
+      },
+      "volunteers": {
+        "discription": {
+          "accentTitle": "for a volunteer",
+          "text": "Our foundation would like the participation of volunteers to support our mission. If you share our mission, values and are willing to go through our system, we would like you to fill out this form. The information posted in this application form is kept confidential and will help us find the most satisfying and rewarding volunteer job for you. Thank you for your interest in our foundation.",
+          "img": "/images/participant/volunteers.jpg",
+          "alt": "Volunteers"
+        },
+        "form": {
+          "title": "Анкета&nbsp;",
+          "accentTitle": "партнера"
+        }
+      }
     }
   }
 }
