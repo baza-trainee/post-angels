@@ -21,6 +21,10 @@ import ModalClose from '../../../public/icons/modalClose.svg';
 import VerselIcon from '../../../public/vercel.svg';
 import FilterIcon from '../../../public/icons/projects/filter.svg';
 import SortSvg from '../../../public/icons/projects/sort.svg';
+import ActivitiesSvg from '../../../public/icons/aboutInNumber/activities.svg';
+import FamilySvg from '../../../public/icons/aboutInNumber/family.svg';
+import LeadershipSvg from '../../../public/icons/aboutInNumber/leadership.svg';
+import VolunteersSvg from '../../../public/icons/aboutInNumber/volunteers.svg';
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -46,4 +50,8 @@ export const ICONS = {
   LOGO_SMALL: LogoIcon,
   FILTER: FilterIcon,
   SORT: SortSvg,
+  ACTIVITIES: ActivitiesSvg,
+  FAMILY: FamilySvg,
+  LEADERSHIP: LeadershipSvg,
+  VOLUNTEERS: VolunteersSvg,
 };
