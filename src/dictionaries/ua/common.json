@@ -63,6 +63,36 @@
         "href": "/ua/partners"
       }
     },
+    "aboutInNumbers": {
+      "title1": "Про нас \r\n",
+      "title2": "у цифрах",
+      "about": [
+        {
+          "name": "family",
+          "title": "Кількість сімей, яким надано допомогу",
+          "measure": "чол.",
+          "icon": "family.svg"
+        },
+        {
+          "name": "partners",
+          "title": "Кількість партнерів",
+          "measure": "чол.",
+          "icon": "leadership.svg"
+        },
+        {
+          "name": "activities",
+          "title": "Кількість реалізованих заходів",
+          "measure": "",
+          "icon": "activities.svg"
+        },
+        {
+          "name": "volunteers",
+          "title": "Кількість волонтерів",
+          "measure": "чол.",
+          "icon": "volunteers.svg"
+        }
+      ]
+    },
     "whatWeDo": {
       "title1": "Що ми \r\n",
       "title2": "робимо",

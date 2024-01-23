@@ -82,8 +82,12 @@ export const Slider: React.FC<SliderProps> = ({
           slidesPerView: slidesPerView?.tablet || slidesPerViewDef,
         },
         1280: {
-          spaceBetween: 30,
+          spaceBetween: 32,
           slidesPerView: slidesPerView?.desktop || slidesPerViewDef,
+        },
+        1920: {
+          spaceBetween: 32,
+          slidesPerView: slidesPerView?.desktop3xl || slidesPerViewDef,
         },
       }}
       pagination={{

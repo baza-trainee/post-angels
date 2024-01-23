@@ -5,7 +5,9 @@ import { BannerProps } from './HeroBanner.props';
 export const HeroBanner: React.FC<BannerProps> = ({ url, image_description, ind = 1 }) => (
   <div
     className={` h-[205px] w-full  rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px] xl:absolute xl:h-full xl:w-full ${
-      ind % 2 === 0 ? '-bottom-10 left-7 z-10 2xl:left-14' : 'bottom-0 left-0'
+      ind % 2 === 0
+        ? '-bottom-10 left-10 z-10 2xl:left-20 3xl:-bottom-14 3xl:left-[32px]'
+        : 'bottom-0 left-0'
     } `}
   >
     <Image
