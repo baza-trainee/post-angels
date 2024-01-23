@@ -248,32 +248,35 @@
       "subtitle": "Вибачте, сторінка, яку ви шукаєте, переміщена або видалена",
       "label": "На головну"
     },
-    "about": {
-      "mission": {
-        "title": "наша місія",
+    "about": [
+      {
+        "title": "our mission",
         "text": [
-          "Наша місія - збудувати справжню спільноту, яка допомагає та підтримує один одного в складних життєвих ситуаціях. Ми, 'Post Angels', об'єднані бажанням робити світ кращим.",
-          "Наша місія полягає у наданні безкоштовної підтримки і допомоги людям, які знаходяться в складних ситуаціях, незалежно від їх віку, статі, релігійних переконань чи національності. Ми допомагаємо тим, хто потребує допомоги, будучи надійною опорою та джерелом вдячності та надії."
+          "Our mission is to build a real community that helps and supports each other in difficult life situations. We, 'Post Angels', are united by the desire to make the world a better place.",
+          "Our mission is to provide free support and help to people who are in difficult situations, regardless of their age, gender, religious beliefs or nationality. We help those who need help, being a reliable support and a source of gratitude and hope."
         ],
-        "imageScr": "/images/about/about-us.png"
+        "imageSrc": "/images/about/about-us.png",
+        "imageAlt": "mission image"
       },
-      "strategy": {
-        "title": "стратегія",
+      {
+        "title": "strategy",
         "text": [
-          "Волонтерський центр POST ANGELES у Лос-Анджелесі, штат Каліфорнія, – це ініціатива людей доброї волі з України та США, місією яких є збір гуманітарної допомоги для постраждалих від вторгнення Росії в Україну.",
-          "Ми є низовою некомерційною організацією 501(c)3, яка займається збором коштів, збором та доставкою гуманітарної допомоги в Україну літаками та морем. Наш волонтерський центр базується в Лос-Анджелесі, з додатковим центром доставки та волонтерським центром у Львові, Україна, який приймає та розподіляє наші відправлення разом із групою інших благодійних організацій, яким довіряють. Десятки людей беруть участь у зборі, обробці, сортуванні, завантаженні та пакуванні до 800 готових до відправки коробок для кожного відправлення."
+          "The POST ANGELES Volunteer Center in Los Angeles, California is an initiative of people of good will from Ukraine and the USA, whose mission is to collect humanitarian aid for victims of Russia's invasion of Ukraine.",
+          "We are a grassroots 501(c)3 non-profit organization dedicated to fundraising, collection and delivery of humanitarian aid to Ukraine by air and sea. Our volunteer center is based in Los Angeles, with an additional delivery center and volunteer center in Lviv, Ukraine, which receives and distributes our shipments together with a group of other trusted charities. Dozens of people are involved in collecting, handling, sorting, loading and packing up to 800 ready-to-ship boxes for each shipment."
         ],
-        "imageScr": "/images/about/about-us.png"
+        "imageSrc": "/images/about/about-us.png",
+        "imageAlt": "strategy image"
       },
-      "goal": {
-        "title": "наша ціль",
+      {
+        "title": "our goal",
         "text": [
-          "Волонтерський центр POST ANGELES у Лос-Анджелесі, штат Каліфорнія, – це ініціатива людей доброї волі з України та США, місією яких є збір гуманітарної допомоги для постраждалих від вторгнення Росії в Україну.",
-          "Ми є низовою некомерційною організацією 501(c)3, яка займається збором коштів, збором та доставкою гуманітарної допомоги в Україну літаками та морем. Наш волонтерський центр базується в Лос-Анджелесі, з додатковим центром доставки та волонтерським центром у Львові, Україна, який приймає та розподіляє наші відправлення разом із групою інших благодійних організацій, яким довіряють. Десятки людей беруть участь у зборі, обробці, сортуванні, завантаженні та пакуванні до 800 готових до відправки коробок для кожного відправлення."
+          "The POST ANGELES Volunteer Center in Los Angeles, California is an initiative of people of good will from Ukraine and the USA, whose mission is to collect humanitarian aid for victims of Russia's invasion of Ukraine.",
+          "We are a grassroots 501(c)3 non-profit organization dedicated to fundraising, collection and delivery of humanitarian aid to Ukraine by air and sea. Our volunteer center is based in Los Angeles, with an additional delivery center and volunteer center in Lviv, Ukraine, which receives and distributes our shipments together with a group of other trusted charities. Dozens of people are involved in collecting, handling, sorting, loading and packing up to 800 ready-to-ship boxes for each shipment."
         ],
-        "imageScr": "/images/about/about-us.png"
+        "imageSrc": "/images/about/about-us.png",
+        "imageAlt": "goal image"
       }
-    },
+    ],
     "participant": {
       "title": "Анкета ",
       "partners": {
