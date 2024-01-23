@@ -13,7 +13,7 @@ export interface SliderProps {
   isPagination?: boolean;
   isNavigation?: boolean;
   className?: string;
-  slidesPerView?: { mobile: number; tablet: number; desktop: number };
+  slidesPerView?: { mobile: number; tablet: number; desktop: number; desktop3xl?: number };
   slidesPerViewDef?: number;
   navigationBreakpoints?: {
     isMobile: boolean;
