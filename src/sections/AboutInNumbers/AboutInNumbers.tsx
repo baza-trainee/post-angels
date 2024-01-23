@@ -21,8 +21,8 @@ export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) =>
     return matchingData[0];
   };
 
-  const beforeClass = `before:block before:w-[1px] before:h-full before:bg-grey-60 before:absolute before:top-0 before:left-[50%]`;
-  const afterClass = `after:block after:w-full xl:after:w-[1px] after:h-[1px] xl:after:h-full after:bg-grey-60 after:absolute after:left-0 after:top-[50%] xl:after:top-0`;
+  const beforeClass = `md:before:block md:before:w-[1px] md:before:h-full md:before:bg-grey-60 md:before:absolute md:before:top-0 md:before:left-[50%]`;
+  const afterClass = `md:after:block md:after:w-full xl:after:w-[1px] md:after:h-[1px] xl:after:h-full md:after:bg-grey-60 md:after:absolute md:after:left-0 md:after:top-[50%] xl:after:top-0`;
   return (
     <section className="pt-20">
       <div className="container">
@@ -36,7 +36,7 @@ export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) =>
             <span>{data.title2}</span>
           </Title>
           <ul
-            className={`relative flex flex-col gap-y-[25px] md:flex-row md:flex-wrap md:gap-x-[30px] md:gap-y-[50px] xl:basis-[804px] 2xl:basis-[912px] 3xl:basis-[1311px] ${beforeClass} ${afterClass}`}
+            className={`relative flex flex-col gap-y-[25px] md:flex-row md:flex-wrap md:gap-x-[30px] md:gap-y-[50px] xl:mr-[17px] xl:basis-[788px] 2xl:mr-0 2xl:basis-[912px] 2xl:gap-x-0 3xl:basis-[1311px] ${beforeClass} ${afterClass}`}
           >
             {data.about.map((el, ind) => {
               return (

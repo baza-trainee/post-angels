@@ -19,14 +19,14 @@ export const AboutInNumberCard = async ({
 
   return (
     <li
-      className={`relative flex w-full flex-row  items-start gap-x-4  md:basis-[calc(50%_-_15px)] xl:px-6 2xl:px-[40px] 3xl:pl-[94px] 3xl:pr-[64px] ${
+      className={`relative flex w-full flex-row items-start gap-x-4 md:basis-[calc(50%_-_15px)]  xl:pl-6 2xl:basis-[456px] 2xl:pl-[40px]  3xl:basis-[655px] 3xl:pl-[86px]  ${
         ind === 0 || ind === 1 ? afterClass : ''
       }`}
     >
       <div className=" flex  basis-[80px] items-center justify-center">
         <Icon />
       </div>
-      <div className="basis-[calc(100%_-_80px_-_30px)] md:basis-[calc(100%_-_80px_-_15px)]  xl:basis-[calc(100%_-_80px_-_16px)]">
+      <div className="basis-[calc(100%_-_80px_-_30px)] md:basis-[calc(100%_-_80px_-_15px)]  xl:basis-[259px] 2xl:basis-[273px]">
         <Paragraph
           variant="orange"
           variantFontSize="22"
