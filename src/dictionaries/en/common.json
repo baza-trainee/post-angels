@@ -70,25 +70,25 @@
           "name": "family",
           "title": "The number of families assisted",
           "measure": "ppl.",
-          "icon": "FAMILY"
+          "icon": "family.svg"
         },
         {
           "name": "partners",
           "title": "The number of partners",
           "measure": "ppl.",
-          "icon": "LEADERSHIP"
+          "icon": "leadership.svg"
         },
         {
           "name": "activities",
           "title": "The number of implemented events",
           "measure": "",
-          "icon": "ACTIVITIES"
+          "icon": "activities.svg"
         },
         {
           "name": "volunteers",
           "title": "The number of volunteers",
           "measure": "ppl.",
-          "icon": "VOLUNTEERS"
+          "icon": "volunteers.svg"
         }
       ]
     },
