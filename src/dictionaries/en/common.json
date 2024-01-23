@@ -62,6 +62,36 @@
         "href": "/en/partners"
       }
     },
+    "aboutInNumbers": {
+      "title1": "About Us \r\n",
+      "title2": "in Numbers",
+      "about": [
+        {
+          "name": "family",
+          "title": "The number of families assisted",
+          "measure": "ppl.",
+          "icon": "family.svg"
+        },
+        {
+          "name": "partners",
+          "title": "The number of partners",
+          "measure": "ppl.",
+          "icon": "leadership.svg"
+        },
+        {
+          "name": "activities",
+          "title": "The number of implemented events",
+          "measure": "",
+          "icon": "activities.svg"
+        },
+        {
+          "name": "volunteers",
+          "title": "The number of volunteers",
+          "measure": "ppl.",
+          "icon": "volunteers.svg"
+        }
+      ]
+    },
     "whatWeDo": {
       "title1": "What we \r\n",
       "title2": "do",
