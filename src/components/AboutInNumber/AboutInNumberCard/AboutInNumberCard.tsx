@@ -7,16 +7,24 @@ import { Paragraph } from '@/components/typography/Paragraph';
 export const AboutInNumberCard = async ({
   data,
   numberData,
+  ind,
 }: {
   data: AboutProps;
   numberData: AboutNumberProps;
+  ind: number;
 }) => {
   const Icon = dynamic(() => import(`../../../../public/icons/aboutInNumber/${data.icon}`), {
     ssr: false,
   });
 
+  const afterClass = `xl:after:bg-grey-60 xl:after:block xl:after:w-[calc(100%_-_48px)] 2xl:after:w-[calc(100%_-_80px)] 3xl:after:w-[calc(100%_-_184px)] xl:after:h-[1px] xl:after:absolute xl:after:bottom-[-25px] xl:after:left-6 2xl:after:left-[40px] 3xl:after:left-[94px]`;
+
   return (
-    <li className="flex w-full  flex-row items-start  gap-x-4 md:basis-[calc(50%_-_15px)] xl:px-6">
+    <li
+      className={`relative flex w-full flex-row  items-start gap-x-4  md:basis-[calc(50%_-_15px)] xl:px-6 2xl:px-[40px] 3xl:pl-[94px] 3xl:pr-[64px] ${
+        ind === 0 || ind === 1 ? afterClass : ''
+      }`}
+    >
       <div className=" flex  basis-[80px] items-center justify-center">
         <Icon />
       </div>

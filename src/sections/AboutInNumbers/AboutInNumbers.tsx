@@ -21,6 +21,8 @@ export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) =>
     return matchingData[0];
   };
 
+  const beforeClass = `before:block before:w-[1px] before:h-full before:bg-grey-60 before:absolute before:top-0 before:left-[50%]`;
+  const afterClass = `after:block after:w-full xl:after:w-[1px] after:h-[1px] xl:after:h-full after:bg-grey-60 after:absolute after:left-0 after:top-[50%] xl:after:top-0`;
   return (
     <section className="pt-20">
       <div className="container">
@@ -33,13 +35,16 @@ export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) =>
             {data.title1}
             <span>{data.title2}</span>
           </Title>
-          <ul className="flex flex-col gap-y-[25px] md:flex-row md:flex-wrap md:gap-x-[30px] xl:basis-[789px] 2xl:basis-[894px] 3xl:basis-[1240px] ">
-            {data.about.map(el => {
+          <ul
+            className={`relative flex flex-col gap-y-[25px] md:flex-row md:flex-wrap md:gap-x-[30px] md:gap-y-[50px] xl:basis-[804px] 2xl:basis-[912px] 3xl:basis-[1311px] ${beforeClass} ${afterClass}`}
+          >
+            {data.about.map((el, ind) => {
               return (
                 <AboutInNumberCard
                   key={el.name}
                   data={el}
                   numberData={gerCardApiData(AboutInNumberApiData, el.name)}
+                  ind={ind}
                 />
               );
             })}
