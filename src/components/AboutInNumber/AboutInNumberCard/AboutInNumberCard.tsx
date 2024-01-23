@@ -1,6 +1,4 @@
-import { ICONS } from '@/components/icons';
 import { AboutProps, AboutNumberProps } from '@/sections/AboutInNumbers/AboutInNumbers.props';
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Paragraph } from '@/components/typography/Paragraph';
 
