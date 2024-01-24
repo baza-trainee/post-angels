@@ -26,7 +26,7 @@ export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) =>
   return (
     <section className="pt-20">
       <div className="container">
-        <div className=" border-b border-grey-60 pb-20 xl:flex xl:justify-between">
+        <div className=" border-b border-grey-60 pb-20 xl:flex xl:justify-between 2xl:gap-x-[243px] 3xl:gap-x-[324px]">
           <Title
             tag="h2"
             variantSize="h2"
