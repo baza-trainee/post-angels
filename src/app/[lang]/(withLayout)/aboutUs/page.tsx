@@ -4,13 +4,12 @@ import { getDictionary } from '@/lib/dictionary';
 
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
-  const { about } = common;
-
+  const { title, content } = common.about;
   return (
-    <section className="mb-2 pb-10 pt-[106px] font-eUkraine xl:pb-12 xl:pt-[216px] ">
-      <h1 className="absolute">&nbsp;</h1>
-      <div className="container">
-        <ContentMap data={about} />
+    <section className="mb-[100px] pt-[106px] xl:pt-[216px]">
+      <div className="container flex flex-col gap-y-20 xl:gap-y-[100px]">
+        <h1 className="hidden-h1">{title}</h1>
+        <ContentMap data={content} />
       </div>
     </section>
   );

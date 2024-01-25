@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { Title } from '@/components/typography/Title/Title';
 import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
+import { Title } from '@/components/typography/Title/Title';
 import { ParticipantHeroProps } from './ParticipantHero.props';
 
 export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
