@@ -209,9 +209,9 @@
     },
     "contacts": {
       "contactsSection": {
-        "title": "OUR",
-        "title1": "CONTACTS",
-        "href": "/",
+        "title": "our",
+        "accentTitle": "contacts",
+        "href": "/en",
         "img": {
           "alt": "Contacts"
         }

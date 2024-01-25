@@ -210,9 +210,9 @@
     },
     "contacts": {
       "contactsSection": {
-        "title": "НАШІ",
-        "title1": "КОНТАКТИ",
-        "href": "/",
+        "title": "наші",
+        "accentTitle": "контакти",
+        "href": "/ua",
         "img": {
           "alt": "Контакти"
         }
