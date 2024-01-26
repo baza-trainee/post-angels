@@ -12,17 +12,28 @@ export const ContentMap = ({ data }: ContentMapProps) => {
       {/* title and text */}
       <div className="flex w-full flex-col gap-y-8 xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]">
         {/* title */}
-        <Title variantSize="h2" className="flex flex-wrap xl:w-[218px]">
-          <p>{object.title} &zwnj;</p>
+        <Title
+          variantSize="h2"
+          className={`flex flex-wrap xl:w-[218px] ${
+            !object.accentTitle ? '!text-accent-primary' : 'text-inherit'
+          }`}
+        >
+          {object.title}
+          <br />
           {object.accentTitle ? <span>{object.accentTitle}</span> : null}
         </Title>
         {/* text */}
-        <Paragraph variantFontSize="16" className="text-grey-80">
-          {object.text}
-        </Paragraph>
+
+        {object.text.map((el, ind) => {
+          return (
+            <Paragraph key={ind} variantFontSize="16" variant="dark_grey">
+              {el}
+            </Paragraph>
+          );
+        })}
       </div>
       {/* image */}
-      <div className="relative h-[205px] w-full rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px] md:h-[468px] lg:h-[620px] xl:h-[580px] xl:w-[584px] 2xl:h-[580px] 2xl:w-[664px] 3xl:w-[904px]">
+      <div className="relative h-[205px] w-full rounded-2xl saturate-0 transition-all delay-300 hover:saturate-100 sm:h-[282px] md:h-[468px] lg:h-[620px] xl:h-[580px] xl:w-[584px] 2xl:h-[580px] 2xl:w-[664px] 3xl:w-[904px]">
         <Image
           src={object.imageSrc}
           alt={object.imageAlt}
