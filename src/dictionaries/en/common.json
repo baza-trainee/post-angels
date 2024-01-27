@@ -278,6 +278,41 @@
       "subtitle": "Sorry, the page you are looking for has been moved or deleted",
       "label": "Go main"
     },
+    "about": {
+      "title": "About us",
+      "content": [
+        {
+          "title": "our",
+          "accentTitle": "mission",
+          "text": [
+            "Our mission is to build a real community that helps and supports each other in difficult life situations. We, 'Post Angels', are united by the desire to make the world a better place.",
+            "Our mission is to provide free support and help to people who are in difficult situations, regardless of their age, gender, religious beliefs or nationality. We help those who need help, being a reliable support and a source of gratitude and hope."
+          ],
+          "imageSrc": "/images/about/about-us.jpg",
+          "imageAlt": "mission image"
+        },
+        {
+          "title": "strategy",
+          "accentTitle": "",
+          "text": [
+            "The POST ANGELES Volunteer Center in Los Angeles, California is an initiative of people of good will from Ukraine and the USA, whose mission is to collect humanitarian aid for victims of Russia's invasion of Ukraine.",
+            "We are a grassroots 501(c)3 non-profit organization dedicated to fundraising, collection and delivery of humanitarian aid to Ukraine by air and sea. Our volunteer center is based in Los Angeles, with an additional delivery center and volunteer center in Lviv, Ukraine, which receives and distributes our shipments together with a group of other trusted charities. Dozens of people are involved in collecting, handling, sorting, loading and packing up to 800 ready-to-ship boxes for each shipment."
+          ],
+          "imageSrc": "/images/about/about-us.jpg",
+          "imageAlt": "strategy image"
+        },
+        {
+          "title": "our",
+          "accentTitle": "goal",
+          "text": [
+            "The POST ANGELES Volunteer Center in Los Angeles, California is an initiative of people of good will from Ukraine and the USA, whose mission is to collect humanitarian aid for victims of Russia's invasion of Ukraine.",
+            "We are a grassroots 501(c)3 non-profit organization dedicated to fundraising, collection and delivery of humanitarian aid to Ukraine by air and sea. Our volunteer center is based in Los Angeles, with an additional delivery center and volunteer center in Lviv, Ukraine, which receives and distributes our shipments together with a group of other trusted charities. Dozens of people are involved in collecting, handling, sorting, loading and packing up to 800 ready-to-ship boxes for each shipment."
+          ],
+          "imageSrc": "/images/about/about-us.jpg",
+          "imageAlt": "goal image"
+        }
+      ]
+    },
     "participant": {
       "title": "Questionnaire ",
       "partners": {
