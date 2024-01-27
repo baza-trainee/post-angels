@@ -23,7 +23,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
 
           <div className="relative">
             <Image
-              className=" rounded-2xl object-cover object-center saturate-0 transition-all delay-150 hover:saturate-100"
+              className="rounded-2xl object-cover object-center saturate-0 transition-all delay-150 hover:saturate-100"
               src={contactsSection.img.src}
               width={990}
               height={740}
