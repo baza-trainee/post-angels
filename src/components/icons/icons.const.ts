@@ -1,3 +1,7 @@
+import ActivitiesSvg from '../../../public/icons/aboutInNumber/activities.svg';
+import FamilySvg from '../../../public/icons/aboutInNumber/family.svg';
+import LeadershipSvg from '../../../public/icons/aboutInNumber/leadership.svg';
+import VolunteersSvg from '../../../public/icons/aboutInNumber/volunteers.svg';
 import FacebookIcon from '../../../public/icons/contacts/Facebook.svg';
 import InstagramIcon from '../../../public/icons/contacts/Instagram.svg';
 import LocationIcon from '../../../public/icons/contacts/Location.svg';
@@ -18,13 +22,10 @@ import LogoIcon from '../../../public/icons/header/mobile/logoIcon.svg';
 import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
 import ModalClose from '../../../public/icons/modalClose.svg';
-import VerselIcon from '../../../public/vercel.svg';
+import PrimaryLogoIcon from '../../../public/icons/primaryLogoIcon.svg';
 import FilterIcon from '../../../public/icons/projects/filter.svg';
 import SortSvg from '../../../public/icons/projects/sort.svg';
-import ActivitiesSvg from '../../../public/icons/aboutInNumber/activities.svg';
-import FamilySvg from '../../../public/icons/aboutInNumber/family.svg';
-import LeadershipSvg from '../../../public/icons/aboutInNumber/leadership.svg';
-import VolunteersSvg from '../../../public/icons/aboutInNumber/volunteers.svg';
+import VerselIcon from '../../../public/vercel.svg';
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -54,4 +55,5 @@ export const ICONS = {
   FAMILY: FamilySvg,
   LEADERSHIP: LeadershipSvg,
   VOLUNTEERS: VolunteersSvg,
+  PRIMARY_LOGO_ICON: PrimaryLogoIcon,
 };

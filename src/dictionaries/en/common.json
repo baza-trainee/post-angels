@@ -213,6 +213,7 @@
         "accentTitle": "contacts",
         "href": "/en",
         "img": {
+          "src": "/images/contacts-map.png",
           "alt": "Contacts"
         }
       }

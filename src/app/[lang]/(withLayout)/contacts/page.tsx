@@ -4,32 +4,33 @@ import { Title } from '@/components/typography/Title';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import Image from 'next/image';
-import Partners from '../../../../../public/images/contacts-map.jpg';
 
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
   const { contactsSection } = common.contacts;
 
   return (
-    <section className="mb-[100px] mt-[102px] xl:mt-[62px]">
+    <section className="mb-[100px] mt-[102px] xl:mt-[284px]">
       <div className="container">
-        <div className="flex flex-col gap-y-[30px] border-b border-grey-60 pb-10">
-          <Title tag="h2" variantSize="h2" className="flex">
-            <p>{contactsSection.title} &zwnj;</p>
-            <span>{contactsSection.accentTitle}</span>
-          </Title>
-          <ContactList />
+        <div className="flex flex-col gap-[30px] border-b border-grey-60 pb-10 xl:flex-row xl:justify-between xl:pb-[140px]">
+          <div className="flex flex-col gap-y-[30px] xl:gap-y-12">
+            <Title tag="h2" variantSize="h2" className="flex">
+              <p>{contactsSection.title} &zwnj;</p>
+              <span>{contactsSection.accentTitle}</span>
+            </Title>
+            <ContactList />
+          </div>
 
           <div className="relative">
             <Image
-              className="rounded-2xl "
-              src={Partners}
-              width={790}
-              height={540}
+              className=" rounded-2xl object-cover object-center saturate-0 transition-all delay-150 hover:saturate-100"
+              src={contactsSection.img.src}
+              width={990}
+              height={740}
               alt={contactsSection.img.alt}
             />
-            <div className="absolute right-[31%] top-[32%] h-10 w-10 sm:h-[60px] sm:w-[60px] ">
-              <ICONS.LOGO_SMALL />
+            <div className="absolute right-[31%] top-[32%] h-10 w-10 md:h-[60px] md:w-[60px]">
+              <ICONS.PRIMARY_LOGO_ICON />
             </div>
           </div>
         </div>

@@ -214,6 +214,7 @@
         "accentTitle": "контакти",
         "href": "/ua",
         "img": {
+          "src": "/images/contacts-map.png",
           "alt": "Контакти"
         }
       }
