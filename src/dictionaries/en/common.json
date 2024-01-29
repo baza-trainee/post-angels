@@ -210,7 +210,7 @@
     "contacts": {
       "contactsSection": {
         "title": "our",
-        "accentTitle": "contacts",
+        "title1": "contacts",
         "href": "/en",
         "img": {
           "src": "/images/contacts-map.jpg",

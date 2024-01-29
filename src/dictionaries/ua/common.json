@@ -211,7 +211,7 @@
     "contacts": {
       "contactsSection": {
         "title": "наші",
-        "accentTitle": "контакти",
+        "title1": "контакти",
         "href": "/ua",
         "img": {
           "src": "/images/contacts-map.jpg",
