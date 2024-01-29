@@ -209,11 +209,12 @@
     },
     "contacts": {
       "contactsSection": {
-        "title": "OUR",
-        "title1": "CONTACTS",
-        "href": "/",
+        "title": "our",
+        "title1": "contacts",
+        "href": "/en",
         "img": {
-          "alt": "Contacts"
+          "src": "/images/contacts-map.jpg",
+          "alt": "City map with a marker for the PostAngels office."
         }
       }
     },
