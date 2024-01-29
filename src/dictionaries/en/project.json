@@ -1,0 +1,38 @@
+{
+  "project_details": {
+    "hero": {
+      "subtitle": "Details of the collection",
+      "collected": "Collected, UAH",
+      "startDate": "Start date of collection",
+      "finishedDate": "Collection completion date",
+      "organizer": {
+        "title": "Organizer"
+      },
+
+      "buttons": {
+        "finishedBtn": {
+          "text": "Completed",
+          "href": ""
+        },
+        "fundBtn": {
+          "text": "Donate",
+          "href": "/ua/payments/${id}"
+        }
+      },
+      "socials": {
+        "icon": [
+          {
+            "name": "facebook",
+            "label": "Facebook social media icon",
+            "src": "facebook.svg"
+          },
+          {
+            "name": "instagram",
+            "label": "Instagram social media icon",
+            "src": "instagram.svg"
+          }
+        ]
+      }
+    }
+  }
+}

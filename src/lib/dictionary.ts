@@ -4,12 +4,12 @@ import type { Locale } from '@/i18n.config';
 const dictionaries = {
   en: async () => ({
     ...(await import(`@/dictionaries/en/common.json`)).default,
-    // ...(await import(`@/dictionaries/en/home.json`)).default,
+    ...(await import(`@/dictionaries/en/project.json`)).default,
   }),
 
   ua: async () => ({
     ...(await import(`@/dictionaries/ua/common.json`)).default,
-    // ...(await import(`@/dictionaries/ua/home.json`)).default,
+    ...(await import(`@/dictionaries/ua/project.json`)).default,
   }),
 };
 

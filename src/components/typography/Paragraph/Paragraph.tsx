@@ -24,6 +24,7 @@ export const Paragraph: FC<ParagraphProps> = ({
           ['text-grey-80']: variant == 'dark_grey',
           ['text-grey-70']: variant == 'grey',
           ['text-white']: variant == 'white',
+          ['text-accent-primary']: variant == 'accent',
           ['text-center']: centered,
           ['font-normal']: variantFontWeight == 'regular',
           ['font-medium']: variantFontWeight == 'medium',

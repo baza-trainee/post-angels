@@ -1,0 +1,38 @@
+{
+  "project_details": {
+    "hero": {
+      "subtitle": "Деталі збору",
+      "collected": "Зібрано, грн.",
+      "startDate": "Дата початку збору",
+      "finishedDate": "Дата завершення збору",
+      "organizer": {
+        "title": "Організатор"
+      },
+      "buttons": {
+        "finishedBtn": {
+          "text": "Збір завершено",
+          "href": ""
+        },
+        "fundBtn": {
+          "text": "Зробити внесок",
+          "href": "/ua/payments/${id}"
+        }
+      },
+
+      "socials": {
+        "icon": [
+          {
+            "name": "facebook",
+            "label": "іконка соцмережі фейсбук",
+            "src": "facebook.svg"
+          },
+          {
+            "name": "instagram",
+            "label": "іконка соцмережі інстаграм",
+            "src": "instagram.svg"
+          }
+        ]
+      }
+    }
+  }
+}
