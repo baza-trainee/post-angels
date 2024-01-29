@@ -38,57 +38,109 @@ const getPartners = async (lang: Locale) => {
 const getFinishedProject = (lang: Locale) => {
   // get projects api
   console.log(lang);
-  const projects = [
-    {
-      id: 1,
-      image: {
-        src: '/images/projects/finished-project-1.jpg',
-        alt: 'project1',
+  const projects = {
+    ua: [
+      {
+        id: 1,
+        image: {
+          src: '/images/projects/finished-project-1.jpg',
+          alt: 'project1',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 68000,
-      all: 68000,
-      startDate: '18.11.23',
-      status: 'new',
-    },
-    {
-      id: 2,
-      image: {
-        src: '/images/projects/finished-project-2.jpg',
-        alt: 'project2',
+      {
+        id: 2,
+        image: {
+          src: '/images/projects/finished-project-2.jpg',
+          alt: 'project2',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 68000,
-      all: 68000,
-      startDate: '18.11.23',
-      status: 'new',
-    },
-    {
-      id: 3,
-      image: {
-        src: '/images/projects/finished-project-3.jpg',
-        alt: 'project3',
+      {
+        id: 3,
+        image: {
+          src: '/images/projects/finished-project-3.jpg',
+          alt: 'project3',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 68000,
-      all: 68000,
-      startDate: '18.11.23',
-      status: 'new',
-    },
-    {
-      id: 4,
-      image: {
-        src: '/images/projects/finished-project-4.jpg',
-        alt: 'project4',
+      {
+        id: 4,
+        image: {
+          src: '/images/projects/finished-project-4.jpg',
+          alt: 'project4',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 68000,
-      all: 68000,
-      startDate: '18.11.23',
-      status: 'new',
-    },
-  ];
-  return projects;
+    ],
+    en: [
+      {
+        id: 1,
+        image: {
+          src: '/images/projects/finished-project-1.jpg',
+          alt: 'project1',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
+      },
+      {
+        id: 2,
+        image: {
+          src: '/images/projects/finished-project-2.jpg',
+          alt: 'project2',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
+      },
+      {
+        id: 3,
+        image: {
+          src: '/images/projects/finished-project-3.jpg',
+          alt: 'project3',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
+      },
+      {
+        id: 4,
+        image: {
+          src: '/images/projects/finished-project-4.jpg',
+          alt: 'project4',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 68000,
+        all: 68000,
+        startDate: '18.11.23',
+        status: 'new',
+      },
+    ],
+  };
+  return projects[lang];
 };
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {

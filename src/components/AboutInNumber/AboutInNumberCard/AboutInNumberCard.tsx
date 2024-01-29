@@ -19,7 +19,7 @@ export const AboutInNumberCard = async ({
 
   return (
     <li
-      className={`relative flex w-full flex-row items-start gap-x-4 md:basis-[calc(50%_-_15px)]  xl:pl-6 2xl:basis-[456px] 2xl:pl-[40px]  3xl:basis-[647px] 3xl:pl-[86px]  ${
+      className={`relative flex w-full flex-row items-start gap-x-4 md:basis-[calc(50%_-_15px)]  xl:pl-6 2xl:basis-[448px] 2xl:pl-[40px]  3xl:basis-[646px] 3xl:pl-[86px]  ${
         ind === 0 || ind === 1 ? afterClass : ''
       }`}
     >
