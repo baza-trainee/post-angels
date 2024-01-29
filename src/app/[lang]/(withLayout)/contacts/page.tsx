@@ -14,8 +14,8 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
       <div className="container">
         <div className="flex flex-col gap-[30px] border-b border-grey-60 pb-10 xl:flex-row xl:justify-between xl:pb-[140px]">
           <div className="flex flex-col gap-y-[30px] xl:gap-y-12">
-            <Title tag="h2" variantSize="h2" className="flex">
-              <p>{contactsSection.title} &zwnj;</p>
+            <Title tag="h1" variantSize="h2" className="flex">
+              {contactsSection.title} &zwnj;
               <span>{contactsSection.accentTitle}</span>
             </Title>
             <ContactList />
