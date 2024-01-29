@@ -210,11 +210,12 @@
     },
     "contacts": {
       "contactsSection": {
-        "title": "НАШІ",
-        "title1": "КОНТАКТИ",
-        "href": "/",
+        "title": "наші",
+        "title1": "контакти",
+        "href": "/ua",
         "img": {
-          "alt": "Контакти"
+          "src": "/images/contacts-map.jpg",
+          "alt": "Карта міста з геопозначкою офіса PostAngels"
         }
       }
     },
