@@ -22,6 +22,14 @@ export interface ProjectDataProps {
   status: string;
   organizer: ProjectOrganizerProps;
   socials: ProjectSocialProps[];
+  info: ProjectDataInfoProps;
+}
+
+export interface ProjectDataInfoProps {
+  info: string;
+  conclusion: string;
+  title: string;
+  supportData: ProjectSupportDataProps[];
 }
 
 export interface ProjectImageProps {
@@ -41,6 +49,9 @@ export interface ProjectSocialProps {
 
 export interface StaticDataProps {
   hero: StaticDataHeroProps;
+  link_nav: StaticDataLinkNav[];
+  info: StaticDataInfo;
+  document: StaticDataDocuments;
 }
 
 export interface StaticDataHeroProps {
@@ -70,4 +81,27 @@ export interface StaticDataSocialIcon {
   name: string;
   label: string;
   src: string;
+}
+
+export interface StaticDataLinkNav {
+  name: string;
+  title: string;
+  href: string;
+}
+
+export interface StaticDataInfo {
+  supportTitle: string;
+  currency: string;
+}
+
+export interface StaticDataDocuments {
+  error_text: string;
+}
+
+export interface ProjectSupportDataProps {
+  id: string;
+  name: string;
+  sum: number;
+  date: number;
+  cardData?: string;
 }

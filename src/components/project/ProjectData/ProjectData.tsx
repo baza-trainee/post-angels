@@ -1,7 +1,6 @@
 'use client';
 import { useRef, useEffect, useState } from 'react';
 import { StaticDataHeroProps, ProjectHeroProps } from '@/sections/ProjectPage/ProjectPage.props';
-import { Title } from '@/components/typography/Title';
 import { Paragraph } from '@/components/typography/Paragraph';
 
 export const ProjectData = ({

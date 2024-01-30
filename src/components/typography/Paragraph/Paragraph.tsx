@@ -6,7 +6,7 @@ import { ParagraphProps } from './Paragraph.props';
 export const Paragraph: FC<ParagraphProps> = ({
   variant = 'dark',
   variantFontWeight = 'regular',
-  variantFontSize = 'sm_16',
+  variantFontSize = '16',
   children,
   className,
   centered = false,
@@ -28,6 +28,7 @@ export const Paragraph: FC<ParagraphProps> = ({
           ['text-center']: centered,
           ['font-normal']: variantFontWeight == 'regular',
           ['font-medium']: variantFontWeight == 'medium',
+          ['text-[24px]']: variantFontSize == '24',
           ['text-[22px]']: variantFontSize == '22',
           ['text-base']: variantFontSize == '16',
           ['text-[15px]']: variantFontSize == '15',

@@ -26,6 +26,7 @@ import PrimaryLogoIcon from '../../../public/icons/primaryLogoIcon.svg';
 import FilterIcon from '../../../public/icons/projects/filter.svg';
 import SortSvg from '../../../public/icons/projects/sort.svg';
 import VerselIcon from '../../../public/vercel.svg';
+import UserAvatarIcon from '../../../public/icons/project/user_avatar.svg';
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -56,4 +57,5 @@ export const ICONS = {
   LEADERSHIP: LeadershipSvg,
   VOLUNTEERS: VolunteersSvg,
   PRIMARY_LOGO_ICON: PrimaryLogoIcon,
+  USER_AVATAR: UserAvatarIcon,
 };

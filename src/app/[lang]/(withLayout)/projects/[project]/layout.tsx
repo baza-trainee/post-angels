@@ -1,6 +1,8 @@
 import { Locale } from '@/i18n.config';
-import { ProjectHero } from '@/sections/ProjectPage/ProjectHero';
+
+import React from 'react';
 import { getDictionary } from '@/lib/dictionary';
+import { ProjectHero } from '@/sections/ProjectPage/ProjectHero';
 
 const getProjectData = async (project: string, lang: Locale) => {
   // GEt API//
@@ -50,7 +52,7 @@ const getProjectData = async (project: string, lang: Locale) => {
       organizer: {
         name: 'Tsehelnyk Viktoriia Vasylivna',
         img: {
-          src: '/images/project/project-org-foto.jpg',
+          src: '/images/project/project-org-foto.png',
           alt: 'The photo of the collection organizer',
         },
       },
@@ -69,8 +71,13 @@ const getProjectData = async (project: string, lang: Locale) => {
   return projectData[lang];
 };
 
-export default async function Project({ params }: { params: { project: string; lang: Locale } }) {
-  const { project, lang } = params;
+export default async function ProjectLayout({
+  children,
+  params: { lang, project },
+}: {
+  children: React.ReactNode;
+  params: { lang: Locale; project: string };
+}) {
   const projectData = await getProjectData(project, lang);
   const { project_details } = await getDictionary(lang);
 
@@ -91,6 +98,7 @@ export default async function Project({ params }: { params: { project: string; l
         }}
         staticData={project_details.hero}
       />
+      {children}
     </main>
   );
 }
