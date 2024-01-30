@@ -6,7 +6,7 @@ import { Locale } from '@/i18n.config';
 
 const getProjects = async (lang: Locale) => {
   // get projects api
-  console.log(lang);
+
   const projects = {
     ua: [
       {
@@ -123,7 +123,7 @@ export const Projects = async ({ projects, lang }: { projects: ProjectsProps; la
           <br />
           <span>{projects.ourProjects.title1}</span>
         </Title>
-        <ProjectsList projects={projects} projectsData={projectsData} />
+        <ProjectsList projects={projects} projectsData={projectsData} lang={lang} />
       </div>
     </section>
   );

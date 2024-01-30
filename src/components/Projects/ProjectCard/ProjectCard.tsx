@@ -7,7 +7,7 @@ import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
 
 export const ProjectCard = (props: ProjectCardProps) => {
-  const { all, cardData, id, image, startDate, title, collected, isFinished } = props;
+  const { all, cardData, id, image, startDate, title, collected, isFinished, lang } = props;
   const blockRef = useRef<HTMLDivElement | null>(null);
   const [blockWidth, setBlockWidth] = useState(0);
 
@@ -112,7 +112,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
           </LinkButton>
         </li>
         <li>
-          <LinkButton variant="white" href={`/projects/${id}`}>
+          <LinkButton variant="white" href={`${lang}/projects/${id}/info`}>
             {cardData?.projectCard.buttons.moreBtn.text}
           </LinkButton>
         </li>

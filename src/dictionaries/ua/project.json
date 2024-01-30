@@ -33,6 +33,25 @@
           }
         ]
       }
+    },
+    "link_nav": [
+      {
+        "name": "info",
+        "title": "Про збір",
+        "href": "info"
+      },
+      {
+        "name": "documents",
+        "title": "Звітність",
+        "href": "documents"
+      }
+    ],
+    "info": {
+      "supportTitle": "Нас вже підтримали!",
+      "currency": "грн"
+    },
+    "document": {
+      "error_text": "Документів ще не додано"
     }
   }
 }

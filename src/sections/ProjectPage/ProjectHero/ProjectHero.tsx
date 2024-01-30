@@ -47,7 +47,7 @@ export const ProjectHero = ({
             />
           </div>
         </div>
-        <div className="w-full border-b border-grey-60">
+        <div className="w-full xl:border-b xl:border-grey-60">
           <Title tag="h1" variantSize="h4" className=" mb-4 xl:mb-[10px] notXl:hidden">
             {title}
           </Title>

@@ -5,6 +5,7 @@ import { LinkButton } from '@/components/buttons/LinkButton';
 import { HeroSlider } from '@/components/Hero/HeroSlider';
 
 import { HeroProps } from './Hero.props';
+import { Locale } from '@/i18n.config';
 
 const banners = [
   {
@@ -25,11 +26,11 @@ const banners = [
   },
 ];
 
-export const Hero = ({ data }: HeroProps) => {
+export const Hero = ({ data, lang }: { data: HeroProps; lang: Locale }) => {
   return (
     <section className="pt-[125px] xl:pt-[190px] ">
       <div className="container">
-        <div className="flex flex-col gap-y-[30px] border-b border-grey-60 pb-10 md:flex-row md:justify-between xl:pb-[126px]">
+        <div className="flex flex-col gap-y-[30px] border-b border-grey-60 pb-10 md:flex-row md:justify-between md:gap-x-[30px] xl:pb-[126px]">
           <div className="flex flex-col gap-y-[30px] xl:mt-[94px] xl:w-[383px] 2xl:mt-[136px] 3xl:mt-[216px]">
             <Title tag="h1" variantSize="h1" className="whitespace-pre-wrap ">
               {data.title}
@@ -45,7 +46,7 @@ export const Hero = ({ data }: HeroProps) => {
               {data.button.text}
             </LinkButton>
           </div>
-          <HeroSlider banners={banners} />
+          <HeroSlider banners={banners} lang={lang} />
         </div>
       </div>
     </section>

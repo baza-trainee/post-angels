@@ -4,13 +4,16 @@ import { FinishedProjectSlider } from '@/components/Projects/FinishedProjectSlid
 import { FinishedProjectsProps } from './FinishedProjects.props';
 import { ProjectCardProps } from '@/components/Projects/ProjectCard/ProjectsCard.props';
 import { LinkButton } from '@/components/buttons/LinkButton';
+import { Locale } from '@/i18n.config';
 
 export const FinishedProjects = async ({
   projects,
   finishedData,
+  lang,
 }: {
   projects: FinishedProjectsProps;
   finishedData: ProjectCardProps[];
+  lang: Locale;
 }) => {
   return (
     <section id="finishedProjects" className="pt-10">
@@ -20,7 +23,12 @@ export const FinishedProjects = async ({
           <br />
           <span>{projects.finishedProjects2023.title1}</span>
         </Title>
-        <FinishedProjectSlider projectsData={finishedData} projects={projects} isFinished />
+        <FinishedProjectSlider
+          projectsData={finishedData}
+          projects={projects}
+          isFinished
+          lang={lang}
+        />
 
         <LinkButton
           className="w-full md:w-[349px] lg:w-[465px]  xl:mx-auto xl:w-[276px]"

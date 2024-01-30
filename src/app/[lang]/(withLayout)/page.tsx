@@ -37,7 +37,7 @@ const getPartners = async (lang: Locale) => {
 
 const getFinishedProject = (lang: Locale) => {
   // get projects api
-  console.log(lang);
+
   const projects = {
     ua: [
       {
@@ -151,13 +151,15 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
   return (
     <main className="">
-      <Hero data={hero} />
+      <Hero data={hero} lang={lang} />
       {partnersData && <PartnersTop partnersData={partnersData} data={partners} />}
       <AboutInNumbers data={aboutInNumbers} />
       <WhatWeDo lang={lang} data={whatWeDo} />
       <Projects projects={projects} lang={lang} />
 
-      {finishedData && <FinishedProjects projects={projects} finishedData={finishedData} />}
+      {finishedData && (
+        <FinishedProjects projects={projects} finishedData={finishedData} lang={lang} />
+      )}
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
       <Cooperation data={cooperation} />
       <Contacts data={contacts} />

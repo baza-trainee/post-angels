@@ -6,9 +6,9 @@ import { Slider } from '@/components/Slider';
 import { BannerSliderProps } from './HeroSlider.props';
 import useBreakpoints from '@/utils/useBreakpoints';
 
-export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '' }) => {
-  const { less768px } = useBreakpoints();
-  const wrapSliderClasses = classNames('h-auto', className);
+export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '', lang }) => {
+  const { less1280px } = useBreakpoints();
+  const wrapSliderClasses = classNames('h-auto md:w-[349px] lg:w-[465px]', className);
   const wrapDesktopClasses = classNames(
     'h-auto 	grid grid-cols-2  gap-y-[50px] relative 2xl:gap-y-[60px] 3xl:gap-y-[100px] 3xl:mr-[89px]',
     className
@@ -16,10 +16,11 @@ export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '
 
   return (
     <>
-      {less768px ? (
+      {less1280px ? (
         <div className={wrapSliderClasses}>
           <Slider
             id="heroSlider"
+            lang={lang}
             data={banners}
             element={HeroBanner}
             isAutoplay={true}

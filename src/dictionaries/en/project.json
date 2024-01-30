@@ -33,6 +33,25 @@
           }
         ]
       }
+    },
+    "link_nav": [
+      {
+        "name": "info",
+        "title": "About the fundraising",
+        "href": "info"
+      },
+      {
+        "name": "documents",
+        "title": "Reporting",
+        "href": "documents"
+      }
+    ],
+    "info": {
+      "supportTitle": "We've been supported!",
+      "currency": "UAH"
+    },
+    "document": {
+      "error_text": "The documents have not been added yet."
     }
   }
 }

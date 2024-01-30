@@ -5,6 +5,7 @@ import { ProjectSlider } from '@/components/Projects/ProjectSlider';
 import { ProjectsProps } from '@/sections/Projects/Projects.props';
 import { useEffect, useState } from 'react';
 import { ProjectCardProps } from '../ProjectCard/ProjectsCard.props';
+import { Locale } from '@/i18n.config';
 
 const getFilteredData = (filterName: string, data: ProjectCardProps[]) => {
   switch (filterName) {
@@ -64,9 +65,11 @@ const getSortedData = (sortingMod: string, data: ProjectCardProps[]) => {
 export const ProjectsList = ({
   projects,
   projectsData,
+  lang,
 }: {
   projects: ProjectsProps;
   projectsData: ProjectCardProps[];
+  lang: Locale;
 }) => {
   const [filteredProjects, setFilteredProjects] = useState<ProjectCardProps[]>(projectsData);
   const [sortedProjects, setSortedProjects] = useState<ProjectCardProps[]>(filteredProjects);
@@ -86,7 +89,7 @@ export const ProjectsList = ({
   return (
     <>
       <Filters projects={projects} setFilterName={setFilterName} setSortingMod={setSortingMod} />
-      <ProjectSlider projectsData={sortedProjects} projects={projects} />
+      <ProjectSlider projectsData={sortedProjects} projects={projects} lang={lang} />
     </>
   );
 };
