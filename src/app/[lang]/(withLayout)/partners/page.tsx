@@ -22,6 +22,10 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
       />
       <PartnersForm
         inputFields={form.inputFields}
+        waysSupport={form.waysSupport}
+        ourOffer={form.ourOffer}
+        descriptionTermsAgreement={form.descriptionTermsAgreement}
+        coreMsg={form.coreMsg}
          />
     </section>
   );

@@ -259,29 +259,52 @@
         "form": {
           "inputFields": [
             { "title": "Your Name", "placeholder": "Your Name", "name": "title", "type": "text" },
-            { "title": "Your Surname", "placeholder": "Your Surname", "name": "surname", "type": "text" },
+            {
+              "title": "Your Surname",
+              "placeholder": "Your Surname",
+              "name": "surname",
+              "type": "text"
+            },
             { "title": "City", "placeholder": "Enter here", "name": "city", "type": "text" },
-            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
-            { "title": "Name of legal entity (company)", "placeholder": "Enter here", "name": "companyName", "type": "text" },
-            { "title": "EDRPOU Code", "placeholder": "Enter here", "name": "EDRPOU", "type": "text" }
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Name of legal entity (company)",
+              "placeholder": "Enter here",
+              "name": "companyName",
+              "type": "text"
+            },
+            {
+              "title": "EDRPOU Code",
+              "placeholder": "Enter here",
+              "name": "EDRPOU",
+              "type": "text"
+            }
           ],
-          "titleSpheres": "Which volunteer spheres are you willing to consider?",
-          "placeholderSpheres": "Select the appropriate",
-          "spheres": [
-            { "value": "chocolate", "label": "Chocolate" },
-            { "value": "strawberry", "label": "Strawberry" },
-            { "value": "vanilla", "label": "Vanilla" }
-          ],
-          "titleReason": "Why do you want to be a volunteer? (optional)",
-          "placeholderReason": "Select the appropriate",
-          "descriptionCertificate": "Presence of a volunteer certificate",
-          "isVolunteerCertificate": "Yes",
-          "isNotVolunteerCertificate": "No",
-          "descriptionCar": "Do you have your own car?",
-          "isCar": "Yes",
-          "isNotCar": "No",
-          "descriptionTermsAgreement": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR",
-          "descriptionVolunteersAgreement": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
+          "waysSupport": {
+            "name": "waysSupport",
+            "title": "What ways of support are you ready to look at?",
+            "placeholder": "Pick up",
+            "options": [
+              { "value": "chocolate", "label": "Chocolate" },
+              { "value": "strawberry", "label": "Strawberry" },
+              { "value": "vanilla", "label": "Vanilla" }
+            ]
+          },
+          "ourOffer": {
+            "name": "waysSupport",
+            "title": "Your offer",
+            "placeholder": "Write here"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR"
+          },
+          "coreMsg": "If you have the relevant experience and want to join one of our initiatives, your work will be very important. Human values are what underlies all philanthropy, because what is needed most is not money, but people."
         }
       },
       "volunteers": {
@@ -294,11 +317,31 @@
         "form": {
           "inputFields": [
             { "title": "Your Name", "placeholder": "Your Name", "name": "title", "type": "text" },
-            { "title": "Your Surname", "placeholder": "Your Surname", "name": "surname", "type": "text" },
+            {
+              "title": "Your Surname",
+              "placeholder": "Your Surname",
+              "name": "surname",
+              "type": "text"
+            },
             { "title": "City", "placeholder": "Enter here", "name": "city", "type": "text" },
-            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
-            { "title": "Phone", "placeholder": "+38 (---) --- -- --", "name": "phone", "type": "text" },
-            { "title": "Your Telegram", "placeholder": "Enter here", "name": "telegram", "type": "text" }
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Phone",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
+              "title": "Your Telegram",
+              "placeholder": "Enter here",
+              "name": "telegram",
+              "type": "text"
+            }
           ],
           "titleSpheres": "Which volunteer spheres are you willing to consider?",
           "placeholderSpheres": "Select the appropriate",

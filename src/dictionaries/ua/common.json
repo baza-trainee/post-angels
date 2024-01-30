@@ -261,31 +261,58 @@
         "form": {
           "inputFields": [
             { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "title", "type": "text" },
-            { "title": "Ваше прізвище", "placeholder": "Ваше прізвище", "name": "surname", "type": "text" },
+            {
+              "title": "Ваше прізвище",
+              "placeholder": "Ваше прізвище",
+              "name": "surname",
+              "type": "text"
+            },
             { "title": "Місто", "placeholder": "Введіть тут", "name": "city", "type": "text" },
-            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
-            { "title": "Телефон", "placeholder": "+38 (---) --- -- --", "name": "phone", "type": "text" },
-            { "title": "Найменування юридичної особи(компанії)", "placeholder": "Введіть тут", "name": "companyName", "type": "text" },
-            { "title": "Код ЄДРПОУ", "placeholder": "Введіть тут", "name": "EDRPOU", "type": "text" }
-
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Телефон",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
+              "title": "Найменування юридичної особи(компанії)",
+              "placeholder": "Введіть тут",
+              "name": "companyName",
+              "type": "text"
+            },
+            {
+              "title": "Код ЄДРПОУ",
+              "placeholder": "Введіть тут",
+              "name": "EDRPOU",
+              "type": "text"
+            }
           ],
-          "titleSpheres": "Які сфери волонтерської діяльності Ви готові розглянути?",
-          "placeholderSpheres": "Оберіть відповідне",
-          "spheres": [
-            { "value": "chocolate", "label": "Chocolate" },
-            { "value": "strawberry", "label": "Strawberry" },
-            { "value": "vanilla", "label": "Vanilla" }
-          ],
-          "titleReason": "Чому Ви хочете бути волонтером? (не обов’язково)",
-          "placeholderReason": "Оберіть відповідне",
-          "descriptionCertificate": "Наявність волонтерського посвідчення",
-          "isVolunteerCertificate": "Так",
-          "isNotVolunteerCertificate": "Ні",
-          "descriptionCar": "У Вас є власне авто?",
-          "isCar": "Так",
-          "isNotCar": "Ні",
-          "descriptionTermsAgreement": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR",
-          "descriptionVolunteersAgreement": "Як волонтёр нашої організації, я погоджуюся дотримуватися внутрішньої політики та процедур. Я погоджуюсь, що вся робота, яку я виконую, виконується на волонтерських засадах."
+          "waysSupport": {
+            "name": "waysSupport",
+            "title": "Які способи підтримки Ви готові розглянути?",
+            "placeholder": "Оберіть відповідне",
+            "options": [
+              { "value": "chocolate", "label": "Chocolate" },
+              { "value": "strawberry", "label": "Strawberry" },
+              { "value": "vanilla", "label": "Vanilla" }
+            ]
+          },
+          "ourOffer": {
+            "name": "waysSupport",
+            "title": "Ваша пропозиція",
+            "placeholder": "Напишіть тут"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
+          },
+          "coreMsg": "Якщо ви маєте відповідний досвід та бажаєте приєднатися до однієї з наших ініціатив, ваша діяльність буде дуже важливою. Людські цінності - це те, що лежить в основі всієї благодійності, тому що найбільше потрібна не грошова, а людська допомога."
         }
       },
       "volunteers": {
@@ -298,11 +325,31 @@
         "form": {
           "inputFields": [
             { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "title", "type": "text" },
-            { "title": "Ваше прізвище", "placeholder": "Ваше прізвище", "name": "surname", "type": "text" },
+            {
+              "title": "Ваше прізвище",
+              "placeholder": "Ваше прізвище",
+              "name": "surname",
+              "type": "text"
+            },
             { "title": "Місто", "placeholder": "Введіть тут", "name": "city", "type": "text" },
-            { "title": "Email", "placeholder": "example@mail.com", "name": "email", "type": "email" },
-            { "title": "Телефон", "placeholder": "+38 (---) --- -- --", "name": "phone", "type": "text" },
-            { "title": "Ваш телеграм", "placeholder": "Введіть тут", "name": "telegram", "type": "text" }
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Телефон",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
+              "title": "Ваш телеграм",
+              "placeholder": "Введіть тут",
+              "name": "telegram",
+              "type": "text"
+            }
           ],
           "titleSpheres": "Які сфери волонтерської діяльності Ви готові розглянути?",
           "placeholderSpheres": "Оберіть відповідне",

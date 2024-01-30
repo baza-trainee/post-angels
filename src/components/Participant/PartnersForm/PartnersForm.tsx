@@ -5,27 +5,40 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
 
+import { Button } from '@/components/buttons/Button/Button';
+import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { Locale } from '@/i18n.config';
 import { PartnersFormProps } from './PartnersForm.props';
 
-const values = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
-
 const schema = yup.object({
   name: yup
     .string()
     .required("Поле обов'язкове для заповнення")
     .min(4, 'Мінімальна довжина 4 символа'),
-  no: yup
+  surname: yup
     .string()
     .required("Поле обов'язкове для заповнення")
     .min(4, 'Мінімальна довжина 4 символа'),
+  email: yup
+    .string()
+    .email()
+    .required("Поле обов'язкове для заповнення")
+    .min(4, 'Мінімальна довжина 4 символа'),
+  phone: yup
+    .string()
+    .required("Поле обов'язкове для заповнення")
+    .min(13, 'Мінімальна довжина 4 символа'),
+  companyName: yup
+    .string()
+    .required("Поле обов'язкове для заповнення")
+    .min(4, 'Мінімальна довжина 4 символа'),
+  EDRPOU: yup
+    .string()
+    .required("Поле обов'язкове для заповнення")
+    .min(8, 'Мінімальна довжина 4 символа'),
   subscribe: yup.boolean().default(false).oneOf([true], "Поле обов'язкове для заповнення"),
   discr: yup
     .string()
@@ -42,7 +55,13 @@ const schema = yup.object({
 
 type FormData = yup.InferType<typeof schema>;
 
-export const PartnersForm: React.FC<PartnersFormProps> = ({ inputFields }) => {
+export const PartnersForm: React.FC<PartnersFormProps> = ({
+  inputFields,
+  waysSupport,
+  ourOffer,
+  descriptionTermsAgreement,
+  coreMsg,
+}) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(schema),
   });
@@ -56,39 +75,22 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({ inputFields }) => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className="flex w-1/2 flex-col gap-4">
-        {inputFields.map(({ title, placeholder }) => (
-          <Input title={title} name="name" type="text" placeholder={placeholder} />
+        {inputFields.map(({ title, placeholder, name, type }) => (
+          <Input title={title} name={name} type={type} placeholder={placeholder} />
         ))}
-
-
-
-        {/* //  // <Input 
-        //   title="Ваше прізвище"
-        //   name="no"
-        //   type="text"
-        //   placeholder="Ваше прізвище"
-        //   lang={lang}
-        // /> */}
-        {/* <Textarea
-          name="discr"
-          title="Опишіть вашу проблему"
-          placeholder="Введіть вашу відповідь"
-          lang={lang}
-        />
-        <Checkbox
-          name="subscribe"
-          description="Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
-          lang={lang}
-        />
-
         <SelectInput
-          name="select"
-          title="Яка вам потрібна допомога?"
-          options={values}
-          placeholder="Оберіть відповідне"
-          lang={lang}
-        /> */}
-        // <button type="submit">Submit</button>
+          name={waysSupport.name}
+          title={waysSupport.title}
+          options={waysSupport.options}
+          placeholder={waysSupport.placeholder}
+        />
+        <Textarea name={ourOffer.name} title={ourOffer.title} placeholder={ourOffer.placeholder} />
+        <Checkbox
+          name={descriptionTermsAgreement.name}
+          description={descriptionTermsAgreement.description}
+        />
+        <Paragraph>{coreMsg}</Paragraph>
+        <Button type="submit">Submit</Button>
       </form>
     </FormProvider>
   );
