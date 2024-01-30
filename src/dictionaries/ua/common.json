@@ -260,7 +260,7 @@
         },
         "form": {
           "inputFields": [
-            { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "title", "type": "text" },
+            { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "name", "type": "text" },
             {
               "title": "Ваше прізвище",
               "placeholder": "Ваше прізвище",
@@ -304,7 +304,7 @@
             ]
           },
           "ourOffer": {
-            "name": "waysSupport",
+            "name": "ourOffer",
             "title": "Ваша пропозиція",
             "placeholder": "Напишіть тут"
           },

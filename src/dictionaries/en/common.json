@@ -258,7 +258,7 @@
         },
         "form": {
           "inputFields": [
-            { "title": "Your Name", "placeholder": "Your Name", "name": "title", "type": "text" },
+            { "title": "Your Name", "placeholder": "Your Name", "name": "name", "type": "text" },
             {
               "title": "Your Surname",
               "placeholder": "Your Surname",

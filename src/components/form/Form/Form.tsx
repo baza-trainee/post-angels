@@ -62,19 +62,16 @@ export const Form = ({ lang }: { lang: Locale }) => {
           name="no"
           type="text"
           placeholder="Ваше прізвище"
-          lang={lang}
         />
 
         <Textarea
           name="discr"
           title="Опишіть вашу проблему"
           placeholder="Введіть вашу відповідь"
-          lang={lang}
         />
         <Checkbox
           name="subscribe"
           description="Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
-          lang={lang}
         />
 
         <SelectInput
@@ -82,7 +79,6 @@ export const Form = ({ lang }: { lang: Locale }) => {
           title="Яка вам потрібна допомога?"
           options={values}
           placeholder="Оберіть відповідне"
-          lang={lang}
         />
 
         <button type="submit">Submit</button>
