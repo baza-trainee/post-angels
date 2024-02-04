@@ -81,7 +81,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className='container'>
-        <div className='flex flex-col flex-wrap gap-x-[344px] h-[504px] border-t-[1px] border-t-grey-60 border-t-solid pt-[50px] '>
+        <div className='flex flex-col flex-wrap gap-x-[172px] h-[504px] border-t-[1px] border-t-grey-60 border-t-solid pt-[50px] '>
         {inputFields.map(({ title, placeholder, name, type }) => (
           <Input title={title} name={name} type={type} placeholder={placeholder}/>
         ))}
