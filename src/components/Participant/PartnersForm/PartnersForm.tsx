@@ -66,6 +66,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   ourOffer,
   descriptionTermsAgreement,
   coreMsg,
+  buttonText
 }) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(schema),
@@ -79,23 +80,25 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex w-1/2 flex-col gap-4">
+      <form onSubmit={handleSubmit(onSubmit)} className='container'>
+        <div className='flex flex-col flex-wrap gap-x-[344px] h-[504px] border-t-[1px] border-t-grey-60 border-t-solid pt-[50px] '>
         {inputFields.map(({ title, placeholder, name, type }) => (
-          <Input title={title} name={name} type={type} placeholder={placeholder} />
+          <Input title={title} name={name} type={type} placeholder={placeholder}/>
         ))}
         <SelectInput
           name={waysSupport.name}
           title={waysSupport.title}
           options={waysSupport.options}
           placeholder={waysSupport.placeholder}
-        />
-        <Textarea name={ourOffer.name} title={ourOffer.title} placeholder={ourOffer.placeholder} />
+          />
+          <Textarea name={ourOffer.name} title={ourOffer.title} placeholder={ourOffer.placeholder} />
+          </div>
         <Checkbox
           name={descriptionTermsAgreement.name}
           description={descriptionTermsAgreement.description}
         />
         <Paragraph>{coreMsg}</Paragraph>
-        <Button type="submit">Submit</Button>
+        <Button type="submit">{buttonText}</Button>
       </form>
     </FormProvider>
   );

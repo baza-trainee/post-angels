@@ -304,7 +304,8 @@
             "name": "descriptionTermsAgreement",
             "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR"
           },
-          "coreMsg": "If you have the relevant experience and want to join one of our initiatives, your work will be very important. Human values are what underlies all philanthropy, because what is needed most is not money, but people."
+          "coreMsg": "If you have the relevant experience and want to join one of our initiatives, your work will be very important. Human values are what underlies all philanthropy, because what is needed most is not money, but people.",
+          "buttonText": "Submit"
         }
       },
       "volunteers": {

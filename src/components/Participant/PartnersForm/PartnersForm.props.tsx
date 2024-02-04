@@ -27,4 +27,5 @@ export interface PartnersFormProps {
     description: string;
   },
   coreMsg: string;
+  buttonText: string;
 }
