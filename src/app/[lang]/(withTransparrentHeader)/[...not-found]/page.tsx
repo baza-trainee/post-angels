@@ -13,7 +13,7 @@ const NotFound = async ({ params: { lang = 'ua' } }: { params: { lang: Locale } 
         <Title
           tag="h1"
           variantSize="h1"
-          className="mb-8 text-center font-eUkraineHead text-8xl font-bold text-grey-20 sm:mb-[52px] lg:text-[162px] xl:text-[162px] 2xl:text-[240px]"
+          className="mb-8 text-center font-eUkraineHead text-8xl font-bold text-grey-20 sm:mb-[52px] lg:text-[162px] 2xl:text-[240px]"
         >
           404
         </Title>
