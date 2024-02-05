@@ -4,7 +4,7 @@ import { Title } from '@/components/typography/Title';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 
-const NotFound = async ({ params: { lang = 'ua' } }: { params: { lang: Locale } }) => {
+const NotFound = async ({ params: { lang = 'uk' } }: { params: { lang: Locale } }) => {
   const { notfound } = (await getDictionary(lang)).common;
 
   return (

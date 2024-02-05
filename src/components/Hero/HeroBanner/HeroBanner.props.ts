@@ -1,5 +1,11 @@
 export interface BannerProps {
-  url: string;
-  image_description: string;
+  src: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
+  alt: string;
   ind?: number;
 }
