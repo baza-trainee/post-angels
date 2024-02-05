@@ -7,6 +7,8 @@ import { HeroSlider } from '@/components/Hero/HeroSlider';
 import { HeroProps } from './Hero.props';
 import { Locale } from '@/i18n.config';
 
+import { fetchHero } from '@/api/fetchHero';
+
 const banners = [
   {
     url: '/images/hero/hero-1.jpg',
@@ -26,17 +28,19 @@ const banners = [
   },
 ];
 
-export const Hero = ({ data, lang }: { data: HeroProps; lang: Locale }) => {
+export const Hero = async ({ data, lang }: { data: HeroProps; lang: Locale }) => {
+  const heroData = await fetchHero(lang);
+
   return (
     <section className="pt-[125px] xl:pt-[190px] ">
       <div className="container">
         <div className="flex flex-col gap-y-[30px] border-b border-grey-60 pb-10 md:flex-row md:justify-between md:gap-x-[30px] xl:pb-[126px]">
           <div className="flex flex-col gap-y-[30px] xl:mt-[94px] xl:w-[383px] 2xl:mt-[136px] 3xl:mt-[216px]">
             <Title tag="h1" variantSize="h1" className="whitespace-pre-wrap ">
-              {data.title}
+              {heroData.title}
             </Title>
             <Paragraph variant="dark" variantFontSize="16">
-              {data.subtitle}
+              {heroData.subtitle}
             </Paragraph>
             <LinkButton
               variant="accent"
@@ -46,7 +50,7 @@ export const Hero = ({ data, lang }: { data: HeroProps; lang: Locale }) => {
               {data.button.text}
             </LinkButton>
           </div>
-          <HeroSlider banners={banners} lang={lang} />
+          <HeroSlider banners={heroData.image} lang={lang} />
         </div>
       </div>
     </section>

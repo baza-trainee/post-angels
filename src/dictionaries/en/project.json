@@ -16,7 +16,7 @@
         },
         "fundBtn": {
           "text": "Donate",
-          "href": "/ua/payments/${id}"
+          "href": "/uk/payments/${id}"
         }
       },
       "socials": {
