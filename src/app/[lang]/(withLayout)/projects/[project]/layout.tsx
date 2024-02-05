@@ -7,7 +7,7 @@ import { ProjectHero } from '@/sections/ProjectPage/ProjectHero';
 const getProjectData = async (project: string, lang: Locale) => {
   // GEt API//
   const projectData = {
-    ua: {
+    uk: {
       id: project,
       image: {
         src: `/images/project/project-${project}.jpg`,
