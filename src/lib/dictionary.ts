@@ -7,9 +7,9 @@ const dictionaries = {
     ...(await import(`@/dictionaries/en/project.json`)).default,
   }),
 
-  ua: async () => ({
-    ...(await import(`@/dictionaries/ua/common.json`)).default,
-    ...(await import(`@/dictionaries/ua/project.json`)).default,
+  uk: async () => ({
+    ...(await import(`@/dictionaries/uk/common.json`)).default,
+    ...(await import(`@/dictionaries/uk/project.json`)).default,
   }),
 };
 
@@ -19,15 +19,15 @@ const metadata = {
     // ...(await import(`@/dictionaries/en/meta/home.json`)).default,
   }),
 
-  ua: async () => ({
-    ...(await import(`@/dictionaries/ua/meta/common.json`)).default,
-    // ...(await import(`@/dictionaries/ua/meta/home.json`)).default,
+  uk: async () => ({
+    ...(await import(`@/dictionaries/uk/meta/common.json`)).default,
+    // ...(await import(`@/dictionaries/uk/meta/home.json`)).default,
   }),
 };
 
 const commonDictionaries = {
   en: async () => (await import(`@/dictionaries/en/common.json`)).default,
-  ua: async () => (await import(`@/dictionaries/ua/common.json`)).default,
+  uk: async () => (await import(`@/dictionaries/uk/common.json`)).default,
 };
 
 export const getDictionary = async (lang: Locale) => dictionaries[lang]();

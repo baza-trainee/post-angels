@@ -8,7 +8,7 @@ const getProjects = async (lang: Locale) => {
   // get projects api
 
   const projects = {
-    ua: [
+    uk: [
       {
         id: 1,
         image: {
