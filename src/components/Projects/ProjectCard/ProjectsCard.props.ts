@@ -1,3 +1,4 @@
+import { Locale } from '@/i18n.config';
 import { ProjectsProps } from '@/sections/Projects/Projects.props';
 
 export interface ProjectCardProps {
@@ -13,4 +14,5 @@ export interface ProjectCardProps {
   cardData?: ProjectsProps;
   isFinished?: boolean;
   status: string;
+  lang?: Locale;
 }

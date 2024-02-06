@@ -6,58 +6,110 @@ import { Locale } from '@/i18n.config';
 
 const getProjects = async (lang: Locale) => {
   // get projects api
-  console.log(lang);
-  const projects = [
-    {
-      id: 1,
-      image: {
-        src: '/images/projects/project-1.jpg',
-        alt: 'project1',
+
+  const projects = {
+    uk: [
+      {
+        id: 1,
+        image: {
+          src: '/images/projects/project-1.jpg',
+          alt: 'project1',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 20000,
+        all: 68000,
+        startDate: '2023-01-01',
+        status: 'new',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 20000,
-      all: 68000,
-      startDate: '2023-01-01',
-      status: 'new',
-    },
-    {
-      id: 2,
-      image: {
-        src: '/images/projects/project-2.jpg',
-        alt: 'project2',
+      {
+        id: 2,
+        image: {
+          src: '/images/projects/project-2.jpg',
+          alt: 'project2',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 13444,
+        all: 68000,
+        startDate: '2023-03-18',
+        status: 'new',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 13444,
-      all: 68000,
-      startDate: '2023-03-18',
-      status: 'new',
-    },
-    {
-      id: 3,
-      image: {
-        src: '/images/projects/project-3.jpg',
-        alt: 'project3',
+      {
+        id: 3,
+        image: {
+          src: '/images/projects/project-3.jpg',
+          alt: 'project3',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 1444,
+        all: 68000,
+        startDate: '2023-02-22',
+        status: 'new',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 1444,
-      all: 68000,
-      startDate: '2023-02-22',
-      status: 'new',
-    },
-    {
-      id: 4,
-      image: {
-        src: '/images/projects/project-4.jpg',
-        alt: 'project4',
+      {
+        id: 4,
+        image: {
+          src: '/images/projects/project-4.jpg',
+          alt: 'project4',
+        },
+        title: 'Збір на травматологічні матеріали',
+        collected: 51000,
+        all: 68000,
+        startDate: '2023-05-15',
+        status: 'completed',
       },
-      title: 'Збір на травматологічні матеріали',
-      collected: 51000,
-      all: 68000,
-      startDate: '2023-05-15',
-      status: 'completed',
-    },
-  ];
-  return projects;
+    ],
+    en: [
+      {
+        id: 1,
+        image: {
+          src: '/images/projects/project-1.jpg',
+          alt: 'project1',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 20000,
+        all: 68000,
+        startDate: '2023-01-01',
+        status: 'new',
+      },
+      {
+        id: 2,
+        image: {
+          src: '/images/projects/project-2.jpg',
+          alt: 'project2',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 13444,
+        all: 68000,
+        startDate: '2023-03-18',
+        status: 'new',
+      },
+      {
+        id: 3,
+        image: {
+          src: '/images/projects/project-3.jpg',
+          alt: 'project3',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 1444,
+        all: 68000,
+        startDate: '2023-02-22',
+        status: 'new',
+      },
+      {
+        id: 4,
+        image: {
+          src: '/images/projects/project-4.jpg',
+          alt: 'project4',
+        },
+        title: 'Collection for traumatology materials',
+        collected: 51000,
+        all: 68000,
+        startDate: '2023-05-15',
+        status: 'completed',
+      },
+    ],
+  };
+  return projects[lang];
 };
 
 export const Projects = async ({ projects, lang }: { projects: ProjectsProps; lang: Locale }) => {
@@ -71,7 +123,7 @@ export const Projects = async ({ projects, lang }: { projects: ProjectsProps; la
           <br />
           <span>{projects.ourProjects.title1}</span>
         </Title>
-        <ProjectsList projects={projects} projectsData={projectsData} />
+        <ProjectsList projects={projects} projectsData={projectsData} lang={lang} />
       </div>
     </section>
   );

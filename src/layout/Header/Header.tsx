@@ -61,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal, logo, transpa
               <ButtonDonate
                 headerButton={buttons.headerButton}
                 modal={modal}
-                buttonClassName="mr-8"
+                buttonClassName="mr-8 !px-[38px]"
               />
               <Dropdown headerLanguageLabel={buttons.headerLanguageLabel} lang={lang} />
             </div>

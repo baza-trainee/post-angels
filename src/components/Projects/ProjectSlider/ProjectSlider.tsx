@@ -9,6 +9,7 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
   projectsData,
   className = '',
   projects,
+  lang,
 }) => {
   const wrapSliderClasses = classNames(
     'h-auto  border-b border-grey-60 pb-10 md:flex-row ',
@@ -21,10 +22,11 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
         id="projectSlider"
         className="projectSlider"
         data={projectsData}
+        lang={lang}
         cardData={projects}
         element={ProjectCard}
         isAutoplay={false}
-        slidesPerView={{ mobile: 1, tablet: 2, desktop: 3 }}
+        slidesPerView={{ mobile: 1, tablet: 2, desktop: 3, desktop3xl: 4 }}
         isLoop={false}
         isPagination={true}
         isInteractive={true}

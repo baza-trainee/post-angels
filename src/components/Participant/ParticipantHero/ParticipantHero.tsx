@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { Title } from '@/components/typography/Title/Title';
 import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
+import { Title } from '@/components/typography/Title/Title';
 import { ParticipantHeroProps } from './ParticipantHero.props';
 
 export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
@@ -15,7 +15,8 @@ export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
     <div className="container flex flex-col gap-[40px] pb-10 xl:flex-row xl:justify-between xl:pb-[100px]">
       <div className="flex flex-col gap-[30px] 2xl:gap-4">
         <Title variantSize="h2" className="flex flex-col flex-wrap lg:flex-row">
-          <p>{title}&zwnj;</p>
+          {title}
+          <br />
           <span>{accentTitle}</span>
         </Title>
         <Paragraph variantFontSize="16" className="text-grey-80">

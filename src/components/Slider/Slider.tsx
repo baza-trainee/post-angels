@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, EffectFade, Navigation, Grid } from 'swiper/modules';
 import classNames from 'classnames';
 
 import { SliderProps } from './Sliper.props';
@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import 'swiper/css/grid';
 import 'swiper/css/navigation';
 
 export const Slider: React.FC<SliderProps> = ({
@@ -23,11 +24,14 @@ export const Slider: React.FC<SliderProps> = ({
   isLoop = false,
   isAutoplay = false,
   isFinished = false,
+  isGrid = 1,
   isPagination = false,
+  isNumberPagination = false,
   isNavigation = false,
   slidesPerViewDef = 1,
   slidesPerView,
   className,
+  lang,
   navigationBreakpoints = {
     isMobile: false,
     isTablet: false,
@@ -62,16 +66,21 @@ export const Slider: React.FC<SliderProps> = ({
   return isFirstRender ? null : (
     <Swiper
       id={id}
-      modules={[Autoplay, Pagination, EffectFade, Navigation]}
+      modules={[Autoplay, Pagination, EffectFade, Navigation, Grid]}
       allowTouchMove={isInteractive}
       grabCursor={isInteractive}
       effect={isFadeEffect ? 'fade' : ''}
       autoplay={isAutoplay ? { delay: 2000, disableOnInteraction: false } : false}
       loop={isLoop}
+      loopAddBlankSlides={true}
       className={className}
       navigation={isNavigation}
       slidesPerView={slidesPerViewDef}
       style={{ zIndex: 'auto' }}
+      grid={{
+        rows: isGrid,
+        fill: 'column',
+      }}
       breakpoints={{
         360: {
           spaceBetween: 20,
@@ -82,20 +91,30 @@ export const Slider: React.FC<SliderProps> = ({
           slidesPerView: slidesPerView?.tablet || slidesPerViewDef,
         },
         1280: {
-          spaceBetween: 30,
+          spaceBetween: 32,
           slidesPerView: slidesPerView?.desktop || slidesPerViewDef,
+        },
+        1920: {
+          spaceBetween: 32,
+          slidesPerView: slidesPerView?.desktop3xl || slidesPerViewDef,
         },
       }}
       pagination={{
         enabled: isPagination,
         clickable: true,
-        type: 'bullets',
+
+        renderBullet: function (index, className) {
+          if (!isNumberPagination) {
+            return '<span class="' + className + '"></span>';
+          }
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
       }}
       lazyPreloadPrevNext={1}
     >
       {data.map((props, index) => (
         <SwiperSlide key={index}>
-          <Element {...props} cardData={cardData} isFinished={isFinished} />
+          <Element {...props} cardData={cardData} isFinished={isFinished} lang={lang} />
         </SwiperSlide>
       ))}
     </Swiper>

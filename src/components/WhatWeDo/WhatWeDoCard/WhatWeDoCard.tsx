@@ -15,7 +15,7 @@ export const WhatWeDoCard = ({ data }: { data: WhatWeDoCardProps }) => {
     <li
       className={` relative flex w-full flex-col md:flex-row md:gap-x-[30px] xl:gap-x-[240px] 2xl:gap-x-[264px] 3xl:gap-x-[188px] ${whatWeDoCardBeforeClass} ${whatWeDoCardAfterClass}`}
     >
-      <div className="relative h-[320px] w-full rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[440px] md:h-[326px] md:basis-1/2 xl:h-[276px] xl:w-[276px] xl:basis-[276px] 2xl:w-[316px] 2xl:basis-[316px] 3xl:basis-[436px] smOnly:mb-[30px]">
+      <div className="relative h-[320px] w-full rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[440px] md:h-[326px] md:basis-1/2 xl:h-[276px] xl:w-[276px] xl:basis-[276px] 2xl:w-[316px] 2xl:basis-[316px] 3xl:w-[436px] 3xl:basis-[436px] smOnly:mb-[30px]">
         <Image
           src={data.img}
           alt={data.alt}
@@ -24,7 +24,7 @@ export const WhatWeDoCard = ({ data }: { data: WhatWeDoCardProps }) => {
           className="rounded-2xl object-cover"
         />
       </div>
-      <div className="md:basis-1/2 xl:basis-[683px] 2xl:basis-[780px] 3xl:basis-[1216px]">
+      <div className="md:basis-1/2 xl:basis-[683px] 2xl:basis-[780px] 3xl:w-[1199px] 3xl:basis-[1199px]">
         <Title tag="h3" variantSize="h3" className="mb-4">
           {data.title}
         </Title>
