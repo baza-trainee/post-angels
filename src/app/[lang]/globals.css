@@ -249,7 +249,7 @@ body {
   .background-404 {
     background-image: url('/images/404/img1x.jpg');
     background-size: cover;
-    background-position: top -50px center;
+    background-position: center;
   }
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .background-404 {
