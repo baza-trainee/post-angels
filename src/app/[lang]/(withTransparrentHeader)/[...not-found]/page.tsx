@@ -8,12 +8,12 @@ const NotFound = async ({ params: { lang = 'uk' } }: { params: { lang: Locale } 
   const { notfound } = (await getDictionary(lang)).common;
 
   return (
-    <section className="background-404 h-[calc(100vh_-_156px)] min-h-[765px] py-40 2xl:h-full">
+    <section className="background-404 h-[calc(100vh_-_156px)] min-h-[765px] pt-[174px] xl:h-full xl:pb-[100px] xl:pt-[150px]">
       <div className="container text-center">
         <Title
           tag="h1"
           variantSize="h1"
-          className="mb-8 text-center font-eUkraineHead text-8xl font-bold text-grey-20 sm:mb-[52px] lg:text-[162px] xl:text-[162px] 2xl:text-[240px]"
+          className="mb-8 text-center font-eUkraineHead text-8xl font-bold text-grey-20 sm:mb-[52px] lg:!text-[162px] xl:text-[162px] 2xl:text-[240px]"
         >
           404
         </Title>
