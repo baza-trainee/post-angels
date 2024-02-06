@@ -66,7 +66,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   ourOffer,
   descriptionTermsAgreement,
   coreMsg,
-  buttonText
+  buttonText,
 }) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(schema),
@@ -80,19 +80,25 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className='container'>
-        <div className='flex flex-col flex-wrap gap-x-[172px] h-[504px] border-t-[1px] border-t-grey-60 border-t-solid pt-[50px] '>
-        {inputFields.map(({ title, placeholder, name, type }) => (
-          <Input title={title} name={name} type={type} placeholder={placeholder}/>
-        ))}
-        <SelectInput
-          name={waysSupport.name}
-          title={waysSupport.title}
-          options={waysSupport.options}
-          placeholder={waysSupport.placeholder}
+      <form onSubmit={handleSubmit(onSubmit)} className="container">
+        <div className="border-t-solid relative flex gap-y-4 h-[554px] flex-col flex-wrap  content-between gap-x-[172px] border-t-[1px] border-t-grey-60 pt-[50px] ">
+          <div className="absolute bottom-0 left-1/2 top-[50px] w-[1px] -translate-x-1/2 transform bg-grey-60"></div>
+          {inputFields.map(({ title, placeholder, name, type }) => (
+            <Input title={title} name={name} type={type} placeholder={placeholder} width="749px" />
+          ))}
+          <SelectInput
+            name={waysSupport.name}
+            title={waysSupport.title}
+            options={waysSupport.options}
+            placeholder={waysSupport.placeholder}
           />
-          <Textarea name={ourOffer.name} title={ourOffer.title} placeholder={ourOffer.placeholder} />
-          </div>
+          <Textarea
+            name={ourOffer.name}
+            title={ourOffer.title}
+            placeholder={ourOffer.placeholder}
+            height={'160px'}
+          />
+        </div>
         <Checkbox
           name={descriptionTermsAgreement.name}
           description={descriptionTermsAgreement.description}

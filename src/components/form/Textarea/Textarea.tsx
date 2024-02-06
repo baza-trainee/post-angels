@@ -4,7 +4,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 
 import { TextareaProps } from './Textarea.props';
 
-export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder }) => {
+export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder, height }) => {
   const { control } = useFormContext();
 
   return (
@@ -21,6 +21,7 @@ export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder }) 
                 : 'text-grey-60 placeholder:text-grey-60'
             }`}
             placeholder={placeholder}
+          style={{ height: height }}
             {...field}
           />
           {fieldState.error && (

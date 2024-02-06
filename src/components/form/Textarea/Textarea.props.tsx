@@ -5,4 +5,5 @@ export interface TextareaProps {
   name: string;
   placeholder: string;
   title: string;
+  height: string;
 }
