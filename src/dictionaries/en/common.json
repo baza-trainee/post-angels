@@ -190,6 +190,32 @@
         "link": "/en/archive"
       }
     },
+    "ourTeam": {
+      "title1": "Our",
+      "title2": "Team",
+      "teamData": [
+        {
+          "name": "Sebastian Syroyishka",
+          "img": "/images/ourteam/Sebastian.jpg"
+        },
+        {
+          "name": "Ostap Khoma",
+          "img": "/images/ourteam/Ostap.jpg"
+        },
+        {
+          "name": "Volodymyr Havryshevsky",
+          "img": "/images/ourteam/Volodymyr.jpg"
+        },
+        {
+          "name": "Gavrilyak Ruslan",
+          "img": "/images/ourteam/Ryslan.jpg"
+        },
+        {
+          "name": "Marta Kovalyshyn",
+          "img": "/images/ourteam/Marta.jpg"
+        }
+      ]
+    },
     "cooperation": {
       "cooperationSection": {
         "title": "Would you like to",

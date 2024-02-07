@@ -208,6 +208,32 @@
         }
       }
     },
+    "ourTeam": {
+      "title1": "Наша",
+      "title2": "Команда",
+      "teamData": [
+        {
+          "name": "Себастіан Сироїшка",
+          "img": "/images/ourteam/Sebastian.jpg"
+        },
+        {
+          "name": "Остап Хома",
+          "img": "/images/ourteam/Ostap.jpg"
+        },
+        {
+          "name": "Володимир Гавришевський",
+          "img": "/images/ourteam/Volodymyr.jpg"
+        },
+        {
+          "name": "Гавриляк Руслан",
+          "img": "/images/ourteam/Ryslan.jpg"
+        },
+        {
+          "name": "Марта Ковалишин",
+          "img": "/images/ourteam/Marta.jpg"
+        }
+      ]
+    },
     "contacts": {
       "contactsSection": {
         "title": "наші",

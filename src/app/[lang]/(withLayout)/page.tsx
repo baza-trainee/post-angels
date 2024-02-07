@@ -9,6 +9,8 @@ import { FinishedProjects } from '@/sections/FinishedProjects';
 import { Cooperation } from '@/sections/Cooperation';
 import { WhatWeDo } from '@/sections/WhatWeDo';
 import { AboutInNumbers } from '@/sections/AboutInNumbers';
+import OurTeam from '@/sections/OurTeam/OurTeam';
+import { TeamMember } from '@/components/OurTeam/TeamMemberCard/TeamMemberCard.props';
 
 const getPartners = async (lang: Locale) => {
   console.log(lang);
@@ -143,11 +145,64 @@ const getFinishedProject = (lang: Locale) => {
   return projects[lang];
 };
 
+const getTeam = (lang: Locale): TeamMember[] => {
+  const teamMembers = {
+    ua: [
+      {
+        name: 'Себастіан Сироїшка',
+        img: '/images/ourteam/Sebastian.png',
+      },
+      {
+        name: 'Остап Хома',
+        img: '/images/ourteam/Ostap.png',
+      },
+      {
+        name: 'Володимир Гавришевський',
+        img: '/images/ourteam/Volodymyr.png',
+      },
+      {
+        name: 'Гавриляк Руслан',
+        img: '/images/ourteam/Ryslan.png',
+      },
+      {
+        name: 'Марта Ковалишин',
+        img: '/images/ourteam/Marta.png',
+      },
+    ],
+    en: [
+      {
+        name: 'Sebastian Syroyishka',
+        img: '/images/ourteam/Sebastian.png',
+      },
+      {
+        name: 'Ostap Khoma',
+        img: '/images/ourteam/Ostap.png',
+      },
+      {
+        name: 'Volodymyr Havryshevsky',
+        img: '/images/ourteam/Volodymyr.png',
+      },
+      {
+        name: 'Gavrilyak Ruslan',
+        img: '/images/ourteam/Ryslan.png',
+      },
+      {
+        name: 'Marta Kovalyshyn',
+        img: '/images/ourteam/Marta.png',
+      },
+    ],
+  };
+
+  return teamMembers[lang];
+};
+
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
-  const { contacts, hero, partners, projects, cooperation, whatWeDo, aboutInNumbers } = common;
+  const { contacts, hero, partners, projects, cooperation, whatWeDo, aboutInNumbers, ourTeam } =
+    common;
   const partnersData = await getPartners(lang);
   const finishedData = getFinishedProject(lang);
+  const teamData = getTeam(lang);
 
   return (
     <main className="">
@@ -160,6 +215,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {finishedData && (
         <FinishedProjects projects={projects} finishedData={finishedData} lang={lang} />
       )}
+      {teamData && <OurTeam data={ourTeam} lang={lang} />}
       {partnersData && <Partners partnersData={partnersData} data={partners} />}
       <Cooperation data={cooperation} />
       <Contacts data={contacts} />
