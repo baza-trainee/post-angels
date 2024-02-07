@@ -1,4 +1,3 @@
-'use client';
 import { TeamMemberCard } from '../TeamMemberCard/TeamMemberCard';
 import { TeamMember } from '../TeamMemberCard/TeamMemberCard.props';
 
