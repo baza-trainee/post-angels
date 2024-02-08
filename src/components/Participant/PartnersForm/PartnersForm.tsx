@@ -80,9 +80,12 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="container">
-        <div className="border-t-solid relative flex gap-y-4 h-[554px] flex-col flex-wrap  content-between gap-x-[172px] border-t-[1px] border-t-grey-60 pt-[50px] ">
-          <div className="absolute bottom-0 left-1/2 top-[50px] w-[1px] -translate-x-1/2 transform bg-grey-60"></div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="container flex flex-col gap-10 border-t-[1px]  border-t-grey-60 pt-10 lg:gap-[50px] xl:pt-[50px]"
+      >
+        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-4  lg:h-[504px] lg:flex-wrap">
+          <div className="absolute bottom-0 left-1/2 top-0 hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
           {inputFields.map(({ title, placeholder, name, type }) => (
             <Input title={title} name={name} type={type} placeholder={placeholder} width="749px" />
           ))}
@@ -99,12 +102,16 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
             height={'160px'}
           />
         </div>
-        <Checkbox
-          name={descriptionTermsAgreement.name}
-          description={descriptionTermsAgreement.description}
-        />
-        <Paragraph>{coreMsg}</Paragraph>
-        <Button type="submit">{buttonText}</Button>
+        <div className="flex flex-col gap-[31px]">
+          <Checkbox
+            name={descriptionTermsAgreement.name}
+            description={descriptionTermsAgreement.description}
+          />
+          <Paragraph className="pl-[45px]">{coreMsg}</Paragraph>
+        </div>
+        <div className="w-[280px]">
+          <Button type="submit">{buttonText}</Button>
+        </div>
       </form>
     </FormProvider>
   );
