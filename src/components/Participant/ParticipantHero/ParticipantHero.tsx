@@ -16,6 +16,7 @@ export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
       <div className="flex flex-col gap-[30px] 2xl:gap-4">
         <Title variantSize="h2" className="flex flex-col flex-wrap lg:flex-row">
           {title}
+          &zwj;
           <br />
           <span>{accentTitle}</span>
         </Title>

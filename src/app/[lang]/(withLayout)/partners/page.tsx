@@ -12,7 +12,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { form } = common.participant.partners;
 
   return (
-    <section className="pt-[113px] xl:pt-[188px] xl:pb-[100px]">
+    <section className="pt-[113px] xl:pt-[188px] pb-[100px]">
       <ParticipantHero
         title={title}
         accentTitle={description.accentTitle}

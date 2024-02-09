@@ -84,10 +84,16 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
         onSubmit={handleSubmit(onSubmit)}
         className="container flex flex-col gap-10 border-t-[1px]  border-t-grey-60 pt-10 lg:gap-[50px] xl:pt-[50px]"
       >
-        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-4  lg:h-[504px] lg:flex-wrap">
+        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-4  lg:h-[504px] lg:flex-wrap lg:gap-x-0">
           <div className="absolute bottom-0 left-1/2 top-0 hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
           {inputFields.map(({ title, placeholder, name, type }) => (
-            <Input title={title} name={name} type={type} placeholder={placeholder} width="749px" />
+            <Input
+              title={title}
+              name={name}
+              type={type}
+              placeholder={placeholder}
+              className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]"
+            />
           ))}
           <SelectInput
             name={waysSupport.name}
@@ -96,22 +102,23 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
             placeholder={waysSupport.placeholder}
           />
           <Textarea
+            className="h-[158px]"
             name={ourOffer.name}
             title={ourOffer.title}
             placeholder={ourOffer.placeholder}
-            height={'160px'}
           />
         </div>
-        <div className="flex flex-col gap-[31px]">
+        <div className="w-max-[1200px] 2xl:w-max-[1840px] flex flex-col gap-[31px] ">
           <Checkbox
+            className="items-start 2xl:items-center"
             name={descriptionTermsAgreement.name}
             description={descriptionTermsAgreement.description}
           />
-          <Paragraph className="pl-[45px]">{coreMsg}</Paragraph>
+          <Paragraph className="pl-[45px] 2xl:pl-0">{coreMsg}</Paragraph>
         </div>
-        <div className="w-[280px]">
-          <Button type="submit">{buttonText}</Button>
-        </div>
+        <Button className="w-full lg:w-[464px] xl:w-[280px]" type="submit">
+          {buttonText}
+        </Button>
       </form>
     </FormProvider>
   );

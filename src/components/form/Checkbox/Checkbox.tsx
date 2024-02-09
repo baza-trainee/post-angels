@@ -1,10 +1,17 @@
 'use client';
+
+import cn from 'classnames';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import { CheckboxProps } from './Checkbox.props';
 import { ICONS } from '@/components/icons/icons.const';
 
-export const Checkbox: React.FC<CheckboxProps> = ({ name, description }) => {
+export const Checkbox: React.FC<CheckboxProps> = ({
+  name,
+  description,
+  variantFontWeight = 'normal',
+  className,
+}) => {
   const { control } = useFormContext();
 
   return (
@@ -12,8 +19,13 @@ export const Checkbox: React.FC<CheckboxProps> = ({ name, description }) => {
       name={name}
       control={control}
       render={({ field, fieldState }) => (
-        <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
-          <div className="flex flex-row items-center gap-3.5">
+        <label
+          className={cn('flex flex-col gap-2 text-base leading-[160%] text-grey-80', {
+            ['font-regular']: variantFontWeight == 'normal',
+            ['font-medium']: variantFontWeight == 'medium',
+          })}
+        >
+          <div className={cn('flex flex-row gap-[21px]', className)}>
             <input className="hidden" type="checkbox" {...field} />
             <div>
               {field.value ? (
@@ -25,7 +37,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ name, description }) => {
             <p>{description}</p>
           </div>
           {fieldState.error && (
-            <p className="text-sm font-normal text-error">{fieldState.error.message}</p>
+            <p className="pl-[45px] text-sm font-normal text-error">{fieldState.error.message}</p>
           )}
         </label>
       )}
