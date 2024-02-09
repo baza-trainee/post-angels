@@ -6,7 +6,7 @@ import { ProjectInfo } from '@/sections/ProjectPage/ProjectInfo';
 // const getProjectData = async (project: string, lang: Locale) => {
 //   // GEt API//
 //   const projectData = {
-//     ua: {
+//     uk: {
 //       id: project,
 //       image: {
 //         src: `/images/project/project-${project}.jpg`,
@@ -71,7 +71,7 @@ import { ProjectInfo } from '@/sections/ProjectPage/ProjectInfo';
 // };
 const getProjectInfo = async (project: string, lang: Locale) => {
   const projectData = {
-    ua: {
+    uk: {
       title: 'Збір на травматологічні матеріали',
       info: `Цей збір призначений для тих, хто щодня ризикує своїм здоров'ям та безпекою, надаючи допомогу тим, хто потребує травматологічної допомоги. Ми спрямовані на підтримку лікарень, екстрених медичних служб та інших установ, які надають травматологічну допомогу.
 Ми збираємо кошти для придбання та постачання травматологічних матеріалів, таких як перев'язочні матеріали, антисептики, гіпсові бандажі, хірургічні інструменти та інші необхідні засоби. Наша мета — забезпечити медичні установи повноцінним арсеналом інструментів для швидкої та ефективної допомоги тим, хто потребує.

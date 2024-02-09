@@ -4,23 +4,23 @@
       "headerNav": [
         {
           "name": "Головна",
-          "href": "/ua"
+          "href": "/uk"
         },
         {
           "name": "Про нас",
-          "href": "/ua/aboutUs"
+          "href": "/uk/aboutUs"
         },
         {
           "name": "Партнерам",
-          "href": "/ua/partners"
+          "href": "/uk/partners"
         },
         {
           "name": "Волонтерам",
-          "href": "/ua/volunteers"
+          "href": "/uk/volunteers"
         },
         {
           "name": "Контакти",
-          "href": "/ua/contacts"
+          "href": "/uk/contacts"
         }
       ],
       "buttons": {
@@ -45,14 +45,14 @@
     },
     "logo": {
       "label": "Логотип компанії",
-      "href": "/ua"
+      "href": "/uk"
     },
     "hero": {
       "title": "Майбутнє \r\nв наших руках",
       "subtitle": "Спільними зусиллями досягнемо яскравого завтра: це наш внесок у формування майбутнього.",
       "button": {
         "text": "Докладніше",
-        "href": "/ua/aboutUs"
+        "href": "/uk/aboutUs"
       }
     },
     "partners": {
@@ -60,7 +60,7 @@
       "title1": "Партнери",
       "button": {
         "text": "Приєднатись",
-        "href": "/ua/partners"
+        "href": "/uk/partners"
       }
     },
     "aboutInNumbers": {
@@ -174,11 +174,11 @@
         "buttons": {
           "fundBtn": {
             "text": "Зробити внесок",
-            "link": "/ua/payments/"
+            "link": "/uk/payments/"
           },
           "moreBtn": {
             "text": "Дізнатися більше",
-            "link": "/ua/projects/"
+            "link": "/uk/projects/"
           },
           "finishedBtn": {
             "text": "Завершений",
@@ -188,7 +188,7 @@
       },
       "archiveBtn": {
         "text": "Архів",
-        "link": "/ua/archive"
+        "link": "/uk/archive"
       }
     },
     "cooperation": {
@@ -199,11 +199,11 @@
         "buttons": {
           "partnerBtn": {
             "text": "Я - партнер",
-            "link": "ua/partners"
+            "link": "uk/partners"
           },
           "volunteerBtn": {
             "text": "Я - волонтер",
-            "link": "ua/volunteers"
+            "link": "uk/volunteers"
           }
         }
       }
@@ -238,7 +238,7 @@
       "contactsSection": {
         "title": "наші",
         "title1": "контакти",
-        "href": "/ua",
+        "href": "/uk",
         "img": {
           "src": "/images/contacts-map.jpg",
           "alt": "Карта міста з геопозначкою офіса PostAngels"
@@ -257,27 +257,27 @@
       "footerNav": [
         {
           "name": "Головна",
-          "href": "/ua/"
+          "href": "/uk/"
         },
         {
           "name": "Про нас",
-          "href": "/ua/aboutUs"
+          "href": "/uk/aboutUs"
         },
         {
           "name": "Волонтерам",
-          "href": "/ua/volunteers"
+          "href": "/uk/volunteers"
         },
         {
           "name": "Партнерам",
-          "href": "/ua/partners"
+          "href": "/uk/partners"
         },
         {
           "name": "Контакти",
-          "href": "/ua/contacts"
+          "href": "/uk/contacts"
         },
         {
           "name": "Звітність",
-          "href": "/ua/"
+          "href": "/uk/"
         }
       ],
       "footerDoc": [
