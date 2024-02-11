@@ -2,6 +2,7 @@ import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 
 import { ParticipantHero } from '@/components/Participant/ParticipantHero/ParticipantHero';
+import { VolunteersForm } from '@/components/Participant/VolunteersForm/VolunteersForm';
 
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
@@ -18,6 +19,14 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         img={description.img}
         alt={description.alt}
       />
+      {/* <VolunteersForm
+        inputFields={form.inputFields}
+        waysSupport={form.waysSupport}
+        ourOffer={form.ourOffer}
+        descriptionTermsAgreement={form.descriptionTermsAgreement}
+        coreMsg={form.coreMsg}
+        buttonText={form.buttonText}
+         /> */}
     </section>
   );
 };

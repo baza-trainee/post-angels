@@ -11,7 +11,7 @@ import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { Locale } from '@/i18n.config';
-import { PartnersFormProps } from './PartnersForm.props';
+import { VolunteersFormProps } from './VolunteersForm.props';
 
 const schema = yup.object({
   name: yup
@@ -61,7 +61,7 @@ const schema = yup.object({
 
 type FormData = yup.InferType<typeof schema>;
 
-export const PartnersForm: React.FC<PartnersFormProps> = ({
+export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   inputFields,
   waysSupport,
   ourOffer,
