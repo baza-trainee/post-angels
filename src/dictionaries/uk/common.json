@@ -417,23 +417,50 @@
               "type": "text"
             }
           ],
-          "titleSpheres": "Які сфери волонтерської діяльності Ви готові розглянути?",
-          "placeholderSpheres": "Оберіть відповідне",
-          "spheres": [
-            { "value": "chocolate", "label": "Chocolate" },
-            { "value": "strawberry", "label": "Strawberry" },
-            { "value": "vanilla", "label": "Vanilla" }
-          ],
-          "titleReason": "Чому Ви хочете бути волонтером? (не обов’язково)",
-          "placeholderReason": "Оберіть відповідне",
-          "descriptionCertificate": "Наявність волонтерського посвідчення",
-          "isVolunteerCertificate": "Так",
-          "isNotVolunteerCertificate": "Ні",
-          "descriptionCar": "У Вас є власне авто?",
-          "isCar": "Так",
-          "isNotCar": "Ні",
-          "descriptionTermsAgreement": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR",
-          "descriptionVolunteersAgreement": "Як волонтёр нашої організації, я погоджуюся дотримуватися внутрішньої політики та процедур. Я погоджуюсь, що вся робота, яку я виконую, виконується на волонтерських засадах."
+          "waysVolunteering": {
+            "name": "waysVolunteering",
+            "title": "Які сфери волонтерської діяльності Ви готові розглянути?",
+            "placeholder": "Оберіть відповідне",
+            "options": [
+              { "value": "chocolate", "label": "Chocolate" },
+              { "value": "strawberry", "label": "Strawberry" },
+              { "value": "vanilla", "label": "Vanilla" }
+            ]
+          },
+          "volunteerCertificate": {
+            "yes": {
+              "name": "yes",
+              "description": "Так"
+            },
+            "no": {
+              "name": "no",
+              "description": "Ні"
+            }
+          },
+          "carAvailability": {
+            "yes": {
+              "name": "yes",
+              "description": "Так"
+            },
+            "no": {
+              "name": "no",
+              "description": "Ні"
+            }
+          },
+          "reasonVolunteering": {
+            "name": "reasonVolunteering",
+            "title": "Чому Ви хочете бути волонтером? (не обов’язково)",
+            "placeholder": "Напишіть тут"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
+          },
+          "descriptionPrivacyPolice": {
+            "name": "descriptionPrivacyPolice",
+            "description": "Як волонтёр нашої організації, я погоджуюся дотримуватися внутрішньої політики та процедур. Я погоджуюсь, що вся робота, яку я виконую, виконується на волонтерських засадах."
+          },
+          "buttonText": "Відправити"
         }
       }
     }

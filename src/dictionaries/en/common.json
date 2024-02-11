@@ -410,23 +410,50 @@
               "type": "text"
             }
           ],
-          "titleSpheres": "Which volunteer spheres are you willing to consider?",
-          "placeholderSpheres": "Select the appropriate",
-          "spheres": [
-            { "value": "chocolate", "label": "Chocolate" },
-            { "value": "strawberry", "label": "Strawberry" },
-            { "value": "vanilla", "label": "Vanilla" }
-          ],
-          "titleReason": "Why do you want to be a volunteer? (optional)",
-          "placeholderReason": "Select the appropriate",
-          "descriptionCertificate": "Presence of a volunteer certificate",
-          "isVolunteerCertificate": "Yes",
-          "isNotVolunteerCertificate": "No",
-          "descriptionCar": "Do you have your own car?",
-          "isCar": "Yes",
-          "isNotCar": "No",
-          "descriptionTermsAgreement": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR",
-          "descriptionVolunteersAgreement": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
+          "waysVolunteering": {
+            "name": "waysVolunteering",
+            "title": "What areas of volunteering are you willing to consider?",
+            "placeholder": "Select an option",
+            "options": [
+              { "value": "chocolate", "label": "Chocolate" },
+              { "value": "strawberry", "label": "Strawberry" },
+              { "value": "vanilla", "label": "Vanilla" }
+            ]
+          },
+          "volunteerCertificate": {
+            "yes": {
+              "name": "yes",
+              "description": "Yes"
+            },
+            "no": {
+              "name": "no",
+              "description": "No"
+            }
+          },
+          "carAvailability": {
+            "yes": {
+              "name": "yes",
+              "description": "Yes"
+            },
+            "no": {
+              "name": "no",
+              "description": "No"
+            }
+          },
+          "reasonVolunteering": {
+            "name": "reasonVolunteering",
+            "title": "Why do you want to be a volunteer? (optional)",
+            "placeholder": "Write here"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR."
+          },
+          "descriptionPrivacyPolice": {
+            "name": "descriptionPrivacyPolice",
+            "description": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
+          },
+          "buttonText": "Submit"
         }
       }
     }
