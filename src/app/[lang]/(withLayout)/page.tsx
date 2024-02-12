@@ -9,6 +9,7 @@ import { FinishedProjects } from '@/sections/FinishedProjects';
 import { Cooperation } from '@/sections/Cooperation';
 import { WhatWeDo } from '@/sections/WhatWeDo';
 import { AboutInNumbers } from '@/sections/AboutInNumbers';
+import { fetchProjects } from '@/api/fetchProjects';
 
 const getPartners = async (lang: Locale) => {
   console.log(lang);
@@ -147,7 +148,8 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
   const { common } = await getDictionary(lang);
   const { contacts, hero, partners, projects, cooperation, whatWeDo, aboutInNumbers } = common;
   const partnersData = await getPartners(lang);
-  const finishedData = getFinishedProject(lang);
+  const finishedData = await fetchProjects(lang, ['completed']);
+  const projectData = await fetchProjects(lang, ['new', 'completed']);
 
   return (
     <main className="">
@@ -155,7 +157,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {partnersData && <PartnersTop partnersData={partnersData} data={partners} />}
       <AboutInNumbers data={aboutInNumbers} />
       <WhatWeDo lang={lang} data={whatWeDo} />
-      <Projects projects={projects} lang={lang} />
+      <Projects projects={projects} lang={lang} projectData={projectData} />
 
       {finishedData && (
         <FinishedProjects projects={projects} finishedData={finishedData} lang={lang} />

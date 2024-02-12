@@ -7,7 +7,10 @@ import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
 
 export const ProjectCard = (props: ProjectCardProps) => {
-  const { all, cardData, id, image, startDate, title, collected, isFinished, lang } = props;
+  const { all, image, startDate, title, collected } = props.attributes;
+  const { id, isFinished, lang } = props;
+  const cardData = props.cardData;
+
   const blockRef = useRef<HTMLDivElement | null>(null);
   const [blockWidth, setBlockWidth] = useState(0);
 
@@ -39,13 +42,13 @@ export const ProjectCard = (props: ProjectCardProps) => {
   return (
     <article className={`${afterclassname}`}>
       <div
-        className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px]  xl:h-full xl:w-full `}
+        className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px]  xl:h-[279px] xl:w-full `}
       >
         <Image
-          src={image.src}
+          src={image.src.data.attributes.url}
           alt={image.alt}
-          width={379}
-          height={384}
+          width={image.src.data.attributes.width}
+          height={image.src.data.attributes.height}
           className='object-center" h-full w-full rounded-2xl object-cover'
         />
       </div>
@@ -63,7 +66,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             {cardData?.projectCard.collected}
           </Paragraph>
           <Paragraph variantFontWeight="medium" variantFontSize="15">
-            {new Intl.NumberFormat('ua-UA').format(collected)} /
+            {new Intl.NumberFormat('ua-UA').format(collected)} /&nbsp;
             {new Intl.NumberFormat('ua-UA').format(all)}
           </Paragraph>
         </div>
