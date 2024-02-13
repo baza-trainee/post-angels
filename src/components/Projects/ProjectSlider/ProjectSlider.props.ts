@@ -3,7 +3,7 @@ import { ProjectCardProps } from '../ProjectCard/ProjectsCard.props';
 import { Locale } from '@/i18n.config';
 
 export interface ProjectSliderProps {
-  projectsDat: ProjectCardProps[];
+  projectsData: ProjectCardProps[];
   className?: string;
   projects: ProjectsProps;
   isFinished?: boolean;

@@ -92,7 +92,7 @@ export const ProjectsList = ({
   return (
     <>
       <Filters projects={projects} checkFilter={checkFilter} checkSort={checkSort} />
-      <ProjectSlider projectsDat={sortedProjects} projects={projects} lang={lang} />
+      <ProjectSlider projectsData={sortedProjects} projects={projects} lang={lang} />
     </>
   );
 };
