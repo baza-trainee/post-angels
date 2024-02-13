@@ -13,10 +13,10 @@ const getFilteredData = (filterName: string, data: ProjectCardProps[]) => {
       return data;
 
     case 'new':
-      return data.filter(dataProject => dataProject.status === 'new');
+      return data.filter(dataProject => dataProject.attributes.status === 'new');
 
     case 'completed':
-      return data.filter(dataProject => dataProject.status === 'completed');
+      return data.filter(dataProject => dataProject.attributes.status === 'completed');
 
     default:
       return data;
@@ -27,30 +27,29 @@ const getSortedData = (sortingMod: string, data: ProjectCardProps[]) => {
   switch (sortingMod) {
     case 'newFirst':
       return data.sort((a, b) => {
-        const dateA = new Date(a.startDate).getTime();
-        const dateB = new Date(b.startDate).getTime();
-
+        const dateA = new Date(a.attributes.startDate).getTime();
+        const dateB = new Date(b.attributes.startDate).getTime();
         return dateA - dateB;
       });
 
     case 'moreFunds':
       return data.sort((a, b) => {
-        const percentA = a.collected / a.all;
-        const percentB = b.collected / b.all;
+        const percentA = a.attributes.collected / a.attributes.all;
+        const percentB = b.attributes.collected / b.attributes.all;
         return percentA - percentB;
       });
 
     case 'lessFunds':
       return data.sort((a, b) => {
-        const percentA = a.collected / a.all;
-        const percentB = b.collected / b.all;
+        const percentA = a.attributes.collected / a.attributes.all;
+        const percentB = b.attributes.collected / b.attributes.all;
         return percentB - percentA;
       });
 
     case 'oldFirst':
       return data.sort((a, b) => {
-        const dateA = new Date(a.startDate).getTime();
-        const dateB = new Date(b.startDate).getTime();
+        const dateA = new Date(a.attributes.startDate).getTime();
+        const dateB = new Date(b.attributes.startDate).getTime();
 
         return dateA - dateB;
       });

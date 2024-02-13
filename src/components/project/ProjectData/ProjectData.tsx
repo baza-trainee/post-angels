@@ -41,7 +41,7 @@ export const ProjectData = ({
     <div className="mb-[30px] flex flex-col gap-y-4 xl:mb-5">
       <div className="flex justify-between	">
         <Paragraph
-          variant={status === 'finished' ? 'light' : 'grey'}
+          variant={status === 'completed' ? 'light' : 'grey'}
           variantFontSize="15"
           variantFontWeight="regular"
         >
@@ -56,11 +56,11 @@ export const ProjectData = ({
         <div ref={blockRef} className="h-[10px] w-full overflow-hidden rounded-full bg-progressBar">
           <div
             style={{ width: getPercentWidth(blockWidth, collected, all) + 'px' }}
-            className={`${status === 'finished' ? 'hidden' : 'bg-green'} h-full rounded-full`}
+            className={`${status === 'completed' ? 'hidden' : 'bg-green'} h-full rounded-full`}
           ></div>
         </div>
         <Paragraph
-          variant={status === 'finished' ? 'light' : 'grey'}
+          variant={status === 'completed' ? 'light' : 'grey'}
           variantFontSize="15"
           variantFontWeight="regular"
         >
@@ -69,14 +69,14 @@ export const ProjectData = ({
       </div>
       <div className="flex justify-between">
         <Paragraph
-          variant={status === 'finished' ? 'light' : 'grey'}
+          variant={status === 'completed' ? 'light' : 'grey'}
           variantFontSize="15"
           variantFontWeight="regular"
         >
           {staticData.startDate}
         </Paragraph>
         <Paragraph
-          variant={status === 'finished' ? 'light' : 'grey'}
+          variant={status === 'completed' ? 'light' : 'grey'}
           variantFontSize="15"
           variantFontWeight="regular"
         >
@@ -85,14 +85,14 @@ export const ProjectData = ({
       </div>
       <div className="flex justify-between">
         <Paragraph
-          variant={status === 'finished' ? 'light' : 'grey'}
+          variant={status === 'completed' ? 'light' : 'grey'}
           variantFontSize="15"
           variantFontWeight="regular"
         >
           {staticData.finishedDate}
         </Paragraph>
         <Paragraph
-          variant={status === 'finished' ? 'light' : 'grey'}
+          variant={status === 'completed' ? 'light' : 'grey'}
           variantFontSize="15"
           variantFontWeight="regular"
         >
