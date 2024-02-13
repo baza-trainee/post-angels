@@ -6,7 +6,7 @@ import { Slider } from '@/components/Slider';
 import { ProjectSliderProps } from '@/components/Projects/ProjectSlider/ProjectSlider.props';
 
 export const ProjectSlider: React.FC<ProjectSliderProps> = ({
-  projectsData,
+  projectsDat,
   className = '',
   projects,
   lang,
@@ -21,7 +21,7 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
       <Slider
         id="projectSlider"
         className="projectSlider"
-        data={projectsData}
+        data={projectsDat}
         lang={lang}
         cardData={projects}
         element={ProjectCard}

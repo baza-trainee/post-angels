@@ -31,7 +31,7 @@ export const Hero = async ({ data, lang }: { data: HeroProps; lang: Locale }) =>
               {data.button.text}
             </LinkButton>
           </div>
-          <HeroSlider banners={heroData.image} lang={lang} />
+          {heroData?.image.length > 0 && <HeroSlider banners={heroData?.image} lang={lang} />}
         </div>
       </div>
     </section>
