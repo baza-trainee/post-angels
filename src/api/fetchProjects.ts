@@ -28,10 +28,6 @@ export const fetchProjects = async (
     return result;
   } catch (error) {
     console.log(error);
-    return {
-      title: '',
-      subtitle: '',
-      image: '',
-    } as any;
+    return [] as any;
   }
 };

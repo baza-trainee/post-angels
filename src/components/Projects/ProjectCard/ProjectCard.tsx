@@ -7,8 +7,8 @@ import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
 
 export const ProjectCard = (props: ProjectCardProps) => {
-  const { all, image, startDate, title, collected, slug } = props.attributes;
-  const { id, isFinished, lang } = props;
+  const { all, image, startDate, title, collected, slug, status } = props.attributes;
+  const { lang } = props;
   const cardData = props.cardData;
 
   const blockRef = useRef<HTMLDivElement | null>(null);
@@ -59,7 +59,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
         </Title>
         <div className="flex justify-between	">
           <Paragraph
-            variant={isFinished ? 'light' : 'grey'}
+            variant={status === 'completed' ? 'light' : 'grey'}
             variantFontSize="15"
             variantFontWeight="regular"
           >
@@ -77,11 +77,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
           >
             <div
               style={{ width: getPercentWidth(blockWidth, collected, all) + 'px' }}
-              className={`${isFinished ? 'hidden' : 'bg-green'} h-full rounded-full`}
+              className={`${status === 'completed' ? 'hidden' : 'bg-green'} h-full rounded-full`}
             ></div>
           </div>
           <Paragraph
-            variant={isFinished ? 'light' : 'grey'}
+            variant={status === 'completed' ? 'light' : 'grey'}
             variantFontSize="15"
             variantFontWeight="regular"
           >
@@ -90,14 +90,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
         </div>
         <div className="flex justify-between	">
           <Paragraph
-            variant={isFinished ? 'light' : 'grey'}
+            variant={status === 'completed' ? 'light' : 'grey'}
             variantFontSize="15"
             variantFontWeight="regular"
           >
             {cardData?.projectCard.starts}
           </Paragraph>
           <Paragraph
-            variant={isFinished ? 'light' : 'grey'}
+            variant={status === 'completed' ? 'light' : 'grey'}
             variantFontSize="15"
             variantFontWeight="regular"
           >
@@ -108,8 +108,8 @@ export const ProjectCard = (props: ProjectCardProps) => {
 
       <ul className="flex flex-col gap-y-5">
         <li>
-          <LinkButton href={`payments/${slug}`} disabled={isFinished}>
-            {isFinished
+          <LinkButton href={`payments/${slug}`} disabled={status === 'completed'}>
+            {status === 'completed'
               ? cardData?.projectCard.buttons.finishedBtn.text
               : cardData?.projectCard.buttons.fundBtn.text}
           </LinkButton>

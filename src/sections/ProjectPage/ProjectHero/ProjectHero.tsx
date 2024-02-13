@@ -80,10 +80,10 @@ export const ProjectHero = ({
 
           <LinkButton
             href={`/payments/${id}`}
-            disabled={status === 'finished'}
+            disabled={status === 'completed'}
             className="xl:w-[280px]"
           >
-            {status === 'finished'
+            {status === 'completed'
               ? staticData?.buttons.finishedBtn.text
               : staticData?.buttons.fundBtn.text}
           </LinkButton>

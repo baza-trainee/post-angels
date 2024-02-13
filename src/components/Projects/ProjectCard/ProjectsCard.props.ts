@@ -11,8 +11,8 @@ export interface ProjectCardProps {
         data: {
           attributes: {
             url: string;
-            width: number;
-            height: number;
+            width?: number;
+            height?: number;
           };
         };
       };
@@ -22,7 +22,7 @@ export interface ProjectCardProps {
     all: number;
     startDate: string;
     status: string;
-    slug: string;
+    slug?: string;
   };
   isFinished?: boolean;
   lang?: Locale;
