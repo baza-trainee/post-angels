@@ -7,7 +7,7 @@ export const PartnerCard = ({ attributes }: PartnersSliderProps) => {
       className={` flex h-[68px]   w-fit items-center justify-center saturate-0 transition-all delay-150 hover:saturate-100 `}
     >
       <Image
-        className="h-[68px] w-auto  object-cover object-center"
+        className="h-[68px] w-auto  object-contain object-center"
         width={attributes.partnerOrgLogo.src.data.attributes.width}
         height={attributes.partnerOrgLogo.src.data.attributes.height}
         priority
