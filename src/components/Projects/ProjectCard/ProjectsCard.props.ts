@@ -2,7 +2,7 @@ import { Locale } from '@/i18n.config';
 import { ProjectsProps } from '@/sections/Projects/Projects.props';
 
 export interface ProjectCardProps {
-  id: number;
+  id: string;
   attributes: {
     image: {
       id: string;
@@ -21,8 +21,8 @@ export interface ProjectCardProps {
     collected: number;
     all: number;
     startDate: string;
-
     status: string;
+    slug: string;
   };
   isFinished?: boolean;
   lang?: Locale;

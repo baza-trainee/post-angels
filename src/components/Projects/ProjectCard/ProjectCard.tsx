@@ -7,7 +7,7 @@ import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
 
 export const ProjectCard = (props: ProjectCardProps) => {
-  const { all, image, startDate, title, collected } = props.attributes;
+  const { all, image, startDate, title, collected, slug } = props.attributes;
   const { id, isFinished, lang } = props;
   const cardData = props.cardData;
 
@@ -108,14 +108,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
 
       <ul className="flex flex-col gap-y-5">
         <li>
-          <LinkButton href={`payments/${id}`} disabled={isFinished}>
+          <LinkButton href={`payments/${slug}`} disabled={isFinished}>
             {isFinished
               ? cardData?.projectCard.buttons.finishedBtn.text
               : cardData?.projectCard.buttons.fundBtn.text}
           </LinkButton>
         </li>
         <li>
-          <LinkButton variant="white" href={`${lang}/projects/${id}/info`}>
+          <LinkButton variant="white" href={`${lang}/projects/${slug}/info`}>
             {cardData?.projectCard.buttons.moreBtn.text}
           </LinkButton>
         </li>

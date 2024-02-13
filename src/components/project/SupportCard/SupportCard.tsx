@@ -4,7 +4,7 @@ import { Paragraph } from '@/components/typography/Paragraph';
 import { formatTimestamp } from '@/utils/dateParser';
 
 export const SupportCard = (props: ProjectSupportDataProps) => {
-  const { name, date, sum, cardData } = props;
+  const { name, date, sum } = props.attributes;
   const formattedDate = formatTimestamp(date);
 
   return (
@@ -23,7 +23,7 @@ export const SupportCard = (props: ProjectSupportDataProps) => {
           </Paragraph>
         </div>
         <Paragraph variant="grey" variantFontSize="16">
-          {`${new Intl.NumberFormat('ua-UA').format(sum)} ${cardData}`}
+          {`${new Intl.NumberFormat('ua-UA').format(sum)} ${props.cardData}`}
         </Paragraph>
       </div>
     </div>

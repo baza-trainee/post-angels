@@ -8,6 +8,7 @@ export const getProjects = gql`
         attributes {
           title
           all
+          slug
           collected
           status
           startDate

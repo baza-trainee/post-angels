@@ -1,29 +1,28 @@
 import { request } from 'graphql-request';
 
-import { getProjects } from './requests/getProjects';
-
 import { Locale } from '@/i18n.config';
 
-import { ProjectDataProps, ProjectsDataType } from '@/sections/Projects/Projects.props';
+import { getOneProject } from './requests/getOneProject';
+import { ProjectOneDataType, ProjectOneDataProps } from '@/sections/ProjectPage/ProjectPage.props';
 
-export const fetchProjects = async (
+export const fetchOneProject = async (
   locale: Locale,
-  filters: string[]
-): Promise<ProjectDataProps[]> => {
+  slug: string
+): Promise<ProjectOneDataProps> => {
   try {
-    const data: ProjectsDataType = await request(
+    const data: ProjectOneDataType = await request(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/graphql` as string,
-      getProjects,
+      getOneProject,
       {
         locale: locale,
-        statuses: filters,
+        slug: slug,
       },
       {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_GET_API}`,
       }
     );
 
-    const result = data.projects.data;
+    const result = { projects: data.projects.data[0], supportsData: data.supportsData.data };
 
     return result;
   } catch (error) {

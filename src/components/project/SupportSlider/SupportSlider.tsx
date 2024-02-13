@@ -10,7 +10,7 @@ export const SupportSlider = ({
   project_details,
   className = '',
 }: {
-  projectDataInfo: ProjectDataInfoProps;
+  projectDataInfo: ProjectDataInfoProps[];
   className?: string;
   project_details: string;
 }) => {
@@ -21,8 +21,7 @@ export const SupportSlider = ({
       <Slider
         id="supportSlider"
         className="supportSlider"
-        data={projectDataInfo.supportData}
-        // lang={lang}
+        data={projectDataInfo}
         cardData={project_details}
         element={SupportCard}
         isAutoplay={false}

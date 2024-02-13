@@ -36,3 +36,47 @@ export interface ProjectsProps {
     link: string;
   };
 }
+
+export interface ProjectsDataType {
+  projects: {
+    data: ProjectDataProps[];
+  };
+}
+
+export interface ProjectDataProps {
+  id: string;
+  attributes: {
+    title: string;
+    all: number;
+    collected: number;
+    status: string;
+    startDate: string;
+    image: {
+      id: string;
+      alt: string;
+      src: {
+        data: {
+          attributes: {
+            url: string;
+            width: number;
+            height: number;
+          };
+        };
+      };
+    };
+  };
+}
+
+export interface ProjectsSlugsDataType {
+  projects: {
+    data: {
+      attributes: {
+        slug: string;
+      };
+    }[];
+  };
+}
+
+export interface ProjectDataSlugsProps {
+  slug: string;
+}
