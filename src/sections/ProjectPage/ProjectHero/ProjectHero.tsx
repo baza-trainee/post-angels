@@ -15,8 +15,8 @@ export const ProjectHero = ({
   data: ProjectHeroProps;
   staticData: StaticDataHeroProps;
 }) => {
-  const { id, title, all, collected, startDate, finishedDate, organizer, image, socials, status } =
-    data;
+  const { id, title, organizer, image, socials, status } = data;
+
   const createTitle = (title: string) => {
     const words = title.split(' ');
 
@@ -39,7 +39,7 @@ export const ProjectHero = ({
 
           <div className="relative h-[243px] w-full rounded-2xl saturate-0 transition-all delay-300 hover:saturate-100 md:h-[418px] lg:h-[818px] xl:h-[429px] xl:w-[583px] 2xl:h-[489px] 2xl:w-[664px] 3xl:h-[469px] 3xl:w-[904px]">
             <Image
-              src={image.src}
+              src={image.src.data.attributes.url}
               alt={image.alt}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -65,10 +65,10 @@ export const ProjectHero = ({
               </Paragraph>
               <div className="mb-[30px] flex items-center gap-x-[10px] xl:mb-[20px]">
                 <Image
-                  src={data.organizer.img.src}
-                  alt={data.organizer.img.alt}
-                  width={40}
-                  height={40}
+                  src={data.organizer.image.src.data.attributes.url}
+                  alt={data.organizer.image.alt}
+                  width={data.organizer.image.src.data.attributes.width}
+                  height={data.organizer.image.src.data.attributes.height}
                   className="h-10 w-10 rounded-full saturate-0 transition-all delay-300 hover:saturate-100"
                 />
                 <Paragraph variant="accent" variantFontSize="14" className="">
@@ -80,10 +80,10 @@ export const ProjectHero = ({
 
           <LinkButton
             href={`/payments/${id}`}
-            disabled={status === 'finished'}
+            disabled={status === 'completed'}
             className="xl:w-[280px]"
           >
-            {status === 'finished'
+            {status === 'completed'
               ? staticData?.buttons.finishedBtn.text
               : staticData?.buttons.fundBtn.text}
           </LinkButton>
