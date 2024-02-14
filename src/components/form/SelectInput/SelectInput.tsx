@@ -106,7 +106,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       isClearable
       // @ts-ignore
       render={({ field, fieldState }) => (
-        <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
+        <label className="relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
           {title}
           <Select
             id={id}
@@ -123,7 +123,9 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
             }}
           />
           {fieldState.error && (
-            <p className="text-sm font-normal text-error">{fieldState.error.message}</p>
+            <p className="absolute bottom-[-26px] text-[13px] font-normal text-error">
+              {fieldState.error.message}
+            </p>
           )}
         </label>
       )}

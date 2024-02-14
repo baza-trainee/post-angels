@@ -20,7 +20,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       control={control}
       render={({ field, fieldState }) => (
         <label
-          className={cn('flex flex-col gap-2 text-base leading-[160%] text-grey-80', {
+          className={cn('relative flex flex-col gap-2 text-base leading-[160%] text-grey-80', {
             ['font-regular']: variantFontWeight == 'normal',
             ['font-medium']: variantFontWeight == 'medium',
           })}
@@ -37,7 +37,9 @@ export const Checkbox: React.FC<CheckboxProps> = ({
             <p>{description}</p>
           </div>
           {fieldState.error && (
-            <p className="pl-[45px] text-sm font-normal text-error">{fieldState.error.message}</p>
+            <p className="absolute bottom-[-26px] pl-[45px] text-[13px] font-normal text-error">
+              {fieldState.error.message}
+            </p>
           )}
         </label>
       )}

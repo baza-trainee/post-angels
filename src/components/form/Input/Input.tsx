@@ -15,13 +15,13 @@ export const Input: React.FC<InputProps> = ({ name, title, type, placeholder, cl
       render={({ field, fieldState }) => (
         <label
           className={cn(
-            'flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80',
+            'relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80',
             className
           )}
         >
           {title}
           <input
-            className={`rounded-2xl border border-grey-60 bg-transparent px-3.5 py-4 text-sm font-normal outline-none focus:text-grey-100 focus:border-accent-hover ${
+            className={`rounded-2xl border border-grey-60 bg-transparent px-3.5 py-4 text-sm font-normal outline-none focus:border-accent-hover focus:text-grey-100 ${
               fieldState.error
                 ? 'text-error placeholder:text-error'
                 : 'text-grey-60 placeholder:text-grey-60'
@@ -31,7 +31,9 @@ export const Input: React.FC<InputProps> = ({ name, title, type, placeholder, cl
             {...field}
           />
           {fieldState.error && (
-            <p className="text-sm font-normal text-error">{fieldState.error.message}</p>
+            <p className="absolute bottom-[-26px] text-[13px] font-normal text-error">
+              {fieldState.error.message}
+            </p>
           )}
         </label>
       )}
