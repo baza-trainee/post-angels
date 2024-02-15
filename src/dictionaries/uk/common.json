@@ -439,7 +439,7 @@
         },
         "form": {
           "inputFields": [
-            { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "title", "type": "text" },
+            { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "name", "type": "text" },
             {
               "title": "Ваше прізвище",
               "placeholder": "Ваше прізвище",
@@ -478,21 +478,21 @@
           },
           "volunteerCertificate": {
             "yes": {
-              "name": "yes",
+              "name": "volunteerCertificateYes",
               "description": "Так"
             },
             "no": {
-              "name": "no",
+              "name": "volunteerCertificateNo",
               "description": "Ні"
             }
           },
           "carAvailability": {
             "yes": {
-              "name": "yes",
+              "name": "carAvailabilityYes",
               "description": "Так"
             },
             "no": {
-              "name": "no",
+              "name": "carAvailabilityNo",
               "description": "Ні"
             }
           },
@@ -510,6 +510,43 @@
             "description": "Як волонтёр нашої організації, я погоджуюся дотримуватися внутрішньої політики та процедур. Я погоджуюсь, що вся робота, яку я виконую, виконується на волонтерських засадах."
           },
           "buttonText": "Відправити"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "surname": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "city": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "email": {
+            "errorType": "Значення повинно бути типу 'example@mail.com'",
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "phone": {
+            "errorType": "Значення повинно починатись із '+'",
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 10 символа"
+          },
+          "telegram": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "waysVolunteering": {
+            "errorRequired": "Поле обов'язкове для заповнення"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Поле обов'язкове для заповнення"
+          },
+          "descriptionPrivacyPolice": {
+            "errorRequired": "Поле обов'язкове для заповнення"
+          }
         }
       }
     }

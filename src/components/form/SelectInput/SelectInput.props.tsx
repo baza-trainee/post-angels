@@ -6,4 +6,5 @@ export interface SelectInputProps {
   placeholder: string;
   title: string;
   options: object;
+  className?: string;
 }

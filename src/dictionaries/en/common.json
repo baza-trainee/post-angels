@@ -427,7 +427,7 @@
         },
         "form": {
           "inputFields": [
-            { "title": "Your Name", "placeholder": "Your Name", "name": "title", "type": "text" },
+            { "title": "Your Name", "placeholder": "Your Name", "name": "name", "type": "text" },
             {
               "title": "Your Surname",
               "placeholder": "Your Surname",
@@ -466,21 +466,21 @@
           },
           "volunteerCertificate": {
             "yes": {
-              "name": "yes",
+              "name": "volunteerCertificateYes",
               "description": "Yes"
             },
             "no": {
-              "name": "no",
+              "name": "volunteerCertificateNo",
               "description": "No"
             }
           },
           "carAvailability": {
             "yes": {
-              "name": "yes",
+              "name": "carAvailabilityYes",
               "description": "Yes"
             },
             "no": {
-              "name": "no",
+              "name": "carAvailabilityNo",
               "description": "No"
             }
           },

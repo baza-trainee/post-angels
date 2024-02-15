@@ -2,75 +2,31 @@
 
 import { Input } from '@/components/form/Input/Input';
 import * as yup from 'yup';
+import { volunteersForm } from '@/utils/schema/volunteersForm';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
 
 import { Button } from '@/components/buttons/Button/Button';
-import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
-import { Locale } from '@/i18n.config';
 import { VolunteersFormProps } from './VolunteersForm.props';
 
-const schema = yup.object({
-  name: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  surname: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  city: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  email: yup
-    .string()
-    .email('Значення повинно бути типу "example@mail.com"')
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  phone: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(10, 'Мінімальна довжина 10 символа')
-    .matches(/^\+\d+$/, 'Значення повинно починатись із "+"'),
-  companyName: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  EDRPOU: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(8, 'Мінімальна довжина 8 символа'),
-  subscribe: yup.boolean().default(false).oneOf([true], "Поле обов'язкове для заповнення"),
-  waysSupport: yup
-    .object({
-      label: yup.string().required("Поле обов'язкове для заповнення"),
-      value: yup.string().required("Поле обов'язкове для заповнення"),
-    })
-    .nonNullable()
-    .required("Поле обов'язкове для заповнення"),
-  ourOffer: yup.string().min(4, 'Мінімальна довжина 4 символа'),
-  descriptionTermsAgreement: yup
-    .boolean()
-    .default(false)
-    .oneOf([true], "Поле обов'язкове для заповнення"),
-});
-
-type FormData = yup.InferType<typeof schema>;
+type FormData = yup.InferType<typeof volunteersForm>;
 
 export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   inputFields,
-  waysSupport,
-  ourOffer,
+  waysVolunteering,
+  reasonVolunteering,
+  volunteerCertificate,
+  carAvailability,
   descriptionTermsAgreement,
-  coreMsg,
+  descriptionPrivacyPolice,
   buttonText,
+  schema,
 }) => {
   const methods = useForm<FormData>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(volunteersForm({ translation: schema })),
   });
   const { handleSubmit, reset } = methods;
 
@@ -83,10 +39,10 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="container flex flex-col gap-10 border-t-[1px]  border-t-grey-60 pt-10 lg:gap-[50px] xl:pt-[50px]"
+        className="container relative flex flex-col gap-10 lg:gap-[50px] xl:pt-[50px]"
       >
-        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-4  lg:h-[504px] lg:flex-wrap lg:gap-x-0">
-          <div className="absolute bottom-0 left-1/2 top-0 hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
+        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8 border-t-[1px] border-t-grey-60 pt-10 lg:h-[874px] lg:flex-wrap lg:gap-x-0 xl:h-[754px]">
+          <div className="absolute bottom-0 left-1/2 top-[50px] hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
           {inputFields.map(({ title, placeholder, name, type }) => (
             <Input
               key={name}
@@ -98,27 +54,66 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
             />
           ))}
           <SelectInput
-            name={waysSupport.name}
-            title={waysSupport.title}
-            options={waysSupport.options}
-            placeholder={waysSupport.placeholder}
+            name={waysVolunteering.name}
+            title={waysVolunteering.title}
+            options={waysVolunteering.options}
+            placeholder={waysVolunteering.placeholder}
+            className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]"
           />
+          <div className="flex flex-col	gap-[7px]">
+            <p>Наявність волонтерського посвідчення</p>
+            <div className="flex flex-row	gap-[33px]">
+              <Checkbox
+                className="items-start 2xl:items-center"
+                name={volunteerCertificate.yes.name}
+                description={volunteerCertificate.yes.description}
+              />
+              <Checkbox
+                className="items-start 2xl:items-center"
+                name={volunteerCertificate.no.name}
+                description={volunteerCertificate.no.description}
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col	gap-[7px]">
+            <p>У Вас є власне авто?</p>
+            <div className="flex flex-row	gap-[33px]">
+              <Checkbox
+                className="items-start 2xl:items-center"
+                name={carAvailability.yes.name}
+                description={carAvailability.yes.description}
+              />
+              <Checkbox
+                className="items-start 2xl:items-center"
+                name={carAvailability.no.name}
+                description={carAvailability.no.description}
+              />
+            </div>
+          </div>
           <Textarea
-            className="h-[158px]"
-            name={ourOffer.name}
-            title={ourOffer.title}
-            placeholder={ourOffer.placeholder}
+            className="h-[380px]"
+            name={reasonVolunteering.name}
+            title={reasonVolunteering.title}
+            placeholder={reasonVolunteering.placeholder}
           />
         </div>
-        <div className="w-max-[1200px] 2xl:w-max-[1840px] flex flex-col gap-[31px] ">
+        <div className="w-max-[1200px] 2xl:w-max-[1840px] static flex flex-col gap-[31px] lg:absolute lg:bottom-[104px] lg:right-[25px] lg:w-[467px] xl:w-auto lg:gap-4 xl:static xl:gap-[31px]">
           <Checkbox
             className="items-start 2xl:items-center"
             name={descriptionTermsAgreement.name}
             description={descriptionTermsAgreement.description}
           />
-          <Paragraph className="pl-[45px] 2xl:pl-0">{coreMsg}</Paragraph>
+          <Checkbox
+            className="items-start 2xl:items-center"
+            name={descriptionPrivacyPolice.name}
+            description={descriptionPrivacyPolice.description}
+          />
         </div>
-        <Button className="w-full lg:w-[464px] xl:w-[280px]" type="submit">
+        <Button
+          className="w-full lg:w-[464px] lg:self-end xl:w-[280px] xl:self-start"
+          type="submit"
+        >
           {buttonText}
         </Button>
       </form>

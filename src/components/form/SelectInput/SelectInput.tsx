@@ -1,13 +1,14 @@
 'use client';
 
 import { useId } from 'react';
+import cn from 'classnames';
 import Select from 'react-select';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import { ICONS } from '@/components/icons/icons.const';
 import { SelectInputProps } from './SelectInput.props';
 
-export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, placeholder }) => {
+export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, placeholder, className }) => {
   const { control, setValue } = useFormContext();
 
   const customStyles = {
@@ -106,7 +107,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       isClearable
       // @ts-ignore
       render={({ field, fieldState }) => (
-        <label className="relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
+        <label className={cn("relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80", className)}>
           {title}
           <Select
             id={id}

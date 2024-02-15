@@ -8,10 +8,10 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
 
   const { title } = common.participant;
-  const { description } = common.participant.volunteers;
+  const { description, form, schema } = common.participant.volunteers;
 
   return (
-    <section className='pt-[113px] xl:pt-[188px]'>
+    <section className="pb-[100px] pt-[113px] xl:pt-[188px]">
       <ParticipantHero
         title={title}
         accentTitle={description.accentTitle}
@@ -19,14 +19,17 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         img={description.img}
         alt={description.alt}
       />
-      {/* <VolunteersForm
+      <VolunteersForm
         inputFields={form.inputFields}
-        waysSupport={form.waysSupport}
-        ourOffer={form.ourOffer}
+        waysVolunteering={form.waysVolunteering}
+        volunteerCertificate={form.volunteerCertificate}
+        carAvailability={form.carAvailability}
+        reasonVolunteering={form.reasonVolunteering}
         descriptionTermsAgreement={form.descriptionTermsAgreement}
-        coreMsg={form.coreMsg}
+        descriptionPrivacyPolice={form.descriptionPrivacyPolice}
         buttonText={form.buttonText}
-         /> */}
+        schema={schema}
+      />
     </section>
   );
 };
