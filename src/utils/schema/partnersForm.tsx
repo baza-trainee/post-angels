@@ -1,47 +1,48 @@
 import * as yup from 'yup';
 
-export const partnersForm = yup.object({
-  name: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  surname: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  city: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  email: yup
-    .string()
-    .email('Значення повинно бути типу "example@mail.com"')
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  phone: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(10, 'Мінімальна довжина 10 символа')
-    .matches(/^\+\d+$/, 'Значення повинно починатись із "+"'),
-  companyName: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  EDRPOU: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(8, 'Мінімальна довжина 8 символа'),
-  subscribe: yup.boolean().default(false).oneOf([true], "Поле обов'язкове для заповнення"),
-  waysSupport: yup
-    .object({
-      label: yup.string().required("Поле обов'язкове для заповнення"),
-      value: yup.string().required("Поле обов'язкове для заповнення"),
-    })
-    .nonNullable()
-    .required("Поле обов'язкове для заповнення"),
-  ourOffer: yup.string().min(4, 'Мінімальна довжина 4 символа'),
-  descriptionTermsAgreement: yup
-    .boolean()
-    .default(false)
-    .oneOf([true], "Поле обов'язкове для заповнення"),
-});
+export const partnersForm = ({
+  translation: {
+    name,
+    surname,
+    city,
+    email,
+    phone,
+    companyName,
+    EDRPOU,
+    waysSupport,
+    descriptionTermsAgreement,
+  },
+}) => {
+  const a = yup.object({
+    name: yup.string().required(name.errorRequired).min(4, name.errorMin),
+    surname: yup.string().required(surname.errorRequired).min(4, surname.errorRequired),
+    city: yup.string().required(city.errorRequired).min(4, city.errorMin),
+    email: yup
+      .string()
+      .email(email.errorType)
+      .required(email.errorRequired)
+      .min(4, email.errorMin),
+    phone: yup
+      .string()
+      .required(phone.errorRequired)
+      .min(10, phone.errorMin)
+      .matches(/^\+\d+$/, phone.errorType),
+    companyName: yup.string().required(companyName.errorRequired).min(4, companyName.errorMin),
+    EDRPOU: yup.string().required(EDRPOU.errorRequired).min(8, EDRPOU.errorMin),
+    subscribe: yup.boolean().default(false).oneOf([true], descriptionTermsAgreement.errorRequired),
+    waysSupport: yup
+      .object({
+        label: yup.string().required(waysSupport.errorRequired),
+        value: yup.string().required(waysSupport.errorRequired),
+      })
+      .nonNullable()
+      .required(waysSupport.errorRequired),
+    ourOffer: yup.string(),
+    descriptionTermsAgreement: yup
+      .boolean()
+      .default(false)
+      .oneOf([true], descriptionTermsAgreement.errorRequired),
+  });
+
+  return a;
+};

@@ -372,6 +372,44 @@
           },
           "coreMsg": "If you have the relevant experience and want to join one of our initiatives, your work will be very important. Human values are what underlies all philanthropy, because what is needed most is not money, but people.",
           "buttonText": "Submit"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "surname": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "city": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "email": {
+            "errorType": "Value should be in the format 'example@mail.com'",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "phone": {
+            "errorType": "Value should start with '+'",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 10 characters"
+          },
+          "companyName": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "EDRPOU": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 8 characters"
+          },
+          "waysSupport": {
+            "errorRequired": "Field is required"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Field is required"
+          }
         }
       },
       "volunteers": {

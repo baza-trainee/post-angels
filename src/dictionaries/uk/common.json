@@ -325,14 +325,24 @@
         },
         "form": {
           "inputFields": [
-            { "title": "Ваше ім’я", "placeholder": "Ваше ім’я", "name": "name", "type": "text" },
+            {
+              "title": "Ваше ім’я",
+              "placeholder": "Ваше ім’я",
+              "name": "name",
+              "type": "text"
+            },
             {
               "title": "Ваше прізвище",
               "placeholder": "Ваше прізвище",
               "name": "surname",
               "type": "text"
             },
-            { "title": "Місто", "placeholder": "Введіть тут", "name": "city", "type": "text" },
+            {
+              "title": "Місто",
+              "placeholder": "Введіть тут",
+              "name": "city",
+              "type": "text"
+            },
             {
               "title": "Email",
               "placeholder": "example@mail.com",
@@ -379,8 +389,47 @@
           },
           "coreMsg": "Якщо ви маєте відповідний досвід та бажаєте приєднатися до однієї з наших ініціатив, ваша діяльність буде дуже важливою. Людські цінності - це те, що лежить в основі всієї благодійності, тому що найбільше потрібна не грошова, а людська допомога.",
           "buttonText": "Відправити"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "surname": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "city": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "email": {
+            "errorType": "Значення повинно бути типу 'example@mail.com'",
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "phone": {
+            "errorType": "Значення повинно починатись із '+'",
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 10 символа"
+          },
+          "companyName": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "EDRPOU": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 8 символа"
+          },
+          "waysSupport": {
+            "errorRequired": "Поле обов'язкове для заповнення"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Поле обов'язкове для заповнення"
+          }
         }
       },
+
       "volunteers": {
         "description": {
           "accentTitle": "волонтера",

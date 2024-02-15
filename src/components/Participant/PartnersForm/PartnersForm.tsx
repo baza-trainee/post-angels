@@ -11,8 +11,9 @@ import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
-import { Locale } from '@/i18n.config';
 import { PartnersFormProps } from './PartnersForm.props';
+
+
 
 type FormData = yup.InferType<typeof partnersForm>;
 
@@ -23,9 +24,11 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   descriptionTermsAgreement,
   coreMsg,
   buttonText,
+  schema
+
 }) => {
   const methods = useForm<FormData>({
-    resolver: yupResolver(partnersForm),
+    resolver: yupResolver(partnersForm({ translation: schema })),
   });
   const { handleSubmit, reset } = methods;
 

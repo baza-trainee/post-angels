@@ -8,8 +8,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
 
   const { title } = common.participant;
-  const { description } = common.participant.partners;
-  const { form } = common.participant.partners;
+  const { description, form, schema } = common.participant.partners;
 
   return (
     <section className="pt-[113px] xl:pt-[188px] pb-[100px]">
@@ -27,6 +26,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         descriptionTermsAgreement={form.descriptionTermsAgreement}
         coreMsg={form.coreMsg}
         buttonText={form.buttonText}
+        schema={schema}
          />
     </section>
   );

@@ -28,4 +28,42 @@ export interface PartnersFormProps {
   },
   coreMsg: string;
   buttonText: string;
+  schema: {
+    name: {
+      errorRequired: string;
+      errorMin: string;
+    };
+    surname: {
+      errorRequired: string;
+      errorMin: string;
+    };
+    city: {
+      errorRequired: string;
+      errorMin: string;
+    };
+    email: {
+      errorType: string;
+      errorRequired: string;
+      errorMin: string;
+    };
+    phone: {
+      errorType: string;
+      errorRequired: string;
+      errorMin: string;
+    };
+    companyName: {
+      errorRequired: string;
+      errorMin: string;
+    };
+    EDRPOU: {
+      errorRequired: string;
+      errorMin: string;
+    };
+    waysSupport: {
+      errorRequired: string;
+    };
+    descriptionTermsAgreement: {
+      errorRequired: string;
+    };
+  };
 }
