@@ -339,6 +339,12 @@
               "type": "email"
             },
             {
+              "title": "Phone",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
               "title": "Name of legal entity (company)",
               "placeholder": "Enter here",
               "name": "companyName",
@@ -362,7 +368,7 @@
             ]
           },
           "ourOffer": {
-            "name": "waysSupport",
+            "name": "ourOffer",
             "title": "Your offer",
             "placeholder": "Write here"
           },

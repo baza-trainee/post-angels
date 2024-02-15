@@ -41,10 +41,10 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="container flex flex-col gap-10 border-t-[1px] border-t-grey-60 pt-10 lg:gap-[50px] xl:pt-[50px]"
+        className="container flex flex-col gap-10 lg:gap-[50px] xl:pt-[50px]"
       >
-        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8  lg:h-[573px] lg:flex-wrap lg:gap-x-0">
-          <div className="absolute bottom-0 left-1/2 top-0 hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
+        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8  pt-10 border-t-[1px] border-t-grey-60  lg:h-[613px] lg:flex-wrap lg:gap-x-0">
+          <div className="absolute bottom-0 left-1/2 top-[50px] hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
           {inputFields.map(({ title, placeholder, name, type }) => (
             <Input
               key={name}
@@ -62,7 +62,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
             placeholder={waysSupport.placeholder}
           />
           <Textarea
-            className="h-[158px]"
+            className="h-[176px]"
             name={ourOffer.name}
             title={ourOffer.title}
             placeholder={ourOffer.placeholder}

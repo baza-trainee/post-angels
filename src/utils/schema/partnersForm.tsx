@@ -13,15 +13,11 @@ export const partnersForm = ({
     descriptionTermsAgreement,
   },
 }) => {
-  const a = yup.object({
+  const schema = yup.object({
     name: yup.string().required(name.errorRequired).min(4, name.errorMin),
     surname: yup.string().required(surname.errorRequired).min(4, surname.errorRequired),
     city: yup.string().required(city.errorRequired).min(4, city.errorMin),
-    email: yup
-      .string()
-      .email(email.errorType)
-      .required(email.errorRequired)
-      .min(4, email.errorMin),
+    email: yup.string().email(email.errorType).required(email.errorRequired).min(4, email.errorMin),
     phone: yup
       .string()
       .required(phone.errorRequired)
@@ -44,5 +40,5 @@ export const partnersForm = ({
       .oneOf([true], descriptionTermsAgreement.errorRequired),
   });
 
-  return a;
+  return schema;
 };
