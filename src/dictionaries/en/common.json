@@ -339,6 +339,9 @@
           "accentTitle": "партнера"
         }
       }
+    },
+    "veterans": {
+      "title": "Veterans"
     }
   }
 }
