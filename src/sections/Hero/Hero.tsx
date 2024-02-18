@@ -9,25 +9,6 @@ import { Locale } from '@/i18n.config';
 
 import { fetchHero } from '@/api/fetchHero';
 
-const banners = [
-  {
-    url: '/images/hero/hero-1.jpg',
-    image_description: 'фото з наданням гуманітарної допомоги',
-  },
-  {
-    url: '/images/hero/hero-2.jpg',
-    image_description: 'фото з наданням гуманітарної допомоги',
-  },
-  {
-    url: '/images/hero/hero-3.jpg',
-    image_description: 'фото з наданням гуманітарної допомоги',
-  },
-  {
-    url: '/images/hero/hero-4.jpg',
-    image_description: 'фото з наданням гуманітарної допомоги',
-  },
-];
-
 export const Hero = async ({ data, lang }: { data: HeroProps; lang: Locale }) => {
   const heroData = await fetchHero(lang);
 
@@ -50,7 +31,7 @@ export const Hero = async ({ data, lang }: { data: HeroProps; lang: Locale }) =>
               {data.button.text}
             </LinkButton>
           </div>
-          <HeroSlider banners={heroData.image} lang={lang} />
+          {heroData?.image.length > 0 && <HeroSlider banners={heroData?.image} lang={lang} />}
         </div>
       </div>
     </section>

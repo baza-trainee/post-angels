@@ -8,4 +8,5 @@ export interface BannerProps {
   };
   alt: string;
   ind?: number;
+  id?: string;
 }

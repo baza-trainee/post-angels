@@ -13,10 +13,10 @@ const getFilteredData = (filterName: string, data: ProjectCardProps[]) => {
       return data;
 
     case 'new':
-      return data.filter(dataProject => dataProject.status === 'new');
+      return data.filter(dataProject => dataProject.attributes.status === 'new');
 
     case 'completed':
-      return data.filter(dataProject => dataProject.status === 'completed');
+      return data.filter(dataProject => dataProject.attributes.status === 'completed');
 
     default:
       return data;
@@ -26,31 +26,30 @@ const getFilteredData = (filterName: string, data: ProjectCardProps[]) => {
 const getSortedData = (sortingMod: string, data: ProjectCardProps[]) => {
   switch (sortingMod) {
     case 'newFirst':
-      return data.sort((a, b) => {
-        const dateA = new Date(a.startDate).getTime();
-        const dateB = new Date(b.startDate).getTime();
-
-        return dateA - dateB;
+      return [...data].sort((a, b) => {
+        const dateA = new Date(a.attributes.startDate).getTime();
+        const dateB = new Date(b.attributes.startDate).getTime();
+        return dateB - dateA;
       });
 
     case 'moreFunds':
-      return data.sort((a, b) => {
-        const percentA = a.collected / a.all;
-        const percentB = b.collected / b.all;
-        return percentA - percentB;
-      });
-
-    case 'lessFunds':
-      return data.sort((a, b) => {
-        const percentA = a.collected / a.all;
-        const percentB = b.collected / b.all;
+      return [...data].sort((a, b) => {
+        const percentA = a.attributes.collected / a.attributes.all;
+        const percentB = b.attributes.collected / b.attributes.all;
         return percentB - percentA;
       });
 
+    case 'lessFunds':
+      return [...data].sort((a, b) => {
+        const percentA = a.attributes.collected / a.attributes.all;
+        const percentB = b.attributes.collected / b.attributes.all;
+        return percentA - percentB;
+      });
+
     case 'oldFirst':
-      return data.sort((a, b) => {
-        const dateA = new Date(a.startDate).getTime();
-        const dateB = new Date(b.startDate).getTime();
+      return [...data].sort((a, b) => {
+        const dateA = new Date(a.attributes.startDate).getTime();
+        const dateB = new Date(b.attributes.startDate).getTime();
 
         return dateA - dateB;
       });
@@ -71,24 +70,28 @@ export const ProjectsList = ({
   projectsData: ProjectCardProps[];
   lang: Locale;
 }) => {
-  const [filteredProjects, setFilteredProjects] = useState<ProjectCardProps[]>(projectsData);
-  const [sortedProjects, setSortedProjects] = useState<ProjectCardProps[]>(filteredProjects);
+  const [sortedProjects, setSortedProjects] = useState<ProjectCardProps[]>(projectsData);
   const [filterName, setFilterName] = useState<string>('all');
-  const [sortingMod, setSortingMod] = useState<string>('default');
+  const [sortingMod, setSortingMod] = useState<string>('newFirst');
 
   useEffect(() => {
     const filtered = getFilteredData(filterName, projectsData);
-    setFilteredProjects(filtered);
-  }, [filterName, projectsData]);
+    const sorted = getSortedData(sortingMod, filtered);
 
-  useEffect(() => {
-    const sorted = getSortedData(sortingMod, filteredProjects);
     setSortedProjects(sorted);
-  }, [sortingMod, filteredProjects]);
+  }, [projectsData, filterName, sortingMod]);
+
+  const checkFilter = (name: string) => {
+    setFilterName(name);
+  };
+
+  const checkSort = (mode: string) => {
+    setSortingMod(mode);
+  };
 
   return (
     <>
-      <Filters projects={projects} setFilterName={setFilterName} setSortingMod={setSortingMod} />
+      <Filters projects={projects} checkFilter={checkFilter} checkSort={checkSort} />
       <ProjectSlider projectsData={sortedProjects} projects={projects} lang={lang} />
     </>
   );

@@ -3,20 +3,18 @@ import { request } from 'graphql-request';
 import { getHero } from './requests/getHero';
 
 import { Locale } from '@/i18n.config';
-import { Token } from 'graphql';
-import { HeroProps } from '@/sections/Hero/Hero.props';
-// import { InfoData, InfoDataType } from '@/types/Info';
+import { HeroDataProps, HeroDataType } from '@/sections/Hero/Hero.props';
 
-export const fetchHero = async (locale: Locale): Promise<any> => {
+export const fetchHero = async (locale: Locale): Promise<HeroDataProps> => {
   try {
-    const data: any = await request(
+    const data: HeroDataType = await request(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/graphql` as string,
       getHero,
-
       {
         locale: locale,
-        headers: { Authorization: `Bearer ${process.env.NEXT_PUBLIC_GET_API}` },
-        credentials: 'include',
+      },
+      {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_GET_API}`,
       }
     );
 

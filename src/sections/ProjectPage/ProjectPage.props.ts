@@ -12,7 +12,6 @@ export interface ProjectHeroProps {
 }
 
 export interface ProjectDataProps {
-  id: string;
   image: ProjectImageProps;
   title: string;
   collected: number;
@@ -20,26 +19,33 @@ export interface ProjectDataProps {
   startDate: string;
   finishedDate: string;
   status: string;
+  conclusion: string;
   organizer: ProjectOrganizerProps;
   socials: ProjectSocialProps[];
-  info: ProjectDataInfoProps;
+  info: string;
 }
 
 export interface ProjectDataInfoProps {
-  info: string;
-  conclusion: string;
-  title: string;
-  supportData: ProjectSupportDataProps[];
+  id: string;
+  attributes: { name: string; sum: number; date: Date };
 }
 
 export interface ProjectImageProps {
-  src: string;
+  src: {
+    data: {
+      attributes: {
+        url: string;
+        width: number;
+        height: number;
+      };
+    };
+  };
   alt: string;
 }
 
 export interface ProjectOrganizerProps {
   name: string;
-  img: ProjectImageProps;
+  image: ProjectImageProps;
 }
 
 export interface ProjectSocialProps {
@@ -100,8 +106,30 @@ export interface StaticDataDocuments {
 
 export interface ProjectSupportDataProps {
   id: string;
-  name: string;
-  sum: number;
-  date: number;
+  attributes: {
+    name: string;
+    sum: number;
+    date: Date;
+  };
   cardData?: string;
+}
+
+export interface ProjectOneDataType {
+  projects: {
+    data: {
+      id: string;
+      attributes: ProjectDataProps;
+    }[];
+  };
+  supportsData: {
+    data: ProjectSupportDataProps[];
+  };
+}
+
+export interface ProjectOneDataProps {
+  supportsData: ProjectSupportDataProps[];
+  projects: {
+    id: any;
+    attributes: ProjectDataProps;
+  };
 }

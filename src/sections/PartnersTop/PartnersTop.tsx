@@ -12,7 +12,7 @@ export const PartnersTop = ({
   return (
     <section>
       <div className="container">
-        <div className="border-b border-grey-60  pb-[80px] pt-[85px] xl:pb-[40px] xl:pt-[85px]">
+        <div className="border-b border-grey-60  pb-[40px] pt-[85px] xl:pb-[100] xl:pt-[80px]">
           <Title tag="h2" variantSize="h2" colorVariant="accent" className="hidden">
             {data.title}
             <br /> <span>{data.title1}</span>

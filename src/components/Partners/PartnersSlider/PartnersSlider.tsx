@@ -19,6 +19,7 @@ export const PartnersSlider = ({
     <div className={wrapSliderClasses}>
       <Slider
         id="homepage-partners"
+        className="partnerSlider"
         data={partnersData}
         element={PartnerCard}
         isAutoplay={true}
