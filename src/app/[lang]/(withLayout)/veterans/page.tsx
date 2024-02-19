@@ -9,6 +9,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { resultTechnology, resultHelp } = await fetchVeterans(lang);
   const { common } = await getDictionary(lang);
   const { veterans } = common;
+
   return (
     <section className="mb-[100px] pt-[106px] xl:pt-[216px]">
       <div className="container flex flex-col gap-y-20 xl:gap-y-[100px]">
