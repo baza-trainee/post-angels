@@ -43,7 +43,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
         onSubmit={handleSubmit(onSubmit)}
         className="container flex flex-col gap-10 lg:gap-[50px] xl:pt-[50px]"
       >
-        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8  pt-10 border-t-[1px] border-t-grey-60  lg:h-[613px] lg:flex-wrap lg:gap-x-0">
+        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8  pt-10 border-t-[1px] border-t-grey-60  lg:h-[613px] lg:flex-wrap lg:gap-x-0 2xl:h-[608px]">
           <div className="absolute bottom-0 left-1/2 top-[50px] hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
           {inputFields.map(({ title, placeholder, name, type }) => (
             <Input
@@ -52,7 +52,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
               name={name}
               type={type}
               placeholder={placeholder}
-              className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[58px] 3xl:w-[748px]"
+              className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]"
             />
           ))}
           <SelectInput
