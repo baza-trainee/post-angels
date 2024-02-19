@@ -52,7 +52,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
               name={name}
               type={type}
               placeholder={placeholder}
-              className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]"
+              className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[58px] 3xl:w-[748px]"
             />
           ))}
           <SelectInput

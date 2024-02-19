@@ -41,7 +41,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
         onSubmit={handleSubmit(onSubmit)}
         className="container relative flex flex-col gap-10 lg:gap-[50px] xl:pt-[50px]"
       >
-        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8 border-t-[1px] border-t-grey-60 pt-10 lg:h-[874px] lg:flex-wrap lg:gap-x-0 xl:h-[754px]">
+        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8 border-t-[1px] border-t-grey-60 pt-10 lg:h-[874px] lg:flex-wrap lg:gap-x-0 xl:h-[727px]">
           <div className="absolute bottom-0 left-1/2 top-[50px] hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
           {inputFields.map(({ title, placeholder, name, type }) => (
             <Input
@@ -92,13 +92,13 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
             </div>
           </div>
           <Textarea
-            className="h-[380px]"
+            className="h-[258px] md:h-[284px] lg:h-[330px] xl:h-[331px] 2xl:h-[357px]"
             name={reasonVolunteering.name}
             title={reasonVolunteering.title}
             placeholder={reasonVolunteering.placeholder}
           />
         </div>
-        <div className="w-max-[1200px] 2xl:w-max-[1840px] static flex flex-col gap-[31px] lg:absolute lg:bottom-[104px] lg:right-[25px] lg:w-[467px] xl:w-auto lg:gap-4 xl:static xl:gap-[31px]">
+        <div className="w-max-[1200px] 2xl:w-max-[1840px] static flex flex-col gap-[31px] lg:absolute lg:bottom-[104px] lg:right-[25px] lg:w-[467px] xl:static xl:w-auto">
           <Checkbox
             className="items-start 2xl:items-center"
             name={descriptionTermsAgreement.name}
