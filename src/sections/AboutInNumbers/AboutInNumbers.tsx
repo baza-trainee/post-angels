@@ -24,7 +24,7 @@ export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) =>
   const beforeClass = `md:before:block md:before:w-[1px] md:before:h-full md:before:bg-grey-60 md:before:absolute md:before:top-0 md:before:left-[50%]`;
   const afterClass = `md:after:block md:after:w-full xl:after:w-[1px] md:after:h-[1px] xl:after:h-full md:after:bg-grey-60 md:after:absolute md:after:left-0 md:after:top-[50%] xl:after:top-0`;
   return (
-    <section className="pt-20">
+    <section className="pt-20" id="about_in_number">
       <div className="container">
         <div className=" border-b border-grey-60 pb-20 xl:flex xl:justify-between 2xl:gap-x-[243px] 3xl:gap-x-[324px]">
           <Title
