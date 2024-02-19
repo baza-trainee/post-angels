@@ -36,7 +36,7 @@ export default async function ProjectLayout({
   const { projects } = projectData;
 
   return (
-    <main>
+    <>
       <ProjectHero
         data={{
           id: projectData.projects.id,
@@ -53,6 +53,6 @@ export default async function ProjectLayout({
         staticData={project_details.hero}
       />
       {children}
-    </main>
+    </>
   );
 }

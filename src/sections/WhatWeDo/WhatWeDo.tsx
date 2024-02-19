@@ -6,7 +6,7 @@ import { WhatWeDoProps } from './WhatWeDo.props';
 
 export const WhatWeDo = ({ lang, data }: { lang: Locale; data: WhatWeDoProps }) => {
   return (
-    <section className="pb-[30px] pt-20 md:pb-[50px]">
+    <section className="pb-[30px] pt-20 md:pb-[50px]" id="what_we_do">
       <div className="container">
         <Title
           tag="h2"
