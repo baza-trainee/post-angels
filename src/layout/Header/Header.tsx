@@ -14,6 +14,7 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal, logo, transpa
 
   return (
     <header
+      id="header"
       className={`fixed inset-x-0 top-0 z-50 ${
         transparent ? 'backdrop-blur-[3px]' : 'bg-grey-20'
       }  font-eUkraineHead text-base font-normal`}

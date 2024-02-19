@@ -13,7 +13,7 @@ export const Hero = async ({ data, lang }: { data: HeroProps; lang: Locale }) =>
   const heroData = await fetchHero(lang);
 
   return (
-    <section className="pt-[125px] xl:pt-[190px] ">
+    <section className="pt-[125px] xl:pt-[190px] " id="hero">
       <div className="container">
         <div className="flex flex-col gap-y-[30px] border-b border-grey-60 pb-10 md:flex-row md:justify-between md:gap-x-[30px] xl:pb-[126px]">
           <div className="flex flex-col gap-y-[30px] xl:mt-[94px] xl:w-[383px] 2xl:mt-[136px] 3xl:mt-[216px]">

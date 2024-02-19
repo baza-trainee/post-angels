@@ -11,16 +11,18 @@ import { WhatWeDo } from '@/sections/WhatWeDo';
 import { AboutInNumbers } from '@/sections/AboutInNumbers';
 import { fetchProjects } from '@/api/fetchProjects';
 import { fetchPartners } from '@/api/fetchPartners';
+import { ScrollBtn } from '@/components/ScrollBtn/ScrollBtn';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
-  const { contacts, hero, partners, projects, cooperation, whatWeDo, aboutInNumbers } = common;
+  const { contacts, hero, partners, projects, cooperation, whatWeDo, aboutInNumbers, scrollbtn } =
+    common;
   const partnersData = await fetchPartners(lang);
   const finishedData = await fetchProjects(lang, ['completed']);
   const projectData = await fetchProjects(lang, ['new', 'completed']);
 
   return (
-    <main className="">
+    <>
       <Hero data={hero} lang={lang} />
       {partnersData.length !== 0 && <PartnersTop partnersData={partnersData} data={partners} />}
       <AboutInNumbers data={aboutInNumbers} />
@@ -35,6 +37,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {partnersData.length !== 0 && <Partners partnersData={partnersData} data={partners} />}
       <Cooperation data={cooperation} />
       <Contacts data={contacts} />
-    </main>
+      <ScrollBtn data={scrollbtn} />
+    </>
   );
 }
