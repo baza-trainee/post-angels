@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { Input } from '@/components/form/Input/Input';
 import * as yup from 'yup';
 import { volunteersForm } from '@/utils/schema/volunteersForm';
@@ -25,6 +27,51 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   buttonText,
   schema,
 }) => {
+  // const [option, setOption] = useState({
+  //   volunteerCertificate: false,
+  //   carAvailability: false,
+  // });
+
+  // const [volunteerCertificateOption, setVolunteerCertificateOption] = useState(false);
+  // const [carAvailabilityOption, setCarAvailabilityOption] = useState(false);
+
+  // const handleCheckbox = (selectOption, fieldName) => {
+  //   console.log('Checkbox clicked:', volunteerCertificateOption, selectOption);
+
+  //   if (fieldName === 'volunteerCertificate') {
+  //     setVolunteerCertificateOption(selectOption);
+  //     setCarAvailabilityOption(false); // Забезпечте взаємовиключення між volunteerCertificate та carAvailability
+  //   } else if (fieldName === 'carAvailability') {
+  //     setCarAvailabilityOption(selectOption);
+  //     setVolunteerCertificateOption(false); // Забезпечте взаємовиключення між carAvailability та volunteerCertificate
+  //   }
+  // };
+
+  // const [volunteerCertificateOption, setVolunteerCertificateOption] = useState(false);
+
+  // const handleCheckbox = (fieldName) => {
+  //   console.log('Checkbox clicked:', fieldName);
+
+  //   if (fieldName === 'volunteerCertificate') {
+  //     setVolunteerCertificateOption(!volunteerCertificateOption);
+  //   }
+  // };
+
+  const [volunteerCertificateOption, setVolunteerCertificateOption] = useState(false);
+  const [carAvailabilityOption, setCarAvailabilityOption] = useState(false);
+
+  const handleCheckbox = (selectOption, fieldName) => {
+    // console.log('Checkbox clicked:', option, fieldName);
+
+    if (fieldName === 'volunteerCertificate') {
+      setVolunteerCertificateOption(selectOption);
+      setCarAvailabilityOption(false); // Забезпечте взаємовиключення між volunteerCertificate та carAvailability
+    } else if (fieldName === 'carAvailability') {
+      setCarAvailabilityOption(selectOption);
+      setVolunteerCertificateOption(false); // Забезпечте взаємовиключення між carAvailability та volunteerCertificate
+    }
+  };
+
   const methods = useForm<FormData>({
     resolver: yupResolver(volunteersForm({ translation: schema })),
   });
@@ -67,11 +114,15 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
                 className="items-start 2xl:items-center"
                 name={volunteerCertificate.yes.name}
                 description={volunteerCertificate.yes.description}
+                checked={volunteerCertificateOption}
+                onChange={() => handleCheckbox(true, 'volunteerCertificate')}
               />
               <Checkbox
                 className="items-start 2xl:items-center"
                 name={volunteerCertificate.no.name}
                 description={volunteerCertificate.no.description}
+                checked={!volunteerCertificateOption}
+                onChange={() => handleCheckbox(false, 'volunteerCertificate')}
               />
             </div>
           </div>
@@ -83,11 +134,15 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
                 className="items-start 2xl:items-center"
                 name={carAvailability.yes.name}
                 description={carAvailability.yes.description}
+                checked={carAvailabilityOption}
+                onChange={() => handleCheckbox(true, 'carAvailability')}
               />
               <Checkbox
                 className="items-start 2xl:items-center"
                 name={carAvailability.no.name}
                 description={carAvailability.no.description}
+                checked={!carAvailabilityOption}
+                onChange={() => handleCheckbox(false, 'carAvailability')}
               />
             </div>
           </div>

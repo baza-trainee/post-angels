@@ -13,8 +13,6 @@ import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { PartnersFormProps } from './PartnersForm.props';
 
-
-
 type FormData = yup.InferType<typeof partnersForm>;
 
 export const PartnersForm: React.FC<PartnersFormProps> = ({
@@ -24,8 +22,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   descriptionTermsAgreement,
   coreMsg,
   buttonText,
-  schema
-
+  schema,
 }) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(partnersForm({ translation: schema })),
@@ -43,7 +40,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
         onSubmit={handleSubmit(onSubmit)}
         className="container flex flex-col gap-10 lg:gap-[50px] xl:pt-[50px]"
       >
-        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8  pt-10 border-t-[1px] border-t-grey-60  lg:h-[613px] lg:flex-wrap lg:gap-x-0 2xl:h-[608px]">
+        <div className="relative flex flex-col flex-nowrap content-between gap-x-[172px] gap-y-8  border-t-[1px] border-t-grey-60 pt-10  lg:h-[613px] lg:flex-wrap lg:gap-x-0 2xl:h-[608px]">
           <div className="absolute bottom-0 left-1/2 top-[50px] hidden w-[1px] -translate-x-1/2 transform bg-grey-60 xl:block"></div>
           {inputFields.map(({ title, placeholder, name, type }) => (
             <Input

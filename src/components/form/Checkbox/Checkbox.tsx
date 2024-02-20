@@ -11,6 +11,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   description,
   variantFontWeight = 'normal',
   className,
+  onChange,
+  checked,
 }) => {
   const { control } = useFormContext();
 
@@ -26,7 +28,16 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           })}
         >
           <div className={cn('flex flex-row gap-[21px]', className)}>
-            <input className="hidden" type="checkbox" {...field} />
+            <input
+              className="hidden"
+              type="checkbox"
+              {...field}
+              checked={checked}
+              onChange={e => {
+                field.onChange(e);
+                onChange(e.target.checked);
+              }}
+            />
             <div>
               {field.value ? (
                 <ICONS.CHECK_TRUE className="h-6 w-6" />
