@@ -40,10 +40,10 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
 
   //   if (fieldName === 'volunteerCertificate') {
   //     setVolunteerCertificateOption(selectOption);
-  //     setCarAvailabilityOption(false); // Забезпечте взаємовиключення між volunteerCertificate та carAvailability
+  //     setCarAvailabilityOption(false); 
   //   } else if (fieldName === 'carAvailability') {
   //     setCarAvailabilityOption(selectOption);
-  //     setVolunteerCertificateOption(false); // Забезпечте взаємовиключення між carAvailability та volunteerCertificate
+  //     setVolunteerCertificateOption(false); 
   //   }
   // };
 
@@ -65,10 +65,10 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
 
     if (fieldName === 'volunteerCertificate') {
       setVolunteerCertificateOption(selectOption);
-      setCarAvailabilityOption(false); // Забезпечте взаємовиключення між volunteerCertificate та carAvailability
+      setCarAvailabilityOption(false); 
     } else if (fieldName === 'carAvailability') {
       setCarAvailabilityOption(selectOption);
-      setVolunteerCertificateOption(false); // Забезпечте взаємовиключення між carAvailability та volunteerCertificate
+      setVolunteerCertificateOption(false);
     }
   };
 
