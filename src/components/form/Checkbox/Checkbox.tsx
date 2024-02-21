@@ -10,9 +10,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   name,
   description,
   variantFontWeight = 'normal',
-  className,
-  onChange,
-  checked,
+  className
 }) => {
   const { control } = useFormContext();
 
@@ -32,11 +30,6 @@ export const Checkbox: React.FC<CheckboxProps> = ({
               className="hidden"
               type="checkbox"
               {...field}
-              checked={checked}
-              onChange={e => {
-                field.onChange(e);
-                onChange(e.target.checked);
-              }}
             />
             <div>
               {field.value ? (

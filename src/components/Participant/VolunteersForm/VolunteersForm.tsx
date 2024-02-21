@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Radiobutton } from '@/components/form/Radiobutton/Radiobutton';
 import { Input } from '@/components/form/Input/Input';
 import * as yup from 'yup';
 import { volunteersForm } from '@/utils/schema/volunteersForm';
@@ -16,6 +17,11 @@ import { VolunteersFormProps } from './VolunteersForm.props';
 
 type FormData = yup.InferType<typeof volunteersForm>;
 
+const options = [
+  { name: 'yes', value: 'Так', index: 1 },
+  { name: 'no', value: 'Ні', index: 1 },
+];
+
 export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   inputFields,
   waysVolunteering,
@@ -27,51 +33,6 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   buttonText,
   schema,
 }) => {
-  // const [option, setOption] = useState({
-  //   volunteerCertificate: false,
-  //   carAvailability: false,
-  // });
-
-  // const [volunteerCertificateOption, setVolunteerCertificateOption] = useState(false);
-  // const [carAvailabilityOption, setCarAvailabilityOption] = useState(false);
-
-  // const handleCheckbox = (selectOption, fieldName) => {
-  //   console.log('Checkbox clicked:', volunteerCertificateOption, selectOption);
-
-  //   if (fieldName === 'volunteerCertificate') {
-  //     setVolunteerCertificateOption(selectOption);
-  //     setCarAvailabilityOption(false); 
-  //   } else if (fieldName === 'carAvailability') {
-  //     setCarAvailabilityOption(selectOption);
-  //     setVolunteerCertificateOption(false); 
-  //   }
-  // };
-
-  // const [volunteerCertificateOption, setVolunteerCertificateOption] = useState(false);
-
-  // const handleCheckbox = (fieldName) => {
-  //   console.log('Checkbox clicked:', fieldName);
-
-  //   if (fieldName === 'volunteerCertificate') {
-  //     setVolunteerCertificateOption(!volunteerCertificateOption);
-  //   }
-  // };
-
-  const [volunteerCertificateOption, setVolunteerCertificateOption] = useState(false);
-  const [carAvailabilityOption, setCarAvailabilityOption] = useState(false);
-
-  const handleCheckbox = (selectOption, fieldName) => {
-    // console.log('Checkbox clicked:', option, fieldName);
-
-    if (fieldName === 'volunteerCertificate') {
-      setVolunteerCertificateOption(selectOption);
-      setCarAvailabilityOption(false); 
-    } else if (fieldName === 'carAvailability') {
-      setCarAvailabilityOption(selectOption);
-      setVolunteerCertificateOption(false);
-    }
-  };
-
   const methods = useForm<FormData>({
     resolver: yupResolver(volunteersForm({ translation: schema })),
   });
@@ -108,41 +69,25 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
             className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]"
           />
           <div className="flex flex-col	gap-[7px]">
-            <p>Наявність волонтерського посвідчення</p>
             <div className="flex flex-row	gap-[33px]">
-              <Checkbox
+              <Radiobutton
                 className="items-start 2xl:items-center"
-                name={volunteerCertificate.yes.name}
-                description={volunteerCertificate.yes.description}
-                checked={volunteerCertificateOption}
-                onChange={() => handleCheckbox(true, 'volunteerCertificate')}
-              />
-              <Checkbox
-                className="items-start 2xl:items-center"
-                name={volunteerCertificate.no.name}
-                description={volunteerCertificate.no.description}
-                checked={!volunteerCertificateOption}
-                onChange={() => handleCheckbox(false, 'volunteerCertificate')}
+                options={volunteerCertificate.options}
+                name={volunteerCertificate.name}
+                title={volunteerCertificate.title}
+
               />
             </div>
           </div>
 
           <div className="flex flex-col	gap-[7px]">
-            <p>У Вас є власне авто?</p>
-            <div className="flex flex-row	gap-[33px]">
-              <Checkbox
+            <div className="flex flex-row">
+              <Radiobutton
                 className="items-start 2xl:items-center"
-                name={carAvailability.yes.name}
-                description={carAvailability.yes.description}
-                checked={carAvailabilityOption}
-                onChange={() => handleCheckbox(true, 'carAvailability')}
-              />
-              <Checkbox
-                className="items-start 2xl:items-center"
-                name={carAvailability.no.name}
-                description={carAvailability.no.description}
-                checked={!carAvailabilityOption}
-                onChange={() => handleCheckbox(false, 'carAvailability')}
+                options={carAvailability.options}
+                name={carAvailability.name}
+                title={carAvailability.title}
+
               />
             </div>
           </div>

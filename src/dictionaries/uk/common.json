@@ -480,24 +480,20 @@
             ]
           },
           "volunteerCertificate": {
-            "yes": {
-              "name": "volunteerCertificateYes",
-              "description": "Так"
-            },
-            "no": {
-              "name": "volunteerCertificateNo",
-              "description": "Ні"
-            }
+            "name": "volunteerCertificate",
+            "title": "Наявність волонтерського посвідчення",
+            "options": [
+              { "name": "yes", "value": "Так", "id": 1 },
+              { "name": "no", "value": "Ні", "id": 2 }
+            ]
           },
           "carAvailability": {
-            "yes": {
-              "name": "carAvailabilityYes",
-              "description": "Так"
-            },
-            "no": {
-              "name": "carAvailabilityNo",
-              "description": "Ні"
-            }
+            "name": "carAvailability",
+            "title": "У Вас є власне авто?",
+            "options": [
+              { "name": "yes", "value": "Так", "id": 3 },
+              { "name": "no", "value": "Ні", "id": 4 }
+            ]
           },
           "reasonVolunteering": {
             "name": "reasonVolunteering",

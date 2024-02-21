@@ -468,24 +468,22 @@
             ]
           },
           "volunteerCertificate": {
-            "yes": {
-              "name": "volunteerCertificateYes",
-              "description": "Yes"
-            },
-            "no": {
-              "name": "volunteerCertificateNo",
-              "description": "No"
-            }
+            "name": "volunteerCertificate",
+            "title": "Having a volunteer certificate",
+            "options": [
+              { "name": "yes", "value": "Yes", "id": 1 },
+              { "name": "no", "value": "No", "id": 2 }
+            ]
           },
           "carAvailability": {
-            "yes": {
-              "name": "carAvailabilityYes",
-              "description": "Yes"
-            },
-            "no": {
-              "name": "carAvailabilityNo",
-              "description": "No"
-            }
+            "name": "carAvailability",
+            "title": "Do you have your own car?",
+            "options": [
+              { "name": "yes", "value": "Yes", "id": 3 },
+              { "name": "no", "value": "No", "id": 4 }
+            ]
+          
+        
           },
           "reasonVolunteering": {
             "name": "reasonVolunteering",
