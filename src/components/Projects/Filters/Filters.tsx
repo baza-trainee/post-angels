@@ -8,12 +8,12 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 
 export const Filters = ({
   projects,
-  setFilterName,
-  setSortingMod,
+  checkFilter,
+  checkSort,
 }: {
   projects: ProjectsProps;
-  setFilterName: React.Dispatch<React.SetStateAction<string>>;
-  setSortingMod: React.Dispatch<React.SetStateAction<string>>;
+  checkFilter: (mode: string) => void;
+  checkSort: (mode: string) => void;
 }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isSortingOpen, setIsSortingOpen] = useState(false);
@@ -55,15 +55,16 @@ export const Filters = ({
   }, [closeSortingOutside]);
 
   const handleClick = (mode: string) => {
-    setFilterName(mode);
     setIsFilterOpen(false);
     setCheckedFilter(mode);
+    checkFilter(mode);
   };
 
   const handleSortClick = (mode: string, name: string) => {
     setCheckedSorting(name);
     setIsSortingOpen(false);
-    setSortingMod(mode);
+
+    checkSort(mode);
   };
 
   return (

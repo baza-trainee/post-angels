@@ -28,8 +28,14 @@ module.exports = {
   },
 
   images: {
-    deviceSizes: [320, 420, 768, 1024, 1200],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+      },
+    ],
+    deviceSizes: [320, 420, 768, 1024, 1280, 1440, 1920],
     loader: 'default',
-    domains: ['res.cloudinary.com'],
   },
 };

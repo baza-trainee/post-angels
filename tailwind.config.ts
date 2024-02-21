@@ -48,6 +48,7 @@ const config: Config = {
         orange: ' #FF551A',
         green: '#45CF15',
         error: '#E50E0E',
+        box: '#CECECE',
       },
       fontFamily: {
         eUkraine: ['var(--font-eUkraine)'],

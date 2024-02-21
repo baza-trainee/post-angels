@@ -1,5 +1,4 @@
 import { Locale } from '@/i18n.config';
-import { LogoProps } from '../Logo/Logo.props';
 
 export interface HeaderProps {
   data: {

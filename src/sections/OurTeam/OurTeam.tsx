@@ -1,9 +1,15 @@
 import { Title } from '@/components/typography/Title';
-import { OurTeamProps } from './OurTeam.props';
 import OurTeamList from '@/components/OurTeam/OurTeamList/OurTeamList';
 import { Locale } from '@/i18n.config';
+import { fetchTeam } from '@/api/fetchTeam';
+import { OurTeamProps } from '@/sections/OurTeam/OurTeam.props';
+import {
+  TeammateAttributes,
+} from '@/components/OurTeam/TeamMemberCard/TeamMemberCard.props';
+import { getTeam } from '@/api/requests/getTeam';
 
-const OurTeam = ({ lang, data }: { data: OurTeamProps; lang: Locale }) => {
+const OurTeam = async ({ lang, data }: { data: OurTeamProps; lang: Locale }) => {
+  const teamData: TeammateAttributes[] = await fetchTeam(lang);
   return (
     <section>
       <div className="container">
@@ -14,7 +20,7 @@ const OurTeam = ({ lang, data }: { data: OurTeamProps; lang: Locale }) => {
               <br /> {data.title2}
             </span>
           </Title>
-          <OurTeamList teamMembers={data.teamData} />
+          <OurTeamList teamMembers={teamData} />
         </div>
       </div>
     </section>

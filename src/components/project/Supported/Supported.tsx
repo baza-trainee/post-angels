@@ -3,10 +3,10 @@ import { StaticDataInfo, ProjectDataInfoProps } from '@/sections/ProjectPage/Pro
 import { SupportSlider } from '@/components/project/SupportSlider';
 
 export const Supported = ({
-  projectDataInfo,
+  projectSupportInfo,
   project_details,
 }: {
-  projectDataInfo: ProjectDataInfoProps;
+  projectSupportInfo: ProjectDataInfoProps[];
   project_details: StaticDataInfo;
 }) => {
   return (
@@ -14,7 +14,10 @@ export const Supported = ({
       <Title tag="h2" variantSize="h4" className="mb-5">
         {project_details.supportTitle}
       </Title>
-      <SupportSlider projectDataInfo={projectDataInfo} project_details={project_details.currency} />
+      <SupportSlider
+        projectDataInfo={projectSupportInfo}
+        project_details={project_details.currency}
+      />
     </div>
   );
 };

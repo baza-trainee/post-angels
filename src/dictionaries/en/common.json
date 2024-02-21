@@ -190,29 +190,35 @@
         "link": "/en/archive"
       }
     },
+
     "ourTeam": {
       "title1": "Our",
       "title2": "Team",
       "teamData": [
         {
-          "name": "Sebastian Syroyishka",
-          "img": "/images/ourteam/Sebastian.jpg"
+          "name": "Sebastian",
+          "lastName": "Syroyishka",
+          "image": "/images/ourteam/Sebastian.jpg"
         },
         {
-          "name": "Ostap Khoma",
-          "img": "/images/ourteam/Ostap.jpg"
+          "name": "Ostap",
+          "lastName": "Khoma",
+          "image": "/images/ourteam/Ostap.jpg"
         },
         {
-          "name": "Volodymyr Havryshevsky",
-          "img": "/images/ourteam/Volodymyr.jpg"
+          "name": "Volodymyr",
+          "lastName": "Havryshevsky",
+          "image": "/images/ourteam/Volodymyr.jpg"
         },
         {
-          "name": "Gavrilyak Ruslan",
-          "img": "/images/ourteam/Ryslan.jpg"
+          "name": "Gavrilyak",
+          "lastName": "Ruslan",
+          "image": "/images/ourteam/Ryslan.jpg"
         },
         {
-          "name": "Marta Kovalyshyn",
-          "img": "/images/ourteam/Marta.jpg"
+          "name": "Marta",
+          "lastName": "Kovalyshyn",
+          "image": "/images/ourteam/Marta.jpg"
         }
       ]
     },

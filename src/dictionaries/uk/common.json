@@ -213,24 +213,29 @@
       "title2": "Команда",
       "teamData": [
         {
-          "name": "Себастіан Сироїшка",
-          "img": "/images/ourteam/Sebastian.jpg"
+          "name": "Себастіан",
+          "lastName": "Сироїшка",
+          "image": "/images/ourteam/Sebastian.jpg"
         },
         {
-          "name": "Остап Хома",
-          "img": "/images/ourteam/Ostap.jpg"
+          "name": "Остап",
+          "lastName": "Хома",
+          "image": "/images/ourteam/Ostap.jpg"
         },
         {
-          "name": "Володимир Гавришевський",
-          "img": "/images/ourteam/Volodymyr.jpg"
+          "name": "Володимир",
+          "lastName": "Гавришевський",
+          "image": "/images/ourteam/Volodymyr.jpg"
         },
         {
-          "name": "Гавриляк Руслан",
-          "img": "/images/ourteam/Ryslan.jpg"
+          "name": "Гавриляк",
+          "lastName": "Руслан",
+          "image": "/images/ourteam/Ryslan.jpg"
         },
         {
-          "name": "Марта Ковалишин",
-          "img": "/images/ourteam/Marta.jpg"
+          "name": "Марта",
+          "lastName": "Ковалишин",
+          "image": "/images/ourteam/Marta.jpg"
         }
       ]
     },

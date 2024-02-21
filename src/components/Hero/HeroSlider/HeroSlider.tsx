@@ -38,7 +38,7 @@ export const HeroSlider: React.FC<BannerSliderProps> = ({ banners, className = '
         </div>
       ) : (
         <ul className={wrapDesktopClasses}>
-          {banners.map((banner, ind) => {
+          {banners?.map((banner, ind) => {
             return (
               <li
                 key={banner.id}
