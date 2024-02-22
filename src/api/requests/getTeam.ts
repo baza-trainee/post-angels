@@ -4,6 +4,7 @@ export const getTeam = gql`
   query ($locale: I18NLocaleCode) {
     teammates(locale: $locale) {
       data {
+        id
         attributes {
           name
           lastName

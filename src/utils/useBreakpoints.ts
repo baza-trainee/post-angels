@@ -8,7 +8,16 @@ const useBreakpoints = () => {
   const less1440px = useMediaPredicate('(max-width: 1339px)');
   const bigger768px = useMediaPredicate('(min-width: 768px)');
   const bigger1280px = useMediaPredicate('(min-width: 1280px)');
-
-  return { less480px, less768px, less1000px, less1280px, less1440px, bigger768px, bigger1280px };
+  const bigger1000px = useMediaPredicate('(min-width: 1000px)');
+  return {
+    less480px,
+    less768px,
+    less1000px,
+    less1280px,
+    less1440px,
+    bigger768px,
+    bigger1280px,
+    bigger1000px,
+  };
 };
 export default useBreakpoints;

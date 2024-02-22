@@ -46,7 +46,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {finishedData.length !== 0 && (
         <FinishedProjects projects={projects} finishedData={finishedData} lang={lang} />
       )}
-      <OurTeam data={ourTeam} teamData={teamData} lang={lang} />
+      <OurTeam data={ourTeam} lang={lang} />
       {partnersData.length !== 0 && <Partners partnersData={partnersData} data={partners} />}
       <Cooperation data={cooperation} />
       <Contacts data={contacts} />

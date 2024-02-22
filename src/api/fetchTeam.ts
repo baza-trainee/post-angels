@@ -21,18 +21,17 @@ export const fetchTeam = async (locale: Locale): Promise<TeamMember[]> => {
 
     const result =
       data && data.teammates && data.teammates.data
-        ? data.teammates.data.map((teammate: any) => ({
+        ? data.teammates.data.map((teammate: TeammateData) => ({
+            id: teammate.id,
             name: teammate.attributes.name,
             lastName: teammate.attributes.lastName,
             image: {
               alt: teammate.attributes.image.alt,
-              src: teammate.attributes.image.src,
-              data: teammate.attributes.image.src.data,
-              attributes: teammate.attributes.image.src.data.attributes,
               url: teammate.attributes.image.src.data.attributes.url,
             },
           }))
         : [];
+
     return result;
   } catch (error) {
     console.log(error);

@@ -285,101 +285,38 @@ body {
 
 /* Our Team Section */
 
-@media (min-width: 1920px) {
-  .team-member:nth-child(3n + 2)::before,
-  .team-member:nth-child(3)::before {
-    position: absolute;
-    right: 0px !important;
-    width: 1px;
-    height: 88%;
-  }
-
-  .team-member:nth-child(5n)::before {
-    position: absolute;
-    left: 0px;
-    width: 1px;
-    height: 88%;
-  }
-
-  .box-line:nth-child(n + 1):before {
+@media (min-width: 768px) and (max-width: 1279px) {
+  .team_card:nth-child(even) .team_image::before {
     content: '';
     position: absolute;
-    top: 15px;
-    bottom: 0;
+    display: block;
+    height: 100%;
     width: 1px;
-    background-color: #b1b0b0;
-    height: 90%;
-  }
-
-  .box-line:nth-child(1n)::before {
-    left: -5px;
-  }
-  .box-line:nth-child(2n)::before {
-    left: 610px;
-  }
-  .box-container-line {
-    border-bottom: 1px solid #b1b0b0;
-  }
-
-  .one-box-line:nth-child(1n)::before {
-    content: '';
-    position: absolute;
-    top: 592px !important;
-    bottom: 84px;
-    width: 1px;
-    right: 617px !important;
-    background-color: #b1b0b0;
-    height: 40%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .team-member:nth-child(2n + 2)::before,
-  .team-member:nth-child(1)::before {
-    position: absolute;
-    right: 0px;
-
-    width: 1px;
-    height: 88%;
-  }
-  .team-member:nth-child(5)::before {
-    display: none;
-  }
-
-  .one-box-line:nth-child(1n)::before {
-    content: '';
-    position: absolute;
-    top: 501px;
-    bottom: 84px;
-    width: 1px;
-    right: 451px;
-    background-color: #b1b0b0;
-    height: 40%;
+    left: -15px;
+    top: 0;
+    background-color: theme('colors.grey.60');
   }
 }
 
 @media (min-width: 1280px) {
-  .team-member:nth-child(2)::before,
-  .team-member:nth-child(3)::before {
+  .team_card:nth-child(3n-1) .team_image::before {
+    content: '';
     position: absolute;
-    left: 0px;
+    display: block;
+    height: 100%;
     width: 1px;
-    height: 88%;
+    left: -16px;
+    top: 0;
+    background-color: theme('colors.grey.60');
   }
-
-  .team-member:nth-child(5n)::before {
+  .team_card:nth-child(3n) .team_image::before {
+    content: '';
     position: absolute;
-    left: -65px;
+    display: block;
+    height: 100%;
     width: 1px;
-    height: 88%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1279px) {
-  .team-member:nth-child(even)::before {
-    position: absolute;
-    left: 0px;
-    width: 1px;
-    height: 88%;
+    left: -16px;
+    top: 0;
+    background-color: theme('colors.grey.60');
   }
 }
