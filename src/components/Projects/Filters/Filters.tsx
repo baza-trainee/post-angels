@@ -68,7 +68,7 @@ export const Filters = ({
   };
 
   return (
-    <div className="mb-10 flex flex-col gap-x-8 gap-y-[30px] md:flex-row xl:mb-1">
+    <div className="absolute flex flex-col gap-x-8 gap-y-[30px] md:flex-row ">
       <div className="relative w-full md:basis-1/2 xl:basis-[200px]">
         <button
           type="button"

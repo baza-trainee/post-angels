@@ -30,6 +30,7 @@ export const Paragraph: FC<ParagraphProps> = ({
           ['font-medium']: variantFontWeight == 'medium',
           ['text-[24px]']: variantFontSize == '24',
           ['text-[22px]']: variantFontSize == '22',
+          ['text-xl']: variantFontSize == '20',
           ['text-base']: variantFontSize == '16',
           ['text-[15px]']: variantFontSize == '15',
           ['text-sm']: variantFontSize == '14',

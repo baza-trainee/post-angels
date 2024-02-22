@@ -193,6 +193,11 @@
         "link": "/en/archive"
       }
     },
+
+    "ourTeam": {
+      "title1": "Our",
+      "title2": "Team"
+    },
     "cooperation": {
       "cooperationSection": {
         "title": "Would you like to",
