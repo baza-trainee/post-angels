@@ -8,10 +8,11 @@ import { Dropdown } from '@/components/header/Dropdown';
 import MobileNav from '@/components/header/MobileNav/MobileNav';
 import { Logo } from '@/layout/Logo';
 import { HeaderProps } from './Header.props';
+import { fetchContact } from '@/api/fetchContact';
 
-export const Header: React.FC<HeaderProps> = ({ data, lang, modal, logo, transparent }) => {
+export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, transparent }) => {
   const { headerNav, buttons } = data;
-
+  const contactData = await fetchContact(lang);
   return (
     <header
       id="header"
@@ -28,19 +29,34 @@ export const Header: React.FC<HeaderProps> = ({ data, lang, modal, logo, transpa
           </div>
 
           {/* address afret 1000px */}
-          <Link className="hidden gap-x-2 xl:flex" href="/">
+          <Link
+            className="hidden gap-x-2 xl:flex"
+            href={contactData.address_link}
+            rel="nofollow noreferrer"
+            target="_blank"
+          >
             <ICONS.HEADER_LOCATION className="h-6 w-6" />
-            816 North Normandie ave., Los Angeles
+            {contactData.address}
           </Link>
           {/* tel number */}
-          <Link className="flex gap-x-2" href="tel:+16572140272">
+          <Link
+            rel="nofollow noreferrer"
+            target="_blank"
+            className="flex gap-x-2"
+            href={`tel:${contactData.phone}`}
+          >
             <ICONS.HEADER_PHONE className="h-6 w-6" />
-            +1 657-214-0272
+            {contactData.phone}
           </Link>
           {/* mail after 1000px */}
-          <Link className="hidden gap-x-2 xl:flex" href="mailto:post.angeles.info@gmail.com">
+          <Link
+            rel="nofollow noreferrer"
+            target="_blank"
+            className="hidden gap-x-2 xl:flex"
+            href={`mailto:${contactData.email}`}
+          >
             <ICONS.HEADER_MAIL className="h-6 w-6" />
-            post.angeles.info@gmail.com
+            {contactData.email}
           </Link>
           {/* mobile nav before 1000px */}
           <MobileNav
