@@ -30,7 +30,7 @@ export const ProjectHero = ({
   const beforeClass =
     'notXl:before:hidden before:bg-grey-60 before:w-[1px] before:block before:absolute before:h-full before:right-[50%] before:top-0';
   return (
-    <section className="pb-[50px] pt-[125px] xl:pb-[80px] xl:pt-[176px] 2xl:pb-[42px]">
+    <section className="pb-[50px] pt-[125px] xl:pb-[80px] xl:pt-[176px] 2xl:pb-[42px]" id="visible">
       <div
         className={`container relative flex flex-col gap-y-4 xl:flex-row xl:gap-x-8 ${beforeClass}`}
       >

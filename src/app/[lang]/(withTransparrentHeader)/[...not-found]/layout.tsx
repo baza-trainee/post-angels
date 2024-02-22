@@ -16,7 +16,7 @@ export default async function DashboardLayout({
   return (
     <>
       <Header data={header} lang={lang} modal={modal} logo={logo} transparent />
-      {children}
+      <main className=" flex-grow ">{children}</main>
       <Footer data={footer} modal={modal} logo={logo} />
     </>
   );
