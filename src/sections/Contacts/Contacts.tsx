@@ -5,8 +5,10 @@ import { ContactList } from '@/components/ContactList/';
 import { Title } from '@/components/typography/Title';
 
 import Partners from '../../../public/images/contacts.png';
+import { fetchContact } from '@/api/fetchContact';
 
-export const Contacts: React.FC<ContactsProps> = ({ data }) => {
+export const Contacts: React.FC<ContactsProps> = async ({ data, lang }) => {
+  const contactData = await fetchContact(lang);
   const { contactsSection } = data;
   return (
     <section className="py-[100px]">
@@ -18,7 +20,7 @@ export const Contacts: React.FC<ContactsProps> = ({ data }) => {
               <br /> {contactsSection.title1}
             </span>
           </Title>
-          <ContactList />
+          <ContactList data={contactData} />
         </div>
 
         <div className="saturate-0 transition-all delay-150 hover:saturate-100 md:h-[416px] md:w-[349px] lg:w-[465px] xl:w-[687px] 2xl:h-[468px] 2xl:w-[664px] 3xl:h-[698px] 3xl:w-[1216px]  notMd:hidden">

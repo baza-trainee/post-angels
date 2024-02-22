@@ -31,7 +31,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
   const partnersData = await fetchPartners(lang);
   const finishedData = await fetchProjects(lang, ['completed']);
   const projectData = await fetchProjects(lang, ['new', 'completed']);
-  const teamData = await fetchTeam(lang);
 
   return (
     <>
@@ -49,7 +48,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       <OurTeam data={ourTeam} lang={lang} />
       {partnersData.length !== 0 && <Partners partnersData={partnersData} data={partners} />}
       <Cooperation data={cooperation} />
-      <Contacts data={contacts} />
+      <Contacts data={contacts} lang={lang} />
       <ScrollBtn data={scrollbtn} />
     </>
   );
