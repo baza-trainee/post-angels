@@ -68,8 +68,8 @@ export const Filters = ({
   };
 
   return (
-    <div className="absolute flex flex-col gap-x-8 gap-y-[30px] md:flex-row ">
-      <div className="relative w-full md:basis-1/2 xl:basis-[200px]">
+    <div className="z-10 flex flex-col gap-x-8 gap-y-[30px] md:flex-row xl:absolute notXl:mb-[30px]">
+      <div className="relative w-full md:basis-1/2 xl:w-[200px] xl:basis-[initial]">
         <button
           type="button"
           onClick={() => setIsFilterOpen(!isFilterOpen)}
@@ -111,7 +111,7 @@ export const Filters = ({
           </ul>
         )}
       </div>
-      <div className="relative w-full md:basis-1/2 xl:basis-[432px]">
+      <div className="relative w-full md:basis-1/2 xl:w-[432px] xl:basis-[initial]">
         <button
           type="button"
           onClick={() => setIsSortingOpen(!isSortingOpen)}
