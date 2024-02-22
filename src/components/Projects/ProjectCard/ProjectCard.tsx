@@ -40,9 +40,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const afterclassname = `smOnly:after:hidden after:bg-grey-60 after:content-[''] after:w-[1px] after:block after:absolute after:h-full after:right-[-15px] after:top-0`;
 
   return (
-    <article className={`${afterclassname}`}>
+    <article className={`${afterclassname} group`}>
       <div
-        className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px]  xl:h-[279px] xl:w-full `}
+        className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 group-hover:saturate-100 sm:h-[282px]  xl:h-[279px] xl:w-full `}
       >
         <Image
           src={image.src.data.attributes.url}
