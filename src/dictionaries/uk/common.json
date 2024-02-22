@@ -211,6 +211,10 @@
         }
       }
     },
+    "ourTeam": {
+      "title1": "Наша",
+      "title2": "Команда"
+    },
     "contacts": {
       "contactsSection": {
         "title": "наші",

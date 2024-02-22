@@ -282,3 +282,41 @@ body {
   height: 1px;
   margin: -1px;
 }
+
+/* Our Team Section */
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .team_card:nth-child(even) .team_image::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 1px;
+    left: -15px;
+    top: 0;
+    background-color: theme('colors.grey.60');
+  }
+}
+
+@media (min-width: 1280px) {
+  .team_card:nth-child(3n-1) .team_image::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 1px;
+    left: -16px;
+    top: 0;
+    background-color: theme('colors.grey.60');
+  }
+  .team_card:nth-child(3n) .team_image::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 1px;
+    left: -16px;
+    top: 0;
+    background-color: theme('colors.grey.60');
+  }
+}
