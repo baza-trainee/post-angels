@@ -12,14 +12,26 @@ import { AboutInNumbers } from '@/sections/AboutInNumbers';
 import { fetchProjects } from '@/api/fetchProjects';
 import { fetchPartners } from '@/api/fetchPartners';
 import { ScrollBtn } from '@/components/ScrollBtn/ScrollBtn';
+import { fetchTeam } from '@/api/fetchTeam';
+import OurTeam from '@/sections/OurTeam/OurTeam';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
-  const { contacts, hero, partners, projects, cooperation, whatWeDo, aboutInNumbers, scrollbtn } =
-    common;
+  const {
+    contacts,
+    hero,
+    partners,
+    projects,
+    cooperation,
+    whatWeDo,
+    aboutInNumbers,
+    scrollbtn,
+    ourTeam,
+  } = common;
   const partnersData = await fetchPartners(lang);
   const finishedData = await fetchProjects(lang, ['completed']);
   const projectData = await fetchProjects(lang, ['new', 'completed']);
+  const teamData = await fetchTeam(lang);
 
   return (
     <>
@@ -34,6 +46,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {finishedData.length !== 0 && (
         <FinishedProjects projects={projects} finishedData={finishedData} lang={lang} />
       )}
+      <OurTeam data={ourTeam} lang={lang} />
       {partnersData.length !== 0 && <Partners partnersData={partnersData} data={partners} />}
       <Cooperation data={cooperation} />
       <Contacts data={contacts} />

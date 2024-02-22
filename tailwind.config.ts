@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -49,6 +48,7 @@ const config: Config = {
         orange: ' #FF551A',
         green: '#45CF15',
         error: '#E50E0E',
+        box: '#CECECE',
       },
       fontFamily: {
         eUkraine: ['var(--font-eUkraine)'],
