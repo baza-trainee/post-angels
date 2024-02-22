@@ -60,15 +60,17 @@ export interface VolunteersFormProps {
       errorRequired: string;
       errorMin: string;
     };
-    companyName: {
+    telegram: {
       errorRequired: string;
       errorMin: string;
     };
-    EDRPOU: {
+    waysVolunteering: {
       errorRequired: string;
-      errorMin: string;
     };
-    waysSupport: {
+    carAvailability: {
+      errorRequired: string;
+    };
+    volunteerCertificate: {
       errorRequired: string;
     };
     descriptionTermsAgreement: {
