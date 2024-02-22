@@ -376,9 +376,13 @@
             "title": "Які способи підтримки Ви готові розглянути?",
             "placeholder": "Оберіть відповідне",
             "options": [
-              { "value": "chocolate", "label": "Chocolate" },
-              { "value": "strawberry", "label": "Strawberry" },
-              { "value": "vanilla", "label": "Vanilla" }
+              { "value": "financialSupport", "label": "Фінансова підтримка" },
+              { "value": "provisionServices", "label": "Надання товарів або послуг" },
+              { "value": "volunteerWork", "label": "Волонтерська діяльність" },
+              { "value": "promotionSupport", "label": "Підтримка у просуванні" },
+              { "value": "resourceMobilization", "label": "Залучення ресурсів" },
+              { "value": "consultation", "label": "Навчання та консультації" },
+              { "value": "other", "label": "Інше" }
             ]
           },
           "ourOffer": {
@@ -542,6 +546,12 @@
           },
           "descriptionTermsAgreement": {
             "errorRequired": "Поле обов'язкове для заповнення"
+          },
+          "volunteerCertificate": {
+            "errorRequired": "Оберіть відповідне"
+          },
+          "carAvailability": {
+            "errorRequired": "Оберіть відповідне"
           },
           "descriptionPrivacyPolice": {
             "errorRequired": "Поле обов'язкове для заповнення"

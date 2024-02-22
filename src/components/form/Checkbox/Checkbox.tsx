@@ -10,7 +10,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   name,
   description,
   variantFontWeight = 'normal',
-  className
+  className,
 }) => {
   const { control } = useFormContext();
 
@@ -26,11 +26,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           })}
         >
           <div className={cn('flex flex-row gap-[21px]', className)}>
-            <input
-              className="hidden"
-              type="checkbox"
-              {...field}
-            />
+            <input className="hidden" type="checkbox" {...field} />
             <div>
               {field.value ? (
                 <ICONS.CHECK_TRUE className="h-6 w-6" />

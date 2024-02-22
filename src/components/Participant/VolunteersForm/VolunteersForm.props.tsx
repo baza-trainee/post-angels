@@ -20,24 +20,14 @@ export interface VolunteersFormProps {
     placeholder: string;
   };
   volunteerCertificate: {
-    yes: {
-      name: string;
-      description: string;
-    };
-    no: {
-      name: string;
-      description: string;
-    };
+    name: string;
+    title: string;
+    options: { name: string; value: string; id: number }[];
   };
   carAvailability: {
-    yes: {
-      name: string;
-      description: string;
-    };
-    no: {
-      name: string;
-      description: string;
-    };
+    name: string;
+    title: string;
+    options: { name: string; value: string; id: number }[];
   };
   descriptionTermsAgreement: {
     name: string;
@@ -47,7 +37,7 @@ export interface VolunteersFormProps {
     name: string;
     description: string;
   };
-schema: {
+  schema: {
     name: {
       errorRequired: string;
       errorMin: string;

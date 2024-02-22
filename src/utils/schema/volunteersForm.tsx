@@ -9,8 +9,10 @@ export const volunteersForm = ({
     phone,
     telegram,
     waysVolunteering,
+    volunteerCertificate,
+    carAvailability,
     descriptionTermsAgreement,
-    descriptionPrivacyPolice
+    descriptionPrivacyPolice,
   },
 }) => {
   const schema = yup.object({
@@ -32,22 +34,8 @@ export const volunteersForm = ({
       })
       .nonNullable()
       .required(waysVolunteering.errorRequired),
-
-
-    volunteerCertificateYes: yup
-      .boolean()
-      .default(false),
-
-    volunteerCertificateNo: yup
-      .boolean()
-      .default(true),
-    carAvailabilityYes: yup
-      .boolean()
-      .default(false),
-    carAvailabilityNo: yup
-      .boolean()
-      .default(true),
-    
+    volunteerCertificate: yup.string().required(volunteerCertificate.errorRequired),
+    carAvailability: yup.string().required(carAvailability.errorRequired),
     reasonVolunteering: yup.string(),
     descriptionTermsAgreement: yup
       .boolean()

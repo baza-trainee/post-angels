@@ -1,7 +1,6 @@
 'use client';
 
 import cn from 'classnames';
-import { useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import { RadiobuttonProps } from './Radiobutton.props';
@@ -10,7 +9,6 @@ import { ICONS } from '@/components/icons/icons.const';
 export const Radiobutton: React.FC<RadiobuttonProps> = ({
   name,
   title,
-  // field,
   variantFontWeight = 'normal',
   options,
   className,
@@ -31,7 +29,7 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
           {title}
           <div className={cn('flex flex-row gap-[33px]', className)}>
             {options.map(({ name, value, id }) => (
-              <div key={id} className="flex flex-row gap-[14px]">
+              <label key={id} className="flex flex-row gap-[14px]">
                 <input
                   name={name}
                   value={value}
@@ -52,11 +50,11 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
                   )}
                 </div>
                 <p>{value}</p>
-              </div>
+              </label>
             ))}
           </div>
           {fieldState.error && (
-            <p className="absolute bottom-[-26px] pl-[45px] text-[13px] font-normal text-error">
+            <p className="absolute w-full bottom-[-26px] text-[13px] font-normal text-error">
               {fieldState.error.message}
             </p>
           )}

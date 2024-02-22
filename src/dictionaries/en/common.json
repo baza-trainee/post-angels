@@ -365,9 +365,13 @@
             "title": "What ways of support are you ready to look at?",
             "placeholder": "Pick up",
             "options": [
-              { "value": "chocolate", "label": "Chocolate" },
-              { "value": "strawberry", "label": "Strawberry" },
-              { "value": "vanilla", "label": "Vanilla" }
+              { "value": "financialSupport", "label": "Financial support" },
+              { "value": "provisionServices", "label": "Provision services" },
+              { "value": "volunteerWork", "label": "Volunteer work" },
+              { "value": "promotionSupport", "label": "Promotion support" },
+              { "value": "resourceMobilization", "label": "Resource mobilization" },
+              { "value": "consultation", "label": "Training and consultation" },
+              { "value": "other", "label": "Other" }
             ]
           },
           "ourOffer": {
@@ -482,8 +486,6 @@
               { "name": "yes", "value": "Yes", "id": 3 },
               { "name": "no", "value": "No", "id": 4 }
             ]
-          
-        
           },
           "reasonVolunteering": {
             "name": "reasonVolunteering",
@@ -499,6 +501,49 @@
             "description": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
           },
           "buttonText": "Submit"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "surname": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "city": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "email": {
+            "errorType": "Value must be of the type 'example@mail.com'",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "phone": {
+            "errorType": "Value must start with '+'",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 10 characters"
+          },
+          "telegram": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "waysVolunteering": {
+            "errorRequired": "Field is required"
+          },
+          "volunteerCertificate": {
+            "errorRequired": "Field is required"
+          },
+          "carAvailability": {
+            "errorRequired": "Field is required"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Field is required"
+          },
+          "descriptionPrivacyPolice": {
+            "errorRequired": "Field is required"
+          }
         }
       }
     }

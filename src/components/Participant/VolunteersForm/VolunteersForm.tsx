@@ -17,11 +17,6 @@ import { VolunteersFormProps } from './VolunteersForm.props';
 
 type FormData = yup.InferType<typeof volunteersForm>;
 
-const options = [
-  { name: 'yes', value: 'Так', index: 1 },
-  { name: 'no', value: 'Ні', index: 1 },
-];
-
 export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   inputFields,
   waysVolunteering,
@@ -75,7 +70,6 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
                 options={volunteerCertificate.options}
                 name={volunteerCertificate.name}
                 title={volunteerCertificate.title}
-
               />
             </div>
           </div>
@@ -87,12 +81,11 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
                 options={carAvailability.options}
                 name={carAvailability.name}
                 title={carAvailability.title}
-
               />
             </div>
           </div>
           <Textarea
-            className="h-[258px] md:h-[284px] lg:h-[330px] xl:h-[331px] 2xl:h-[357px]"
+            className="h-[258px] md:h-[284px] lg:h-[330px] xl:h-[326px] 2xl:h-[352px]"
             name={reasonVolunteering.name}
             title={reasonVolunteering.title}
             placeholder={reasonVolunteering.placeholder}
