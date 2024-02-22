@@ -17,8 +17,8 @@ export const FinishedProjects = async ({
 }) => {
   return (
     <section id="finishedProjects" className="pt-10">
-      <div className="container">
-        <Title tag="h2" variantSize="h2" className="mb-[30px] xl:mb-1">
+      <div className="container relative">
+        <Title tag="h2" variantSize="h2" className="absolute  ">
           {projects.finishedProjects2023.title}
           <br />
           <span>{projects.finishedProjects2023.title1}</span>
