@@ -3,8 +3,9 @@
 import { Slider } from '@/components/Slider';
 import classNames from 'classnames';
 import { TechImage } from '../TechImage';
+import { TechSliderProps } from './TechSlider.props';
 
-export const TechSlider = ({ data, className }: any) => {
+export const TechSlider = ({ data, className }: TechSliderProps) => {
   const wrapSliderClasses = classNames('h-auto mb-[50px]', className);
   return (
     <div className={wrapSliderClasses}>
@@ -20,8 +21,8 @@ export const TechSlider = ({ data, className }: any) => {
         isPagination={true}
         isInteractive={true}
         isFadeEffect={false}
-        isNavigation={true}
-        // isFinished={true}
+        isNavigation={false}
+        // isFinished={false}
         navigationBreakpoints={{
           isMobile: false,
           isTablet: false,

@@ -15,7 +15,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
       <div className="container flex flex-col gap-y-20 xl:gap-y-[100px]">
         <h1 className="hidden-h1">{veterans.title}</h1>
         <div className="flex flex-col gap-y-20">
-          <Tech data={resultTechnology} />
+          <Tech data={resultTechnology} dictionaryData={veterans} />
           <Help data={resultHelp} />
         </div>
       </div>

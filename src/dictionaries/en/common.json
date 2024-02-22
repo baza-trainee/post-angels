@@ -341,7 +341,10 @@
       }
     },
     "veterans": {
-      "title": "Veterans"
+      "title": "Veterans",
+      "faq": {
+        "buttonAreaLabel": "Open/close button"
+      }
     }
   }
 }
