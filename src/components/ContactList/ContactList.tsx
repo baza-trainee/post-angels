@@ -5,7 +5,6 @@ import { ICONS } from '../icons';
 import { ContactDataProps } from '@/sections/Contacts/Contacts.props';
 
 export const ContactList = ({ data }: { data: ContactDataProps }) => {
-  console.log(data);
   return (
     <ul className="flex flex-col gap-y-4 md:w-[349px] lg:w-[465px] xl:w-[390px] 2xl:w-[538px]">
       <li>
