@@ -2,6 +2,7 @@ import ActivitiesSvg from '../../../public/icons/aboutInNumber/activities.svg';
 import FamilySvg from '../../../public/icons/aboutInNumber/family.svg';
 import LeadershipSvg from '../../../public/icons/aboutInNumber/leadership.svg';
 import VolunteersSvg from '../../../public/icons/aboutInNumber/volunteers.svg';
+import ScrollArrowIcon from '../../../public/icons/arrow.svg';
 import FacebookIcon from '../../../public/icons/contacts/Facebook.svg';
 import InstagramIcon from '../../../public/icons/contacts/Instagram.svg';
 import LocationIcon from '../../../public/icons/contacts/Location.svg';
@@ -60,4 +61,5 @@ export const ICONS = {
   PRIMARY_LOGO_ICON: PrimaryLogoIcon,
   USER_AVATAR: UserAvatarIcon,
   FAQ: Faq,
+  SCROLL_ARROW: ScrollArrowIcon,
 };

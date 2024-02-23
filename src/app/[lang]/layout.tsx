@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import Loading from './loading';
 
 import PopupCookie from '@/components/PopupCookies/PopupСookie';
+
 import { getDictionary } from '@/lib/dictionary';
 import './globals.css';
 
@@ -90,9 +91,10 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
-      <body className="relative">
+      <body className="relative flex h-screen flex-col">
         <Suspense fallback={<Loading />}>
           {children}
+
           <PopupCookie data={cookie} />
           <div id="modal" />
         </Suspense>

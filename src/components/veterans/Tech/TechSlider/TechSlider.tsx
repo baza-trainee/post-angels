@@ -6,7 +6,10 @@ import { TechImage } from '../TechImage';
 import { TechSliderProps } from './TechSlider.props';
 
 export const TechSlider = ({ data, className }: TechSliderProps) => {
-  const wrapSliderClasses = classNames('h-auto mb-[50px]', className);
+  const wrapSliderClasses = classNames(
+    'h-auto w-full mb-[50px] xl:w-[584px] 2xl:w-[780px] 3xl:w-[1216px]',
+    className
+  );
   return (
     <div className={wrapSliderClasses}>
       <Slider

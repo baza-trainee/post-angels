@@ -11,7 +11,7 @@ const Tech = ({ data, dictionaryData }: TechProps) => {
       {/* title / text / slider section */}
       <div className="flex flex-col gap-y-10 border-b border-grey-60 xl:flex-row xl:justify-between">
         {/* title and text */}
-        <div className="flex w-full flex-col gap-y-8 xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]">
+        <div className="flex w-full flex-col gap-y-8 xl:w-[482px] 2xl:w-[432px] 3xl:w-[436px]">
           {/* title */}
           <Title variantSize="h2" className="flex w-full flex-wrap text-inherit sm:w-[230px]">
             {formatTitle(data.title)}

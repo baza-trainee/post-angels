@@ -15,7 +15,7 @@ export const Projects = async ({
 }) => {
   return (
     <section id="projectSlider" className="pt-20 xl:pt-[100px]">
-      <div className="container">
+      <div className="container relative">
         <Title tag="h2" variantSize="h2" className="mb-[30px]">
           {projects.ourProjects.title}
           <br />

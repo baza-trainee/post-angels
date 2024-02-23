@@ -46,6 +46,9 @@
       "label": "Company logo",
       "href": "/en"
     },
+    "scrollbtn": {
+      "label": "Back to top"
+    },
     "hero": {
       "title": "The future is in our hands",
       "subtitle": "Together we will achieve a bright tomorrow: this is our contribution to shaping the future.",
@@ -189,6 +192,11 @@
         "text": "Archive",
         "link": "/en/archive"
       }
+    },
+
+    "ourTeam": {
+      "title1": "Our",
+      "title2": "Team"
     },
     "cooperation": {
       "cooperationSection": {

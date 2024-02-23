@@ -1,3 +1,4 @@
+import { fetchContact } from '@/api/fetchContact';
 import { ContactList } from '@/components/ContactList';
 import { ICONS } from '@/components/icons';
 import { Title } from '@/components/typography/Title';
@@ -8,6 +9,7 @@ import Image from 'next/image';
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
   const { contactsSection } = common.contacts;
+  const contactData = await fetchContact(lang);
 
   return (
     <section className="mb-[100px] mt-[102px] xl:mt-[284px]">
@@ -18,7 +20,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
               {contactsSection.title} &zwnj;
               <span>{contactsSection.title1}</span>
             </Title>
-            <ContactList />
+            <ContactList data={contactData} />
           </div>
 
           <div className="relative">
