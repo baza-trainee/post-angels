@@ -40,15 +40,17 @@ export const FAQ = ({ data, dictionaryData }: FAQProps) => {
             })}
           </div>
           {/* image */}
-          <div className="relative mt-7 h-[264px] w-full rounded-2xl sm:h-[364px]">
-            <Image
-              src={image.src.data.attributes.url}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 960px) 100vw, 50vw"
-              className="rounded-2xl object-cover object-center"
-            />
-          </div>
+          {image && (
+            <div className="relative mt-7 h-[264px] w-full rounded-2xl sm:h-[364px]">
+              <Image
+                src={image.src.data.attributes.url}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 960px) 100vw, 50vw"
+                className="rounded-2xl object-cover object-center"
+              />
+            </div>
+          )}
         </>
       )}
     </div>

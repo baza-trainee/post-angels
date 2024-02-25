@@ -13,7 +13,11 @@ const Tech = ({ data, dictionaryData }: TechProps) => {
         {/* title and text */}
         <div className="flex w-full flex-col gap-y-8 xl:w-[482px] 2xl:w-[432px] 3xl:w-[436px]">
           {/* title */}
-          <Title variantSize="h2" className="flex w-full flex-wrap text-inherit sm:w-[230px]">
+          <Title
+            variantSize="h2"
+            tag="h2"
+            className="flex w-full flex-wrap text-inherit sm:w-[230px]"
+          >
             {formatTitle(data.title)}
           </Title>
           {/* text */}
@@ -31,7 +35,7 @@ const Tech = ({ data, dictionaryData }: TechProps) => {
         <TechSlider data={data.image} />
       </div>
       {/* faq section */}
-      <div className="flex flex-col gap-y-10 border-b border-grey-60 pb-10">
+      <div className="flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:pb-20">
         {data.technology.map((el, ind) => (
           <FAQ data={el} key={ind} dictionaryData={dictionaryData.faq} />
         ))}

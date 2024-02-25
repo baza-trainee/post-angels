@@ -352,7 +352,8 @@
       "title": "Veterans",
       "faq": {
         "buttonAreaLabel": "Open/close button"
-      }
+      },
+      "help": "Help offered by our organization"
     }
   }
 }

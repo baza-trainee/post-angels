@@ -5,7 +5,7 @@ export interface FAQProps {
   data: {
     name: string;
     text: string;
-    image: {
+    image?: {
       alt: string;
       id: number | string;
       src: {
