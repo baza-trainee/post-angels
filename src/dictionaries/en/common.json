@@ -410,7 +410,7 @@
             "errorMin": "Minimum length is 4 characters"
           },
           "phone": {
-            "errorType": "Value should start with '+'",
+            "errorType": "The value must start with '+' and contain only numbers",
             "errorRequired": "Field is required",
             "errorMin": "Minimum length is 10 characters"
           },
@@ -526,7 +526,7 @@
             "errorMin": "Minimum length is 4 characters"
           },
           "phone": {
-            "errorType": "Value must start with '+'",
+            "errorType": "The value must start with '+' and contain only numbers",
             "errorRequired": "Field is required",
             "errorMin": "Minimum length is 10 characters"
           },
