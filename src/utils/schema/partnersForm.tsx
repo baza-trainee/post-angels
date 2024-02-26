@@ -22,10 +22,9 @@ export const partnersForm = ({
       .string()
       .required(phone.errorRequired)
       .min(10, phone.errorMin)
-      .matches(/^\+\d+$/, phone.errorType),
+      .matches(/^\+(?!0+$)\d+$/, phone.errorType),
     companyName: yup.string().required(companyName.errorRequired).min(4, companyName.errorMin),
     EDRPOU: yup.string().required(EDRPOU.errorRequired).min(8, EDRPOU.errorMin),
-    subscribe: yup.boolean().default(false).oneOf([true], descriptionTermsAgreement.errorRequired),
     waysSupport: yup
       .object({
         label: yup.string().required(waysSupport.errorRequired),

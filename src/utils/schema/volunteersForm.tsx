@@ -26,7 +26,6 @@ export const volunteersForm = ({
       .min(10, phone.errorMin)
       .matches(/^\+(?!0+$)\d+$/, phone.errorType),
     telegram: yup.string().required(telegram.errorRequired).min(4, telegram.errorMin),
-    subscribe: yup.boolean().default(false).oneOf([true], descriptionTermsAgreement.errorRequired),
     waysVolunteering: yup
       .object({
         label: yup.string().required(waysVolunteering.errorRequired),
