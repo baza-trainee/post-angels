@@ -26,7 +26,7 @@ export const FooterDoc = ({
   };
   return (
     <>
-      <ul className="flex flex-col gap-5 text-sm underline md:flex-row md:gap-10 lg:gap-28 xl:gap-[138px]">
+      <ul className="flex flex-col gap-5 text-sm underline md:flex-row md:gap-10 lg:gap-28 xl:gap-[138px] 2xl:gap-[220px] 3xl:gap-[460px]">
         {footerDoc.map(ell => (
           <li key={ell.name}>
             <Link href={ell.href}>{ell.name}</Link>
