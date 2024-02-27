@@ -8,12 +8,15 @@ import * as yup from 'yup';
 import { volunteersForm } from '@/utils/schema/volunteersForm';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
+import { Locale } from '@/i18n.config';
+
 
 import { Button } from '@/components/buttons/Button/Button';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { VolunteersFormProps } from './VolunteersForm.props';
+import { fetchVolunteerFormData } from '../../../api/fetchVolunteerFormData';
 
 type FormData = yup.InferType<typeof volunteersForm>;
 
@@ -27,6 +30,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   descriptionPrivacyPolice,
   buttonText,
   schema,
+  lang
 }) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(volunteersForm({ translation: schema })),
@@ -35,6 +39,16 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
 
   const onSubmit = (data: FormData) => {
     console.log(data);
+    fetchVolunteerFormData(lang, {name: "volunteer",
+        lastName: "QQQQvolunteer",
+        city: "volunteer",
+        email: "volun@gmail.com",
+        phone: "+33333333333",
+        telegram: "volunteer",
+        activity: "volunteerWork",
+        volunteerCertificate: true,
+        carAvailability: true,
+        message: "volunteer"})
     reset();
   };
 

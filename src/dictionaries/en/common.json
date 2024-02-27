@@ -471,9 +471,13 @@
             "title": "What areas of volunteering are you willing to consider?",
             "placeholder": "Select an option",
             "options": [
-              { "value": "chocolate", "label": "Chocolate" },
-              { "value": "strawberry", "label": "Strawberry" },
-              { "value": "vanilla", "label": "Vanilla" }
+              { "value": "financialSupport", "label": "Financial support" },
+              { "value": "provisionServices", "label": "Provision services" },
+              { "value": "volunteerWork", "label": "Volunteer work" },
+              { "value": "promotionSupport", "label": "Promotion support" },
+              { "value": "resourceMobilization", "label": "Resource mobilization" },
+              { "value": "consultation", "label": "Training and consultation" },
+              { "value": "other", "label": "Other" }
             ]
           },
           "volunteerCertificate": {
