@@ -6,14 +6,14 @@ import { VolunteersFormProps } from '@/components/Participant/VolunteersForm/Vol
 import { Locale } from '@/i18n.config';
 
 export const fetchVolunteerFormData = async (
-  // locale: Locale,
-  formData: VolunteersFormProps) => {
+  locale: Locale,
+  formData) => {
   try {
     const data = await request(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/graphql` as string,
       getVolunteerFormData,
       {
-        // locale: locale,
+        locale: locale,
         formData: formData,
       },
       
