@@ -19,6 +19,7 @@ export const getPartners = gql`
             }
           }
           partnerOrgTitle
+          web_link
         }
       }
     }
