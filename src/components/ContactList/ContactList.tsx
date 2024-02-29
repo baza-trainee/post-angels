@@ -70,8 +70,8 @@ export const ContactList = ({ data }: { data: ContactDataProps }) => {
           <Link
             href={social.link}
             rel="nofollow noreferrer"
-            className="group flex cursor-pointer items-center gap-2 group-hover:text-accent-primary group-focus:text-accent-primary"
             target="_blank"
+            className="group flex cursor-pointer items-center gap-2 group-hover:text-accent-primary group-focus:text-accent-primary"
           >
             {social.name.toLowerCase() === 'facebook' && (
               <ICONS.FACEBOOK className="h-10 w-10 fill-none stroke-grey-100 hover:fill-none hover:stroke-accent-hover group-hover:stroke-accent-hover group-hover:text-accent-primary group-focus:stroke-accent-primary group-focus:text-accent-primary" />
