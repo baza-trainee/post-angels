@@ -13,6 +13,7 @@ import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { PartnersFormProps } from './PartnersForm.props';
 import { fetchPartnerFormData } from '../../../api/fetchPartnerFormData';
+import { useState } from 'react';
 
 type FormData = yup.InferType<typeof partnersForm>;
 
@@ -26,26 +27,33 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   schema,
   lang,
 }) => {
+  const [submitting, setSubmitting] = useState(false);
   const methods = useForm<FormData>({
     resolver: yupResolver(partnersForm({ translation: schema })),
   });
   const { handleSubmit, reset } = methods;
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    fetchPartnerFormData(lang, {
-      name: 'data.name',
-      lastName: 'data.surname',
-      city: 'data.city',
-      email: 'data.email',
-      phone: 'data.phone',
-      partnerOrgTitle: 'data.companyName',
-      EDRPOU: 'data.EDRPOU',
-      supportMethods: 'data.waysSupport',
-      ourOffers: 'data.ourOffers',
-    });
-
-    reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      console.log(data);
+      const response = await fetchPartnerFormData(lang, {
+        name: 'data.name',
+        lastName: 'data.surname',
+        city: 'data.city',
+        email: 'data.email',
+        phone: 'data.phone',
+        partnerOrgTitle: 'data.companyName',
+        EDRPOU: 'data.EDRPOU',
+        supportMethods: 'data.waysSupport',
+        ourOffers: 'data.ourOffers',
+      });
+      reset();
+      console.log('success');
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -87,7 +95,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
           />
           <Paragraph className="pl-[45px] 2xl:pl-0">{coreMsg}</Paragraph>
         </div>
-        <Button className="w-full lg:w-[464px] xl:w-[280px]" type="submit">
+        <Button className="w-full lg:w-[464px] xl:w-[280px]" type="submit" disabled={submitting}>
           {buttonText}
         </Button>
       </form>

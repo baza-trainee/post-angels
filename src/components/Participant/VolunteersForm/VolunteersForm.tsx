@@ -13,6 +13,7 @@ import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { VolunteersFormProps } from './VolunteersForm.props';
 import { fetchVolunteerFormData } from '../../../api/fetchVolunteerFormData';
+import { useState } from 'react';
 
 type FormData = yup.InferType<typeof volunteersForm>;
 
@@ -28,26 +29,35 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   schema,
   lang,
 }) => {
+  const [submitting, setSubmitting] = useState(false);
   const methods = useForm<FormData>({
     resolver: yupResolver(volunteersForm({ translation: schema })),
   });
   const { handleSubmit, reset } = methods;
 
-  const onSubmit = (data: FormData) => {
-    console.log(data.volunteerCertificate, data.waysVolunteering);
-    fetchVolunteerFormData(lang, {
-      name: data.name,
-      lastName: data.surname,
-      city: data.city,
-      email: data.email,
-      phone: data.phone,
-      telegram: data.telegram,
-      activity: data.waysVolunteering.value,
-      volunteerCertificate: data.volunteerCertificate,
-      carAvailability: data.carAvailability,
-      message: data.reasonVolunteering,
-    });
-    reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      console.log(data);
+      setSubmitting(true);
+      const response = await fetchVolunteerFormData(lang, {
+        name: data.name,
+        lastName: data.surname,
+        city: data.city,
+        email: data.email,
+        phone: data.phone,
+        telegram: data.telegram,
+        activity: data.waysVolunteering.value,
+        volunteerCertificate: data.volunteerCertificate,
+        carAvailability: data.carAvailability,
+        message: data.reasonVolunteering,
+      });
+      reset();
+      console.log('success');
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -118,6 +128,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
         <Button
           className="w-full lg:w-[464px] lg:self-end xl:w-[280px] xl:self-start"
           type="submit"
+          disabled={submitting}
         >
           {buttonText}
         </Button>
