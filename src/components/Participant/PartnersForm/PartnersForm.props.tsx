@@ -64,3 +64,15 @@ export interface PartnersFormProps {
     };
   };
 }
+
+export interface PartnersDataFormProps {
+  name: string;
+  email: string;
+  phone: string;
+  lastName: string;
+  city: string;
+  partnerOrgTitle: string;
+  EDRPOU: string;
+  supportMethods: string;
+  ourOffers: string;
+}

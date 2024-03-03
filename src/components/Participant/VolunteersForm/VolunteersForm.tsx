@@ -1,15 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { Radiobutton } from '@/components/form/Radiobutton/Radiobutton';
 import { Input } from '@/components/form/Input/Input';
 import * as yup from 'yup';
 import { volunteersForm } from '@/utils/schema/volunteersForm';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
-import { Locale } from '@/i18n.config';
-
 
 import { Button } from '@/components/buttons/Button/Button';
 import { Textarea } from '@/components/form/Textarea/Textarea';
@@ -30,7 +26,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   descriptionPrivacyPolice,
   buttonText,
   schema,
-  lang
+  lang,
 }) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(volunteersForm({ translation: schema })),
@@ -38,17 +34,19 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   const { handleSubmit, reset } = methods;
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
-    fetchVolunteerFormData(lang, {name: "volunteer",
-        lastName: "QQQQvolunteer",
-        city: "volunteer",
-        email: "volun@gmail.com",
-        phone: "+33333333333",
-        telegram: "volunteer",
-        activity: "volunteerWork",
-        volunteerCertificate: true,
-        carAvailability: true,
-        message: "volunteer"})
+    console.log(data.volunteerCertificate, data.waysVolunteering);
+    fetchVolunteerFormData(lang, {
+      name: data.name,
+      lastName: data.surname,
+      city: data.city,
+      email: data.email,
+      phone: data.phone,
+      telegram: data.telegram,
+      activity: data.waysVolunteering.value,
+      volunteerCertificate: data.volunteerCertificate,
+      carAvailability: data.carAvailability,
+      message: data.reasonVolunteering,
+    });
     reset();
   };
 

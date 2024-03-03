@@ -79,3 +79,16 @@ export interface VolunteersFormProps {
   };
   buttonText: string;
 }
+
+export interface VolunteersDataFormProps {
+  name: string;
+  email: string;
+  phone: string;
+  lastName: string;
+  city: string;
+  telegram: string;
+  message: string;
+  activity: string;
+  volunteerCertificate: string;
+  carAvailability: string;
+}

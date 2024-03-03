@@ -12,6 +12,7 @@ import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { PartnersFormProps } from './PartnersForm.props';
+import { fetchPartnerFormData } from '../../../api/fetchPartnerFormData';
 
 type FormData = yup.InferType<typeof partnersForm>;
 
@@ -23,6 +24,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   coreMsg,
   buttonText,
   schema,
+  lang,
 }) => {
   const methods = useForm<FormData>({
     resolver: yupResolver(partnersForm({ translation: schema })),
@@ -31,6 +33,18 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
 
   const onSubmit = (data: FormData) => {
     console.log(data);
+    fetchPartnerFormData(lang, {
+      name: 'data.name',
+      lastName: 'data.surname',
+      city: 'data.city',
+      email: 'data.email',
+      phone: 'data.phone',
+      partnerOrgTitle: 'data.companyName',
+      EDRPOU: 'data.EDRPOU',
+      supportMethods: 'data.waysSupport',
+      ourOffers: 'data.ourOffers',
+    });
+
     reset();
   };
 

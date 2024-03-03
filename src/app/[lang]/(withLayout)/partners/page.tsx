@@ -27,6 +27,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         coreMsg={form.coreMsg}
         buttonText={form.buttonText}
         schema={schema}
+        lang={lang}
       />
     </section>
   );
