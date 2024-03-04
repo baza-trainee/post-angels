@@ -27,7 +27,7 @@ export const fetchPartnerFormData = async (
         partnerOrgTitle: formData.partnerOrgTitle,
         EDRPOU: formData.EDRPOU,
         supportMethods: formData.supportMethods,
-        ourOffer: formData.ourOffer,
+        ourOffer: formData.ourOffer
       },
 
       {
