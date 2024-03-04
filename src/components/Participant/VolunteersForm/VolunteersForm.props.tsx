@@ -78,6 +78,10 @@ export interface VolunteersFormProps {
     };
   };
   buttonText: string;
+  notice: {
+    success: string;
+    fail: string;
+  };
 }
 
 export interface VolunteersDataFormProps {

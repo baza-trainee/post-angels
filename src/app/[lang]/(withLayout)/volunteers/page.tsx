@@ -4,11 +4,10 @@ import { getDictionary } from '@/lib/dictionary';
 import { ParticipantHero } from '@/components/Participant/ParticipantHero/ParticipantHero';
 import { VolunteersForm } from '@/components/Participant/VolunteersForm/VolunteersForm';
 
-
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
 
-  const { title } = common.participant;
+  const { title, notice } = common.participant;
   const { description, form, schema } = common.participant.volunteers;
 
   return (
@@ -30,6 +29,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         descriptionPrivacyPolice={form.descriptionPrivacyPolice}
         buttonText={form.buttonText}
         schema={schema}
+        notice={notice}
         lang={lang}
       />
     </section>

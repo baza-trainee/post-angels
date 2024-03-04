@@ -63,6 +63,10 @@ export interface PartnersFormProps {
       errorRequired: string;
     };
   };
+  notice: {
+    success: string;
+    fail: string;
+  };
 }
 
 export interface PartnersDataFormProps {
@@ -74,5 +78,5 @@ export interface PartnersDataFormProps {
   partnerOrgTitle: string;
   EDRPOU: string;
   supportMethods: string;
-  ourOffers: string;
+  ourOffer: string;
 }

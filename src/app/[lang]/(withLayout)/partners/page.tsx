@@ -7,7 +7,7 @@ import { PartnersForm } from '@/components/Participant/PartnersForm/PartnersForm
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
 
-  const { title } = common.participant;
+  const { title, notice } = common.participant;
   const { description, form, schema } = common.participant.partners;
 
   return (
@@ -27,6 +27,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         coreMsg={form.coreMsg}
         buttonText={form.buttonText}
         schema={schema}
+        notice={notice}
         lang={lang}
       />
     </section>

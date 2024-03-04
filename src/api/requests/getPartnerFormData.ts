@@ -10,8 +10,8 @@ export const getPartnerFormData = gql`
     $phone: String!
     $partnerOrgTitle: String!
     $EDRPOU: String!
+    $ourOffer: String!
     $supportMethods: ENUM_PARTNER_SUPPORTMETHODS
-    $ourOffers: String!
   ) {
     createPartner(
       locale: $locale
@@ -23,21 +23,12 @@ export const getPartnerFormData = gql`
         phone: $phone
         partnerOrgTitle: $partnerOrgTitle
         EDRPOU: $EDRPOU
+        ourOffer: $ourOffer
         supportMethods: $supportMethods
       }
     ) {
       data {
         id
-        attributes {
-          name
-          lastName
-          city
-          email
-          phone
-          partnerOrgTitle
-          EDRPOU
-          supportMethods
-        }
       }
     }
   }

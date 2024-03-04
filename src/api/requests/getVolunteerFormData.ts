@@ -31,18 +31,6 @@ export const getVolunteerFormData = gql`
     ) {
       data {
         id
-        attributes {
-          name
-          lastName
-          city
-          email
-          phone
-          telegram
-          activity
-          volunteerCertificate
-          carAvailability
-          message
-        }
       }
     }
   }

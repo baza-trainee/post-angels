@@ -1,9 +1,7 @@
 'use client';
 
-import { Radiobutton } from '@/components/form/Radiobutton/Radiobutton';
-import { Input } from '@/components/form/Input/Input';
 import * as yup from 'yup';
-import { volunteersForm } from '@/utils/schema/volunteersForm';
+import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
 
@@ -11,9 +9,11 @@ import { Button } from '@/components/buttons/Button/Button';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
+import { Radiobutton } from '@/components/form/Radiobutton/Radiobutton';
+import { Input } from '@/components/form/Input/Input';
 import { VolunteersFormProps } from './VolunteersForm.props';
+import { volunteersForm } from '@/utils/schema/volunteersForm';
 import { fetchVolunteerFormData } from '../../../api/fetchVolunteerFormData';
-import { useState } from 'react';
 
 type FormData = yup.InferType<typeof volunteersForm>;
 
@@ -27,6 +27,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   descriptionPrivacyPolice,
   buttonText,
   schema,
+  notice,
   lang,
 }) => {
   const [submitting, setSubmitting] = useState(false);
@@ -39,7 +40,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
     try {
       console.log(data);
       setSubmitting(true);
-      const response = await fetchVolunteerFormData(lang, {
+      const response = await fetchVolunteerFormData(lang, notice, {
         name: data.name,
         lastName: data.surname,
         city: data.city,
@@ -52,7 +53,6 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
         message: data.reasonVolunteering,
       });
       reset();
-      console.log('success');
     } catch (error) {
       console.error(error);
     } finally {

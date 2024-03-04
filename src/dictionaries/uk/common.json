@@ -323,6 +323,10 @@
     },
     "participant": {
       "title": "Анкета ",
+      "notice": {
+        "success": "Інформація надіслана успішно!",
+        "fail": "Виникла помилка, спробуйте ще раз!"
+      },
       "partners": {
         "description": {
           "accentTitle": "партнера",

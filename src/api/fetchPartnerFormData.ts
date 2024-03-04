@@ -1,11 +1,18 @@
 import { request } from 'graphql-request';
+import { Locale } from '@/i18n.config';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { getPartnerFormData } from './requests/getPartnerFormData';
-import { PartnersDataFormProps } from '@/components/Participant/PartnersForm/PartnersForm.props';
+import {
+  PartnersDataFormProps,
+  PartnersFormProps,
+} from '@/components/Participant/PartnersForm/PartnersForm.props';
 
-import { Locale } from '@/i18n.config';
-
-export const fetchPartnerFormData = async (locale: Locale, formData: PartnersDataFormProps) => {
+export const fetchPartnerFormData = async (
+  locale: Locale,
+  notice: Pick<PartnersFormProps, 'notice'>,
+  formData: PartnersDataFormProps
+) => {
   try {
     const data = await request(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/graphql` as string,
@@ -20,19 +27,22 @@ export const fetchPartnerFormData = async (locale: Locale, formData: PartnersDat
         partnerOrgTitle: formData.partnerOrgTitle,
         EDRPOU: formData.EDRPOU,
         supportMethods: formData.supportMethods,
-        // ourOffers: formData.ourOffers,
+        ourOffer: formData.ourOffer,
       },
 
       {
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_POST_API}`,
       }
     );
+    Notify.success(notice.success);
 
     const id = data.createPartner.data.id;
 
     return console.log(id);
   } catch (error) {
     console.log(error);
+    Notify.failure(notice.fail);
+
     return [] as any;
   }
 };

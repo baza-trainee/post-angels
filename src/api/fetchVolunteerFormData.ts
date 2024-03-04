@@ -1,10 +1,18 @@
 import { request } from 'graphql-request';
 
 import { getVolunteerFormData } from './requests/getVolunteerFormData';
-import { VolunteersDataFormProps } from '@/components/Participant/VolunteersForm/VolunteersForm.props';
+import {
+  VolunteersDataFormProps,
+  VolunteersFormProps,
+} from '@/components/Participant/VolunteersForm/VolunteersForm.props';
 import { Locale } from '@/i18n.config';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-export const fetchVolunteerFormData = async (locale: Locale, formData: VolunteersDataFormProps) => {
+export const fetchVolunteerFormData = async (
+  locale: Locale,
+  notice: Pick<VolunteersFormProps, 'notice'>,
+  formData: VolunteersDataFormProps
+) => {
   try {
     const data = await request(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/graphql` as string,
@@ -20,15 +28,15 @@ export const fetchVolunteerFormData = async (locale: Locale, formData: Volunteer
         message: formData.message,
         activity: formData.activity,
         volunteerCertificate:
-          formData.volunteerCertificate === 'Так'
+          formData.volunteerCertificate === 'Так'|| 'Yes'
             ? true
-            : formData.volunteerCertificate === 'Ні'
+            : formData.volunteerCertificate === 'Ні'|| 'No'
               ? false
               : null,
         carAvailability:
-          formData.carAvailability === 'Так'
+          formData.carAvailability === 'Так'|| 'Yes'
             ? true
-            : formData.carAvailability === 'Ні'
+            : formData.carAvailability === 'Ні'|| 'No'
               ? false
               : null,
       },
@@ -37,12 +45,15 @@ export const fetchVolunteerFormData = async (locale: Locale, formData: Volunteer
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_POST_API}`,
       }
     );
+    Notify.success(notice.success);
 
     const id = data.createVolonter.data.id;
 
     return console.log(id);
   } catch (error) {
     console.log(error);
+    Notify.failure(notice.fail);
+
     return [] as any;
   }
 };

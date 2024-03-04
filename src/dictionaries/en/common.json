@@ -323,6 +323,10 @@
     },
     "participant": {
       "title": "Questionnaire ",
+      "notice": {
+        "success": "Data sent successfully!",
+        "fail": "An error occurred, please try again!"
+      },
       "partners": {
         "description": {
           "accentTitle": "for partner",

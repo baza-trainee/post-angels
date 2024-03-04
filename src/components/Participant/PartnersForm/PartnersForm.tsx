@@ -1,19 +1,20 @@
 'use client';
 
-import { Input } from '@/components/form/Input/Input';
 import * as yup from 'yup';
-import { partnersForm } from '@/utils/schema/partnersForm';
+import { useState } from 'react';
+
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
 
 import { Button } from '@/components/buttons/Button/Button';
+import { Input } from '@/components/form/Input/Input';
 import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
-import { PartnersFormProps } from './PartnersForm.props';
 import { fetchPartnerFormData } from '../../../api/fetchPartnerFormData';
-import { useState } from 'react';
+import { partnersForm } from '@/utils/schema/partnersForm';
+import { PartnersFormProps } from './PartnersForm.props';
 
 type FormData = yup.InferType<typeof partnersForm>;
 
@@ -25,6 +26,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   coreMsg,
   buttonText,
   schema,
+  notice,
   lang,
 }) => {
   const [submitting, setSubmitting] = useState(false);
@@ -36,19 +38,18 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   const onSubmit = async (data: FormData) => {
     try {
       console.log(data);
-      const response = await fetchPartnerFormData(lang, {
-        name: 'data.name',
-        lastName: 'data.surname',
-        city: 'data.city',
-        email: 'data.email',
-        phone: 'data.phone',
-        partnerOrgTitle: 'data.companyName',
-        EDRPOU: 'data.EDRPOU',
-        supportMethods: 'data.waysSupport',
-        ourOffers: 'data.ourOffers',
+      const response = await fetchPartnerFormData(lang, notice, {
+        name: data.name,
+        lastName: data.surname,
+        city: data.city,
+        email: data.email,
+        phone: data.phone,
+        partnerOrgTitle: data.companyName,
+        EDRPOU: data.EDRPOU,
+        supportMethods: data.waysSupport.value,
+        ourOffer: data.ourOffers,
       });
       reset();
-      console.log('success');
     } catch (error) {
       console.error(error);
     } finally {
