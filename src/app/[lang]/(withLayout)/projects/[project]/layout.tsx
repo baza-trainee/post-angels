@@ -51,6 +51,7 @@ export default async function ProjectLayout({
           status: projects.attributes.status,
         }}
         staticData={project_details.hero}
+        lang={lang}
       />
       {children}
     </>
