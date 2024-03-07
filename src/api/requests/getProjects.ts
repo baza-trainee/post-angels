@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 export const getProjects = gql`
   query ($locale: I18NLocaleCode, $statuses: [String!]) {
-    projects(locale: $locale, filters: { status: { in: $statuses } }) {
+    projects(locale: $locale, filters: { status: { in: $statuses } }, pagination: { limit: 100 }) {
       data {
         id
         attributes {
