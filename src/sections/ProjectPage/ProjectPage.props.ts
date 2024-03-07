@@ -4,8 +4,8 @@ export interface ProjectHeroProps {
   title: string;
   collected: number;
   all: number;
-  startDate: string;
-  finishedDate: string;
+  startDate: Date;
+  finishedDate?: Date;
   organizer: ProjectOrganizerProps;
   socials: ProjectSocialProps[];
   status: string;
@@ -16,8 +16,8 @@ export interface ProjectDataProps {
   title: string;
   collected: number;
   all: number;
-  startDate: string;
-  finishedDate: string;
+  startDate: Date;
+  finishedDate?: Date;
   status: string;
   conclusion: string;
   organizer: ProjectOrganizerProps;
@@ -97,6 +97,7 @@ export interface StaticDataLinkNav {
 
 export interface StaticDataInfo {
   supportTitle: string;
+  noSupport: string;
   currency: string;
 }
 

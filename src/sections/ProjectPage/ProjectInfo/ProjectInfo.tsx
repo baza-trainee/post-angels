@@ -2,6 +2,7 @@ import { ProjectLinks } from '@/components/project/ProjectLinks';
 import { StaticDataProps, ProjectDataInfoProps, ProjectDataProps } from '../ProjectPage.props';
 import { Info } from '@/components/project/Info';
 import { Supported } from '@/components/project/Supported';
+import { Locale } from '@/i18n.config';
 
 export const ProjectInfo = ({
   projectDataInfo,

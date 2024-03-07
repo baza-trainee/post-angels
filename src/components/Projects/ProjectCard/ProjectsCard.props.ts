@@ -20,7 +20,7 @@ export interface ProjectCardProps {
     title: string;
     collected: number;
     all: number;
-    startDate: string;
+    startDate: Date;
     status: string;
     slug?: string;
   };

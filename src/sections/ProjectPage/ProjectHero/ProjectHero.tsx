@@ -7,13 +7,16 @@ import { ProjectHeroProps, StaticDataHeroProps } from '../ProjectPage.props';
 import { Title } from '@/components/typography/Title';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { SocialIcon } from '../SocialIcon';
+import { Locale } from '@/i18n.config';
 
 export const ProjectHero = ({
   data,
   staticData,
+  lang,
 }: {
   data: ProjectHeroProps;
   staticData: StaticDataHeroProps;
+  lang: Locale;
 }) => {
   const { id, title, organizer, image, socials, status } = data;
 
@@ -52,7 +55,7 @@ export const ProjectHero = ({
             {title}
           </Title>
           <Paragraph className="mb-4 xl:mb-[10px]">{staticData.subtitle}</Paragraph>
-          <ProjectData staticData={staticData} data={data} />
+          <ProjectData staticData={staticData} data={data} lang={lang} />
           {organizer && (
             <div>
               <Paragraph
