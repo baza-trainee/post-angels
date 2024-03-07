@@ -115,7 +115,7 @@ export const Slider: React.FC<SliderProps> = ({
       lazyPreloadPrevNext={1}
     >
       {data.map((props, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index} className="!h-auto">
           <Element {...props} cardData={cardData} isFinished={isFinished} lang={lang} />
         </SwiperSlide>
       ))}

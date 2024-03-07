@@ -12,7 +12,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const { all, image, startDate, title, collected, slug, status } = props.attributes;
   const { lang } = props;
   const cardData = props.cardData;
-  console.log(startDate);
+
   const blockRef = useRef<HTMLDivElement | null>(null);
   const [blockWidth, setBlockWidth] = useState(0);
 
@@ -50,7 +50,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
   const afterclassname = `smOnly:after:hidden after:bg-grey-60 after:content-[''] after:w-[1px] after:block after:absolute after:h-full after:right-[-15px] after:top-0`;
 
   return (
-    <article className={`${afterclassname} group`}>
+    <article className={`${afterclassname} group flex h-full w-full flex-col`}>
       <div
         className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 group-hover:saturate-100 sm:h-[282px]  xl:h-[279px] xl:w-full `}
       >
@@ -63,11 +63,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
         />
       </div>
 
-      <div className="mb-[30px] flex flex-col gap-y-4">
-        <Title tag="h4" variantSize="h4">
-          {title}
-        </Title>
-        <div className="flex justify-between	">
+      <Title tag="h4" variantSize="h4">
+        {title}
+      </Title>
+      <div className="mb-[30px] mt-auto flex flex-col gap-y-4">
+        <div className="mt-auto flex	justify-between">
           <Paragraph
             variant={status === 'completed' ? 'light' : 'grey'}
             variantFontSize="15"
