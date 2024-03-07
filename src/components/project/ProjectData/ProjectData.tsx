@@ -4,6 +4,7 @@ import { StaticDataHeroProps, ProjectHeroProps } from '@/sections/ProjectPage/Pr
 import { Paragraph } from '@/components/typography/Paragraph';
 import dayjs from 'dayjs';
 import { Locale } from '@/i18n.config';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 
 export const ProjectData = ({
   staticData,
@@ -43,8 +44,8 @@ export const ProjectData = ({
 
   const getLocalFormattedDate = (date: Date) => {
     const formattedLang = {
-      uk: dayjs(date).format('DD.MM.YYYY'),
-      en: dayjs(date).format('MM.DD.YYYY'),
+      uk: dayjs(date).locale(lang).format('DD.MM.YYYY'),
+      en: dayjs(date).locale(lang).format('MM.DD.YYYY'),
     };
     return lang ? formattedLang[lang] : formattedLang['uk'];
   };
