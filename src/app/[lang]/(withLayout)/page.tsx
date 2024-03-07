@@ -15,6 +15,8 @@ import { ScrollBtn } from '@/components/ScrollBtn/ScrollBtn';
 import { fetchTeam } from '@/api/fetchTeam';
 import OurTeam from '@/sections/OurTeam/OurTeam';
 
+export const revalidate = 600;
+
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const { common } = await getDictionary(lang);
   const {
