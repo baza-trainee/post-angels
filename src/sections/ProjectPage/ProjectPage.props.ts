@@ -23,6 +23,15 @@ export interface ProjectDataProps {
   organizer: ProjectOrganizerProps;
   socials: ProjectSocialProps[];
   info: string;
+  document: ProjectDocumentProps[];
+}
+
+export interface ProjectDocumentProps {
+  name: string;
+  title: string;
+  href: {
+    data: { attributes: { url: string; ext: string } }[];
+  };
 }
 
 export interface ProjectDataInfoProps {

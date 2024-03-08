@@ -15,7 +15,7 @@ export const SupportCard = (props: ProjectSupportDataProps) => {
 
       <div className="flex w-full justify-between">
         <div>
-          <Paragraph variant="grey" variantFontSize="16" className="mb-1">
+          <Paragraph variant="grey" variantFontSize="16" className="mb-1 font-eUkraineHead">
             {name}
           </Paragraph>
           <Paragraph variant="grey" variantFontSize="14">

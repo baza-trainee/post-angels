@@ -12,11 +12,11 @@ export default async function Project({ params }: { params: { project: string; l
   const projectData = await getProjectDataDocuments(project, lang);
   const { project_details } = await getDictionary(lang);
   const projectInfoData = await fetchOneProject(lang, project);
-  const { supportsData } = projectInfoData;
+  const { supportsData, projects } = projectInfoData;
 
   return (
     <ProjectDocument
-      projectDataDoc={projectData}
+      projectDataDoc={projects.attributes.document}
       projectSupportsData={supportsData}
       project_details={project_details}
     />
