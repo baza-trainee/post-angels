@@ -3,7 +3,7 @@ import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 
 import { ProjectInfo } from '@/sections/ProjectPage/ProjectInfo';
-
+export const revalidate = 600;
 export default async function Project({ params }: { params: { project: string; lang: Locale } }) {
   const { project, lang } = params;
 
