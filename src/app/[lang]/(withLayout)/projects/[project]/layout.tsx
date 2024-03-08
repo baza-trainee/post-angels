@@ -1,5 +1,5 @@
 import { Locale } from '@/i18n.config';
-
+import { revalidateTag } from 'next/cache';
 import React from 'react';
 import { getDictionary } from '@/lib/dictionary';
 import { ProjectHero } from '@/sections/ProjectPage/ProjectHero';
@@ -33,6 +33,7 @@ export default async function ProjectLayout({
 }) {
   const projectData = await fetchOneProject(lang, project);
   const { project_details } = await getDictionary(lang);
+  revalidateTag('project');
   const { projects } = projectData;
 
   return (
