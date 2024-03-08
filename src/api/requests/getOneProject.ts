@@ -34,6 +34,18 @@ export const getOneProject = gql`
             name
             link
           }
+          document {
+            name
+            title
+            href {
+              data {
+                attributes {
+                  url
+                  ext
+                }
+              }
+            }
+          }
           image {
             id
             alt
