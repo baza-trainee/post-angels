@@ -2,13 +2,18 @@
 import { useRef, useEffect, useState } from 'react';
 import { StaticDataHeroProps, ProjectHeroProps } from '@/sections/ProjectPage/ProjectPage.props';
 import { Paragraph } from '@/components/typography/Paragraph';
+import dayjs from 'dayjs';
+import { Locale } from '@/i18n.config';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 
 export const ProjectData = ({
   staticData,
   data,
+  lang,
 }: {
   staticData: StaticDataHeroProps;
   data: ProjectHeroProps;
+  lang: Locale;
 }) => {
   const { all, collected, startDate, finishedDate, status } = data;
   const blockRef = useRef<HTMLDivElement | null>(null);
@@ -35,6 +40,14 @@ export const ProjectData = ({
 
   const getPercentWidth = (blockWidth: number, collected: number, all: number) => {
     return Math.round(blockWidth * (collected / all));
+  };
+
+  const getLocalFormattedDate = (date: Date) => {
+    const formattedLang = {
+      uk: dayjs(date).locale(lang).format('DD.MM.YYYY'),
+      en: dayjs(date).locale(lang).format('MM.DD.YYYY'),
+    };
+    return lang ? formattedLang[lang] : formattedLang['uk'];
   };
 
   return (
@@ -80,7 +93,7 @@ export const ProjectData = ({
           variantFontSize="15"
           variantFontWeight="regular"
         >
-          {startDate}
+          {getLocalFormattedDate(startDate)}
         </Paragraph>
       </div>
       <div className="flex justify-between">
@@ -96,7 +109,7 @@ export const ProjectData = ({
           variantFontSize="15"
           variantFontWeight="regular"
         >
-          {finishedDate}
+          {finishedDate ? getLocalFormattedDate(finishedDate) : ''}
         </Paragraph>
       </div>
     </div>

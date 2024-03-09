@@ -1,6 +1,7 @@
 import { Title } from '@/components/typography/Title';
 import { StaticDataInfo, ProjectDataInfoProps } from '@/sections/ProjectPage/ProjectPage.props';
 import { SupportSlider } from '@/components/project/SupportSlider';
+import { Paragraph } from '@/components/typography/Paragraph';
 
 export const Supported = ({
   projectSupportInfo,
@@ -14,10 +15,14 @@ export const Supported = ({
       <Title tag="h2" variantSize="h4" className="mb-5">
         {project_details.supportTitle}
       </Title>
-      <SupportSlider
-        projectDataInfo={projectSupportInfo}
-        project_details={project_details.currency}
-      />
+      {projectSupportInfo.length > 0 ? (
+        <SupportSlider
+          projectDataInfo={projectSupportInfo}
+          project_details={project_details.currency}
+        />
+      ) : (
+        <Paragraph>{project_details.noSupport}</Paragraph>
+      )}
     </div>
   );
 };

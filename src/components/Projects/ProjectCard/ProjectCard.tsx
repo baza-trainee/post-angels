@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
+import dayjs from 'dayjs';
 
 import { ProjectCardProps } from './ProjectsCard.props';
 import { Title } from '@/components/typography/Title';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
+import { Locale } from '@/i18n.config';
 
 export const ProjectCard = (props: ProjectCardProps) => {
   const { all, image, startDate, title, collected, slug, status } = props.attributes;
@@ -37,12 +39,20 @@ export const ProjectCard = (props: ProjectCardProps) => {
     return Math.round(blockWidth * (collected / all));
   };
 
+  const getLocalFormattedDate = (date: Date) => {
+    const formattedLang = {
+      uk: dayjs(date).format('DD.MM.YYYY'),
+      en: dayjs(date).format('MM.DD.YYYY'),
+    };
+    return lang ? formattedLang[lang] : formattedLang['uk'];
+  };
+
   const afterclassname = `smOnly:after:hidden after:bg-grey-60 after:content-[''] after:w-[1px] after:block after:absolute after:h-full after:right-[-15px] after:top-0`;
 
   return (
-    <article className={`${afterclassname}`}>
+    <article className={`${afterclassname} group flex h-full w-full flex-col`}>
       <div
-        className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 sm:h-[282px]  xl:h-[279px] xl:w-full `}
+        className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 group-hover:saturate-100 sm:h-[282px]  xl:h-[279px] xl:w-full `}
       >
         <Image
           src={image.src.data.attributes.url}
@@ -53,11 +63,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
         />
       </div>
 
-      <div className="mb-[30px] flex flex-col gap-y-4">
-        <Title tag="h4" variantSize="h4">
-          {title}
-        </Title>
-        <div className="flex justify-between	">
+      <Title tag="h4" variantSize="h4">
+        {title}
+      </Title>
+      <div className="mb-[30px] mt-auto flex flex-col gap-y-4">
+        <div className="mt-auto flex	justify-between">
           <Paragraph
             variant={status === 'completed' ? 'light' : 'grey'}
             variantFontSize="15"
@@ -101,7 +111,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             variantFontSize="15"
             variantFontWeight="regular"
           >
-            {startDate}
+            {getLocalFormattedDate(startDate)}
           </Paragraph>
         </div>
       </div>

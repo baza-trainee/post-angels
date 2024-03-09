@@ -1,6 +1,6 @@
 export interface PartnersSliderProps {
   id: string;
-  attributes: { partnerOrgLogo: PartnerImageProps; partnerOrgTitle: string };
+  attributes: { partnerOrgLogo: PartnerImageProps; partnerOrgTitle: string; web_link: string };
 }
 
 export interface PartnerImageProps {
@@ -32,5 +32,5 @@ export interface PartnerDataType {
 
 export interface PartnerDataProps {
   id: string;
-  attributes: { partnerOrgLogo: PartnerImageProps; partnerOrgTitle: string };
+  attributes: { partnerOrgLogo: PartnerImageProps; partnerOrgTitle: string; web_link: string };
 }

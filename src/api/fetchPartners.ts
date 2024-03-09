@@ -4,8 +4,9 @@ import { getPartners } from './requests/getPartners';
 
 import { Locale } from '@/i18n.config';
 import { PartnerDataProps, PartnerDataType } from '@/sections/PartnersTop/PartnersTop.props';
+import { cache } from 'react';
 
-export const fetchPartners = async (locale: Locale): Promise<PartnerDataProps[]> => {
+export const fetchPartners = cache(async (locale: Locale): Promise<PartnerDataProps[]> => {
   try {
     const data: PartnerDataType = await request(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/graphql` as string,
@@ -24,4 +25,4 @@ export const fetchPartners = async (locale: Locale): Promise<PartnerDataProps[]>
   } catch (error) {
     return [];
   }
-};
+});

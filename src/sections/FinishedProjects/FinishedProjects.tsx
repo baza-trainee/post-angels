@@ -18,7 +18,7 @@ export const FinishedProjects = async ({
   return (
     <section id="finishedProjects" className="pt-10">
       <div className="container relative">
-        <Title tag="h2" variantSize="h2" className="absolute  ">
+        <Title tag="h2" variantSize="h2" className="xl:absolute notXl:mb-[30px] ">
           {projects.finishedProjects2023.title}
           <br />
           <span>{projects.finishedProjects2023.title1}</span>

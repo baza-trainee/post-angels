@@ -9,6 +9,16 @@ import { Locale } from '@/i18n.config';
 
 import { fetchHero } from '@/api/fetchHero';
 
+const createTitle = (title: string) => {
+  const words = title.split(' ');
+
+  return (
+    <Title tag="h1" variantSize="h1" className="whitespace-pre-wrap ">
+      {words.slice(0, 2).join(' ')} <span>{words.slice(2).join(' ')}</span>
+    </Title>
+  );
+};
+
 export const Hero = async ({ data, lang }: { data: HeroProps; lang: Locale }) => {
   const heroData = await fetchHero(lang);
 
@@ -17,9 +27,8 @@ export const Hero = async ({ data, lang }: { data: HeroProps; lang: Locale }) =>
       <div className="container">
         <div className="flex flex-col gap-y-[30px] border-b border-grey-60 pb-10 md:flex-row md:justify-between md:gap-x-[30px] xl:pb-[126px]">
           <div className="flex flex-col gap-y-[30px] xl:mt-[94px] xl:w-[383px] 2xl:mt-[136px] 3xl:mt-[216px]">
-            <Title tag="h1" variantSize="h1" className="whitespace-pre-wrap ">
-              {heroData.title}
-            </Title>
+            {createTitle(heroData.title)}
+
             <Paragraph variant="dark" variantFontSize="16">
               {heroData.subtitle}
             </Paragraph>

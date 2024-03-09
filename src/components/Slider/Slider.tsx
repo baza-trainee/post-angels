@@ -31,6 +31,7 @@ export const Slider: React.FC<SliderProps> = ({
   slidesPerViewDef = 1,
   slidesPerView,
   className,
+
   lang,
   navigationBreakpoints = {
     isMobile: false,
@@ -69,6 +70,7 @@ export const Slider: React.FC<SliderProps> = ({
       modules={[Autoplay, Pagination, EffectFade, Navigation, Grid]}
       allowTouchMove={isInteractive}
       grabCursor={isInteractive}
+      speed={1000}
       effect={isFadeEffect ? 'fade' : ''}
       autoplay={isAutoplay ? { delay: 2000, disableOnInteraction: false } : false}
       loop={isLoop}
@@ -113,7 +115,7 @@ export const Slider: React.FC<SliderProps> = ({
       lazyPreloadPrevNext={1}
     >
       {data.map((props, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={index} className="!h-auto">
           <Element {...props} cardData={cardData} isFinished={isFinished} lang={lang} />
         </SwiperSlide>
       ))}
