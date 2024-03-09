@@ -24,12 +24,12 @@ export const TechSlider = ({ data, className }: TechSliderProps) => {
         isPagination={true}
         isInteractive={true}
         isFadeEffect={false}
-        isNavigation={false}
+        isNavigation={true}
         // isFinished={false}
         navigationBreakpoints={{
           isMobile: false,
           isTablet: false,
-          isDesktop: false,
+          isDesktop: true,
         }}
       />
     </div>
