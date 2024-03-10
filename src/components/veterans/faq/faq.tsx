@@ -16,14 +16,16 @@ export const FAQ = ({ data, dictionaryData, isPreOpen }: FAQProps) => {
     <div className="w-full xl:w-[566px]">
       <div className="">
         {/* question */}
-        <div className="flex items-center gap-x-5 rounded-2xl bg-[#F0F0F0]">
+        <div
+          className="flex cursor-pointer items-center gap-x-5 rounded-2xl bg-[#F0F0F0]"
+          onClick={handleQuestion}
+        >
           <button className="h-[50px] w-[50px]">
             <ICONS.FAQ
               className={`h-[50px] w-[50px] duration-300 ${
                 openQuestion ? 'rotate-45' : 'rotate-0'
               }`}
               aria-label={dictionaryData.buttonAreaLabel}
-              onClick={handleQuestion}
             />
           </button>
           <Title variantSize="h5" tag="h3" className="font-eUkraineHead text-xl font-normal">

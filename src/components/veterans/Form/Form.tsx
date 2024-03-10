@@ -63,37 +63,46 @@ export const Form = ({ data, lang }: FormProps) => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-4">
-        <Input title={name} name="name" type="text" placeholder={name} lang={lang} />
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="![&>*]:col-span-1 flex w-full flex-col gap-y-4 lg:grid lg:grid-cols-2 lg:gap-x-8 xl:w-[1200px] xl:grid-cols-3 [&>div]:flex [&>div]:flex-col [&>div]:gap-y-4"
+      >
+        <div className="">
+          <Input title={name} name="name" type="text" placeholder={name} lang={lang} />
 
-        <Input title={surname} name="surname" type="text" placeholder={surname} lang={lang} />
+          <Input title={surname} name="surname" type="text" placeholder={surname} lang={lang} />
 
-        <Input title={city} name="city" type="text" placeholder={city} lang={lang} />
+          <Input title={city} name="city" type="text" placeholder={city} lang={lang} />
 
-        <Input title={email} name="email" type="email" placeholder={email} lang={lang} />
+          <Input title={email} name="email" type="email" placeholder={email} lang={lang} />
 
-        <Input title={phone} name="phone" type="number" placeholder={phone} lang={lang} />
+          <Input title={phone} name="phone" type="number" placeholder={phone} lang={lang} />
+        </div>
 
-        <SelectInput
-          name="select"
-          title={select.title}
-          options={select.options}
-          placeholder={select.subtitle}
-          lang={lang}
-        />
+        <span className="mx-auto hidden w-0 border-l border-grey-60 xl:flex"></span>
 
-        <Textarea
-          name="description"
-          title={description.title}
-          placeholder={description.subtitle}
-          lang={lang}
-        />
+        <div className="">
+          <SelectInput
+            name="select"
+            title={select.title}
+            options={select.options}
+            placeholder={select.subtitle}
+            lang={lang}
+          />
 
-        <Checkbox name="subscribe" description={checkbox} lang={lang} />
+          <Textarea
+            name="description"
+            title={description.title}
+            placeholder={description.subtitle}
+            lang={lang}
+          />
 
-        <Button disabled type="submit" aria-label={submitButton.areaLabel}>
-          {submitButton.title}
-        </Button>
+          <Checkbox name="subscribe" description={checkbox} lang={lang} />
+
+          <Button disabled type="submit" aria-label={submitButton.areaLabel}>
+            {submitButton.title}
+          </Button>
+        </div>
       </form>
     </FormProvider>
   );
