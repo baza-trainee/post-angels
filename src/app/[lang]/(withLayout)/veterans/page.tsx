@@ -3,6 +3,7 @@ import Tech from '@/components/veterans/Tech/Tech';
 import { Locale } from '@/i18n.config';
 
 import { fetchVeterans } from '@/api/fetchVeterans';
+import { Form } from '@/components/veterans/Form';
 import { getDictionary } from '@/lib/dictionary';
 
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
@@ -17,6 +18,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         <div className="flex flex-col gap-y-20">
           <Tech data={resultTechnology} dictionaryData={veterans} />
           <Help data={resultHelp} dictionaryData={veterans} />
+          <Form data={veterans.form} lang={lang} />
         </div>
       </div>
     </section>

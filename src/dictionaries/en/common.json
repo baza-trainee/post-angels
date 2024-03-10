@@ -353,7 +353,32 @@
       "faq": {
         "buttonAreaLabel": "Open/close button"
       },
-      "help": "Help offered by our organization"
+      "help": "Help offered by our organization",
+      "form": {
+        "name": "Your name",
+        "surname": "Your surname",
+        "city": "City",
+        "email": "Email",
+        "phone": "Phone",
+        "select": {
+          "title": "Veteran's identification document",
+          "subtitle": "Select the appropriate",
+          "options": [
+            { "chocolate": "chocolate" },
+            { "vanilla": "vanilla" },
+            { "strawberry": "strawberry" }
+          ]
+        },
+        "description": {
+          "title": "Describe your problem",
+          "subtitle": "Enter your answer"
+        },
+        "checkbox": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR",
+        "submitButton": {
+          "title": "submit",
+          "areaLabel": "submit button"
+        }
+      }
     }
   }
 }
