@@ -1,4 +1,7 @@
+import { Locale } from '@/i18n.config';
+
 export interface PartnersFormProps {
+  lang?: Locale;
   inputFields: {
     type: string;
     name: string;
@@ -79,4 +82,9 @@ export interface PartnersDataFormProps {
   EDRPOU: string;
   supportMethods: string;
   ourOffer: string;
+}
+
+export interface Notice {
+  success: string;
+  fail: string;
 }

@@ -4,13 +4,14 @@ import { getVolunteerFormData } from './requests/getVolunteerFormData';
 import {
   VolunteersDataFormProps,
   VolunteersFormProps,
+  Notice,
 } from '@/components/Participant/VolunteersForm/VolunteersForm.props';
 import { Locale } from '@/i18n.config';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export const fetchVolunteerFormData = async (
   locale: Locale,
-  notice: Pick<VolunteersFormProps, 'notice'>,
+  notice: Notice,
   formData: VolunteersDataFormProps
 ) => {
   try {
@@ -27,18 +28,8 @@ export const fetchVolunteerFormData = async (
         telegram: formData.telegram,
         message: formData.message,
         activity: formData.activity,
-        volunteerCertificate:
-          formData.volunteerCertificate === 'Так'|| 'Yes'
-            ? true
-            : formData.volunteerCertificate === 'Ні'|| 'No'
-              ? false
-              : null,
-        carAvailability:
-          formData.carAvailability === 'Так'|| 'Yes'
-            ? true
-            : formData.carAvailability === 'Ні'|| 'No'
-              ? false
-              : null,
+        volunteerCertificate: formData.volunteerCertificate === 'true' ? true : false,
+        carAvailability: formData.carAvailability === 'true' ? true : false,
       },
 
       {

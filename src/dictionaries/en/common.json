@@ -488,16 +488,16 @@
             "name": "volunteerCertificate",
             "title": "Having a volunteer certificate",
             "options": [
-              { "name": "yes", "value": "Yes", "id": 1 },
-              { "name": "no", "value": "No", "id": 2 }
+              { "name": true, "value": "Yes", "id": 1 },
+              { "name": false, "value": "No", "id": 2 }
             ]
           },
           "carAvailability": {
             "name": "carAvailability",
             "title": "Do you have your own car?",
             "options": [
-              { "name": "yes", "value": "Yes", "id": 3 },
-              { "name": "no", "value": "No", "id": 4 }
+              { "name": true, "value": "Yes", "id": 3 },
+              { "name": false, "value": "No", "id": 4 }
             ]
           },
           "reasonVolunteering": {

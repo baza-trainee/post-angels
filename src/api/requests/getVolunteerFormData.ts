@@ -9,7 +9,7 @@ export const getVolunteerFormData = gql`
     $lastName: String!
     $city: String!
     $telegram: String!
-    $message: String!
+    $message: String
     $activity: ENUM_VOLONTER_ACTIVITY
     $volunteerCertificate: Boolean!
     $carAvailability: Boolean!

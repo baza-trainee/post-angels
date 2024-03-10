@@ -6,11 +6,12 @@ import { getPartnerFormData } from './requests/getPartnerFormData';
 import {
   PartnersDataFormProps,
   PartnersFormProps,
+  Notice,
 } from '@/components/Participant/PartnersForm/PartnersForm.props';
 
 export const fetchPartnerFormData = async (
   locale: Locale,
-  notice: Pick<PartnersFormProps, 'notice'>,
+  notice: Notice,
   formData: PartnersDataFormProps
 ) => {
   try {
@@ -27,7 +28,7 @@ export const fetchPartnerFormData = async (
         partnerOrgTitle: formData.partnerOrgTitle,
         EDRPOU: formData.EDRPOU,
         supportMethods: formData.supportMethods,
-        ourOffer: formData.ourOffer
+        ourOffer: formData.ourOffer,
       },
 
       {

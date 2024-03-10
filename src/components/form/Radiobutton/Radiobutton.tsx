@@ -37,13 +37,13 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
                   type="radio"
                   {...field}
                   id={id}
-                  checked={field.value === value}
+                  checked={field.value === name}
                   onChange={() => {
-                    field.onChange(value);
+                    field.onChange(name);
                   }}
                 />
                 <div>
-                  {field.value === value ? (
+                  {field.value === name ? (
                     <ICONS.CHECK_TRUE className="h-6 w-6" />
                   ) : (
                     <ICONS.CHECK_FALSE className="h-6 w-6" />

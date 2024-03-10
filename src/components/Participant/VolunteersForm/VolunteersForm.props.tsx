@@ -1,4 +1,8 @@
+import { Locale } from '@/i18n.config';
+
 export interface VolunteersFormProps {
+  lang?: Locale;
+
   inputFields: {
     type: string;
     name: string;
@@ -78,7 +82,7 @@ export interface VolunteersFormProps {
     };
   };
   buttonText: string;
-  notice: {
+  notice?: {
     success: string;
     fail: string;
   };
@@ -95,4 +99,9 @@ export interface VolunteersDataFormProps {
   activity: string;
   volunteerCertificate: string;
   carAvailability: string;
+}
+
+export interface Notice {
+  success: string;
+  fail: string;
 }

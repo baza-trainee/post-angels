@@ -10,7 +10,7 @@ export const getPartnerFormData = gql`
     $phone: String!
     $partnerOrgTitle: String!
     $EDRPOU: String!
-    $ourOffer: String!
+    $ourOffer: String
     $supportMethods: ENUM_PARTNER_SUPPORTMETHODS
   ) {
     createPartner(
