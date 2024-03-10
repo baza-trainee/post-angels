@@ -364,9 +364,9 @@
           "title": "Індетифікаційний документ ветерана",
           "subtitle": "Оберіть відповідне",
           "options": [
-            { "chocolate": "chocolate" },
-            { "vanilla": "vanilla" },
-            { "strawberry": "strawberry" }
+            { "value": "шоколад", "label": "Шоколад" },
+            { "value": "полуниця", "label": "Полуниця" },
+            { "value": "ваніль", "label": "Ваніль" }
           ]
         },
         "description": {

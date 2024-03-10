@@ -364,9 +364,9 @@
           "title": "Veteran's identification document",
           "subtitle": "Select the appropriate",
           "options": [
-            { "chocolate": "chocolate" },
-            { "vanilla": "vanilla" },
-            { "strawberry": "strawberry" }
+            { "value": "chocolate", "label": "Chocolate" },
+            { "value": "strawberry", "label": "Strawberry" },
+            { "value": "vanilla", "label": "Vanilla" }
           ]
         },
         "description": {

@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import { Button } from '@/components/buttons/Button';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { Input } from '@/components/form/Input/Input';
-import { SelectInput } from '@/components/form/SelectInput/SelectInput';
+import { SelectInput } from '@/components/form/SelectInput';
 import { Textarea } from '@/components/form/Textarea/Textarea';
 import { FormProps } from './Form.props';
 
@@ -76,7 +76,7 @@ export const Form = ({ data, lang }: FormProps) => {
 
           <Input title={email} name="email" type="email" placeholder={email} lang={lang} />
 
-          <Input title={phone} name="phone" type="number" placeholder={phone} lang={lang} />
+          <Input title={phone} name="phone" type="tel" placeholder={phone} lang={lang} />
         </div>
 
         <span className="mx-auto hidden w-0 border-l border-grey-60 xl:flex"></span>
