@@ -35,9 +35,9 @@ const Tech = ({ data, dictionaryData }: TechProps) => {
         <TechSlider data={data.image} />
       </div>
       {/* faq section */}
-      <div className="flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:pb-20">
+      <div className="relative flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:pb-20">
         {data.technology.map((el, ind) => (
-          <FAQ data={el} key={ind} dictionaryData={dictionaryData.faq} />
+          <FAQ data={el} key={ind} dictionaryData={dictionaryData.faq} isPreOpen={ind === 0} />
         ))}
       </div>
     </div>

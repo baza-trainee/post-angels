@@ -9,7 +9,7 @@ export interface TechProps {
     description: string;
     image: {
       alt: string;
-      id: number | string;
+      id: string;
       src: {
         data: {
           attributes: {

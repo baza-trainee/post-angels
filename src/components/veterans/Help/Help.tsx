@@ -45,9 +45,10 @@ export const Help = ({ data, dictionaryData }: HelpProps) => {
         <Title variantSize="h3" tag="h3" className="font-eUkraineHead !text-accent-primary">
           {dictionaryData.help}
         </Title>
-        <div className="flex flex-col gap-y-10">
+        {/* <div className=""> */}
+        <div className="flex flex-col gap-y-8 xl:grid xl:grid-flow-row xl:grid-cols-2">
           {helps.map((el, ind) => (
-            <FAQ data={el} key={ind} dictionaryData={dictionaryData.faq} />
+            <FAQ data={el} key={ind} isPreOpen={false} dictionaryData={dictionaryData.faq} />
           ))}
         </div>
       </div>

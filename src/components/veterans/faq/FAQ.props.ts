@@ -17,4 +17,5 @@ export interface FAQProps {
       };
     };
   };
+  isPreOpen: boolean;
 }
