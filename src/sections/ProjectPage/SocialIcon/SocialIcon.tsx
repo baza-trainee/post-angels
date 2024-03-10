@@ -22,7 +22,7 @@ export const SocialIcon = ({
             ? 'fill-grey-100 hover:fill-accent-primary focus:fill-accent-primary'
             : 'stroke-grey-100 hover:stroke-accent-primary focus:stroke-accent-primary'
         }`}
-        href={social.link}
+        href={social.link || ''}
         blank
       >
         <Icon />

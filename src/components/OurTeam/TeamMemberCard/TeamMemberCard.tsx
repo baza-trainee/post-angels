@@ -6,12 +6,12 @@ import { TeamMember } from '@/components/OurTeam/TeamMemberCard/TeamMemberCard.p
 export const TeamMemberCard = ({ name, lastName, image, id }: TeamMember) => {
   return (
     <li
-      className={`team_card  relative border-b border-grey-60 py-10 md:w-[calc((100%_-_30px)_/_2)] xl:w-[calc((100%_-_32px)_/_3)] mdOnly:even:pl-[30px] xl:[&:nth-child(3n)]:pl-[32px] xl:[&:nth-child(3n-1)]:pl-[32px]`}
+      className={`team_card relative box-content border-b border-grey-60 py-10 md:w-[calc((100%_-_30px)_/_2)] xl:w-[calc((100%_-_64px)_/_3)] 3xl:w-[calc((100%_-_96px)_/_4)] 3xl:pl-[32px]  mdOnly:even:pl-[30px] xl:[&:nth-child(3n)]:pl-[32px]  xl:[&:nth-child(3n-1)]:pl-[32px]  3xl:[&:nth-child(4n+1)]:pl-0`}
     >
       <div className={`team_image relative`}>
         {!id?.startsWith('default') ? (
           <Image
-            className={`relative h-[326px] w-full rounded-2xl object-cover object-center saturate-0 transition-all delay-150 hover:saturate-100 lg:h-[346px]  xl:h-[326px]  3xl:h-[436px]`}
+            className={`relative h-[326px] w-full rounded-2xl object-cover object-center saturate-0 transition-all delay-150 hover:saturate-100 lg:h-[346px]  xl:h-[326px]  `}
             src={image.url}
             alt={image.alt}
             width={320}
@@ -20,7 +20,7 @@ export const TeamMemberCard = ({ name, lastName, image, id }: TeamMember) => {
             sizes="100wv"
           />
         ) : (
-          <div className="relative w-full rounded-2xl  bg-box md:h-[326px]  lg:h-[346px]  xl:h-[326px] 3xl:h-[436px]  "></div>
+          <div className="relative w-full rounded-2xl  bg-box md:h-[326px]  lg:h-[346px]  xl:h-[326px]   "></div>
         )}
 
         <div>

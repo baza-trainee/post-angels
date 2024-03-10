@@ -50,7 +50,7 @@ export interface ProjectDataProps {
     all: number;
     collected: number;
     status: string;
-    startDate: string;
+    startDate: Date;
     image: {
       id: string;
       alt: string;

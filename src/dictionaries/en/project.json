@@ -48,6 +48,7 @@
     ],
     "info": {
       "supportTitle": "We've been supported!",
+      "noSupport": "Currently empty. Support us!",
       "currency": "UAH"
     },
     "document": {

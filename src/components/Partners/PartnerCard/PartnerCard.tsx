@@ -3,7 +3,7 @@ import { PartnersSliderProps } from '@/sections/PartnersTop/PartnersTop.props';
 import Link from 'next/link';
 
 export const PartnerCard = ({ attributes }: PartnersSliderProps) => {
-  return (
+  return !attributes.partnerOrgLogo.src ? null : (
     <Link
       href={attributes.web_link || ''}
       rel="nofollow noreferrer"
@@ -12,8 +12,8 @@ export const PartnerCard = ({ attributes }: PartnersSliderProps) => {
     >
       <Image
         className="h-[68px] w-auto  object-contain object-center"
-        width={attributes.partnerOrgLogo.src.data.attributes.width}
-        height={attributes.partnerOrgLogo.src.data.attributes.height}
+        width={attributes.partnerOrgLogo.src.data.attributes.width || 40}
+        height={attributes.partnerOrgLogo.src.data.attributes.height || 40}
         priority
         src={attributes.partnerOrgLogo.src.data.attributes.url}
         alt={`${attributes.partnerOrgLogo.alt} ${attributes.partnerOrgTitle}`}
