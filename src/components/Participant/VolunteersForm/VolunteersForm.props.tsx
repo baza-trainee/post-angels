@@ -2,7 +2,12 @@ import { Locale } from '@/i18n.config';
 
 export interface VolunteersFormProps {
   lang?: Locale;
-
+errorObject?: {
+    response: {
+      status: number;
+    };
+    message: string;
+  };
   inputFields: {
     type: string;
     name: string;
@@ -101,7 +106,23 @@ export interface VolunteersDataFormProps {
   carAvailability: string;
 }
 
-export interface Notice {
-  success: string;
-  fail: string;
+// export interface Notice {
+//   success: string;
+//   fail: string;
+// }
+
+export interface ErrorObject {
+  response: {
+    status: number;
+  };
+  message: string;
+}
+
+export interface CreateVolunteerResponse {
+  createVolonter: {
+    data: {
+      id: string; // Replace 'string' with the actual type of the 'id' property
+      // Add other properties if present in the 'data' object
+    };
+  };
 }

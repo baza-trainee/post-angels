@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { Button } from '@/components/buttons/Button/Button';
 import { Input } from '@/components/form/Input/Input';
@@ -14,9 +15,10 @@ import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { fetchPartnerFormData } from '../../../api/fetchPartnerFormData';
 import { partnersForm } from '@/utils/schema/partnersForm';
-import { PartnersFormProps } from './PartnersForm.props';
+import { PartnersFormProps, ErrorObject } from './PartnersForm.props';
 
 type FormData = yup.InferType<typeof partnersForm>;
+
 
 export const PartnersForm: React.FC<PartnersFormProps> = ({
   inputFields,
@@ -38,7 +40,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   const onSubmit = async (data: FormData) => {
     try {
       console.log(data);
-      const response = await fetchPartnerFormData(lang, notice, {
+      const response = await fetchPartnerFormData(lang, {
         name: data.name,
         lastName: data.surname,
         city: data.city,
@@ -50,8 +52,16 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
         ourOffer: data.ourOffers,
       });
       reset();
-    } catch (error) {
-      console.error(error);
+      methods.setValue(ourOffer.name, '');
+
+      Notify.success(notice.success);
+    } catch (error: ErrorObject | any) {
+      if (error.response.status === 400) {
+        console.error('Bad request:', error.response);
+      } else {
+        console.error('Error occurred:', error.message);
+      }
+      Notify.failure(notice.fail);
     } finally {
       setSubmitting(false);
     }

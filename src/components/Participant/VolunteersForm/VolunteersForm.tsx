@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, FormProvider } from 'react-hook-form';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { Button } from '@/components/buttons/Button/Button';
 import { Textarea } from '@/components/form/Textarea/Textarea';
@@ -11,7 +12,7 @@ import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { SelectInput } from '@/components/form/SelectInput/SelectInput';
 import { Radiobutton } from '@/components/form/Radiobutton/Radiobutton';
 import { Input } from '@/components/form/Input/Input';
-import { VolunteersFormProps } from './VolunteersForm.props';
+import { VolunteersFormProps, ErrorObject } from './VolunteersForm.props';
 import { volunteersForm } from '@/utils/schema/volunteersForm';
 import { fetchVolunteerFormData } from '../../../api/fetchVolunteerFormData';
 
@@ -40,7 +41,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
     try {
       console.log(data);
       setSubmitting(true);
-      const response = await fetchVolunteerFormData(lang, notice, {
+      const response = await fetchVolunteerFormData(lang, {
         name: data.name,
         lastName: data.surname,
         city: data.city,
@@ -53,8 +54,15 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
         message: data.reasonVolunteering,
       });
       reset();
-    } catch (error) {
-      console.error(error);
+      methods.setValue(reasonVolunteering.name, '');
+      Notify.success(notice.success);
+    } catch (error: ErrorObject | any) {
+      if (error.response.status === 400) {
+        console.error('Bad request:', error.response);
+      } else {
+        console.error('Error occurred:', error.message);
+      }
+      Notify.failure(notice.fail);
     } finally {
       setSubmitting(false);
     }
