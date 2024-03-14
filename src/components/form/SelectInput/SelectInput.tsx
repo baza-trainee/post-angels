@@ -1,13 +1,14 @@
 'use client';
 
 import { useId } from 'react';
+import cn from 'classnames';
 import Select from 'react-select';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import { ICONS } from '@/components/icons/icons.const';
 import { SelectInputProps } from './SelectInput.props';
 
-export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, placeholder }) => {
+export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, placeholder, className }) => {
   const { control, setValue } = useFormContext();
 
   const customStyles = {
@@ -17,11 +18,11 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       display: 'flex',
       justifyContent: 'center',
       border: '1px solid #B1B0B0',
-      borderRadius: '16px',
-      paddingRight: '14px',
-      paddingLeft: '14px',
-      paddingTop: '16px',
-      paddingBottom: '16px',
+      borderRadius: '14px',
+      paddingRight: '6px',
+      paddingLeft: '6px',
+      paddingTop: '8px',
+      paddingBottom: '8px',
       fontSize: '14px',
       fontStyle: 'normal',
       fontWeight: '400',
@@ -41,6 +42,8 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
     placeholder: provided => ({
       ...provided,
       color: '#B1B0B0',
+      padding: '0',
+      margin: '0',
     }),
     // @ts-ignore
     dropdownIndicator: provided => ({
@@ -104,7 +107,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
       isClearable
       // @ts-ignore
       render={({ field, fieldState }) => (
-        <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
+        <label className={cn("relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80", className)}>
           {title}
           <Select
             id={id}
@@ -121,7 +124,9 @@ export const SelectInput: React.FC<SelectInputProps> = ({ options, title, name, 
             }}
           />
           {fieldState.error && (
-            <p className="text-sm font-normal text-error">{fieldState.error.message}</p>
+            <p className="absolute bottom-[-26px] text-[13px] font-normal text-error">
+              {fieldState.error.message}
+            </p>
           )}
         </label>
       )}

@@ -323,28 +323,240 @@
     },
     "participant": {
       "title": "Questionnaire ",
+      "notice": {
+        "success": "Data sent successfully!",
+        "fail": "An error occurred, please try again!"
+      },
       "partners": {
-        "discription": {
+        "description": {
           "accentTitle": "for partner",
           "text": "Our foundation is looking for partners who share our mission and are ready to support our project. If you want to get involved with our work, we encourage you to fill out this form. The information posted in this questionnaire will help us identify possible forms and direct procedures. Thank you for your interest in our foundation.",
           "img": "/images/participant/partners.jpg",
           "alt": "Partners"
         },
         "form": {
-          "title": "Анкета&nbsp;",
-          "accentTitle": "партнера"
+          "inputFields": [
+            { "title": "Your Name", "placeholder": "Your Name", "name": "name", "type": "text" },
+            {
+              "title": "Your Surname",
+              "placeholder": "Your Surname",
+              "name": "surname",
+              "type": "text"
+            },
+            { "title": "City", "placeholder": "Enter here", "name": "city", "type": "text" },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Phone",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
+              "title": "Name of legal entity (company)",
+              "placeholder": "Enter here",
+              "name": "companyName",
+              "type": "text"
+            },
+            {
+              "title": "EDRPOU Code",
+              "placeholder": "Enter here",
+              "name": "EDRPOU",
+              "type": "text"
+            }
+          ],
+          "waysSupport": {
+            "name": "waysSupport",
+            "title": "What ways of support are you ready to look at?",
+            "placeholder": "Pick up",
+            "options": [
+              { "value": "financialSupport", "label": "Financial support" },
+              { "value": "provisionServices", "label": "Provision services" },
+              { "value": "volunteerWork", "label": "Volunteer work" },
+              { "value": "promotionSupport", "label": "Promotion support" },
+              { "value": "resourceMobilization", "label": "Resource mobilization" },
+              { "value": "consultation", "label": "Training and consultation" },
+              { "value": "other", "label": "Other" }
+            ]
+          },
+          "ourOffer": {
+            "name": "ourOffer",
+            "title": "Your offer",
+            "placeholder": "Write here"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR"
+          },
+          "coreMsg": "If you have the relevant experience and want to join one of our initiatives, your work will be very important. Human values are what underlies all philanthropy, because what is needed most is not money, but people.",
+          "buttonText": "Submit"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "surname": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "city": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "email": {
+            "errorType": "Value should be in the format 'example@mail.com'",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "phone": {
+            "errorType": "The value must start with '+' and contain only numbers",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 10 characters"
+          },
+          "companyName": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "EDRPOU": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 8 characters"
+          },
+          "waysSupport": {
+            "errorRequired": "Field is required"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Field is required"
+          }
         }
       },
       "volunteers": {
-        "discription": {
+        "description": {
           "accentTitle": "for a volunteer",
           "text": "Our foundation would like the participation of volunteers to support our mission. If you share our mission, values and are willing to go through our system, we would like you to fill out this form. The information posted in this application form is kept confidential and will help us find the most satisfying and rewarding volunteer job for you. Thank you for your interest in our foundation.",
           "img": "/images/participant/volunteers.jpg",
           "alt": "Volunteers"
         },
         "form": {
-          "title": "Анкета&nbsp;",
-          "accentTitle": "партнера"
+          "inputFields": [
+            { "title": "Your Name", "placeholder": "Your Name", "name": "name", "type": "text" },
+            {
+              "title": "Your Surname",
+              "placeholder": "Your Surname",
+              "name": "surname",
+              "type": "text"
+            },
+            { "title": "City", "placeholder": "Enter here", "name": "city", "type": "text" },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Phone",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
+              "title": "Your Telegram",
+              "placeholder": "Enter here",
+              "name": "telegram",
+              "type": "text"
+            }
+          ],
+          "waysVolunteering": {
+            "name": "waysVolunteering",
+            "title": "What areas of volunteering are you willing to consider?",
+            "placeholder": "Select an option",
+            "options": [
+              { "value": "financialSupport", "label": "Financial support" },
+              { "value": "provisionServices", "label": "Provision services" },
+              { "value": "volunteerWork", "label": "Volunteer work" },
+              { "value": "promotionSupport", "label": "Promotion support" },
+              { "value": "resourceMobilization", "label": "Resource mobilization" },
+              { "value": "consultation", "label": "Training and consultation" },
+              { "value": "other", "label": "Other" }
+            ]
+          },
+          "volunteerCertificate": {
+            "name": "volunteerCertificate",
+            "title": "Having a volunteer certificate",
+            "options": [
+              { "name": "true", "value": "Yes", "id": 1 },
+              { "name": "false", "value": "No", "id": 2 }
+            ]
+          },
+          "carAvailability": {
+            "name": "carAvailability",
+            "title": "Do you have your own car?",
+            "options": [
+              { "name": "true", "value": "Yes", "id": 3 },
+              { "name": "false", "value": "No", "id": 4 }
+            ]
+          },
+          "reasonVolunteering": {
+            "name": "reasonVolunteering",
+            "title": "Why do you want to be a volunteer? (optional)",
+            "placeholder": "Write here"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR."
+          },
+          "descriptionPrivacyPolice": {
+            "name": "descriptionPrivacyPolice",
+            "description": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
+          },
+          "buttonText": "Submit"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "surname": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "city": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "email": {
+            "errorType": "Value must be of the type 'example@mail.com'",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "phone": {
+            "errorType": "The value must start with '+' and contain only numbers",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 10 characters"
+          },
+          "telegram": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "waysVolunteering": {
+            "errorRequired": "Field is required"
+          },
+          "volunteerCertificate": {
+            "errorRequired": "Field is required"
+          },
+          "carAvailability": {
+            "errorRequired": "Field is required"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Field is required"
+          },
+          "descriptionPrivacyPolice": {
+            "errorRequired": "Field is required"
+          }
         }
       }
     }

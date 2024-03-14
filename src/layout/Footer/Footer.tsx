@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ data, logo, modal }) => {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-start gap-5 font-normal text-grey-70 md:flex-row md:gap-10 xl:gap-[159px]">
+        <div className="flex flex-col justify-start gap-5 font-normal text-grey-70 md:flex-row md:items-center md:justify-between">
           <div className=" sm:w-[296px] md:w-[171px] lg:w-[293px] xl:w-fit">
             <Paragraph variantFontSize="14" variant="grey">
               {footerCop.name}
