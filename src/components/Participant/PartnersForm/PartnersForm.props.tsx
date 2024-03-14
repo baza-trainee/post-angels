@@ -1,7 +1,7 @@
 import { Locale } from '@/i18n.config';
 
 export interface PartnersFormProps {
-  lang?: Locale;
+  lang: Locale;
   errorObject?: {
     response: {
       status: number;

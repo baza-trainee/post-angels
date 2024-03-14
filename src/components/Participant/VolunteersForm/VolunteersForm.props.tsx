@@ -1,7 +1,7 @@
 import { Locale } from '@/i18n.config';
 
 export interface VolunteersFormProps {
-  lang?: Locale;
+  lang: Locale;
   errorObject?: {
     response: {
       status: number;
@@ -85,9 +85,10 @@ export interface VolunteersFormProps {
     descriptionTermsAgreement: {
       errorRequired: string;
     };
+    descriptionPrivacyPolice: { errorRequired: string };
   };
   buttonText: string;
-  notice?: {
+  notice: {
     success: string;
     fail: string;
   };

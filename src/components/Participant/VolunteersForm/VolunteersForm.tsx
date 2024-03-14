@@ -16,7 +16,7 @@ import { VolunteersFormProps, ErrorObject } from './VolunteersForm.props';
 import { volunteersForm } from '@/utils/schema/volunteersForm';
 import { fetchVolunteerFormData } from '../../../api/fetchVolunteerFormData';
 
-type FormData = yup.InferType<typeof volunteersForm>;
+type FormData = yup.InferType<ReturnType<typeof volunteersForm>>;
 
 export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   inputFields,
@@ -39,7 +39,6 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
 
   const onSubmit = async (data: FormData) => {
     try {
-      console.log(data);
       setSubmitting(true);
       const response = await fetchVolunteerFormData(lang, {
         name: data.name,
@@ -51,10 +50,10 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
         activity: data.waysVolunteering.value,
         volunteerCertificate: data.volunteerCertificate,
         carAvailability: data.carAvailability,
-        message: data.reasonVolunteering,
+        message: data.reasonVolunteering || '',
       });
       reset();
-      methods.setValue(reasonVolunteering.name, '');
+
       Notify.success(notice.success);
     } catch (error: ErrorObject | any) {
       if (error.response.status === 400) {

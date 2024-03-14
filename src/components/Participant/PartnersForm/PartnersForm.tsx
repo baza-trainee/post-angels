@@ -17,7 +17,7 @@ import { fetchPartnerFormData } from '../../../api/fetchPartnerFormData';
 import { partnersForm } from '@/utils/schema/partnersForm';
 import { PartnersFormProps, ErrorObject } from './PartnersForm.props';
 
-type FormData = yup.InferType<typeof partnersForm>;
+type FormData = yup.InferType<ReturnType<typeof partnersForm>>;
 
 export const PartnersForm: React.FC<PartnersFormProps> = ({
   inputFields,
@@ -38,6 +38,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
 
   const onSubmit = async (data: FormData) => {
     try {
+      setSubmitting(true);
       console.log(data);
       const response = await fetchPartnerFormData(lang, {
         name: data.name,
@@ -48,10 +49,9 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
         partnerOrgTitle: data.companyName,
         EDRPOU: data.EDRPOU,
         supportMethods: data.waysSupport.value,
-        ourOffer: data.ourOffers,
+        ourOffer: data.ourOffer || '',
       });
       reset();
-      methods.setValue(ourOffer.name, '');
 
       Notify.success(notice.success);
     } catch (error: ErrorObject | any) {
