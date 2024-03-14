@@ -90,10 +90,44 @@ export interface PartnersDataFormProps {
   ourOffer: string;
 }
 
-// export interface Notice {
-//   success: string;
-//   fail: string;
-// }
+export interface SchemaTypes {
+  name: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  surname: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  city: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  email: {
+    errorType: string;
+    errorRequired: string;
+    errorMin: string;
+  };
+  phone: {
+    errorType: string;
+    errorRequired: string;
+    errorMin: string;
+  };
+  companyName: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  EDRPOU: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  waysSupport: {
+    errorRequired: string;
+  };
+  descriptionTermsAgreement: {
+    errorRequired: string;
+  };
+}
 
 export interface ErrorObject {
   response: {
@@ -105,8 +139,7 @@ export interface ErrorObject {
 export interface CreatePartnerResponse {
   createPartner: {
     data: {
-      id: string; // Replace 'string' with the actual type of the 'id' property
-      // Add other properties if present in the 'data' object
+      id: string;
     };
   };
 }

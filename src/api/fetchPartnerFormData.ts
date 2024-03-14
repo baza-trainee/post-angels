@@ -2,7 +2,10 @@ import { request } from 'graphql-request';
 import { Locale } from '@/i18n.config';
 
 import { getPartnerFormData } from './requests/getPartnerFormData';
-import { PartnersDataFormProps, CreatePartnerResponse } from '@/components/Participant/PartnersForm/PartnersForm.props';
+import {
+  PartnersDataFormProps,
+  CreatePartnerResponse,
+} from '@/components/Participant/PartnersForm/PartnersForm.props';
 
 export const fetchPartnerFormData = async (locale: Locale, formData: PartnersDataFormProps) => {
   const data: CreatePartnerResponse = await request(

@@ -2,7 +2,7 @@ import { Locale } from '@/i18n.config';
 
 export interface VolunteersFormProps {
   lang?: Locale;
-errorObject?: {
+  errorObject?: {
     response: {
       status: number;
     };
@@ -106,10 +106,49 @@ export interface VolunteersDataFormProps {
   carAvailability: string;
 }
 
-// export interface Notice {
-//   success: string;
-//   fail: string;
-// }
+export interface SchemaTypes {
+  name: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  surname: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  city: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  email: {
+    errorType: string;
+    errorRequired: string;
+    errorMin: string;
+  };
+  phone: {
+    errorType: string;
+    errorRequired: string;
+    errorMin: string;
+  };
+  telegram: {
+    errorRequired: string;
+    errorMin: string;
+  };
+  waysVolunteering: {
+    errorRequired: string;
+  };
+  carAvailability: {
+    errorRequired: string;
+  };
+  volunteerCertificate: {
+    errorRequired: string;
+  };
+  descriptionTermsAgreement: {
+    errorRequired: string;
+  };
+  descriptionPrivacyPolice: {
+    errorRequired: string;
+  };
+}
 
 export interface ErrorObject {
   response: {
@@ -121,8 +160,7 @@ export interface ErrorObject {
 export interface CreateVolunteerResponse {
   createVolonter: {
     data: {
-      id: string; // Replace 'string' with the actual type of the 'id' property
-      // Add other properties if present in the 'data' object
+      id: string;
     };
   };
 }

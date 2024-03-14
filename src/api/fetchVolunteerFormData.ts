@@ -1,7 +1,10 @@
 import { request } from 'graphql-request';
 
 import { getVolunteerFormData } from './requests/getVolunteerFormData';
-import { VolunteersDataFormProps, CreateVolunteerResponse } from '@/components/Participant/VolunteersForm/VolunteersForm.props';
+import {
+  VolunteersDataFormProps,
+  CreateVolunteerResponse,
+} from '@/components/Participant/VolunteersForm/VolunteersForm.props';
 import { Locale } from '@/i18n.config';
 
 export const fetchVolunteerFormData = async (locale: Locale, formData: VolunteersDataFormProps) => {

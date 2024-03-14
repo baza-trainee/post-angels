@@ -499,16 +499,16 @@
             "name": "volunteerCertificate",
             "title": "Наявність волонтерського посвідчення",
             "options": [
-              { "name": true, "value": "Так", "id": 1 },
-              { "name": false, "value": "Ні", "id": 2 }
+              { "name": "true", "value": "Так", "id": 1 },
+              { "name": "false", "value": "Ні", "id": 2 }
             ]
           },
           "carAvailability": {
             "name": "carAvailability",
             "title": "У Вас є власне авто?",
             "options": [
-              { "name": true, "value": "Так", "id": 3 },
-              { "name": false, "value": "Ні", "id": 4 }
+              { "name": "true", "value": "Так", "id": 3 },
+              { "name": "false", "value": "Ні", "id": 4 }
             ]
           },
           "reasonVolunteering": {

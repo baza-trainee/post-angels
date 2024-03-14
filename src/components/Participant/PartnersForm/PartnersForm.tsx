@@ -19,7 +19,6 @@ import { PartnersFormProps, ErrorObject } from './PartnersForm.props';
 
 type FormData = yup.InferType<typeof partnersForm>;
 
-
 export const PartnersForm: React.FC<PartnersFormProps> = ({
   inputFields,
   waysSupport,
@@ -33,7 +32,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
 }) => {
   const [submitting, setSubmitting] = useState(false);
   const methods = useForm<FormData>({
-    resolver: yupResolver(partnersForm({ translation: schema })),
+    resolver: yupResolver(partnersForm(schema)),
   });
   const { handleSubmit, reset } = methods;
 

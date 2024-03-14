@@ -33,7 +33,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
 }) => {
   const [submitting, setSubmitting] = useState(false);
   const methods = useForm<FormData>({
-    resolver: yupResolver(volunteersForm({ translation: schema })),
+    resolver: yupResolver(volunteersForm(schema)),
   });
   const { handleSubmit, reset } = methods;
 

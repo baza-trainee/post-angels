@@ -31,12 +31,9 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
             {options.map(({ name, value, id }) => (
               <label key={id} className="flex flex-row gap-[14px]">
                 <input
-                  name={name}
-                  value={value}
                   className="hidden"
                   type="radio"
                   {...field}
-                  id={id}
                   checked={field.value === name}
                   onChange={() => {
                     field.onChange(name);

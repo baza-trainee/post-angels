@@ -1,7 +1,8 @@
 import * as yup from 'yup';
+import { SchemaTypes } from '@/components/Participant/PartnersForm/PartnersForm.props';
 
-export const partnersForm = ({
-  translation: {
+export const partnersForm = (translation: SchemaTypes) => {
+  const {
     name,
     surname,
     city,
@@ -11,8 +12,8 @@ export const partnersForm = ({
     EDRPOU,
     waysSupport,
     descriptionTermsAgreement,
-  },
-}) => {
+  } = translation;
+
   const schema = yup.object({
     name: yup.string().required(name.errorRequired).min(4, name.errorMin),
     surname: yup.string().required(surname.errorRequired).min(4, surname.errorRequired),
