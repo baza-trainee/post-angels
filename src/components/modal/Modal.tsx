@@ -32,7 +32,7 @@ const Modal = ({ modalClose, children, modal, className, scroll = false }: Modal
   return (
     <ClientOnlyPortal selector="#modal">
       <div
-        className="flex-center fixed inset-0 flex bg-backdrop p-10"
+        className="items-center justify-center fixed inset-0 flex bg-backdrop p-10"
         onClick={handleBackdropClick}
       >
         <div className={`modal-animation relative h-auto max-h-[1000px]  bg-white px-24 py-20 ${className} `}>
