@@ -35,7 +35,7 @@ export const FooterDoc = ({
       </ul>
 
       {document && (
-        <Modal modalClose={handlerShowModal} modal={modal} className='px-1' scroll>
+        <Modal modalClose={handlerShowModal} modal={modal} className='px-10 py-10' scroll>
           <PDFView document={document} />
         </Modal>
       )}
