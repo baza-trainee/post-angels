@@ -18,7 +18,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         <div className="flex flex-col gap-y-20">
           <Tech data={resultTechnology} dictionaryData={veterans} />
           <Help data={resultHelp} dictionaryData={veterans} />
-          <Form data={veterans.form} lang={lang} />
+          <Form data={veterans.form} />
         </div>
       </div>
     </section>

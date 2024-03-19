@@ -1,5 +1,3 @@
-import { Locale } from '@/i18n.config';
-
 export interface FormProps {
   data: {
     name: string;
@@ -22,5 +20,4 @@ export interface FormProps {
       areaLabel: string;
     };
   };
-  lang: Locale;
 }
