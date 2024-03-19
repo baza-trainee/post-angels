@@ -1,72 +1,65 @@
 'use client';
 
-import { yupResolver } from '@hookform/resolvers/yup';
-import { FormProvider, useForm } from 'react-hook-form';
+import { FC, useState } from 'react';
 import * as yup from 'yup';
 
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Notify } from 'notiflix';
+import { FormProvider, useForm } from 'react-hook-form';
+
+import { fetchVeteranFormData } from '@/api/fetchVeteranFormData';
 import { Button } from '@/components/buttons/Button';
 import { Checkbox } from '@/components/form/Checkbox/Checkbox';
 import { Input } from '@/components/form/Input/Input';
 import { SelectInput } from '@/components/form/SelectInput';
 import { Textarea } from '@/components/form/Textarea/Textarea';
-import { useEffect, useState } from 'react';
-import { FormProps } from './Form.props';
+import { veteransForm } from '@/utils/schema/veteransForm';
+import { ErrorObject, FormProps } from './Form.props';
 
-const schema = yup.object({
-  name: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  surname: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  city: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  email: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  phone: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  subscribe: yup.boolean().default(false).oneOf([true], "Поле обов'язкове для заповнення"),
-  description: yup
-    .string()
-    .required("Поле обов'язкове для заповнення")
-    .min(4, 'Мінімальна довжина 4 символа'),
-  select: yup
-    .object({
-      label: yup.string().required("Поле обов'язкове для заповнення"),
-      value: yup.string().required("Поле обов'язкове для заповнення"),
-    })
-    .nonNullable()
-    .required("Поле обов'язкове для заповнення"),
-});
+type FormData = yup.InferType<ReturnType<typeof veteransForm>>;
 
-type FormData = yup.InferType<typeof schema>;
-
-export const Form = ({ data }: FormProps) => {
-  const { name, surname, city, phone, email, select, description, checkbox, submitButton } = data;
-
+export const Form: FC<FormProps> = ({
+  inputFields,
+  identificationDocument,
+  descriptionTermsAgreement,
+  buttonText,
+  schema,
+  problem,
+  notice,
+  lang,
+}) => {
+  const [submitting, setSubmitting] = useState(false);
   const methods = useForm<FormData>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(veteransForm(schema)),
   });
+  const { handleSubmit, reset } = methods;
 
-  const { handleSubmit, reset, formState } = methods;
-  const { isValid } = formState;
-  const [disableSubmitButton, setDisableSubmitButton] = useState(true);
+  const onSubmit = async (data: FormData) => {
+    try {
+      setSubmitting(true);
+      console.log(data);
+      const response = await fetchVeteranFormData(lang, {
+        name: data.name,
+        lastName: data.surname,
+        city: data.city,
+        email: data.email,
+        phone: data.phone,
+        identificationDocument: data.identificationDocument.value,
+        problem: data.problem,
+      });
+      reset();
 
-  useEffect(() => {
-    setDisableSubmitButton(!isValid);
-  }, [isValid]);
-
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-    reset();
+      Notify.success(notice.success);
+    } catch (error: ErrorObject | any) {
+      if (error.response.status === 400) {
+        console.error('Bad request:', error.response);
+      } else {
+        console.error('Error occurred:', error.message);
+      }
+      Notify.failure(notice.fail);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -75,38 +68,30 @@ export const Form = ({ data }: FormProps) => {
         onSubmit={handleSubmit(onSubmit)}
         className="![&>*]:col-span-1 flex w-full flex-col gap-y-4 lg:grid lg:grid-cols-2 lg:gap-x-8 xl:w-[1200px] xl:grid-cols-3 [&>div]:flex [&>div]:flex-col [&>div]:gap-y-4"
       >
-        <div className="">
-          <Input title={name} name="name" type="text" placeholder={name} />
-
-          <Input title={surname} name="surname" type="text" placeholder={surname} />
-
-          <Input title={city} name="city" type="text" placeholder={city} />
-
-          <Input title={email} name="email" type="email" placeholder={email} />
-
-          <Input title={phone} name="phone" type="tel" placeholder={phone} />
+        <div>
+          {inputFields.map(({ title, placeholder, name, type }) => (
+            <Input key={name} title={title} name={name} type={type} placeholder={placeholder} />
+          ))}
         </div>
 
         <span className="mx-auto hidden w-0 border-l border-grey-60 xl:flex"></span>
 
-        <div className="">
+        <div>
           <SelectInput
-            name="select"
-            title={select.title}
-            options={select.options}
-            placeholder={select.subtitle}
+            name={identificationDocument.name}
+            title={identificationDocument.title}
+            options={identificationDocument.options}
+            placeholder={identificationDocument.placeholder}
           />
 
-          <Textarea
-            name="description"
-            title={description.title}
-            placeholder={description.subtitle}
+          <Textarea name={problem.name} title={problem.title} placeholder={problem.placeholder} />
+
+          <Checkbox
+            name={descriptionTermsAgreement.name}
+            description={descriptionTermsAgreement.description}
           />
-
-          <Checkbox name="subscribe" description={checkbox} />
-
-          <Button type="submit" disabled={disableSubmitButton} aria-label={submitButton.areaLabel}>
-            {submitButton.title}
+          <Button type="submit" disabled={submitting}>
+            {buttonText}
           </Button>
         </div>
       </form>

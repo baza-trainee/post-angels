@@ -1,9 +1,4 @@
 export interface TechProps {
-  dictionaryData: {
-    faq: {
-      buttonAreaLabel: string;
-    };
-  };
   data: {
     title: string;
     description: string;

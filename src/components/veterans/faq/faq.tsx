@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { FAQProps } from './FAQ.props';
 
-export const FAQ = ({ data, dictionaryData, isPreOpen }: FAQProps) => {
+export const FAQ = ({ data, isPreOpen }: FAQProps) => {
   const { name, text, image } = data;
   const [openQuestion, setOpenQuestion] = useState(isPreOpen);
   const handleQuestion = () => setOpenQuestion(!openQuestion);
@@ -25,7 +25,6 @@ export const FAQ = ({ data, dictionaryData, isPreOpen }: FAQProps) => {
               className={`h-[50px] w-[50px] duration-300 ${
                 openQuestion ? 'rotate-45' : 'rotate-0'
               }`}
-              aria-label={dictionaryData.buttonAreaLabel}
             />
           </button>
           <Title variantSize="h5" tag="h3" className="font-eUkraineHead text-xl font-normal">

@@ -18,10 +18,7 @@ export interface HelpProps {
       text: string;
     }[];
   };
-  dictionaryData: {
-    faq: {
-      buttonAreaLabel: string;
-    };
+  descriptionData: {
     help: string;
   };
 }

@@ -444,7 +444,6 @@
           }
         }
       },
-
       "volunteers": {
         "description": {
           "accentTitle": "волонтера",
@@ -569,37 +568,99 @@
             "errorRequired": "Поле обов'язкове для заповнення"
           }
         }
-      }
-    },
-    "veterans": {
-      "title": "Ветеранам",
-      "faq": {
-        "buttonAreaLabel": "Кнопка відкрити/закрити"
       },
-      "help": "Допомога, яку пропонує наша організація",
-      "form": {
-        "name": "Ваше ім’я",
-        "surname": "Ваше прізвище",
-        "city": "Місто",
-        "email": "Пошта",
-        "phone": "Телефон",
-        "select": {
-          "title": "Індетифікаційний документ ветерана",
-          "subtitle": "Оберіть відповідне",
-          "options": [
-            { "value": "шоколад", "label": "Шоколад" },
-            { "value": "полуниця", "label": "Полуниця" },
-            { "value": "ваніль", "label": "Ваніль" }
-          ]
-        },
+      "veterans": {
         "description": {
-          "title": "Опишіть вашу проблему",
-          "subtitle": "Введіть вашу відповідь"
+          "title": "Ветеранам",
+          "help": "Допомога, яку пропонує наша організація"
         },
-        "checkbox": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR",
-        "submitButton": {
-          "title": "відправити",
-          "areaLabel": "кнопка відправити"
+        "form": {
+          "inputFields": [
+            {
+              "title": "Ваше ім’я",
+              "placeholder": "Ваше ім’я",
+              "name": "name",
+              "type": "text"
+            },
+            {
+              "title": "Ваше прізвище",
+              "placeholder": "Ваше прізвище",
+              "name": "surname",
+              "type": "text"
+            },
+            {
+              "title": "Місто",
+              "placeholder": "Введіть тут",
+              "name": "city",
+              "type": "text"
+            },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Телефон",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            }
+          ],
+          "identificationDocument": {
+            "name": "identificationDocument",
+            "title": "Ідентифікаційний документ ветерана",
+            "placeholder": "Оберіть відповідне",
+            "options": [
+              { "value": "vanilla", "label": "vanilla" },
+              { "value": "chocolate", "label": "chocolate" },
+              { "value": "strawberry", "label": "strawberry" }
+            ]
+          },
+          "problem": {
+            "name": "problem",
+            "title": "Опишіть вашу проблему",
+            "placeholder": "Введіть вашу відповідь"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "Я погоджуюсь з умовами використання, та даю згоду на обробку моїх персональних даних відповідно до політики конфіденційності та GDPR"
+          },
+          "buttonText": "Відправити"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "surname": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "city": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "email": {
+            "errorType": "Значення повинно бути типу 'example@mail.com'",
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 4 символа"
+          },
+          "phone": {
+            "errorType": "Значення повинно починатись із '+' та містити лише цифри",
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 10 символа"
+          },
+          "identificationDocument": {
+            "errorRequired": "Поле обов'язкове для заповнення"
+          },
+          "problem": {
+            "errorRequired": "Поле обов'язкове для заповнення",
+            "errorMin": "Мінімальна довжина 10 символа"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Поле обов'язкове для заповнення"
+          }
         }
       }
     }

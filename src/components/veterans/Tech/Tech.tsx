@@ -5,7 +5,7 @@ import { FAQ } from '../Faq';
 import { TechProps } from './Tech.props';
 import { TechSlider } from './TechSlider';
 
-const Tech = ({ data, dictionaryData }: TechProps) => {
+const Tech = ({ data }: TechProps) => {
   return (
     <div className="flex flex-col gap-y-20">
       {/* title / text / slider section */}
@@ -37,7 +37,7 @@ const Tech = ({ data, dictionaryData }: TechProps) => {
       {/* faq section */}
       <div className="relative flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:pb-20">
         {data.technology.map((el, ind) => (
-          <FAQ data={el} key={ind} dictionaryData={dictionaryData.faq} isPreOpen={ind === 0} />
+          <FAQ data={el} key={ind} isPreOpen={ind === 0} />
         ))}
       </div>
     </div>
