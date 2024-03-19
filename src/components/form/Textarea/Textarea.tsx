@@ -1,10 +1,11 @@
 'use client';
 
+import cn from 'classnames';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import { TextareaProps } from './Textarea.props';
 
-export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder }) => {
+export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder, className }) => {
   const { control } = useFormContext();
 
   return (
@@ -12,19 +13,24 @@ export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder }) 
       name={name}
       control={control}
       render={({ field, fieldState }) => (
-        <label className="flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
+        <label className="relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
           {title}
           <textarea
-            className={`bg-transparent h-[366px] resize-none rounded-2xl border border-grey-60 px-3.5 py-4 text-sm font-normal outline-none focus:border-accent-hover ${
-              fieldState.error
-                ? 'text-error placeholder:text-error'
-                : 'text-grey-60 placeholder:text-grey-60'
-            }`}
+            className={cn(
+              `resize-none rounded-2xl border border-grey-60 bg-transparent px-3.5 py-4 text-sm font-normal outline-none focus:border-accent-hover focus:text-grey-100 ${
+                fieldState.error
+                  ? 'text-error placeholder:text-error'
+                  : 'text-grey-60 placeholder:text-grey-60'
+              }`,
+              className
+            )}
             placeholder={placeholder}
             {...field}
           />
           {fieldState.error && (
-            <p className="text-sm font-normal text-error">{fieldState.error.message}</p>
+            <p className="absolute bottom-[-26px] text-[13px] font-normal text-error">
+              {fieldState.error.message}
+            </p>
           )}
         </label>
       )}
