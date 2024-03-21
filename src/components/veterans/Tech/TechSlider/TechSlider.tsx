@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { TechImage } from '../TechImage';
 import { TechSliderProps } from './TechSlider.props';
 
-export const TechSlider = ({ data, className }: TechSliderProps) => {
+export const TechSlider = ({ imageData, className }: TechSliderProps) => {
   const wrapSliderClasses = classNames(
     'h-auto w-full mb-[50px] xl:w-[584px] 2xl:w-[780px] 3xl:w-[1216px]',
     className
@@ -15,8 +15,8 @@ export const TechSlider = ({ data, className }: TechSliderProps) => {
       <Slider
         id="veteransTechSlider"
         className="veteransTechSlider"
-        data={data}
-        cardData={(data.alt, data.src)}
+        data={imageData}
+        // cardData={imageData}
         element={TechImage}
         isAutoplay={false}
         slidesPerView={{ mobile: 1, tablet: 1, desktop: 1, desktop3xl: 1 }}

@@ -1,4 +1,14 @@
 export interface TechSliderProps {
   className?: string;
-  data: any;
+  imageData: {
+    alt: string;
+    id: string;
+    src: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  }[];
 }

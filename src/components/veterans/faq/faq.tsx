@@ -56,6 +56,7 @@ export const FAQ = ({ data, isPreOpen }: FAQProps) => {
               src={image.src.data.attributes.url}
               alt={image.alt}
               fill
+              priority
               sizes="(max-width: 960px) 100vw, 50vw"
               className="rounded-2xl object-cover object-center"
             />

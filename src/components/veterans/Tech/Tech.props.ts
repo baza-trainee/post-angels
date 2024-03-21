@@ -12,13 +12,13 @@ export interface TechProps {
           };
         };
       };
-    };
+    }[];
     technology: {
       name: string;
       text: string;
       image: {
         alt: string;
-        id: number | string;
+        id: string;
         src: {
           data: {
             attributes: {

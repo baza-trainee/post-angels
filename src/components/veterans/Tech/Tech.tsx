@@ -5,7 +5,7 @@ import { FAQ } from '../Faq';
 import { TechProps } from './Tech.props';
 import { TechSlider } from './TechSlider';
 
-const Tech = ({ data }: TechProps) => {
+export const Tech = ({ data }: TechProps) => {
   return (
     <div className="flex flex-col gap-y-20">
       {/* title / text / slider section */}
@@ -32,7 +32,7 @@ const Tech = ({ data }: TechProps) => {
           </div>
         </div>
         {/* slider */}
-        <TechSlider data={data.image} />
+        <TechSlider imageData={data.image} />
       </div>
       {/* faq section */}
       <div className="relative flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:pb-20">
@@ -43,5 +43,3 @@ const Tech = ({ data }: TechProps) => {
     </div>
   );
 };
-
-export default Tech;

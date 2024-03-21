@@ -1,5 +1,5 @@
 import { Help } from '@/components/veterans/Help';
-import Tech from '@/components/veterans/Tech/Tech';
+import { Tech } from '@/components/veterans/Tech';
 import { Locale } from '@/i18n.config';
 
 import { fetchVeterans } from '@/api/fetchVeterans';
