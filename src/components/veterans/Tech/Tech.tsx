@@ -1,7 +1,7 @@
 import { formatTitle } from '@/components/formatTitle';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
-import { FAQ } from '../Faq';
+import { FAQ } from '../FAQ';
 import { TechProps } from './Tech.props';
 import { TechSlider } from './TechSlider';
 

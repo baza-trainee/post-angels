@@ -2,7 +2,7 @@ import { formatTitle } from '@/components/formatTitle';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
 import Image from 'next/image';
-import { FAQ } from '../Faq';
+import { FAQ } from '@/components/veterans/FAQ/FAQ';
 import { HelpProps } from './Help.props';
 
 export const Help = ({ data, descriptionData }: HelpProps) => {
