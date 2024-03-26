@@ -19,6 +19,10 @@
           "href": "/uk/volunteers"
         },
         {
+          "name": "Ветеранам",
+          "href": "/uk/veterans"
+        },
+        {
           "name": "Контакти",
           "href": "/uk/contacts"
         }
@@ -255,6 +259,10 @@
         {
           "name": "Контакти",
           "href": "/uk/contacts"
+        },
+        {
+          "name": "Ветеранам",
+          "href": "/uk/veterans"
         },
         {
           "name": "Звітність",
