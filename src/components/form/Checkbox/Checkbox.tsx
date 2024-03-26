@@ -20,10 +20,13 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       control={control}
       render={({ field, fieldState }) => (
         <label
-          className={cn('relative flex flex-col gap-2 text-base leading-[160%] text-grey-80', {
-            ['font-regular']: variantFontWeight == 'normal',
-            ['font-medium']: variantFontWeight == 'medium',
-          })}
+          className={cn(
+            'relative flex flex-col gap-2 font-eUkraine text-base leading-[160%] text-grey-80',
+            {
+              ['font-regular']: variantFontWeight == 'normal',
+              ['font-medium']: variantFontWeight == 'medium',
+            }
+          )}
         >
           <div className={cn('flex flex-row gap-[21px]', className)}>
             <input className="hidden" type="checkbox" {...field} />

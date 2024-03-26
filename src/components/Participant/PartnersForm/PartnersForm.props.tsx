@@ -37,33 +37,33 @@ export interface PartnersFormProps {
   schema: {
     name: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     surname: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     city: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     email: {
       errorType: string;
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     phone: {
       errorType: string;
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     companyName: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     EDRPOU: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     waysSupport: {
       errorRequired: string;
@@ -93,36 +93,43 @@ export interface PartnersDataFormProps {
 export interface SchemaTypes {
   name: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   surname: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   city: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   email: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   phone: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   companyName: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   EDRPOU: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   waysSupport: {
     errorRequired: string;
+  };
+  ourOffer: {
+    errorType: string;
   };
   descriptionTermsAgreement: {
     errorRequired: string;

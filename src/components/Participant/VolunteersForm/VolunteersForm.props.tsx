@@ -49,29 +49,29 @@ export interface VolunteersFormProps {
   schema: {
     name: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     surname: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     city: {
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     email: {
       errorType: string;
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     phone: {
       errorType: string;
       errorRequired: string;
-      errorMin: string;
+      errorLength: string;
     };
     telegram: {
-      errorRequired: string;
-      errorMin: string;
+      errorType: string;
+      errorLength: string;
     };
     waysVolunteering: {
       errorRequired: string;
@@ -81,6 +81,9 @@ export interface VolunteersFormProps {
     };
     volunteerCertificate: {
       errorRequired: string;
+    };
+    reasonVolunteering: {
+      errorLength: string;
     };
     descriptionTermsAgreement: {
       errorRequired: string;
@@ -110,29 +113,33 @@ export interface VolunteersDataFormProps {
 export interface SchemaTypes {
   name: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   surname: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   city: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   email: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   phone: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   telegram: {
+    errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   waysVolunteering: {
     errorRequired: string;
@@ -142,6 +149,10 @@ export interface SchemaTypes {
   };
   volunteerCertificate: {
     errorRequired: string;
+  };
+  reasonVolunteering:{
+    errorType: string;
+    errorLength: string;
   };
   descriptionTermsAgreement: {
     errorRequired: string;
