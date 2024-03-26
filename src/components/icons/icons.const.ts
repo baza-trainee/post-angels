@@ -28,6 +28,10 @@ import SortSvg from '../../../public/icons/projects/sort.svg';
 import VerselIcon from '../../../public/vercel.svg';
 import UserAvatarIcon from '../../../public/icons/project/user_avatar.svg';
 import ScrollArrowIcon from '../../../public/icons/arrow.svg';
+import Privat_Bank from '../../../public/icons/payments/Privat_Bank.svg';
+import Visa from '../../../public/icons/payments/Visa.svg';
+import Master_Card from '../../../public/icons/payments/Master_Card.svg';
+import LiqPay from '../../../public/icons/payments/LiqPay.svg';
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -60,4 +64,8 @@ export const ICONS = {
   PRIMARY_LOGO_ICON: PrimaryLogoIcon,
   USER_AVATAR: UserAvatarIcon,
   SCROLL_ARROW: ScrollArrowIcon,
+  PRIVAT_BANK: Privat_Bank,
+  VISA: Visa,
+  MASTER_CARD: Master_Card,
+  LIQPAY: LiqPay,
 };
