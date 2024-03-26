@@ -66,7 +66,7 @@ export const Form: FC<FormProps> = ({
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex w-full flex-col gap-y-4 lg:flex-row lg:justify-between [&>div]:flex [&>div]:flex-col [&>div]:gap-y-4 [&>div]:lg:w-[436px] [&>div]:xl:w-[480px] [&>div]:2xl:w-[520px] [&>div]:3xl:w-[720px]"
+        className="flex w-full flex-col gap-y-10 lg:flex-row lg:justify-between [&>div]:flex [&>div]:flex-col [&>div]:gap-y-10 [&>div]:lg:w-[436px] [&>div]:xl:w-[480px] [&>div]:2xl:w-[520px] [&>div]:3xl:w-[720px]"
       >
         <div>
           {inputFields.map(({ title, placeholder, name, type }) => (

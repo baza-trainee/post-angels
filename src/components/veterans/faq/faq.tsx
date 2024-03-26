@@ -13,7 +13,7 @@ export const FAQ = ({ data, isPreOpen }: FAQProps) => {
   const handleQuestion = () => setOpenQuestion(!openQuestion);
 
   return (
-    <div className="w-full xl:w-[566px]">
+    <li className="w-full xl:w-[566px]">
       <div className="">
         {/* question */}
         <div
@@ -63,6 +63,6 @@ export const FAQ = ({ data, isPreOpen }: FAQProps) => {
           </div>
         )}
       </div>
-    </div>
+    </li>
   );
 };

@@ -46,11 +46,11 @@ export const Help = ({ data, descriptionData }: HelpProps) => {
           {descriptionData.help}
         </Title>
         {/* <div className=""> */}
-        <div className="flex flex-col gap-y-8 xl:grid xl:grid-flow-row xl:grid-cols-2">
+        <ul className="flex flex-col gap-y-8 xl:grid xl:grid-flow-row xl:grid-cols-2">
           {helps.map((el, ind) => (
             <FAQ data={el} key={ind} isPreOpen={false} />
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

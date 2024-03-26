@@ -35,11 +35,11 @@ export const Tech = ({ data }: TechProps) => {
         <TechSlider imageData={data.image} />
       </div>
       {/* faq section */}
-      <div className="relative flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:pb-20">
+      <ul className="relative flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:pb-20">
         {data.technology.map((el, ind) => (
           <FAQ data={el} key={ind} isPreOpen={ind === 0} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
