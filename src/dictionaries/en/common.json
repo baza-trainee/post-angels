@@ -621,7 +621,8 @@
               {
                 "value": "actionsParticipation",
                 "label": "Certificate of Participation in Military Actions"
-              }
+              },
+              { "value": "other", "label": "Other" }
             ]
           },
           "problem": {
