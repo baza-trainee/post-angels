@@ -6,8 +6,9 @@ import { Title } from '@/components/typography/Title';
 import Image from 'next/image';
 import { useState } from 'react';
 import { FAQProps } from './FAQ.props';
+import { IconButton } from '@/components/buttons/IconButton';
 
-export const FAQ = ({ data, isPreOpen }: FAQProps) => {
+export const FAQ = ({ data, isPreOpen, faq }: FAQProps) => {
   const { name, text, image } = data;
   const [openQuestion, setOpenQuestion] = useState(isPreOpen);
   const handleQuestion = () => setOpenQuestion(!openQuestion);
@@ -20,13 +21,13 @@ export const FAQ = ({ data, isPreOpen }: FAQProps) => {
           className="flex cursor-pointer items-center gap-x-5 rounded-2xl bg-[#F0F0F0]"
           onClick={handleQuestion}
         >
-          <button className="h-[50px] w-[50px]">
+          <IconButton className="h-[50px] w-[50px]" label={faq?.button?.label}>
             <ICONS.FAQ
               className={`h-[50px] w-[50px] duration-300 ${
                 openQuestion ? 'rotate-45' : 'rotate-0'
               }`}
             />
-          </button>
+          </IconButton>
           <Title variantSize="h5" tag="h3" className="font-eUkraineHead text-xl font-normal">
             {name}
           </Title>

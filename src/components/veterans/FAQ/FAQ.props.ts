@@ -15,4 +15,9 @@ export interface FAQProps {
     };
   };
   isPreOpen: boolean;
+  faq: {
+    button: {
+      label: string;
+    };
+  };
 }

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FAQ } from '@/components/veterans/FAQ/FAQ';
 import { HelpProps } from './Help.props';
 
-export const Help = ({ data, descriptionData }: HelpProps) => {
+export const Help = ({ data, descriptionData, faq }: HelpProps) => {
   const { title, description, image, helps } = data;
   return (
     <div className="flex flex-col gap-y-10 border-b border-grey-60 pb-10 xl:gap-y-24 xl:pb-20">
@@ -48,7 +48,7 @@ export const Help = ({ data, descriptionData }: HelpProps) => {
         {/* <div className=""> */}
         <ul className="flex flex-col gap-y-8 xl:grid xl:grid-flow-row xl:grid-cols-2">
           {helps.map((el, ind) => (
-            <FAQ data={el} key={ind} isPreOpen={false} />
+            <FAQ data={el} key={ind} isPreOpen={false} faq={faq} />
           ))}
         </ul>
       </div>

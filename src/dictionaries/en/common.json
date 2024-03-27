@@ -571,6 +571,11 @@
           "title": "For Veterans",
           "help": "Help offered by our organization"
         },
+        "faq": {
+          "button": {
+            "label": "open menu button"
+          }
+        },
         "form": {
           "inputFields": [
             {
@@ -609,9 +614,14 @@
             "title": "Veteran's identification document",
             "placeholder": "Select an option",
             "options": [
-              { "value": "vanilla", "label": "vanilla" },
-              { "value": "chocolate", "label": "chocolate" },
-              { "value": "strawberry", "label": "strawberry" }
+              { "value": "warVeteran", "label": "Certificate of War Veteran" },
+              { "value": "combatantVeteran", "label": "Combatant Veteran Certificate" },
+              { "value": "warDisabled", "label": "War Disabled Certificate" },
+              { "value": "warParticipant", "label": "War Participant Certificate" },
+              {
+                "value": "actionsParticipation",
+                "label": "Certificate of Participation in Military Actions"
+              }
             ]
           },
           "problem": {

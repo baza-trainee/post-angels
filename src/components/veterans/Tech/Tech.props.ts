@@ -29,4 +29,9 @@ export interface TechProps {
       };
     }[];
   };
+  faq: {
+    button: {
+      label: string;
+    };
+  };
 }

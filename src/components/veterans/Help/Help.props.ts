@@ -21,4 +21,9 @@ export interface HelpProps {
   descriptionData: {
     help: string;
   };
+  faq: {
+    button: {
+      label: string;
+    };
+  };
 }

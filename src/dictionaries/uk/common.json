@@ -582,6 +582,11 @@
           "title": "Ветеранам",
           "help": "Допомога, яку пропонує наша організація"
         },
+        "faq": {
+          "button": {
+            "label": "кнопка відкриття меню"
+          }
+        },
         "form": {
           "inputFields": [
             {
@@ -620,9 +625,15 @@
             "title": "Ідентифікаційний документ ветерана",
             "placeholder": "Оберіть відповідне",
             "options": [
-              { "value": "vanilla", "label": "vanilla" },
-              { "value": "chocolate", "label": "chocolate" },
-              { "value": "strawberry", "label": "strawberry" }
+              { "value": "warVeteran", "label": "Свідоцтво ветерана війни" },
+              { "value": "combatantVeteran", "label": "Посвідчення ветерана бойових дій" },
+              { "value": "warDisabled", "label": "Посвідчення інваліда війни" },
+              { "value": "warParticipant", "label": "Посвідчення учасника війни" },
+              {
+                "value": "actionsParticipation",
+                "label": "Свідоцтво про участь у військових діях"
+              },
+              { "value": "other", "label": "Інше" }
             ]
           },
           "problem": {
