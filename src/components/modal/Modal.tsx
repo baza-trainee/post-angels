@@ -6,7 +6,7 @@ import { ModalProps } from './Modal.props';
 import { IconButton } from '@/components/buttons/IconButton';
 import { ICONS } from '@/components/icons';
 
-const Modal = ({ modalClose, children, modal, scroll = false }: ModalProps) => {
+const Modal = ({ modalClose, children, modal, className, scroll = false }: ModalProps) => {
   const handleBackdropClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       modalClose();
@@ -32,12 +32,14 @@ const Modal = ({ modalClose, children, modal, scroll = false }: ModalProps) => {
   return (
     <ClientOnlyPortal selector="#modal">
       <div
-        className="flex-center fixed inset-0 flex bg-backdrop p-10"
+        className="fixed inset-0 flex items-center justify-center bg-backdrop p-10"
         onClick={handleBackdropClick}
       >
-        <div className={`modal-animation relative h-auto max-h-[1000px]  bg-white px-24 py-20 `}>
+        <div
+          className={`modal-animation relative h-auto max-h-[1000px] bg-white px-24 py-20 ${className}`}
+        >
           <IconButton
-            className="absolute right-12 top-12 h-5 w-5"
+            className="absolute right-10 top-[35px] h-5 w-5 lg:top-10"
             onClick={modalClose}
             label={modal.button.label}
           >
