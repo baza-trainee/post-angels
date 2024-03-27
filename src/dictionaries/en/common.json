@@ -19,6 +19,10 @@
           "href": "/en/volunteers"
         },
         {
+          "name": "Veterans",
+          "href": "/en/veterans"
+        },
+        {
           "name": "Contacts",
           "href": "/en/contacts"
         }
@@ -193,7 +197,6 @@
         "link": "/en/archive"
       }
     },
-
     "ourTeam": {
       "title1": "Our",
       "title2": "Team"
@@ -251,6 +254,10 @@
         {
           "name": "Partners",
           "href": "/en/partners"
+        },
+        {
+          "name": "Veterans",
+          "href": "/en/veterans"
         },
         {
           "name": "Сontacts",
@@ -555,6 +562,110 @@
             "errorRequired": "Field is required"
           },
           "descriptionPrivacyPolice": {
+            "errorRequired": "Field is required"
+          }
+        }
+      },
+      "veterans": {
+        "description": {
+          "title": "For Veterans",
+          "help": "Help offered by our organization"
+        },
+        "faq": {
+          "button": {
+            "label": "open menu button"
+          }
+        },
+        "form": {
+          "inputFields": [
+            {
+              "title": "Your name",
+              "placeholder": "Your name",
+              "name": "name",
+              "type": "text"
+            },
+            {
+              "title": "Your surname",
+              "placeholder": "Your surname",
+              "name": "surname",
+              "type": "text"
+            },
+            {
+              "title": "City",
+              "placeholder": "Enter here",
+              "name": "city",
+              "type": "text"
+            },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Phone",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            }
+          ],
+          "identificationDocument": {
+            "name": "identificationDocument",
+            "title": "Veteran's identification document",
+            "placeholder": "Select an option",
+            "options": [
+              { "value": "warVeteran", "label": "Certificate of War Veteran" },
+              { "value": "combatantVeteran", "label": "Combatant Veteran Certificate" },
+              { "value": "warDisabled", "label": "War Disabled Certificate" },
+              { "value": "warParticipant", "label": "War Participant Certificate" },
+              {
+                "value": "actionsParticipation",
+                "label": "Certificate of Participation in Military Actions"
+              }
+            ]
+          },
+          "problem": {
+            "name": "problem",
+            "title": "Please describe your problem",
+            "placeholder": "Enter your answer"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR."
+          },
+          "buttonText": "Submit"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "surname": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "city": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "email": {
+            "errorType": "Value should be in the format 'example@mail.com'",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 4 characters"
+          },
+          "phone": {
+            "errorType": "The value must start with '+' and contain only numbers",
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 10 characters"
+          },
+          "identificationDocument": {
+            "errorRequired": "Field is required"
+          },
+          "problem": {
+            "errorRequired": "Field is required",
+            "errorMin": "Minimum length is 10 characters"
+          },
+          "descriptionTermsAgreement": {
             "errorRequired": "Field is required"
           }
         }

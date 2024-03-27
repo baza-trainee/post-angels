@@ -18,7 +18,7 @@ export const LinkButton: FC<LinkButtonProps & LinkProps> = ({
     <Link legacyBehavior href={href} {...disabledProps}>
       <a
         className={cn(
-          'flex items-center justify-center rounded-full p-[14px] font-eUkraine text-base font-medium',
+          'flex items-center justify-center rounded-full p-[14px] font-eUkraine text-base font-medium duration-300',
           className,
           // { ['w-[140px]']: size == 'small', ['w-[214px]']: size == 'big' },
           { ['mx-auto']: centered },
