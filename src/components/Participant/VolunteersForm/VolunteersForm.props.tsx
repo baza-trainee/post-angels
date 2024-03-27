@@ -46,50 +46,56 @@ export interface VolunteersFormProps {
     name: string;
     description: string;
   };
-  schema: {
-    name: {
-      errorRequired: string;
-      errorLength: string;
-    };
-    surname: {
-      errorRequired: string;
-      errorLength: string;
-    };
-    city: {
-      errorRequired: string;
-      errorLength: string;
-    };
-    email: {
-      errorType: string;
-      errorRequired: string;
-      errorLength: string;
-    };
-    phone: {
-      errorType: string;
-      errorRequired: string;
-      errorLength: string;
-    };
-    telegram: {
-      errorType: string;
-      errorLength: string;
-    };
-    waysVolunteering: {
-      errorRequired: string;
-    };
-    carAvailability: {
-      errorRequired: string;
-    };
-    volunteerCertificate: {
-      errorRequired: string;
-    };
-    reasonVolunteering: {
-      errorLength: string;
-    };
-    descriptionTermsAgreement: {
-      errorRequired: string;
-    };
-    descriptionPrivacyPolice: { errorRequired: string };
+  schema:  {
+  name: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
   };
+  surname: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  city: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  email: {
+    errorType: string;
+    errorRequired: string;
+    errorLength: string;
+  };
+  phone: {
+    errorType: string;
+    errorRequired: string;
+    errorLength: string;
+  };
+  telegram: {
+    errorType: string;
+    errorLength: string;
+  };
+  waysVolunteering: {
+    errorRequired: string;
+  };
+  carAvailability: {
+    errorRequired: string;
+  };
+  volunteerCertificate: {
+    errorRequired: string;
+  };
+  reasonVolunteering:{
+    errorType: string;
+    errorLength: string;
+  };
+  descriptionTermsAgreement: {
+    errorRequired: string;
+  };
+  descriptionPrivacyPolice: {
+    errorRequired: string;
+  };
+}
   buttonText: string;
   notice: {
     success: string;
@@ -138,7 +144,6 @@ export interface SchemaTypes {
   };
   telegram: {
     errorType: string;
-    errorRequired: string;
     errorLength: string;
   };
   waysVolunteering: {
