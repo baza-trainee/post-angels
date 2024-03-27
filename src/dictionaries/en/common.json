@@ -405,36 +405,43 @@
         "schema": {
           "name": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "surname": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "city": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "email": {
             "errorType": "Value should be in the format 'example@mail.com'",
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 256 characters"
           },
           "phone": {
             "errorType": "The value must start with '+' and contain only numbers",
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 10 characters"
+            "errorLength": "Maximum length is 13 characters"
           },
           "companyName": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "EDRPOU": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 8 characters"
+            "errorLength": "Minimum length is 8 characters"
           },
           "waysSupport": {
             "errorRequired": "Field is required"
+          },
+           "ourOffer": {
+            "errorType": "The value contains invalid characters"
           },
           "descriptionTermsAgreement": {
             "errorRequired": "Field is required"
@@ -525,29 +532,32 @@
         "schema": {
           "name": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "surname": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "city": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "email": {
             "errorType": "Value must be of the type 'example@mail.com'",
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 256 characters"
           },
           "phone": {
             "errorType": "The value must start with '+' and contain only numbers",
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 10 characters"
+            "errorLength": "Maximum length is 13 characters"
           },
           "telegram": {
-            "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorType": "The value contains invalid characters",
+            "errorLength": "The correct field length is from 2 to 30 characters"
           },
           "waysVolunteering": {
             "errorRequired": "Field is required"
@@ -557,6 +567,10 @@
           },
           "carAvailability": {
             "errorRequired": "Field is required"
+          },
+          "reasonVolunteering": {
+            "errorLength": "Maximum length is 1000 characters",
+            "errorType": "The value contains invalid characters"
           },
           "descriptionTermsAgreement": {
             "errorRequired": "Field is required"

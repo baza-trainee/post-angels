@@ -46,47 +46,56 @@ export interface VolunteersFormProps {
     name: string;
     description: string;
   };
-  schema: {
-    name: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    surname: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    city: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    email: {
-      errorType: string;
-      errorRequired: string;
-      errorMin: string;
-    };
-    phone: {
-      errorType: string;
-      errorRequired: string;
-      errorMin: string;
-    };
-    telegram: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    waysVolunteering: {
-      errorRequired: string;
-    };
-    carAvailability: {
-      errorRequired: string;
-    };
-    volunteerCertificate: {
-      errorRequired: string;
-    };
-    descriptionTermsAgreement: {
-      errorRequired: string;
-    };
-    descriptionPrivacyPolice: { errorRequired: string };
+  schema:  {
+  name: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
   };
+  surname: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  city: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  email: {
+    errorType: string;
+    errorRequired: string;
+    errorLength: string;
+  };
+  phone: {
+    errorType: string;
+    errorRequired: string;
+    errorLength: string;
+  };
+  telegram: {
+    errorType: string;
+    errorLength: string;
+  };
+  waysVolunteering: {
+    errorRequired: string;
+  };
+  carAvailability: {
+    errorRequired: string;
+  };
+  volunteerCertificate: {
+    errorRequired: string;
+  };
+  reasonVolunteering:{
+    errorType: string;
+    errorLength: string;
+  };
+  descriptionTermsAgreement: {
+    errorRequired: string;
+  };
+  descriptionPrivacyPolice: {
+    errorRequired: string;
+  };
+}
   buttonText: string;
   notice: {
     success: string;
@@ -110,29 +119,32 @@ export interface VolunteersDataFormProps {
 export interface SchemaTypes {
   name: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   surname: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   city: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   email: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   phone: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   telegram: {
-    errorRequired: string;
-    errorMin: string;
+    errorType: string;
+    errorLength: string;
   };
   waysVolunteering: {
     errorRequired: string;
@@ -142,6 +154,10 @@ export interface SchemaTypes {
   };
   volunteerCertificate: {
     errorRequired: string;
+  };
+  reasonVolunteering:{
+    errorType: string;
+    errorLength: string;
   };
   descriptionTermsAgreement: {
     errorRequired: string;

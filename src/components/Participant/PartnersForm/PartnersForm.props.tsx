@@ -36,41 +36,48 @@ export interface PartnersFormProps {
   buttonText: string;
   schema: {
     name: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    surname: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    city: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    email: {
-      errorType: string;
-      errorRequired: string;
-      errorMin: string;
-    };
-    phone: {
-      errorType: string;
-      errorRequired: string;
-      errorMin: string;
-    };
-    companyName: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    EDRPOU: {
-      errorRequired: string;
-      errorMin: string;
-    };
-    waysSupport: {
-      errorRequired: string;
-    };
-    descriptionTermsAgreement: {
-      errorRequired: string;
-    };
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  surname: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  city: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  email: {
+    errorType: string;
+    errorRequired: string;
+    errorLength: string;
+  };
+  phone: {
+    errorType: string;
+    errorRequired: string;
+    errorLength: string;
+  };
+  companyName: {
+    errorRequired: string;
+    errorLength: string;
+    errorType: string;
+  };
+  EDRPOU: {
+    errorRequired: string;
+    errorLength: string;
+  };
+  waysSupport: {
+    errorRequired: string;
+  };
+  ourOffer: {
+    errorType: string;
+  };
+  descriptionTermsAgreement: {
+    errorRequired: string;
+  };
   };
   notice: {
     success: string;
@@ -93,36 +100,43 @@ export interface PartnersDataFormProps {
 export interface SchemaTypes {
   name: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   surname: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   city: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   email: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   phone: {
     errorType: string;
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   companyName: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
+    errorType: string;
   };
   EDRPOU: {
     errorRequired: string;
-    errorMin: string;
+    errorLength: string;
   };
   waysSupport: {
     errorRequired: string;
+  };
+  ourOffer: {
+    errorType: string;
   };
   descriptionTermsAgreement: {
     errorRequired: string;
