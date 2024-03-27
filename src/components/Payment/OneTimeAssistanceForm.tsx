@@ -118,7 +118,7 @@ const OneTimeAssistanceForm = ({ className }: { className: string }) => {
     <div className={`${className}`}>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex flex-wrap gap-4 border-b border-grey-60 xl:flex-row">
+          <div className="flex flex-wrap gap-4  xl:flex-row">
             <Controller
               name="currency"
               control={control}
@@ -126,7 +126,7 @@ const OneTimeAssistanceForm = ({ className }: { className: string }) => {
               render={({ field }) => (
                 <Select
                   styles={customStyles}
-                  {...field}
+                  // {...field}
                   options={options.map(option => ({
                     ...option,
                     label: `${option.label}`,
@@ -193,30 +193,25 @@ const OneTimeAssistanceForm = ({ className }: { className: string }) => {
                   </Title>
                 </div>
 
+                <ul
+                  className={`mb-[50px] mt-[30px] flex flex-wrap justify-between xl:flex-nowrap `}
+                >
+                  <li className="flex w-[148px] items-center justify-center pb-[30px] pr-[9px] sm:w-2/4">
+                    <ICONS.PRIVAT_BANK className="h-[22px]   w-[147px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                  <li className="flex h-[22px] w-[148px] items-center justify-center sm:w-2/4">
+                    <ICONS.VISA className="h-[22px]   w-12 cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                  <li className="flex h-[22px] w-[150px] items-center justify-center pr-[10px] sm:w-2/4">
+                    <ICONS.MASTER_CARD className="h-[22px]   w-[79px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                  <li className="flex h-[22px] w-[150px] items-center justify-center sm:w-2/4">
+                    <ICONS.LIQPAY className="h-[21px]   w-[62px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                </ul>
+
                 <div>
-                  <ul
-                    className={`mb-[50px] mt-[30px] flex flex-wrap justify-between xl:flex-nowrap ${beforeClass} ${afterClass}`}
-                  >
-                    <li className="flex w-[148px] items-center justify-center pb-[30px] pr-[9px] sm:w-2/4">
-                      <ICONS.PRIVAT_BANK className="h-[22px]   w-[147px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                    <li className="flex h-[22px] w-[148px] items-center justify-center sm:w-2/4">
-                      <ICONS.VISA className="h-[22px]   w-12 cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                    <li className="flex h-[22px] w-[150px] items-center justify-center pr-[10px] sm:w-2/4">
-                      <ICONS.MASTER_CARD className="h-[22px]   w-[79px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                    <li className="flex h-[22px] w-[150px] items-center justify-center sm:w-2/4">
-                      <ICONS.LIQPAY className="h-[21px]   w-[62px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <Button
-                    type="submit"
-                    className="w-full p-[10px] xl:mb-[50px] "
-                    onSubmit={onSubmit}
-                  >
+                  <Button type="submit" className="w-full p-[10px] " onSubmit={onSubmit}>
                     Підтримати
                   </Button>
                 </div>

@@ -111,14 +111,14 @@ const MonthlyAssistanceForm = ({ className }: { className: string }) => {
     console.log(data);
   };
 
-  const beforeClass = `before:block before:w-[1px] before:h-[10%] before:bg-grey-60 before:absolute before:top-[940px] before:left-[50%] sm:before:block sm:before:w-[1px] sm:before:h-[10%] sm:before:bg-grey-60 sm:before:absolute sm:before:top-[888px] sm:before:left-[52%] ||||| md:before:block md:before:w-[1px] md:before:h-[10%] md:before:bg-grey-60 md:before:absolute md:before:top-[776px] md:before:left-[52%]`;
-  const afterClass = `after:block after:w-[90%] xl:after:w-[1px] after:h-[1px] xl:after:h-full after:bg-grey-60 after:absolute after:left-[14px] after:top-[97%] xl:after:top-0 | sm:after:block sm:after:w-[90%] sm:after:h-[1px] sm:after:bg-grey-60 sm:after:absolute sm:after:left-[14px] sm:after:top-[92%] md:after:top-[81%] md:after:left-[38px]`;
+  const beforeClass = `xl:before:hidden before:block before:w-[1px] before:h-[100%] before:bg-grey-60 before:absolute before:top-0  before:left-[calc(50%_-_1px)] `;
+  const afterClass = `xl:after:hidden after:block after:w-[100%]  after:h-[1px]  after:bg-grey-60 after:absolute after:left-0 after:top-[calc(50%_-_1px)]`;
 
   return (
     <div className={`${className}`}>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex flex-wrap gap-4 border-b border-grey-60 xl:flex-row">
+          <div className="flex flex-wrap gap-4  xl:flex-row">
             <Controller
               name="currency"
               control={control}
@@ -126,7 +126,6 @@ const MonthlyAssistanceForm = ({ className }: { className: string }) => {
               render={({ field }) => (
                 <Select
                   styles={customStyles}
-                  {...field}
                   options={options.map(option => ({
                     ...option,
                     label: `${option.label}`,
@@ -192,30 +191,24 @@ const MonthlyAssistanceForm = ({ className }: { className: string }) => {
                   </Title>
                 </div>
 
+                <ul
+                  className={`mb-[50px] mt-[30px] flex flex-wrap justify-between xl:flex-nowrap `}
+                >
+                  <li className="flex w-[148px] items-center justify-center pb-[30px] pr-[9px] sm:w-2/4">
+                    <ICONS.PRIVAT_BANK className="h-[22px]   w-[147px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                  <li className="flex h-[22px] w-[148px] items-center justify-center sm:w-2/4">
+                    <ICONS.VISA className="h-[22px]   w-12 cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                  <li className="flex h-[22px] w-[150px] items-center justify-center pr-[10px] sm:w-2/4">
+                    <ICONS.MASTER_CARD className="h-[22px]   w-[79px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                  <li className="flex h-[22px] w-[150px] items-center justify-center sm:w-2/4">
+                    <ICONS.LIQPAY className="h-[21px]   w-[62px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
+                  </li>
+                </ul>
                 <div>
-                  <ul
-                    className={`mb-[50px] mt-[30px] flex flex-wrap justify-between xl:flex-nowrap ${beforeClass} ${afterClass}`}
-                  >
-                    <li className="flex w-[148px] items-center justify-center pb-[30px] pr-[9px] sm:w-2/4 ">
-                      <ICONS.PRIVAT_BANK className="h-[22px]   w-[147px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                    <li className="flex h-[22px] w-[148px] items-center justify-center sm:w-2/4">
-                      <ICONS.VISA className="h-[22px]   w-12 cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                    <li className="flex h-[22px] w-[150px] items-center justify-center pr-[10px] sm:w-2/4">
-                      <ICONS.MASTER_CARD className="h-[22px]   w-[79px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                    <li className="flex h-[22px] w-[150px] items-center justify-center sm:w-2/4">
-                      <ICONS.LIQPAY className="h-[21px]   w-[62px] cursor-pointer hover:text-accent-primary focus:text-accent-primary" />
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <Button
-                    type="submit"
-                    className="w-full p-[10px] xl:mb-[50px] "
-                    onSubmit={onSubmit}
-                  >
+                  <Button type="submit" className="w-full p-[10px]  " onSubmit={onSubmit}>
                     Підтримати
                   </Button>
                 </div>

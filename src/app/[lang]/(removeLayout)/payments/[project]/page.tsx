@@ -10,33 +10,32 @@ import OneTimeAssistanceForm from '@/components/Payment/OneTimeAssistanceForm';
 import MonthlyAssistanceForm from '@/components/Payment/MonthlyAssistanceForm';
 
 export const page = () => {
-
   return (
-    <div className="container xl:border-b xl:border-grey-60">
-      <div className="mb-10 border-b border-grey-60">
+    <div className="container ">
+      <div className="mb-10">
         <div className="mb-5">
           <Title variantSize="h2">Збір на травматологічні матеріали</Title>
         </div>
         <div>
-          <Paragraph variant="orange" className="pb-10">
-            Залишилось зібрати 23 549.00 грн.
-          </Paragraph>
+          <Paragraph variant="orange">Залишилось зібрати 23 549.00 грн.</Paragraph>
         </div>
       </div>
+      <div className="relative border-y border-grey-60   py-[30px] xl:before:absolute xl:before:left-[calc(50%_-_1px)] xl:before:top-0 xl:before:block xl:before:h-full xl:before:w-[1px] xl:before:bg-grey-60">
+        <div className=" flex flex-col gap-y-4 xl:flex-row xl:justify-center">
+          <button className="active:xl:border-b-accent-hover'  w-full rounded-2xl border border-grey-60 py-3 hover:border-accent-hover hover:text-accent-primary xl:rounded-none xl:border-none xl:text-accent-primary">
+            Одноразова допомога
+          </button>
+          <button className=" w-full rounded-2xl border border-grey-60 py-3 hover:border-accent-hover hover:text-accent-primary xl:rounded-none xl:border-none xl:text-accent-primary active:xl:border-b-accent-hover">
+            Щомісячна допомога
+          </button>
+        </div>
 
-      <div className="mb-[30px] xl:flex xl:flex-row xl:justify-center">
-        <button className="m-2 w-full rounded-2xl border py-3 border-grey-60 xl:border-none hover:text-accent-primary hover:border-accent-hover xl:rounded-none xl:text-accent-primary active:xl:border-b-accent-hover'">Одноразова допомога</button>
-        <button className='m-2 w-full rounded-2xl border py-3 border-grey-60 xl:border-none hover:text-accent-primary hover:border-accent-hover xl:rounded-none xl:text-accent-primary active:xl:border-b-accent-hover'>Щомісячна допомога</button>
+        <div className="flex flex-col xl:flex-row xl:gap-x-8">
+          <OneTimeAssistanceForm className="sm:none md:none lg:none hidden  xl:flex xl:w-1/2 " />
+          <MonthlyAssistanceForm className=" flex xl:w-1/2 " />
+        </div>
       </div>
-
-      <div className="mb-[30px]">
-      </div>
-
-      <div className='flex flex-col xl:flex-row xl:space-x-4'>
-        <OneTimeAssistanceForm className="hidden sm:none md:none lg:none xl:flex  "/>
-        <MonthlyAssistanceForm className="flex " />
-      </div>
-      </div>
+    </div>
   );
 };
 
