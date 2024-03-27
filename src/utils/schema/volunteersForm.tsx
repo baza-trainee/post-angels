@@ -27,8 +27,8 @@ export const volunteersForm = (translation: SchemaTypes) => {
     surname: yup
       .string()
       .required(surname.errorRequired)
-      .min(2, surname.errorRequired)
-      .max(30, surname.errorRequired)
+      .min(2, surname.errorLength)
+      .max(30, surname.errorLength)
       .matches(/^[^ёы\d.,!”№;%?*]*$/, surname.errorType),
     city: yup
       .string()
