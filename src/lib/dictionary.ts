@@ -11,6 +11,11 @@ const dictionaries = {
     ...(await import(`@/dictionaries/uk/common.json`)).default,
     ...(await import(`@/dictionaries/uk/project.json`)).default,
   }),
+
+  pl: async () => ({
+    ...(await import(`@/dictionaries/pl/common.json`)).default,
+    ...(await import(`@/dictionaries/pl/project.json`)).default,
+  }),
 };
 
 const metadata = {
@@ -22,6 +27,11 @@ const metadata = {
   uk: async () => ({
     ...(await import(`@/dictionaries/uk/meta/common.json`)).default,
     // ...(await import(`@/dictionaries/uk/meta/home.json`)).default,
+  }),
+
+  pl: async () => ({
+    ...(await import(`@/dictionaries/pl/meta/common.json`)).default,
+    // ...(await import(`@/dictionaries/pl/meta/home.json`)).default,
   }),
 };
 
