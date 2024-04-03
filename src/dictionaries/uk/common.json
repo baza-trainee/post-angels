@@ -194,6 +194,18 @@
         "link": "/uk/archive"
       }
     },
+    "payments": {
+      "title": "Збір на травматологічні матеріали",
+      "needToCollect": "Залишилось зібрати 23 549.00 грн.",
+      "OneTimeTextButton": "Одноразова допомога",
+      "MonthlyTextButton": "Щомісячна допомога",
+      "chooseYourContribution": "Виберіть свій внесок",
+      "otherAmount": "Інша сума",
+      "supportPostAngeles": "Підтримати Post Angeles (за бажанням)",
+      "contributionText": "Це ваш внесок до існування нашої благодійної платформи.",
+      "paymentSystemTitle": "Оплатіть за допомогою платіжної системи",
+      "supportUsButton": "Підтримайте нас"
+      },
     "cooperation": {
       "cooperationSection": {
         "title": "Бажаєте з нами",

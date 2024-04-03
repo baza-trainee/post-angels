@@ -193,7 +193,18 @@
         "link": "/en/archive"
       }
     },
-
+      "payments": {
+        "title": "Fee for trauma materials",
+        "needToCollect": "We have to raise UAH 23 549.00.",
+        "OneTimeTextButton": "One-time assistance",
+        "MonthlyTextButton": "Monthly assistance",
+        "chooseYourContribution": "Choose your contribution",
+        "otherAmount": "Other amount",
+        "supportPostAngeles": "Support Post Angeles (optional)",
+        "contributionText": "This is your contribution to the existence of our charity platform.",
+        "paymentSystemTitle": "Pay using the payment system",
+        "supportUsButton": "Please support us"
+        },
     "ourTeam": {
       "title1": "Our",
       "title2": "Team"

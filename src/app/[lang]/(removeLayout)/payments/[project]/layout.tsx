@@ -2,7 +2,8 @@ import { Locale, i18n } from '@/i18n.config';
 
 import { getDictionary } from '@/lib/dictionary';
 import { Footer } from '@/layout/Footer';
-import { PaymentHeader } from './../../../../../components/Payment/PaymentHeader';
+import { PaymentHeader } from '../../../../../components/Payment/Header/PaymentHeader';
+import FooterPayments from '@/components/Payment/Footer/FooterPayments';
 
 async function PaymentsLayout({
   children,
@@ -12,12 +13,12 @@ async function PaymentsLayout({
   params: { lang: Locale };
 }) {
   const { common } = await getDictionary(lang);
-  const { header, modal, logo, footer } = common;
+  const { header, logo, modal } = common;
   return (
     <>
-      {/* <PaymentHeader data={header} lang={lang} modal={modal} logo={logo} /> */}
+      <PaymentHeader data={header} lang={lang} logo={logo} modal={modal} />
       <main className=" flex-grow ">{children}</main>
-      {/* <Footer data={footer} modal={modal} logo={logo} /> */}
+      <FooterPayments />
     </>
   );
 }
