@@ -1,6 +1,6 @@
-import { AboutProps, AboutNumberProps } from '@/sections/AboutInNumbers/AboutInNumbers.props';
-import dynamic from 'next/dynamic';
 import { Paragraph } from '@/components/typography/Paragraph';
+import { AboutNumberProps, AboutProps } from '@/sections/AboutInNumbers/AboutInNumbers.props';
+import dynamic from 'next/dynamic';
 
 export const AboutInNumberCard = async ({
   data,

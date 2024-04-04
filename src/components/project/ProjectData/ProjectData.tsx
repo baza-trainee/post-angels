@@ -46,6 +46,7 @@ export const ProjectData = ({
     const formattedLang = {
       uk: dayjs(date).locale(lang).format('DD.MM.YYYY'),
       en: dayjs(date).locale(lang).format('MM.DD.YYYY'),
+      pl: dayjs(date).locale(lang).format('MM.DD.YYYY'),
     };
     return lang ? formattedLang[lang] : formattedLang['uk'];
   };
