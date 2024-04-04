@@ -4,14 +4,15 @@ import Select from 'react-select';
 import { useForm, Controller, FormProvider } from 'react-hook-form';
 import { ChangeEvent, useState } from 'react';
 
-import { Button } from '../../buttons/Button';
-import { Checkbox } from '../../form/Checkbox';
-import { Input } from '../../form/Input';
-import { Paragraph } from '../../typography/Paragraph';
+import { Button } from '../../../buttons/Button';
+import { Checkbox } from '../../../form/Checkbox';
+import { Paragraph } from '../../../typography/Paragraph';
 
-import { Title } from '../../typography/Title';
-import BankIcons from '../BankIcons/BankIcons';
+import { Title } from '../../../typography/Title';
+import BankIcons from '../../BankIcons/BankIcons';
 import { Payments } from '@/components/Payment/Payments.props';
+import Modal from '@/components/modal/Modal';
+import ModalSupport from '../../Modal/ModalChildSupport';
 
 const MonthlyAssistanceForm = ({
   className,
@@ -28,9 +29,13 @@ const MonthlyAssistanceForm = ({
   const [donationAmount, setDonationAmount] = useState<number | null>(null);
   const [inputValue, setInputValue] = useState('');
   const [isChecked, setIsChecked] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const { handleSubmit, control } = useForm();
   const methods = useForm();
+
+  const watch = methods.watch;
+  const checked = watch('checkbox');
 
   const options = [
     { value: 'UAH', label: '₴ UAH', symbol: '₴' },
@@ -66,7 +71,7 @@ const MonthlyAssistanceForm = ({
       gap: '4px',
       marginTop: '19px',
 
-      border: 'none',
+      border: '#000',
       borderRadius: '16px',
       background: '#FFF',
       padding: '4px',
@@ -117,26 +122,34 @@ const MonthlyAssistanceForm = ({
     setIsChecked(event.target.checked);
   };
 
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
   const onSubmit = (data: any) => {
     console.log(data);
   };
 
   return (
-    <div className={`${className}`}>
+    <div className={className}>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-wrap gap-4  xl:flex-row">
             <Controller
               name="currency"
               control={control}
-              defaultValue={options.find(option => option.label === 'UAH')}
               render={({ field }) => (
                 <Select
                   styles={customStyles}
                   options={options.map(option => ({
                     ...option,
-                    label: `${option.label}`,
+                    label: option.label,
                   }))}
+                  defaultValue={options[0]}
                   onChange={handleCurrencyChange}
                   placeholder={payments.chooseYourContribution}
                   className="mb-[30px] w-full border border-b-2 border-none border-grey-60 xl:w-full"
@@ -184,24 +197,34 @@ const MonthlyAssistanceForm = ({
                   onChange={handleCheckboxChange}
                 />
               </div>
-
               <div className="mb-[30px]">
                 <input
                   type="number"
-                  placeholder={isChecked && selectedCurrency ? selectedCurrency.label : ''}
-                  className="mb-[10px] h-[54px] w-[320px] lg:w-full gap-4 rounded-[48px] border border-accent-primary bg-grey-20 text-center sm:w-[440px] md:w-[728px]  xl:w-[581px] 2xl:w-[626px] 3xl:w-[850px]"
-                  name={''}
-                  title={''}
+                  placeholder={checked && selectedCurrency ? selectedCurrency?.label : ''}
+                  className="mb-[10px] h-[54px] w-[320px] gap-4 rounded-[48px] border border-accent-primary bg-grey-20 text-center sm:w-[440px] md:w-[728px] lg:w-full  xl:w-[581px] 2xl:w-[626px] 3xl:w-[850px]"
                   onChange={handleInputChange}
+                  onClick={openModal}
                   value={inputValue}
                 />
-
-                <Paragraph variant="light" variantFontSize="14">
-                  {payments.contributionText}
-                </Paragraph>
+                {checked && modalVisible && (
+                  <Modal
+                  modal={{
+                    button:{
+                      label: ''
+                    }
+                  }}
+                    modalClose={closeModal}
+                  >
+                    <ModalSupport />
+                  </Modal>
+                )}
               </div>
 
-              <div className="flex items-start">
+              <Paragraph variant="light" variantFontSize="14">
+                {payments.contributionText}
+              </Paragraph>
+
+              <div className="flex items-start mt-[30px]">
                 <Title variantSize="h5" className="items-center justify-center">
                   {payments.paymentSystemTitle}
                 </Title>

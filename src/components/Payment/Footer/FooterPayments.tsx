@@ -4,7 +4,7 @@ import React from 'react';
 const FooterPayments: React.FC = () => {
    
   return (
-    <div className='  sm:hidden xs:hidden md:flex md:mt-[50px] px-[100px]'>
+    <div className='sm:hidden xs:hidden md:flex md:mt-[50px] px-[100px]'>
          <ul
                   className={`mb-[50px] mt-[30px] flex  justify-between xl:flex-nowrap md:px-[100px] px-[150px] xl:px-[60px]  3xl:pl-[100px]`}
                 >

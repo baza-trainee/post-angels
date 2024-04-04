@@ -9,4 +9,9 @@ export interface Payments {
   chooseYourContribution: string;
   contributionText: string;
   paymentSystemTitle: string;
+  modal: {
+    button: {
+      label: string;
+    };
+  };
 }

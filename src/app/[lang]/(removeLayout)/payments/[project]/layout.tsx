@@ -18,7 +18,6 @@ async function PaymentsLayout({
     <>
       <PaymentHeader data={header} lang={lang} logo={logo} modal={modal} />
       <main className=" flex-grow ">{children}</main>
-      <FooterPayments />
     </>
   );
 }

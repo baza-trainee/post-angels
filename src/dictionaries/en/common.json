@@ -203,7 +203,12 @@
         "supportPostAngeles": "Support Post Angeles (optional)",
         "contributionText": "This is your contribution to the existence of our charity platform.",
         "paymentSystemTitle": "Pay using the payment system",
-        "supportUsButton": "Please support us"
+        "supportUsButton": "Support us",
+        "modal": {
+          "button":{
+            "label" : "close modal button"
+          }
+        }
         },
     "ourTeam": {
       "title1": "Our",
