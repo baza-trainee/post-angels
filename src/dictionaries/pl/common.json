@@ -74,25 +74,25 @@
       "title2": "w Liczbach",
       "about": [
         {
-          "name": "rodzina",
+          "name": "family",
           "title": "Liczba rodzin, którym udzielono pomocy",
           "measure": "ppl.",
           "icon": "family.svg"
         },
         {
-          "name": "partnerzy",
+          "name": "partners",
           "title": "Ilość partnerów",
           "measure": "ppl.",
           "icon": "leadership.svg"
         },
         {
-          "name": "działalność",
+          "name": "activities",
           "title": "Liczba zrealizowanych wydarzeń",
           "measure": "",
           "icon": "activities.svg"
         },
         {
-          "name": "wolontariusze",
+          "name": "volunteers",
           "title": "Ilość wolontariuszy",
           "measure": "ppl.",
           "icon": "volunteers.svg"
