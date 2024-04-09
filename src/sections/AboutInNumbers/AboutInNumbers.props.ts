@@ -13,6 +13,8 @@ export interface AboutProps {
 }
 
 export interface AboutNumberProps {
+  title: string;
   name: string;
   measure: string;
+  quantity: string;
 }

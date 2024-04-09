@@ -1,19 +1,18 @@
+import { fetchPartners } from '@/api/fetchPartners';
+import { fetchProjects } from '@/api/fetchProjects';
+import { ScrollBtn } from '@/components/ScrollBtn/ScrollBtn';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
-import { Contacts } from '@/sections/Contacts/Contacts';
-import { Hero } from '@/sections/Hero/Hero';
-import { PartnersTop } from '@/sections/PartnersTop';
-import { Partners } from '@/sections/Partners';
-import { Projects } from '@/sections/Projects';
-import { FinishedProjects } from '@/sections/FinishedProjects';
-import { Cooperation } from '@/sections/Cooperation';
-import { WhatWeDo } from '@/sections/WhatWeDo';
 import { AboutInNumbers } from '@/sections/AboutInNumbers';
-import { fetchProjects } from '@/api/fetchProjects';
-import { fetchPartners } from '@/api/fetchPartners';
-import { ScrollBtn } from '@/components/ScrollBtn/ScrollBtn';
-import { fetchTeam } from '@/api/fetchTeam';
+import { Contacts } from '@/sections/Contacts/Contacts';
+import { Cooperation } from '@/sections/Cooperation';
+import { FinishedProjects } from '@/sections/FinishedProjects';
+import { Hero } from '@/sections/Hero/Hero';
 import OurTeam from '@/sections/OurTeam/OurTeam';
+import { Partners } from '@/sections/Partners';
+import { PartnersTop } from '@/sections/PartnersTop';
+import { Projects } from '@/sections/Projects';
+import { WhatWeDo } from '@/sections/WhatWeDo';
 
 export const revalidate = 600;
 
@@ -38,7 +37,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
     <>
       <Hero data={hero} lang={lang} />
       {partnersData.length !== 0 && <PartnersTop partnersData={partnersData} data={partners} />}
-      <AboutInNumbers data={aboutInNumbers} />
+      <AboutInNumbers data={aboutInNumbers} lang={lang} />
       <WhatWeDo lang={lang} data={whatWeDo} />
       {projectData.length !== 0 && (
         <Projects projects={projects} lang={lang} projectData={projectData} />
