@@ -33,7 +33,7 @@ export const AboutInNumberCard = async ({
           className="!font-eUkraineHead! mb-4 xl:!text-[32px]"
           variantFontWeight="medium"
         >
-          {numberData.measure} {data.measure.toUpperCase()}
+          {numberData.quantity} {data.measure.toUpperCase()}
         </Paragraph>
         <Paragraph variant="dark_grey">{data.title}</Paragraph>
       </div>
