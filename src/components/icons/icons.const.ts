@@ -2,6 +2,7 @@ import ActivitiesSvg from '../../../public/icons/aboutInNumber/activities.svg';
 import FamilySvg from '../../../public/icons/aboutInNumber/family.svg';
 import LeadershipSvg from '../../../public/icons/aboutInNumber/leadership.svg';
 import VolunteersSvg from '../../../public/icons/aboutInNumber/volunteers.svg';
+import ScrollArrowIcon from '../../../public/icons/arrow.svg';
 import FacebookIcon from '../../../public/icons/contacts/Facebook.svg';
 import InstagramIcon from '../../../public/icons/contacts/Instagram.svg';
 import LocationIcon from '../../../public/icons/contacts/Location.svg';
@@ -23,15 +24,15 @@ import LogoDark from '../../../public/icons/logoDark.svg';
 import LogoLight from '../../../public/icons/logoLight.svg';
 import ModalClose from '../../../public/icons/modalClose.svg';
 import PrimaryLogoIcon from '../../../public/icons/primaryLogoIcon.svg';
+import UserAvatarIcon from '../../../public/icons/project/user_avatar.svg';
 import FilterIcon from '../../../public/icons/projects/filter.svg';
 import SortSvg from '../../../public/icons/projects/sort.svg';
+import Faq from '../../../public/icons/veterans/faq.svg';
 import VerselIcon from '../../../public/vercel.svg';
-import UserAvatarIcon from '../../../public/icons/project/user_avatar.svg';
-import ScrollArrowIcon from '../../../public/icons/arrow.svg';
-import Privat_Bank from '../../../public/icons/payments/Privat_Bank.svg';
-import Visa from '../../../public/icons/payments/Visa.svg';
-import Master_Card from '../../../public/icons/payments/Master_Card.svg';
-import LiqPay from '../../../public/icons/payments/LiqPay.svg';
+import Privat_Bank from '../../../public/icons/payments/Privat_Bank.svg'
+import Visa from '../../../public/icons/payments/Visa.svg'
+import Master_Card from '../../../public/icons/payments/Master_Card.svg'
+import LiqPay from '../../../public/icons/payments/LiqPay.svg'
 
 export const ICONS = {
   VERSEL: VerselIcon,
@@ -63,6 +64,7 @@ export const ICONS = {
   VOLUNTEERS: VolunteersSvg,
   PRIMARY_LOGO_ICON: PrimaryLogoIcon,
   USER_AVATAR: UserAvatarIcon,
+  FAQ: Faq,
   SCROLL_ARROW: ScrollArrowIcon,
   PRIVAT_BANK: Privat_Bank,
   VISA: Visa,

@@ -43,6 +43,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
     const formattedLang = {
       uk: dayjs(date).format('DD.MM.YYYY'),
       en: dayjs(date).format('MM.DD.YYYY'),
+      pl: dayjs(date).format('DD.MM.YYYY'),
     };
     return lang ? formattedLang[lang] : formattedLang['uk'];
   };

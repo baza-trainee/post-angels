@@ -46,7 +46,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
         city: data.city,
         email: data.email,
         phone: data.phone,
-        telegram: data.telegram,
+        telegram: data.telegram || '',
         activity: data.waysVolunteering.value,
         volunteerCertificate: data.volunteerCertificate,
         carAvailability: data.carAvailability,

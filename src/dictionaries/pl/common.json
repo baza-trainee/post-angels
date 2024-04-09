@@ -1,0 +1,707 @@
+{
+  "common": {
+    "header": {
+      "headerNav": [
+        {
+          "name": "Główna",
+          "href": "/pl"
+        },
+        {
+          "name": "O nas",
+          "href": "/pl/aboutUs"
+        },
+        {
+          "name": "Partnerzy",
+          "href": "/pl/partners"
+        },
+        {
+          "name": "Wolontariusze",
+          "href": "/pl/volunteers"
+        },
+        {
+          "name": "Weterani",
+          "href": "/pl/veterans"
+        },
+        {
+          "name": "Kontakt",
+          "href": "/pl/contacts"
+        }
+      ],
+      "buttons": {
+        "headerButton": {
+          "name": "Wpłać"
+        },
+
+        "headerLanguageLabel": {
+          "name": "Przycisk zmiany języka"
+        },
+        "headerLanguageName": {
+          "name": "Polski"
+        },
+        "menuOpen": {
+          "label": "otwórz menu mobilne"
+        },
+        "menuClose": {
+          "label": "zamknij menu mobilne"
+        }
+      }
+    },
+    "logo": {
+      "label": "Logo firmy",
+      "href": "/pl"
+    },
+    "scrollbtn": {
+      "label": "Powrót do góry"
+    },
+    "hero": {
+      "title": "Przyszłość jest w naszych rękach",
+      "subtitle": "Razem osiągniemy jasne jutro: to nasz wkład w kształtowanie przyszłości.",
+      "button": {
+        "text": "Czytaj więcej",
+        "href": "/pl/aboutUs"
+      }
+    },
+    "partners": {
+      "title": "Nasi",
+      "title1": "partnerzy",
+      "button": {
+        "text": "dołączyć",
+        "href": "/pl/partners"
+      }
+    },
+    "aboutInNumbers": {
+      "title1": "O Nas \r\n",
+      "title2": "w Liczbach",
+      "about": [
+        {
+          "name": "family",
+          "title": "Liczba rodzin, którym udzielono pomocy",
+          "measure": "ppl.",
+          "icon": "family.svg"
+        },
+        {
+          "name": "partners",
+          "title": "Ilość partnerów",
+          "measure": "ppl.",
+          "icon": "leadership.svg"
+        },
+        {
+          "name": "activities",
+          "title": "Liczba zrealizowanych wydarzeń",
+          "measure": "",
+          "icon": "activities.svg"
+        },
+        {
+          "name": "volunteers",
+          "title": "Ilość wolontariuszy",
+          "measure": "ppl.",
+          "icon": "volunteers.svg"
+        }
+      ]
+    },
+    "whatWeDo": {
+      "title1": "Co \r\n",
+      "title2": "robimy",
+      "workWith": [
+        {
+          "title": "Równość płci",
+          "subTitle": "Jak osiągnąć równość między ludźmi",
+          "text": "Zapewnienie pełnego poszanowania praw kobiet ma kluczowe znaczenie dla rozwoju kwitnącego społeczeństwa. Inwestycje w równość płci przyczyniają się do zmniejszania różnicy w wynagrodzeniach mężczyzn i kobiet.",
+          "img": "/images/whatwedo/what-do-1.jpg",
+          "alt": "",
+          "linkTitle": "Dowiedz się więcej",
+          "href": "fghfh"
+        },
+        {
+          "title": "Jakość edukacji",
+          "subTitle": "Jak stworzyć efektywny system edukacji i rozwoju",
+          "text": "Jakość edukacji wpływa na poziom dobrobytu społeczeństwa, a możliwość uczenia się przez całe życie dla każdego człowieka odświeża kapitał odpowiedzi na wyzwania współczesności.",
+          "img": "/images/whatwedo/what-do-2.jpg",
+          "alt": "",
+          "linkTitle": "Dowiedz się więcej",
+          "href": ""
+        },
+        {
+          "title": "Innowacje i Infrastruktura",
+          "subTitle": "Jak rozwijać wysokiej jakości, niezawodną, zrównoważoną i dostępną infrastrukturę",
+          "text": "Rozwój infrastruktury i innowacji jest warunkiem postępu gospodarczego. Postęp technologiczny zapewnia rozwiązanie kwestii środowiskowych i gospodarczych oraz może wpływać na czynniki społeczne.",
+          "img": "/images/whatwedo/what-do-3.jpg",
+          "alt": "",
+          "linkTitle": "Dowiedz się więcej",
+          "href": ""
+        },
+        {
+          "title": "Partnerstwo dla Zrównoważonego Rozwoju",
+          "subTitle": "Jak rozwijać relacje oparte na współpracy w zarządzaniu",
+          "text": "Skoncentruj się na tworzeniu partnerstw w sektorach finansowym, technologicznym i handlowym, a także promowaniu współpracy między sektorem publicznym i prywatnym.",
+          "img": "/images/whatwedo/what-do-4.jpg",
+          "alt": "",
+          "linkTitle": "Dowiedz się więcej",
+          "href": ""
+        },
+        {
+          "title": "Pokój i Sprawiedliwość",
+          "subTitle": "Jak stworzyć pokojowe społeczeństwo",
+          "text": "Jednym z najważniejszych priorytetów zrównoważonego rozwoju jest tworzenie pokojowych, sprawiedliwych i inkluzywnych społeczeństw, opartych na poszanowaniu praw człowieka, praworządności i dobrym rządzeniu.",
+          "img": "/images/whatwedo/what-do-5.jpg",
+          "alt": "",
+          "linkTitle": "Dowiedz się więcej",
+          "href": ""
+        }
+      ]
+    },
+    "projects": {
+      "filter": {
+        "title": "Filtry",
+        "filters": [
+          { "name": "Zbiórka", "mod": "fundraising" },
+          { "name": "Wszystkie", "mod": "all" },
+          { "name": "Nowe", "mod": "new" },
+          { "name": "Zakończone", "mod": "completed" }
+        ]
+      },
+      "sorting": [
+        { "name": "Najpierw nowe", "mod": "newFirst" },
+        { "name": "Najpierw stare", "mod": "oldFirst" },
+        { "name": "Więcej zbiorów", "mod": "moreFunds" },
+        { "name": "Mniej zbiorów", "mod": "lessFunds" }
+      ],
+      "ourProjects": {
+        "title": "NASZE",
+        "title1": "Projekty"
+      },
+      "finishedProjects2023": {
+        "title": "Zakończone",
+        "title1": "projekty 2023"
+      },
+      "projectCard": {
+        "collected": "Zakończone, UAH",
+        "starts": "Data rozpoczęcia zbioru",
+        "buttons": {
+          "fundBtn": {
+            "text": "Wpłać",
+            "link": "/pl/payments/"
+          },
+          "moreBtn": {
+            "text": "Czytaj więcej",
+            "link": "/pl/projects/"
+          },
+          "finishedBtn": {
+            "text": "Zakończono",
+            "link": "/"
+          }
+        }
+      },
+      "payments": {
+        "title": "Opłata za materiały dotyczące urazów",
+        "needToCollect": "Musimy zebrać 23 549,00 UAH",
+        "OneTimeTextButton": "Jednorazowa pomoc",
+        "MonthlyTextButton": "Pomoc miesięczna",
+        "chooseYourContribution": "Wybierz swój wkład",
+        "otherAmountText": "Other amount",
+        "supportPostAngeles": "Support Post Angeles (opcjonalnie)",
+        "contributionText": "To jest Twój wkład w istnienie naszej platformy charytatywnej.",
+        "paymentSystemTitle": "Zapłać za pomocą systemu płatności",
+        "supportUsButton": "Support us",
+        "modal": {
+          "button":{
+            "label" : "zamknij przycisk modalny"
+          }
+        }
+        },
+      "archiveBtn": {
+        "text": "Archiwum",
+        "link": "/pl/archive"
+      }
+    },
+    "ourTeam": {
+      "title1": "Nasza",
+      "title2": "Ekipa"
+    },
+    "cooperation": {
+      "cooperationSection": {
+        "title": "Czy chciałbyś",
+        "title1": "z nami współpracować?",
+        "text": "Wybierz kierunek!",
+        "buttons": {
+          "partnerBtn": {
+            "text": "Jestem partnerem",
+            "link": "/pl/partners"
+          },
+          "volunteerBtn": {
+            "text": "Jestem wolontariuszem",
+            "link": "/pl/volunteers"
+          }
+        }
+      }
+    },
+    "contacts": {
+      "contactsSection": {
+        "title": "nasze",
+        "title1": "kontakty",
+        "href": "/pl",
+        "img": {
+          "src": "/images/contacts-map.jpg",
+          "alt": "Plan miasta z siedzibą PostAngels."
+        }
+      }
+    },
+    "cookie": {
+      "popupCookie": {
+        "text": "Ta strona korzysta z plików cookies w celu prawidłowego funkcjonowania i ulepszania serwisu. Jeśli wyrażasz zgodę - kliknij OK.",
+        "text1": "Więcej informacji w",
+        "linkText": "Polityce Prywatności.",
+        "href": "/"
+      }
+    },
+    "footer": {
+      "footerNav": [
+        {
+          "name": "Główna",
+          "href": "/pl"
+        },
+        {
+          "name": "O nas",
+          "href": "/pl/aboutUs"
+        },
+        {
+          "name": "Partnerzy",
+          "href": "/pl/partners"
+        },
+        {
+          "name": "Wolontariusze",
+          "href": "/pl/volunteers"
+        },
+        {
+          "name": "Weterani",
+          "href": "/pl/veterans"
+        },
+        {
+          "name": "Kontakt",
+          "href": "/pl/contacts"
+        },
+        {
+          "name": "Raportowanie",
+          "href": "/pl/"
+        }
+      ],
+      "footerDoc": [
+        {
+          "name": "Polityka Prywatności",
+          "href": "?document=policy.pdf",
+          "doc": "policy.pdf"
+        },
+        {
+          "name": "Warunki korzystania z serwisu",
+          "href": "?document=statut.pdf",
+          "doc": "statut.pdf"
+        }
+      ],
+      "footerCop": {
+        "name": "Rozwój Baza Trainee Ukraina 2023 © Wszelkie prawa zastrzeżone"
+      }
+    },
+    "modal": {
+      "button": {
+        "label": "przycisk zamknięcia modalu"
+      }
+    },
+    "notfound": {
+      "subtitle": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta",
+      "label": "Na główną"
+    },
+    "about": {
+      "title": "O nas",
+      "content": [
+        {
+          "title": "nasza",
+          "accentTitle": "misja",
+          "text": [
+            "Naszą misją jest budowanie prawdziwej społeczności, która pomaga i wspiera się nawzajem w trudnych sytuacjach życiowych. Nas, „Post Angeles”, łączy chęć uczynienia świata lepszym miejscem.",
+            "Naszą misją jest niesienie bezpłatnego wsparcia i pomocy osobom znajdującym się w trudnej sytuacji życiowej, niezależnie od wieku, płci, przekonań religijnych czy narodowości. Pomagamy potrzebującym pomocy, będąc niezawodnym wsparciem oraz źródłem wdzięczności i nadziei."
+          ],
+          "imageSrc": "/images/about/about-us.jpg",
+          "imageAlt": "obraz misji"
+        },
+        {
+          "title": "strategia",
+          "accentTitle": "",
+          "text": [
+            "Centrum Wolontariatu POST ANGELES w Los Angeles w Kalifornii to inicjatywa ludzi dobrej woli z Ukrainy i USA, których misją jest zbieranie pomocy humanitarnej dla ofiar rosyjskiej inwazji na Ukrainę.",
+            "Jesteśmy oddolną organizacją non-profit 501(c)3 zajmującą się zbieraniem funduszy, gromadzeniem i dostarczaniem pomocy humanitarnej na Ukrainę drogą powietrzną i morską. Nasze centrum wolontariatu mieści się w Los Angeles, a dodatkowe centrum dostaw i centrum wolontariatu we Lwowie na Ukrainie odbiera i dystrybuuje nasze przesyłki wraz z grupą innych zaufanych organizacji charytatywnych. W zbieraniu, przeładunku, sortowaniu, załadunku i pakowaniu do 800 gotowych do wysyłki skrzynek na każdą przesyłkę zaangażowane są dziesiątki osób."
+          ],
+          "imageSrc": "/images/about/about-us.jpg",
+          "imageAlt": "obraz strategii"
+        },
+        {
+          "title": "nasz",
+          "accentTitle": "cel",
+          "text": [
+            "Centrum Wolontariatu POST ANGELES w Los Angeles w Kalifornii to inicjatywa ludzi dobrej woli z Ukrainy i USA, których misją jest zbieranie pomocy humanitarnej dla ofiar rosyjskiej inwazji na Ukrainę.",
+            "Jesteśmy oddolną organizacją non-profit 501(c)3 zajmującą się zbieraniem funduszy, gromadzeniem i dostarczaniem pomocy humanitarnej na Ukrainę drogą powietrzną i morską. Nasze centrum wolontariatu mieści się w Los Angeles, a dodatkowe centrum dostaw i centrum wolontariatu we Lwowie na Ukrainie odbiera i dystrybuuje nasze przesyłki wraz z grupą innych zaufanych organizacji charytatywnych. W zbieraniu, przeładunku, sortowaniu, załadunku i pakowaniu do 800 gotowych do wysyłki skrzynek na każdą przesyłkę zaangażowane są dziesiątki osób."
+          ],
+          "imageSrc": "/images/about/about-us.jpg",
+          "imageAlt": "obraz celu"
+        }
+      ]
+    },
+    "participant": {
+      "title": "Kwestionariusz",
+      "notice": {
+        "success": "Dane zostały wysłane pomyślnie!",
+        "fail": "Wystąpił błąd, proszę spróbować ponownie!"
+      },
+      "partners": {
+        "description": {
+          "accentTitle": "dla partnera",
+          "text": "Nasza fundacja poszukuje partnerów podzielających naszą misję i gotowych wesprzeć nasz projekt. Jeśli chcesz zaangażować się w naszą pracę, zachęcamy do wypełnienia formularza. Informacje zawarte w tym kwestionariuszu pomogą nam zidentyfikować możliwe formy i bezpośrednie procedury. Dziękujemy za zainteresowanie naszą fundacją.",
+          "img": "/images/participant/partners.jpg",
+          "alt": "Partnerzy"
+        },
+        "form": {
+          "inputFields": [
+            { "title": "Twoje imię", "placeholder": "Twoje imię", "name": "name", "type": "text" },
+            {
+              "title": "Twoje nazwisko",
+              "placeholder": "Twoje nazwisko",
+              "name": "surname",
+              "type": "text"
+            },
+            { "title": "City", "placeholder": "Wprisz tutaj", "name": "city", "type": "text" },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Telefon",
+              "placeholder": "+48 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
+              "title": "Nazwa osoby prawnej (firmy)",
+              "placeholder": "Wpisz tutaj",
+              "name": "companyName",
+              "type": "text"
+            },
+            {
+              "title": "Nummer REGON lub NIP ",
+              "placeholder": "Wpisz tutaj",
+              "name": "EDRPOU",
+              "type": "text"
+            }
+          ],
+          "waysSupport": {
+            "name": "waysSupport",
+            "title": "Jakie sposoby wsparcia jesteś gotowy rozważyć?",
+            "placeholder": "Wybierz",
+            "options": [
+              { "value": "financialSupport", "label": "Pomoc finansowa" },
+              { "value": "provisionServices", "label": "Świadczenie usług" },
+              { "value": "volunteerWork", "label": "Praca wolontariuszy" },
+              { "value": "promotionSupport", "label": "Wsparcie promocyjne" },
+              { "value": "resourceMobilization", "label": "Mobilizacja środków" },
+              { "value": "consultation", "label": "Szkolenia i doradztwo" },
+              { "value": "other", "label": "Inne" }
+            ]
+          },
+          "ourOffer": {
+            "name": "ourOffer",
+            "title": "Twoja oferta",
+            "placeholder": "Wpisz tutaj"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "Zgadzam się z regulaminem i wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności i RODO"
+          },
+          "coreMsg": "Jeżeli posiadasz odpowiednie doświadczenie i chcesz dołączyć do którejś z naszych inicjatyw, Twoja praca będzie bardzo niezbędna. U podstaw wszelkiej filantropii leżą wartości ludzkie, ponieważ najbardziej potrzebne są nie pieniądze, ale ludzie.",
+          "buttonText": "Potwierdż"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Poprawna długość pola to od 2 do 30 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "surname": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Poprawna długość pola to od 2 do 30 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "city": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Poprawna długość pola to od 2 do 30 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "email": {
+            "errorType": "Wartość powinna być w formacie 'example@mail.com'",
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Poprawna długość pola to od 2 do 256 znaków"
+          },
+          "phone": {
+            "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Maksymalna długość wynosi 13 znaków"
+          },
+          "companyName": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Poprawna długość pola to od 2 do 30 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "EDRPOU": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Minimalna długość wynosi 8 znaków"
+          },
+          "waysSupport": {
+            "errorRequired": "Pole jest wymagane"
+          },
+          "ourOffer": {
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Pole jest wymagane"
+          }
+        }
+      },
+      "volunteers": {
+        "description": {
+          "accentTitle": "dla wolontariusza",
+          "text": "Nasza fundacja pragnie zaangażowania wolontariuszy, którzy wspierają naszą misję. Jeśli podzielasz naszą misję, wartości i chcesz przejść przez nasz system, prosimy o wypełnienie tego formularza. Informacje zawarte w tym formularzu zgłoszeniowym są traktowane poufnie i pomogą nam znaleźć dla Ciebie najbardziej satysfakcjonującą pracę wolontariacką. Dziękujemy za zainteresowanie naszą fundacją.",
+          "img": "/images/participant/volunteers.jpg",
+          "alt": "Wolontariusze"
+        },
+        "form": {
+          "inputFields": [
+            { "title": "Twoje imię", "placeholder": "Twoje imię", "name": "name", "type": "text" },
+            {
+              "title": "Twoje nazwisko",
+              "placeholder": "Twoje nazwisko",
+              "name": "surname",
+              "type": "text"
+            },
+            { "title": "Miasto", "placeholder": "Wpisz tutaj", "name": "city", "type": "text" },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Telefon",
+              "placeholder": "+48 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            },
+            {
+              "title": "Twoj Telegram",
+              "placeholder": "Wpisz tutaj",
+              "name": "telegram",
+              "type": "text"
+            }
+          ],
+          "waysVolunteering": {
+            "name": "waysVolunteering",
+            "title": "What areas of volunteering are you willing to consider?",
+            "placeholder": "Select an option",
+            "options": [
+              { "value": "financialSupport", "label": "Financial support" },
+              { "value": "provisionServices", "label": "Provision services" },
+              { "value": "volunteerWork", "label": "Volunteer work" },
+              { "value": "promotionSupport", "label": "Promotion support" },
+              { "value": "resourceMobilization", "label": "Resource mobilization" },
+              { "value": "consultation", "label": "Training and consultation" },
+              { "value": "other", "label": "Other" }
+            ]
+          },
+          "volunteerCertificate": {
+            "name": "volunteerCertificate",
+            "title": "Having a volunteer certificate",
+            "options": [
+              { "name": "true", "value": "Yes", "id": 1 },
+              { "name": "false", "value": "No", "id": 2 }
+            ]
+          },
+          "carAvailability": {
+            "name": "carAvailability",
+            "title": "Do you have your own car?",
+            "options": [
+              { "name": "true", "value": "Yes", "id": 3 },
+              { "name": "false", "value": "No", "id": 4 }
+            ]
+          },
+          "reasonVolunteering": {
+            "name": "reasonVolunteering",
+            "title": "Why do you want to be a volunteer? (optional)",
+            "placeholder": "Write here"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR."
+          },
+          "descriptionPrivacyPolice": {
+            "name": "descriptionPrivacyPolice",
+            "description": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
+          },
+          "buttonText": "Submit"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Prawidłowa długość pola wynosi od 2 do 30 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "surname": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Prawidłowa długość pola wynosi od 2 do 30 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "city": {
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Prawidłowa długość pola wynosi od 2 do 30 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "email": {
+            "errorType": "Value must be of the type 'example@mail.com'",
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Prawidłowa długość pola wynosi od 2 do 256 znaków"
+          },
+          "phone": {
+            "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
+            "errorRequired": "Pole jest wymagane",
+            "errorLength": "Maximum length is 13 characters"
+          },
+          "telegram": {
+            "errorType": "Wartość zawiera nieprawidłowe znaki",
+            "errorLength": "Prawidłowa długość pola wynosi od 2 do 30 znaków"
+          },
+          "waysVolunteering": {
+            "errorRequired": "Pole jest wymagane"
+          },
+          "volunteerCertificate": {
+            "errorRequired": "Pole jest wymagane"
+          },
+          "carAvailability": {
+            "errorRequired": "Pole jest wymagane"
+          },
+          "reasonVolunteering": {
+            "errorLength": "Maksymalna długość wynosi 1000 znaków",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Pole jest wymagane"
+          },
+          "descriptionPrivacyPolice": {
+            "errorRequired": "Pole jest wymagane"
+          }
+        }
+      },
+      "veterans": {
+        "description": {
+          "title": "Dla weteranów",
+          "help": "Pomoc oferowana przez naszą organizację"
+        },
+        "faq": {
+          "button": {
+            "label": "przycisk otwarcia menu"
+          }
+        },
+        "form": {
+          "inputFields": [
+            {
+              "title": "Twoje imię",
+              "placeholder": "Twoje imię",
+              "name": "name",
+              "type": "text"
+            },
+            {
+              "title": "Twoje nazwisko",
+              "placeholder": "Twoje nazwisko",
+              "name": "surname",
+              "type": "text"
+            },
+            {
+              "title": "Miasto",
+              "placeholder": "Wprisz tutaj",
+              "name": "city",
+              "type": "text"
+            },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Telefon",
+              "placeholder": "+48 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            }
+          ],
+          "identificationDocument": {
+            "name": "identificationDocument",
+            "title": "Dokument identyfikacyjny weterana",
+            "placeholder": "Wybierz opcję",
+            "options": [
+              { "value": "warVeteran", "label": "Świadectwo Weterana Wojennego" },
+              { "value": "combatantVeteran", "label": "Świadectwo Weterana Bojowego" },
+              { "value": "warDisabled", "label": "Świadectwo Niepełnosprawności Wojennego" },
+              { "value": "warParticipant", "label": "Certyfikat Uczestnika Wojennego" },
+              {
+                "value": "actionsParticipation",
+                "label": "Zaświadczenie o udziale w Działaniach Zbrojnych"
+              },
+              { "value": "other", "label": "Inne" }
+            ]
+          },
+          "problem": {
+            "name": "problem",
+            "title": "Opisz swój problem",
+            "placeholder": "Wpisz tutaj"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "Zgadzam się z regulaminem i wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności i RODO."
+          },
+          "buttonText": "Potwierdż"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Pole jest wymagane",
+            "errorMin": "Minimalna długość wynosi 4 znaki"
+          },
+          "surname": {
+            "errorRequired": "Pole jest wymagane",
+            "errorMin": "Minimalna długość wynosi 4 znaki"
+          },
+          "city": {
+            "errorRequired": "Pole jest wymagane",
+            "errorMin": "Minimalna długość wynosi 4 znaki"
+          },
+          "email": {
+            "errorType": "Wartość powinna mieć format 'example@mail.com'",
+            "errorRequired": "Pole jest wymagane",
+            "errorMin": "Minimalna długość wynosi 4 znaki"
+          },
+          "phone": {
+            "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
+            "errorRequired": "Pole jest wymagane",
+            "errorMin": "Minimalna długość wynosi 10 znaków"
+          },
+          "identificationDocument": {
+            "errorRequired": "Pole jest wymagane"
+          },
+          "problem": {
+            "errorRequired": "Pole jest wymagane",
+            "errorMin": "Minimalna długość wynosi 10 znaków"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Pole jest wymagane"
+          }
+        }
+      }
+    }
+  }
+}

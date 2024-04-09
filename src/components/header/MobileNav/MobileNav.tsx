@@ -38,8 +38,8 @@ const MobileNav = ({ lang, buttons, headerNav, modal, logo }: MobileNavProps) =>
       <Link
         href={link.href}
         onClick={() => setOpenMobileMenu(false)}
-        className={`flex h-[60px] items-center border-b border-grey-40 font-eUkraine ${
-          pathname === link.href ? 'text-accent-primary' : ''
+        className={`flex h-[60px] items-center border-b border-grey-40 font-eUkraine duration-300 ${
+          pathname === link.href ? 'text-accent-primary' : 'focus:text-orange'
         }`}
       >
         {link.name}
@@ -81,9 +81,9 @@ const MobileNav = ({ lang, buttons, headerNav, modal, logo }: MobileNavProps) =>
             </div>
             {/* links & language */}
             <nav>
-              <ul className="flex flex-col border-t border-grey-40 font-normal uppercase text-grey-40">
+              <ul className="flex flex-col border-t border-grey-40 font-normal uppercase text-grey-40  hover:[&>*]:text-orange">
                 {mobileNavLinks}
-                <li className="flex h-[60px] items-center justify-between border-b border-grey-40 font-eUkraine">
+                <li className="flex h-[60px] items-center justify-between border-b border-grey-40 font-eUkraine duration-300">
                   {headerLanguageName.name}
                   <Dropdown headerLanguageLabel={headerLanguageLabel} lang={lang} />
                 </li>

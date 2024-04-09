@@ -17,7 +17,7 @@ export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder, cl
           {title}
           <textarea
             className={cn(
-              `resize-none rounded-2xl border border-grey-60 bg-transparent px-3.5 py-4 text-sm font-normal outline-none focus:border-accent-hover focus:text-grey-100 ${
+              `resize-none rounded-2xl border border-grey-60 bg-transparent px-3.5 py-4 text-sm font-normal outline-none text-grey-80 focus:border-accent-hover focus:text-grey-100 ${
                 fieldState.error
                   ? 'text-error placeholder:text-error'
                   : 'text-grey-60 placeholder:text-grey-60'
