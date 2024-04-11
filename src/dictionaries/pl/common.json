@@ -191,7 +191,8 @@
             "link": "/"
           }
         }
-      },
+      }
+    },
       "payments": {
         "title": "Opłata za materiały dotyczące urazów",
         "needToCollect": "Musimy zebrać 23 549,00 UAH",
@@ -704,4 +705,5 @@
       }
     }
   }
-}
+
+

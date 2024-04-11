@@ -5,16 +5,13 @@ export interface Payments {
   MonthlyTextButton: string;
   supportUsButton: string;
   otherAmountText: string;
-  otherAmountValue: number;
   supportPostAngeles: string;
   chooseYourContribution: string;
   contributionText: string;
   paymentSystemTitle: string;
-  schema: {
+  schema?: {
     otherAmount: {
       errorRequired: string;
-      errorLength?: string;
-      errorType?: string;
     };
     supportPostAngeles: {
       errorRequired: string;

@@ -12,6 +12,7 @@ export const page = async ({ params: { lang },schema}: { params: { lang: Locale 
   const { common } = await getDictionary(lang);
   const { payments} = common
   const {needToCollect, title} = common.payments
+  
   return (
     <div className="container ">
       <div className="mb-10">

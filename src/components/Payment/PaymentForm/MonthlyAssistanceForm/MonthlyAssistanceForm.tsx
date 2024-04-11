@@ -48,16 +48,15 @@ const MonthlyAssistanceForm = ({
 
   const options = [
     { value: 'UAH', label: '₴ UAH', symbol: '₴' },
-    { value: 'USD', label: '$ Доллар США', symbol: '$' },
+    { value: 'USD', label: '$ USD', symbol: '$' },
   ];
 
   const customStyles: StylesConfig = {
     control: base => ({
       ...base,
-      alignItems: 'end',
       border: 'none',
       display: 'flex',
-      justifyContent: 'end',
+      justifyContent: 'space-between',
       borderBottom: '1px solid #B1B0B0',
       borderRadius: '1px',
       paddingRight: '6px',
@@ -80,8 +79,6 @@ const MonthlyAssistanceForm = ({
       display: 'flex',
       gap: '4px',
       marginTop: '19px',
-
-      border: '#000',
       borderRadius: '16px',
       background: '#FFF',
       padding: '4px',
@@ -94,8 +91,9 @@ const MonthlyAssistanceForm = ({
       fontStyle: 'normal',
       fontWeight: '400',
       lineHeight: '160%',
-      color: state.isFocused ? '#1A48ED' : '#43444A',
       backgroundColor: state.isFocused ? '#FFF' : '#FFF',
+      color: state.isFocused ? '#1A48ED' : '#43444A',
+      cursor: 'pointer',
       '&:active': {
         backgroundColor: '#FFF',
       },
@@ -103,6 +101,7 @@ const MonthlyAssistanceForm = ({
     valueContainer: (provided, state) => ({
       ...provided,
       justifyContent: state.hasValue ? 'flex-end' : 'flex-start',
+      cursor: 'pointer',
     }),
   };
 
@@ -176,18 +175,24 @@ const MonthlyAssistanceForm = ({
           />
 
           <div className="flex flex-wrap gap-3 gap-y-[30px] xl:gap-x-8 2xl:gap-x-14 3xl:gap-x-40">
-            <Button
-              variant="white"
-              className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] hover:border-4 hover:border-accent-hover"
-            >{`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}</Button>
-            <Button
-              variant="white"
-              className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] hover:border-4  hover:border-accent-hover"
-            >{`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}</Button>
-            <Button
-              variant="white"
-              className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] hover:border-4  hover:border-accent-hover"
-            >{`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}</Button>
+          <Button
+  variant="white"
+  className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] relative hover:border-none"
+>{`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+  <span className="absolute inset-0 border-4 border-transparent hover:border-accent-primary rounded-[48px]"></span>
+</Button>
+              <Button
+                variant="white"
+                className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] relative hover:border-none"
+              >{`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+              <span className="absolute inset-0 border-4 border-transparent hover:border-accent-primary rounded-[48px]"></span>
+              </Button>
+              <Button
+                variant="white"
+                className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] relative hover:border-none"
+              >{`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+              <span className="absolute inset-0 border-4 border-transparent hover:border-accent-primary rounded-[48px]"></span>
+              </Button>
 
             <div className="relative 2xl:w-full">
               <input

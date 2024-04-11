@@ -8,7 +8,9 @@ export const paymentsForm = (translation: SchemaTypes) => {
       .positive()
       .integer()
       .required(),
+      checkbox: yup.boolean()
     });
+    
 
   return schema;
   }

@@ -379,20 +379,3 @@ body {
     background-color: theme('colors.grey.60');
   }
 }
-
-/* Payments */
- /* .button {
-  width: 100%;
-  border: 1px solid grey;
-  padding: 10px;
-  text-align: center;
-}
-
-.button:hover {
-  color: blue;
-  border-color: blue;
-}  */
-
-.button:current {
-  border-bottom: 2px solid blue;
-}

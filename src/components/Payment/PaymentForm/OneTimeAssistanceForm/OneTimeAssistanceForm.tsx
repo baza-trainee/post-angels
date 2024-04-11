@@ -47,11 +47,11 @@ const OneTimeAssistanceForm = ({
 
   const options = [
     { value: 'UAH', label: '₴ UAH', symbol: '₴' },
-    { value: 'USD', label: '$ Доллар США', symbol: '$' },
+    { value: 'USD', label: '$ USD', symbol: '$' },
   ];
 
   const customStyles: StylesConfig = {
-    control: (base) => ({
+    control: base => ({
       ...base,
       border: 'none',
       display: 'flex',
@@ -90,8 +90,9 @@ const OneTimeAssistanceForm = ({
       fontStyle: 'normal',
       fontWeight: '400',
       lineHeight: '160%',
-      color: '#43444A',
       backgroundColor: state.isFocused ? '#FFF' : '#FFF',
+      color: state.isFocused ? '#1A48ED' : '#43444A',
+      cursor: 'pointer',
       '&:active': {
         backgroundColor: '#FFF',
       },
@@ -99,6 +100,7 @@ const OneTimeAssistanceForm = ({
     valueContainer: (provided, state) => ({
       ...provided,
       justifyContent: state.hasValue ? 'flex-end' : 'flex-start',
+      cursor: 'pointer',
     }),
   };
 
@@ -174,16 +176,25 @@ const OneTimeAssistanceForm = ({
             <div className="flex flex-wrap gap-3 gap-y-[30px] xl:gap-x-8 2xl:gap-x-14 3xl:gap-x-40">
               <Button
                 variant="white"
-                className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] hover:border-4 hover:border-accent-hover"
-              >{`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}</Button>
+                className="relative w-[150px] hover:border-none sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px]"
+              >
+                {`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+                <span className="absolute inset-0 rounded-[48px] border-4 border-transparent hover:border-accent-primary"></span>
+              </Button>
               <Button
                 variant="white"
-                className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] hover:border-4  hover:border-accent-hover"
-              >{`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}</Button>
+                className="relative w-[150px] hover:border-none sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px]"
+              >
+                {`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+                <span className="absolute inset-0 rounded-[48px] border-4 border-transparent hover:border-accent-primary"></span>
+              </Button>
               <Button
                 variant="white"
-                className="w-[150px] sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] hover:border-4  hover:border-accent-hover"
-              >{`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}</Button>
+                className="relative w-[150px] hover:border-none sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px]"
+              >
+                {`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+                <span className="absolute inset-0 rounded-[48px] border-4 border-transparent hover:border-accent-primary"></span>
+              </Button>
 
               <div className="relative 2xl:w-full">
                 <input
@@ -195,7 +206,7 @@ const OneTimeAssistanceForm = ({
                   placeholder={payments.otherAmountText}
                   onChange={handleDonationAmountChange}
                   value={donationAmount}
-                  className=" h-[54px] w-[150px] gap-4 hover:border-4 rounded-[48px] border border-accent-primary bg-grey-20 text-center sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[581px] 2xl:w-[626px] 3xl:w-[850px]  hover:border-accent-hover"
+                  className=" h-[54px] w-[150px] gap-4 rounded-[48px] border border-accent-primary bg-grey-20 text-center hover:border-4 hover:border-accent-hover sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[581px] 2xl:w-[626px]  3xl:w-[850px]"
                 />
                 {donationAmount && selectedCurrency && (
                   <span className="absolute h-[26px] w-3 pr-2 xs:bottom-[13px] xs:right-[26px] sm:bottom-[13px] sm:right-[66px] md:bottom-[13px] md:right-[126px] lg:bottom-3 lg:right-[184px] xl:bottom-[13px] xl:right-[242px] 2xl:bottom-3 2xl:right-[268px] 3xl:right-[382px]">
@@ -205,19 +216,19 @@ const OneTimeAssistanceForm = ({
               </div>
             </div>
             <hr />
-            <div className="w-full  lg:w-full">
-                <Checkbox
-                  name="checkbox"
-                  description={payments.supportPostAngeles}
-                  variantFontWeight="normal"
-                  className="mb-[30px]"
-                  onChange={handleCheckboxChange}
-                />
+            <div className="w-full lg:block lg:w-full">
+              <Checkbox
+                name="checkbox"
+                description={payments.supportPostAngeles}
+                variantFontWeight="normal"
+                className="mb-[30px]"
+                onChange={handleCheckboxChange}
+              />
               <div className="mb-[40px]">
                 <input
                   type="number"
                   placeholder={isChecked && selectedCurrency ? selectedCurrency?.label : ''}
-                  className="h-[54px] w-[320px] gap-4 rounded-[48px] border hover:border-4 border-accent-primary bg-grey-20 text-center sm:w-[440px] md:w-[728px] lg:w-full  xl:w-[581px] 2xl:w-[626px] 3xl:w-[850px]  hover:border-accent-hover"
+                  className="h-[54px] w-[320px] gap-4 rounded-[48px] border border-accent-primary bg-grey-20 text-center hover:border-4 hover:border-accent-hover sm:w-[440px] md:w-[728px]  lg:w-full xl:w-[581px] 2xl:w-[626px]  3xl:w-[850px]"
                   onChange={handleInputChange}
                   onClick={openModal}
                   value={inputValue}
@@ -246,11 +257,11 @@ const OneTimeAssistanceForm = ({
                 </Title>
               </div>
 
-                <BankIcons />
+              <BankIcons />
 
-                <Button type="submit" className="w-full p-[10px] " onSubmit={onSubmit}>
-                  {payments.supportUsButton}
-                </Button>
+              <Button type="submit" className="w-full p-[10px] " onSubmit={onSubmit}>
+                {payments.supportUsButton}
+              </Button>
             </div>
           </div>
         </form>
