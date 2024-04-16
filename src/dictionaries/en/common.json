@@ -685,6 +685,11 @@
           }
         }
       }
+    },
+    "archive": {
+      "title": "Archive of our",
+      "title1": "projects",
+      "noProjects": "There are no projects in the archive"
     }
   }
 }

@@ -23,6 +23,15 @@ body {
   font-weight: 400;
 }
 
+.archivedProjects > .swiper-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  @media screen and (min-width: 768px) {
+    grid-template-rows: repeat(2, 1fr) !important ;
+    grid-row-gap: 50px;
+  }
+}
+
 /* Hero Slider */
 
 .swiper-grid-column > .swiper-wrapper {

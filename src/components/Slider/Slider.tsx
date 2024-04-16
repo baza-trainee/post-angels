@@ -1,18 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade, Navigation, Grid } from 'swiper/modules';
 import classNames from 'classnames';
+import { useEffect, useState } from 'react';
+import { Autoplay, EffectFade, Grid, Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SliderProps } from './Sliper.props';
 
+import useBreakpoints from '@/utils/useBreakpoints';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import 'swiper/css/grid';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const Slider: React.FC<SliderProps> = ({
   id,
@@ -24,6 +25,7 @@ export const Slider: React.FC<SliderProps> = ({
   isLoop = false,
   isAutoplay = false,
   isFinished = false,
+  isArchive = false,
   isGrid = 1,
   isPagination = false,
   isNumberPagination = false,
@@ -31,7 +33,6 @@ export const Slider: React.FC<SliderProps> = ({
   slidesPerViewDef = 1,
   slidesPerView,
   className,
-
   lang,
   navigationBreakpoints = {
     isMobile: false,
@@ -64,6 +65,9 @@ export const Slider: React.FC<SliderProps> = ({
     }
   }, [isFirstRender, navigationBreakpoints, id]);
 
+  const isDeviceLess768px = useBreakpoints().less768px;
+  const archiveProjectsGridRows = isArchive && isDeviceLess768px ? 1 : isGrid;
+
   return isFirstRender ? null : (
     <Swiper
       id={id}
@@ -80,7 +84,7 @@ export const Slider: React.FC<SliderProps> = ({
       slidesPerView={slidesPerViewDef}
       style={{ zIndex: 'auto' }}
       grid={{
-        rows: isGrid,
+        rows: archiveProjectsGridRows,
         fill: 'column',
       }}
       breakpoints={{
