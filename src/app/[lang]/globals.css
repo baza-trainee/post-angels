@@ -80,6 +80,8 @@ body {
 
 .swiper.finishedProjects .swiper-button-prev.swiper-button-disabled,
 .swiper.finishedProjects .swiper-button-next.swiper-button-disabled,
+.swiper.archivedProjects .swiper-button-prev.swiper-button-disabled,
+.swiper.archivedProjects .swiper-button-next.swiper-button-disabled,
 .swiper.projectSlider .swiper-button-prev.swiper-button-disabled,
 .swiper.projectSlider .swiper-button-next.swiper-button-disabled,
 .swiper.supportSlider .swiper-button-prev.swiper-button-disabled,
@@ -111,12 +113,17 @@ body {
   .swiper.finishedProjects {
     padding-top: 120px;
   }
+  .swiper.archivedProjects {
+    padding-top: 120px;
+  }
 }
 
 .swiper.projectSlider .swiper-button-prev::after,
 .swiper.projectSlider .swiper-button-next::after,
 .swiper.finishedProjects .swiper-button-prev::after,
 .swiper.finishedProjects .swiper-button-next::after,
+.swiper.archivedProjects .swiper-button-prev::after,
+.swiper.archivedProjects .swiper-button-next::after,
 .swiper.supportSlider .swiper-button-prev::after,
 .swiper.supportSlider .swiper-button-next::after,
 .swiper.veteransTechSlider .swiper-button-prev::after,
@@ -134,6 +141,8 @@ body {
 .swiper.projectSlider .swiper-button-next,
 .swiper.finishedProjects .swiper-button-prev,
 .swiper.finishedProjects .swiper-button-next,
+.swiper.archivedProjects .swiper-button-prev,
+.swiper.archivedProjects .swiper-button-next,
 .swiper.supportSlider .swiper-button-prev,
 .swiper.supportSlider .swiper-button-next,
 .swiper.veteransTechSlider .swiper-button-prev,
@@ -150,6 +159,8 @@ body {
 .swiper.projectSlider .swiper-button-next:hover,
 .swiper.finishedProjects .swiper-button-prev:hover,
 .swiper.finishedProjects .swiper-button-next:hover,
+.swiper.archivedProjects .swiper-button-prev:hover,
+.swiper.archivedProjects .swiper-button-next:hover,
 .swiper.supportSlider .swiper-button-prev:hover,
 .swiper.supportSlider .swiper-button-next:hover,
 .swiper.veteransTechSlider .swiper-button-prev:hover,
@@ -167,13 +178,21 @@ body {
   top: 56px;
   left: auto !important;
 }
+.swiper.archivedProjects .swiper-button-prev {
+  right: 80px !important;
+  top: 56px;
+  left: auto !important;
+}
 
 .swiper.projectSlider .swiper-button-next {
   right: 0px;
   top: 26px;
 }
-
 .swiper.finishedProjects .swiper-button-next {
+  right: 0px;
+  top: 56px;
+}
+.swiper.archivedProjects .swiper-button-next {
   right: 0px;
   top: 56px;
 }
@@ -183,7 +202,6 @@ body {
   bottom: 0;
   left: 0 !important;
 }
-
 .swiper.supportSlider .swiper-button-next {
   right: 0;
   top: initial;

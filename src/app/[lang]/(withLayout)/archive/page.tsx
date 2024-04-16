@@ -13,22 +13,18 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   return (
     <section className="pt-[100px] xl:pt-[230px]">
       <div className="container relative">
-        <Title tag="h1" variantSize="h2" className="mb-[30px] w-[320px] xl:mb-[50px]">
+        <Title tag="h1" variantSize="h2">
           {archive.title}
           <br />
           <span>{archive.title1}</span>
         </Title>
-        {archiveData.length !== 0 ? (
+        {archiveData.length !== 0 && (
           <ArchiveProjectsSlider
             projectsData={archiveData}
             projects={projects}
             isFinished
             lang={lang}
           />
-        ) : (
-          <Title tag="h2" variantSize="h2">
-            {archive.noProjects}
-          </Title>
         )}
       </div>
     </section>
