@@ -182,6 +182,9 @@ body {
   right: 80px !important;
   top: 56px;
   left: auto !important;
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
 }
 
 .swiper.projectSlider .swiper-button-next {
@@ -195,6 +198,9 @@ body {
 .swiper.archivedProjects .swiper-button-next {
   right: 0px;
   top: 56px;
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
 }
 .swiper.supportSlider .swiper-button-prev {
   right: auto !important;
