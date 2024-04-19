@@ -20,6 +20,7 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
         </Title>
         {archiveData.length !== 0 && (
           <ArchiveProjectsSlider
+            className="mt-10 xl:mt-0"
             projectsData={archiveData}
             projects={projects}
             isFinished

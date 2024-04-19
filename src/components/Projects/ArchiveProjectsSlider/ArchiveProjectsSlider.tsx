@@ -13,6 +13,10 @@ export const ArchiveProjectsSlider = ({
 }: ProjectSliderProps) => {
   const wrapSliderClasses = classNames('h-auto mb-[50px]', className);
 
+  projectsData.forEach(obj => {
+    obj.attributes.status = 'completed';
+  });
+
   return (
     <div className={wrapSliderClasses}>
       <Slider
