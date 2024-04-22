@@ -32,7 +32,7 @@ const Modal = ({ modalClose, children, modal, className, scroll = false }: Modal
   return (
     <ClientOnlyPortal selector="#modal">
       <div
-        className="fixed inset-0 flex items-center justify-center bg-backdrop p-10"
+        className="fixed inset-0 z-[99] flex items-center justify-center bg-backdrop p-10"
         onClick={handleBackdropClick}
       >
         <div
