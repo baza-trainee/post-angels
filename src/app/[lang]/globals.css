@@ -74,7 +74,9 @@ body {
 .swiper.projectSlider .swiper-button-prev.swiper-button-disabled,
 .swiper.projectSlider .swiper-button-next.swiper-button-disabled,
 .swiper.supportSlider .swiper-button-prev.swiper-button-disabled,
-.swiper.supportSlider .swiper-button-next.swiper-button-disabled {
+.swiper.supportSlider .swiper-button-next.swiper-button-disabled,
+.swiper.veteransTechSlider .swiper-button-prev.swiper-button-disabled,
+.swiper.veteransTechSlider .swiper-button-next.swiper-button-disabled {
   background-color: theme('colors.grey.60');
 }
 
@@ -107,7 +109,9 @@ body {
 .swiper.finishedProjects .swiper-button-prev::after,
 .swiper.finishedProjects .swiper-button-next::after,
 .swiper.supportSlider .swiper-button-prev::after,
-.swiper.supportSlider .swiper-button-next::after {
+.swiper.supportSlider .swiper-button-next::after,
+.swiper.veteransTechSlider .swiper-button-prev::after,
+.swiper.veteransTechSlider .swiper-button-next::after {
   height: 30px !important;
   width: 30px !important;
   background-position: center;
@@ -122,7 +126,9 @@ body {
 .swiper.finishedProjects .swiper-button-prev,
 .swiper.finishedProjects .swiper-button-next,
 .swiper.supportSlider .swiper-button-prev,
-.swiper.supportSlider .swiper-button-next {
+.swiper.supportSlider .swiper-button-next,
+.swiper.veteransTechSlider .swiper-button-prev,
+.swiper.veteransTechSlider .swiper-button-next {
   height: 50px !important;
   width: 50px !important;
   background-color: #0d36c9;
@@ -136,7 +142,9 @@ body {
 .swiper.finishedProjects .swiper-button-prev:hover,
 .swiper.finishedProjects .swiper-button-next:hover,
 .swiper.supportSlider .swiper-button-prev:hover,
-.swiper.supportSlider .swiper-button-next:hover {
+.swiper.supportSlider .swiper-button-next:hover,
+.swiper.veteransTechSlider .swiper-button-prev:hover,
+.swiper.veteransTechSlider .swiper-button-next:hover {
   background-color: #1a48ed;
 }
 

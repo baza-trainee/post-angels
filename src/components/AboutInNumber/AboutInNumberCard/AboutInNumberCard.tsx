@@ -1,6 +1,6 @@
-import { AboutProps, AboutNumberProps } from '@/sections/AboutInNumbers/AboutInNumbers.props';
-import dynamic from 'next/dynamic';
 import { Paragraph } from '@/components/typography/Paragraph';
+import { AboutNumberProps, AboutProps } from '@/sections/AboutInNumbers/AboutInNumbers.props';
+import dynamic from 'next/dynamic';
 
 export const AboutInNumberCard = async ({
   data,
@@ -33,7 +33,7 @@ export const AboutInNumberCard = async ({
           className="!font-eUkraineHead! mb-4 xl:!text-[32px]"
           variantFontWeight="medium"
         >
-          {numberData.measure} {data.measure.toUpperCase()}
+          {numberData.quantity} {data.measure.toUpperCase()}
         </Paragraph>
         <Paragraph variant="dark_grey">{data.title}</Paragraph>
       </div>

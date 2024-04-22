@@ -123,7 +123,7 @@
           "text": "The development of infrastructure and innovation is a prerequisite for economic progress. Technological progress ensures the resolution of environmental and economic issues and can influence social factors.",
           "img": "/images/whatwedo/what-do-3.jpg",
           "alt": "",
-          "linkTitle": "Детальніше",
+          "linkTitle": "Learn more",
           "href": ""
         },
         {
@@ -193,7 +193,6 @@
         "link": "/en/archive"
       }
     },
-
     "ourTeam": {
       "title1": "Our",
       "title2": "Team"
@@ -293,7 +292,7 @@
           "title": "our",
           "accentTitle": "mission",
           "text": [
-            "Our mission is to build a real community that helps and supports each other in difficult life situations. We, 'Post Angels', are united by the desire to make the world a better place.",
+            "Our mission is to build a real community that helps and supports each other in difficult life situations. We, 'Post Angeles', are united by the desire to make the world a better place.",
             "Our mission is to provide free support and help to people who are in difficult situations, regardless of their age, gender, religious beliefs or nationality. We help those who need help, being a reliable support and a source of gratitude and hope."
           ],
           "imageSrc": "/images/about/about-us.jpg",
@@ -398,36 +397,43 @@
         "schema": {
           "name": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "surname": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "city": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "email": {
             "errorType": "Value should be in the format 'example@mail.com'",
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 256 characters"
           },
           "phone": {
             "errorType": "The value must start with '+' and contain only numbers",
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 10 characters"
+            "errorLength": "Maximum length is 13 characters"
           },
           "companyName": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
           },
           "EDRPOU": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 8 characters"
+            "errorLength": "Minimum length is 8 characters"
           },
           "waysSupport": {
             "errorRequired": "Field is required"
+          },
+          "ourOffer": {
+            "errorType": "The value contains invalid characters"
           },
           "descriptionTermsAgreement": {
             "errorRequired": "Field is required"
@@ -518,6 +524,127 @@
         "schema": {
           "name": {
             "errorRequired": "Field is required",
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
+          },
+          "surname": {
+            "errorRequired": "Field is required",
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
+          },
+          "city": {
+            "errorRequired": "Field is required",
+            "errorLength": "The correct field length is from 2 to 30 characters",
+            "errorType": "The value contains invalid characters"
+          },
+          "email": {
+            "errorType": "Value must be of the type 'example@mail.com'",
+            "errorRequired": "Field is required",
+            "errorLength": "The correct field length is from 2 to 256 characters"
+          },
+          "phone": {
+            "errorType": "The value must start with '+' and contain only numbers",
+            "errorRequired": "Field is required",
+            "errorLength": "Maximum length is 13 characters"
+          },
+          "telegram": {
+            "errorType": "The value contains invalid characters",
+            "errorLength": "The correct field length is from 2 to 30 characters"
+          },
+          "waysVolunteering": {
+            "errorRequired": "Field is required"
+          },
+          "volunteerCertificate": {
+            "errorRequired": "Field is required"
+          },
+          "carAvailability": {
+            "errorRequired": "Field is required"
+          },
+          "reasonVolunteering": {
+            "errorLength": "Maximum length is 1000 characters",
+            "errorType": "The value contains invalid characters"
+          },
+          "descriptionTermsAgreement": {
+            "errorRequired": "Field is required"
+          },
+          "descriptionPrivacyPolice": {
+            "errorRequired": "Field is required"
+          }
+        }
+      },
+      "veterans": {
+        "description": {
+          "title": "For Veterans",
+          "help": "Help offered by our organization"
+        },
+        "faq": {
+          "button": {
+            "label": "open menu button"
+          }
+        },
+        "form": {
+          "inputFields": [
+            {
+              "title": "Your name",
+              "placeholder": "Your name",
+              "name": "name",
+              "type": "text"
+            },
+            {
+              "title": "Your surname",
+              "placeholder": "Your surname",
+              "name": "surname",
+              "type": "text"
+            },
+            {
+              "title": "City",
+              "placeholder": "Enter here",
+              "name": "city",
+              "type": "text"
+            },
+            {
+              "title": "Email",
+              "placeholder": "example@mail.com",
+              "name": "email",
+              "type": "email"
+            },
+            {
+              "title": "Phone",
+              "placeholder": "+38 (---) --- -- --",
+              "name": "phone",
+              "type": "text"
+            }
+          ],
+          "identificationDocument": {
+            "name": "identificationDocument",
+            "title": "Veteran's identification document",
+            "placeholder": "Select an option",
+            "options": [
+              { "value": "warVeteran", "label": "Certificate of War Veteran" },
+              { "value": "combatantVeteran", "label": "Combatant Veteran Certificate" },
+              { "value": "warDisabled", "label": "War Disabled Certificate" },
+              { "value": "warParticipant", "label": "War Participant Certificate" },
+              {
+                "value": "actionsParticipation",
+                "label": "Certificate of Participation in Military Actions"
+              },
+              { "value": "other", "label": "Other" }
+            ]
+          },
+          "problem": {
+            "name": "problem",
+            "title": "Please describe your problem",
+            "placeholder": "Enter your answer"
+          },
+          "descriptionTermsAgreement": {
+            "name": "descriptionTermsAgreement",
+            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR."
+          },
+          "buttonText": "Submit"
+        },
+        "schema": {
+          "name": {
+            "errorRequired": "Field is required",
             "errorMin": "Minimum length is 4 characters"
           },
           "surname": {
@@ -529,7 +656,7 @@
             "errorMin": "Minimum length is 4 characters"
           },
           "email": {
-            "errorType": "Value must be of the type 'example@mail.com'",
+            "errorType": "Value should be in the format 'example@mail.com'",
             "errorRequired": "Field is required",
             "errorMin": "Minimum length is 4 characters"
           },
@@ -538,23 +665,14 @@
             "errorRequired": "Field is required",
             "errorMin": "Minimum length is 10 characters"
           },
-          "telegram": {
+          "identificationDocument": {
+            "errorRequired": "Field is required"
+          },
+          "problem": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
-          },
-          "waysVolunteering": {
-            "errorRequired": "Field is required"
-          },
-          "volunteerCertificate": {
-            "errorRequired": "Field is required"
-          },
-          "carAvailability": {
-            "errorRequired": "Field is required"
+            "errorMin": "Minimum length is 10 characters"
           },
           "descriptionTermsAgreement": {
-            "errorRequired": "Field is required"
-          },
-          "descriptionPrivacyPolice": {
             "errorRequired": "Field is required"
           }
         }
