@@ -1,7 +1,8 @@
-import { AboutInNumbersProps } from './AboutInNumbers.props';
-import { Title } from '@/components/typography/Title';
+import { fetchAboutInNumbers } from '@/api/fetchAboutInNumbers';
 import { AboutInNumberCard } from '@/components/AboutInNumber/AboutInNumberCard';
-import { AboutNumberProps } from './AboutInNumbers.props';
+import { Title } from '@/components/typography/Title';
+import { Locale } from '@/i18n.config';
+import { AboutInNumbersProps, AboutNumberProps } from './AboutInNumbers.props';
 
 const getApiData = async () => {
   const data = [
@@ -13,11 +14,18 @@ const getApiData = async () => {
   return data;
 };
 
-export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) => {
-  const AboutInNumberApiData = await getApiData();
+export const AboutInNumbers = async ({
+  data,
+  lang,
+}: {
+  data: AboutInNumbersProps;
+  lang: Locale;
+}) => {
+  const aboutInNumbersData = await fetchAboutInNumbers(lang);
 
-  const gerCardApiData = (AboutInNumberApiData: AboutNumberProps[], name: string) => {
-    const matchingData = AboutInNumberApiData.filter(item => item.name === name);
+  const getCardApiData = (aboutInNumbersData: AboutNumberProps[], name: string) => {
+    const matchingData = aboutInNumbersData.filter(item => item.name === name);
+
     return matchingData[0];
   };
 
@@ -43,7 +51,7 @@ export const AboutInNumbers = async ({ data }: { data: AboutInNumbersProps }) =>
                 <AboutInNumberCard
                   key={el.name}
                   data={el}
-                  numberData={gerCardApiData(AboutInNumberApiData, el.name)}
+                  numberData={getCardApiData(aboutInNumbersData, el.name)}
                   ind={ind}
                 />
               );

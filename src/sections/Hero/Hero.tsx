@@ -1,11 +1,11 @@
-import { Title } from '@/components/typography/Title';
-import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
+import { Paragraph } from '@/components/typography/Paragraph';
+import { Title } from '@/components/typography/Title';
 
 import { HeroSlider } from '@/components/Hero/HeroSlider';
 
-import { HeroProps } from './Hero.props';
 import { Locale } from '@/i18n.config';
+import { HeroProps } from './Hero.props';
 
 import { fetchHero } from '@/api/fetchHero';
 
