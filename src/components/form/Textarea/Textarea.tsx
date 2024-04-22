@@ -13,7 +13,7 @@ export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder, cl
       name={name}
       control={control}
       render={({ field, fieldState }) => (
-        <label className="relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80">
+        <label className="relative flex flex-col gap-2 text-base font-eUkraine font-medium leading-[160%] text-grey-80">
           {title}
           <textarea
             className={cn(
@@ -28,7 +28,7 @@ export const Textarea: React.FC<TextareaProps> = ({ name, title, placeholder, cl
             {...field}
           />
           {fieldState.error && (
-            <p className="absolute bottom-[-26px] text-[13px] font-normal text-error">
+            <p className="absolute bottom-[-26px] text-[13px] font-eUkraine font-normal text-error">
               {fieldState.error.message}
             </p>
           )}

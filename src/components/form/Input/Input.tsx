@@ -15,7 +15,7 @@ export const Input: React.FC<InputProps> = ({ name, title, type, placeholder, cl
       render={({ field, fieldState }) => (
         <label
           className={cn(
-            'relative flex flex-col gap-2 text-base font-medium leading-[160%] text-grey-80',
+            'relative flex flex-col gap-2 text-base font-eUkraine font-medium leading-[160%] text-grey-80',
             className
           )}
         >
@@ -31,7 +31,7 @@ export const Input: React.FC<InputProps> = ({ name, title, type, placeholder, cl
             {...field}
           />
           {fieldState.error && (
-            <p className="absolute bottom-[-26px] text-[13px] font-normal text-error">
+            <p className="absolute bottom-[-26px] text-[13px] font-eUkraine font-normal text-error">
               {fieldState.error.message}
             </p>
           )}

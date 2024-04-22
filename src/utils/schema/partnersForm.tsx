@@ -21,19 +21,19 @@ export const partnersForm = (translation: SchemaTypes) => {
       .required(name.errorRequired)
       .min(2, name.errorLength)
       .max(30, name.errorLength)
-      .matches(/^[^ёы\d.,!”№;%?*]*$/, name.errorType),
+      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, name.errorType),
     surname: yup
       .string()
       .required(surname.errorRequired)
       .min(2, surname.errorLength)
       .max(30, surname.errorLength)
-      .matches(/^[^ёы\d.,!”№;%?*]*$/, surname.errorType),
+      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, surname.errorType),
     city: yup
       .string()
       .required(city.errorRequired)
       .min(2, city.errorLength)
       .max(30, city.errorLength)
-      .matches(/^[^ёы\d.,!”№;%?*]*$/, city.errorType),
+      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, city.errorType),
     email: yup
       .string()
       .email(email.errorType)
@@ -51,7 +51,7 @@ export const partnersForm = (translation: SchemaTypes) => {
       .required(companyName.errorRequired)
       .min(2, companyName.errorLength)
       .max(30, companyName.errorLength)
-      .matches(/^[^ёы\d.,!”№;%?*]*$/, companyName.errorType),
+      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, companyName.errorType),
     EDRPOU: yup
       .string()
       .required(EDRPOU.errorRequired)
