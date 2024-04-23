@@ -1,6 +1,8 @@
 export interface Payments {
   title: string;
   needToCollect: string;
+  sum: string;
+  currency: string;
   OneTimeTextButton: string;
   MonthlyTextButton: string;
   supportUsButton: string;
@@ -26,7 +28,6 @@ export interface Payments {
   };
 }
 
-
 export interface SchemaTypes {
   otherAmount: {
     errorRequired: string;
@@ -34,4 +35,3 @@ export interface SchemaTypes {
     errorType?: string;
   };
 }
-

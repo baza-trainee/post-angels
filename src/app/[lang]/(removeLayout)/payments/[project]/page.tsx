@@ -7,34 +7,26 @@ import { getDictionary } from '@/lib/dictionary';
 import FooterPayments from '@/components/Payment/Footer/FooterPayments';
 import PageContent from '@/components/Payment/PageContent/PageContent';
 import { SchemaTypes } from '@/components/Payment/Payments.props';
+import { fetchOneProject } from '@/api/fetchOneProject';
+import { PageMain } from '@/components/Payment/PageMain/PageMain';
 
-export const page = async ({ params: { lang },schema}: { params: { lang: Locale }, schema:SchemaTypes}) => {
+export const page = async (
+  { params }: { params: { project: string; lang: Locale } },
+  schema: SchemaTypes
+) => {
+  const { project, lang } = params;
+
   const { common } = await getDictionary(lang);
-  const { payments} = common
-  const {needToCollect, title} = common.payments
-  
-  return (
-    <div className="container ">
-      <div className="mb-10">
-      <div className="mb-5 flex">
-  <div className='md:my-auto md:flex xs:hidden sm:hidden mt-[40px] xl:mt-[50px] lg:mt-[50px]'>
-    <Logo variantSize='big' type='dark' logo={{
-      label: '',
-      href: '/'
-    }} />
-  </div>
+  const { payments } = common;
+  const projectData = await fetchOneProject(lang, project);
+  const { projects } = projectData;
 
-  <div className='md:ml-[100px] mt-[40px] ml-0 xl:ml-[120px] lg:mt-[50px] xl:mt-[50px] 2xl:ml-[250px] 3xl:ml-[500px]'>
-      <Title variantSize="h4" className='break-words'>{title}</Title>
-      <Paragraph variant="orange">{needToCollect}</Paragraph>
-  </div>
-</div>
-      </div>
-  <PageContent payments={payments} schema={schema}/>
-      <FooterPayments />
+  return (
+    <div className="container">
+      <PageMain projectDataInfo={projects.attributes} lang={lang} />
+      <PageContent payments={payments} schema={schema} />
     </div>
   );
 };
 
 export default page;
-

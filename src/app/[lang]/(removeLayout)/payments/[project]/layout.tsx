@@ -1,7 +1,6 @@
-import { Locale, i18n } from '@/i18n.config';
+import { Locale } from '@/i18n.config';
 
 import { getDictionary } from '@/lib/dictionary';
-import { Footer } from '@/layout/Footer';
 import { PaymentHeader } from '../../../../../components/Payment/Header/PaymentHeader';
 import FooterPayments from '@/components/Payment/Footer/FooterPayments';
 
@@ -18,6 +17,7 @@ async function PaymentsLayout({
     <>
       <PaymentHeader data={header} lang={lang} logo={logo} modal={modal} />
       <main className=" flex-grow ">{children}</main>
+      <FooterPayments /> 
     </>
   );
 }

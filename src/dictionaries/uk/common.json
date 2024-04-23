@@ -196,7 +196,9 @@
     },
     "payments": {
       "title": "Збір на травматологічні матеріали",
-      "needToCollect": "Залишилось зібрати 23 549.00 грн.",
+      "needToCollect": "Залишилось зібрати",
+      "sum": "23 549.00",
+      "currency": "грн",
       "OneTimeTextButton": "ОДНОРАЗОВА ДОПОМОГА",
       "MonthlyTextButton": "ЩОМІСЯЧНА ДОПОМОГА",
       "chooseYourContribution": "Оберіть свій внесок",
@@ -206,11 +208,11 @@
       "paymentSystemTitle": "Оплатіть за допомогою платіжної системи",
       "supportUsButton": "Підтримайте нас",
       "modal": {
-        "button":{
-          "label" : "кнопка закриття модального вікна"
+        "button": {
+          "label": "кнопка закриття модального вікна"
         }
       }
-      },
+    },
     "cooperation": {
       "cooperationSection": {
         "title": "Бажаєте з нами",
