@@ -69,6 +69,11 @@ const OneTimeAssistanceForm = ({
       outline: 'none',
       backgroundColor: 'transparent',
     }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      cursor: 'pointer',
+    }),
+
     indicatorSeparator: provided => ({
       ...provided,
       display: 'none',
@@ -154,7 +159,7 @@ const OneTimeAssistanceForm = ({
   return (
     <div className={className}>
       <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full">
           <div className="flex flex-wrap gap-4  xl:flex-row">
             <Controller
               name="currency"
@@ -173,30 +178,27 @@ const OneTimeAssistanceForm = ({
               )}
             />
 
-            <div className="flex flex-wrap gap-3 gap-y-[30px] xl:gap-x-8 2xl:gap-x-14 3xl:gap-x-40">
+            <div className="flex w-full flex-wrap gap-3  gap-y-[30px] xl:justify-between">
               <Button
                 variant="white"
-                className="relative w-[150px] hover:border-none sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px]"
+                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
               >
                 {`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-                <span className="absolute inset-0 rounded-[48px] border-4 border-transparent hover:border-accent-primary"></span>
               </Button>
               <Button
                 variant="white"
-                className="relative w-[150px] hover:border-none sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px]"
+                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
               >
                 {`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-                <span className="absolute inset-0 rounded-[48px] border-4 border-transparent hover:border-accent-primary"></span>
               </Button>
               <Button
                 variant="white"
-                className="relative w-[150px] hover:border-none sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px]"
+                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
               >
                 {`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-                <span className="absolute inset-0 rounded-[48px] border-4 border-transparent hover:border-accent-primary"></span>
               </Button>
 
-              <div className="relative 2xl:w-full">
+              <div className="relative xl:w-full">
                 <input
                   {...register('otherAmount', {
                     required: false,
@@ -206,13 +208,9 @@ const OneTimeAssistanceForm = ({
                   placeholder={payments.otherAmountText}
                   onChange={handleDonationAmountChange}
                   value={donationAmount}
-                  className=" h-[54px] w-[150px] gap-4 rounded-[48px] border border-accent-primary bg-grey-20 text-center hover:border-4 hover:border-accent-hover sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[581px] 2xl:w-[626px]  3xl:w-[850px]"
+                  className=" h-[54px] w-[150px] gap-4 rounded-[48px]  bg-grey-20 text-center  ring-1 ring-inset ring-accent-primary   ring-offset-0 duration-300  hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full "
                 />
-                {donationAmount && selectedCurrency && (
-                  <span className="absolute h-[26px] w-3 pr-2 xs:bottom-[13px] xs:right-[26px] sm:bottom-[13px] sm:right-[66px] md:bottom-[13px] md:right-[126px] lg:bottom-3 lg:right-[184px] xl:bottom-[13px] xl:right-[242px] 2xl:bottom-3 2xl:right-[268px] 3xl:right-[382px]">
-                    {selectedCurrency.symbol}
-                  </span>
-                )}
+                {donationAmount && selectedCurrency && <span>{selectedCurrency.symbol}</span>}
               </div>
             </div>
             <hr />
@@ -228,7 +226,7 @@ const OneTimeAssistanceForm = ({
                 <input
                   type="number"
                   placeholder={isChecked && selectedCurrency ? selectedCurrency?.label : ''}
-                  className="h-[54px] w-[320px] gap-4 rounded-[48px] border border-accent-primary bg-grey-20 text-center hover:border-4 hover:border-accent-hover sm:w-[440px] md:w-[728px]  lg:w-full xl:w-[581px] 2xl:w-[626px]  3xl:w-[850px]"
+                  className="h-[54px] w-[320px] gap-4 rounded-[48px]  bg-grey-20 text-center ring-1   ring-inset ring-accent-primary  ring-offset-0 duration-300  hover:ring-4  sm:w-[440px] md:w-[728px]  lg:w-full  xl:w-full"
                   onChange={handleInputChange}
                   onClick={openModal}
                   value={inputValue}

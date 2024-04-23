@@ -31,8 +31,8 @@ export const PageMain = async ({
           </div>
 
           <div className="ml-0 mt-[40px] md:ml-[100px] lg:mt-[50px] xl:ml-[120px] xl:mt-[50px] 2xl:ml-[250px] 3xl:ml-[500px]">
-            <Title variantSize="h4" className="break-words xs:text-center sm:text-start">
-              {projectDataInfo.title}
+            <Title variantSize="h4" className="mb-5 break-words xs:text-center sm:text-start">
+              {projectDataInfo?.title}
             </Title>
             <div className="flex flex-col xs:text-center sm:flex-row">
               <Paragraph variant="orange" className="sm:mr-[4px]">
@@ -40,7 +40,7 @@ export const PageMain = async ({
               </Paragraph>
               <div className="flex xs:justify-center">
                 <Paragraph variant="orange" className="xs:mr-[4px]">
-                  {projectDataInfo.all - projectDataInfo.collected}
+                  {projectDataInfo?.all - projectDataInfo?.collected}
                 </Paragraph>
                 <Paragraph variant="orange">{payments.currency}</Paragraph>
               </div>

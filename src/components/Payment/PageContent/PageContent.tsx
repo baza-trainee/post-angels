@@ -20,7 +20,7 @@ const PageContent = ({ payments, schema }: { payments: Payments; schema: SchemaT
       schema={schema}
     />
   );
-  const [activeButton, setActiveButton] = useState('');
+  const [activeButton, setActiveButton] = useState('OneTime');
 
   const handleClick = (componentName: string) => {
     if (less1280px) {
@@ -28,7 +28,7 @@ const PageContent = ({ payments, schema }: { payments: Payments; schema: SchemaT
         setComponent(
           <OneTimeComponent
             className={
-              'xl:mr-[73px] xl:flex xl:w-1/2 active:xl:border-accent-primary  3xl:mr-[93px]'
+              'xl:mr-[73px] xl:flex xl:w-1/2 active:xl:border-accent-primary   3xl:mr-[93px]'
             }
             payments={payments}
             schema={schema}
@@ -47,52 +47,50 @@ const PageContent = ({ payments, schema }: { payments: Payments; schema: SchemaT
   };
 
   return (
-    <div className="relative border-y border-grey-60 py-[30px] xl:before:absolute xl:before:left-[calc(50%_-_1px)] xl:before:top-0 xl:before:block xl:before:h-full xl:before:w-[1px] xl:before:bg-grey-60">
-      <div className="mb-[30px] flex flex-col xl:mb-0 xl:flex-row xl:justify-center">
+    <div className="relative border-t  border-grey-60 py-[30px] xl:border-y xl:before:absolute xl:before:left-[calc(50%_-_1px)] xl:before:top-0 xl:before:block xl:before:h-full xl:before:w-[1px] xl:before:bg-grey-60">
+      <div className=" flex flex-col gap-y-[30px] xl:mb-0 xl:flex-row xl:justify-center xl:gap-x-8 2xl:gap-x-[148px] 3xl:gap-x-[188px]">
         <button
           onClick={() => {
             handleClick('OneTime');
             setActiveButton('OneTime');
           }}
-          disabled={activeButton === 'Monthly'}
-          className={
+          className={`relative w-full rounded-2xl border-2 py-[14px]  transition-all duration-500 hover:border-accent-primary hover:text-accent-primary focus:border-accent-primary focus:text-accent-primary xl:border-none xl:text-accent-primary xl:underline-offset-2 hover:xl:underline focus:xl:underline ${
             activeButton === 'OneTime'
-              ? 'relative mb-[30px] w-full rounded-2xl border-4 border-transparent py-3  hover:text-accent-primary xl:rounded-none xl:border-none xl:border-accent-primary xl:text-accent-pressed xl:underline active:xl:border-b-2'
-              : 'relative mb-[30px] w-full rounded-2xl border-4 border-transparent py-3  hover:text-accent-primary xl:rounded-none xl:border-none xl:text-accent-pressed'
-          }
+              ? ' border-accent-primary text-accent-primary xl:underline xl:underline-offset-2'
+              : 'border-grey-60'
+          } `}
         >
-          <span className="border-grey-60 xl:border-none active:xl:border-b active:xl:border-accent-primary active:xl:decoration-solid">
-            {OneTimeTextButton}
-          </span>
-          <span className="absolute inset-0 rounded-2xl border border-grey-60 hover:border-4 hover:border-accent-primary xl:border-none"></span>
+          {OneTimeTextButton}
         </button>
         <button
           onClick={() => {
             handleClick('Monthly');
             setActiveButton('Monthly');
           }}
-          disabled={activeButton === 'OneTime'}
-          className={
+          className={` relative w-full rounded-2xl border-2 py-[14px] transition-all duration-500 hover:border-accent-primary  hover:text-accent-primary  focus:border-accent-primary focus:text-accent-primary  xl:border-none xl:text-accent-primary xl:underline-offset-2 hover:xl:underline focus:xl:underline ${
             activeButton === 'Monthly'
-              ? 'relative mb-[30px] w-full rounded-2xl border border-grey-60 border-transparent py-3  hover:text-accent-primary xl:rounded-none xl:border-none xl:border-accent-primary xl:text-accent-pressed xl:underline active:xl:border-b-2'
-              : 'relative mb-[30px] w-full rounded-2xl border border-grey-60 border-transparent py-3  hover:text-accent-primary xl:rounded-none xl:border-none xl:text-accent-pressed'
-          }
+              ? ' border-accent-primary text-accent-primary xl:underline xl:underline-offset-2'
+              : 'border-grey-60'
+          }`}
         >
-          <span>{MonthlyTextButton}</span>
-          <span className="absolute inset-0 rounded-2xl border border-grey-60 hover:border-4 hover:border-accent-primary xl:border-none"></span>
+          {MonthlyTextButton}
         </button>
 
         {less1280px && component}
       </div>
 
       {bigger1280px && (
-        <div className="flex flex-col xl:flex-row xl:gap-x-8">
+        <div className="flex flex-col xl:flex-row xl:justify-between xl:gap-x-8">
           <OneTimeComponent
-            className="xl:flex xl:w-1/2  2xl:mr-[73px] 3xl:mr-[93px]"
+            className="xl:flex xl:w-1/2  2xl:w-[calc(50%_-_74px)] 3xl:w-[calc(50%_-_94px)]"
             payments={payments}
             schema={schema}
           />
-          <MonthlyComponent className="flex xl:w-1/2 " payments={payments} schema={schema} />
+          <MonthlyComponent
+            className="flex xl:w-1/2  2xl:w-[calc(50%_-_74px)] 3xl:w-[calc(50%_-_94px)]"
+            payments={payments}
+            schema={schema}
+          />
         </div>
       )}
     </div>

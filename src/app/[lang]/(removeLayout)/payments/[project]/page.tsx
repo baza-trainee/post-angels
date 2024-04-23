@@ -23,7 +23,7 @@ export const page = async (
 
   return (
     <div className="container">
-      <PageMain projectDataInfo={projects.attributes} lang={lang} />
+      <PageMain projectDataInfo={projects?.attributes} lang={lang} />
       <PageContent payments={payments} schema={schema} />
     </div>
   );
