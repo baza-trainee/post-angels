@@ -29,7 +29,7 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
           {title}
           <div className={cn('flex flex-row gap-[33px]', className)}>
             {options.map(({ name, value, id }) => (
-              <label key={id} className="flex flex-row gap-[14px]">
+              <label key={id} className="flex flex-row gap-[14px] font-eUkraine">
                 <input
                   className="hidden"
                   type="radio"
@@ -51,7 +51,7 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
             ))}
           </div>
           {fieldState.error && (
-            <p className="absolute w-full bottom-[-26px] text-[13px] font-normal text-error">
+            <p className="absolute w-full bottom-[-26px] text-[13px] font-eUkraine font-normal text-error">
               {fieldState.error.message}
             </p>
           )}

@@ -12,7 +12,7 @@ export const PDFView: React.FC<PDFViewProps> = ({ document }) => {
 
   return (
     <div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center w-[320px] sm:w-[450px] md:w-[680px] lg:w-[900px] xl:w-[1200px] 2xl:w-[1400px] 3xl:w-[1800px]">
         <DocViewer
           documents={docs}
           pluginRenderers={DocViewerRenderers}
