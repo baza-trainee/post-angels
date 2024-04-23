@@ -40,7 +40,7 @@ export const PageMain = async ({
               </Paragraph>
               <div className="flex xs:justify-center">
                 <Paragraph variant="orange" className="xs:mr-[4px]">
-                  {projectDataInfo?.all - projectDataInfo?.collected}
+                  {projectDataInfo ? projectDataInfo?.all - projectDataInfo?.collected : ''}
                 </Paragraph>
                 <Paragraph variant="orange">{payments.currency}</Paragraph>
               </div>
