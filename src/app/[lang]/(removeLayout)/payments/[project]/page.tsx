@@ -1,16 +1,12 @@
-import { Title } from '@/components/typography/Title';
-import { Paragraph } from '@/components/typography/Paragraph';
 
 import { Locale } from '@/i18n.config';
-import { Logo } from '@/layout/Logo';
 import { getDictionary } from '@/lib/dictionary';
-import FooterPayments from '@/components/Payment/Footer/FooterPayments';
 import PageContent from '@/components/Payment/PageContent/PageContent';
 import { SchemaTypes } from '@/components/Payment/Payments.props';
 import { fetchOneProject } from '@/api/fetchOneProject';
 import { PageMain } from '@/components/Payment/PageMain/PageMain';
 
-export const page = async (
+const page = async (
   { params }: { params: { project: string; lang: Locale } },
   schema: SchemaTypes
 ) => {
