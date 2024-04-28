@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { useForm, Controller, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { ChangeEvent,useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { Button } from '../../../buttons/Button';
 import { Checkbox } from '../../../form/Checkbox';
@@ -22,12 +22,12 @@ export const MonthlyAssistanceForm = ({
   className,
   payments,
   schema,
-  isDisabled
+  isDisabled,
 }: {
   className: string;
   payments: Payments;
   schema: SchemaTypes;
-  isDisabled:boolean
+  isDisabled: boolean;
 }) => {
   const [selectedCurrency, setSelectedCurrency] = useState<{
     value: string;
@@ -39,8 +39,8 @@ export const MonthlyAssistanceForm = ({
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { handleSubmit, reset, control, register,formState } = useForm();
-  
+  const { handleSubmit, reset, control, register, formState } = useForm();
+
   const methods = useForm<FormData>({
     resolver: yupResolver(paymentsForm(schema)),
   });
@@ -146,10 +146,10 @@ export const MonthlyAssistanceForm = ({
     }),
   };
 
-  const onSubmit = (data:any) =>{
-    console.log(data)
-    reset()
-  } 
+  const onSubmit = (data: any) => {
+    console.log(data);
+    reset();
+  };
 
   const openModal = () => {
     setModalVisible(true);
@@ -159,121 +159,128 @@ export const MonthlyAssistanceForm = ({
     setModalVisible(false);
   };
 
-
   return (
     <div className={className}>
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full">
-        <div className="flex flex-wrap gap-4  xl:flex-row">
-          <Controller
-            name="currency"
-            control={control}
-            render={({ field }) => (
-              <Select
-                styles={customStyles}
-                options={options.map(option => ({
-                  ...option,
-                  label: option.label,
-                }))}
-                isDisabled={isDisabled}
-                onChange={handleCurrencyChange}
-                placeholder={payments.chooseYourContribution}
-                className="mb-[30px] w-full border border-b-2 border-none border-grey-60 xl:w-full"
-              />
-            )}
-          />
-
-          <div className="flex w-full flex-wrap gap-3  gap-y-[30px] xl:justify-between">
-            <Button
-              variant="white"
-              className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-            >
-              {`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-            </Button>
-            <Button
-              variant="white"
-              className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-            >
-              {`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-            </Button>
-            <Button
-              variant="white"
-              className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-            >
-              {`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-            </Button>
-
-            <div className="relative xl:w-full">
-              <input
-                {...register('otherAmount', {
-                  required: false,
-                  minLength: 0,
-                })}
-                type="number"
-                placeholder={payments.otherAmountText}
-                onChange={handleDonationAmountChange}
-                value={donationAmount}
-                disabled={isDisabled}
-                className=" h-[54px] w-[150px] gap-4 rounded-[48px]  bg-grey-20 text-center  ring-1 ring-inset ring-accent-primary   ring-offset-0 duration-300  hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full "
-              />
-              {donationAmount && selectedCurrency && <span className='absolute h-[26px] w-3 pr-2 xs:bottom-[13px] xs:right-[26px] sm:bottom-[13px] sm:right-[66px] md:bottom-[13px] md:right-[126px] lg:bottom-3 lg:right-[184px] xl:bottom-[13px] xl:right-[242px] 2xl:bottom-3 2xl:right-[268px] 3xl:right-[382px]'>{selectedCurrency.symbol}</span>}
-            </div>
-          </div>
-          <hr />
-          <div className="w-full lg:block lg:w-full">
-            <Checkbox
-              name="checkbox"
-              description={payments.supportPostAngeles}
-              variantFontWeight="normal"
-              className="mb-[30px]"
-              onChange={handleCheckboxChange}
-            />
-            <div className="mb-[40px]">
-              <input
-                type="number"
-                placeholder={isChecked && selectedCurrency ? selectedCurrency?.label : ''}
-                className="h-[54px] w-[320px] gap-4 rounded-[48px]  bg-grey-20 text-center ring-1   ring-inset ring-accent-primary  ring-offset-0 duration-300  hover:ring-4  sm:w-[440px] md:w-[728px]  lg:w-full  xl:w-full"
-                onChange={handleInputChange}
-                onClick={openModal}
-                value={inputValue}
-                disabled={isDisabled}
-              />
-              {checked && modalVisible && (
-                <Modal
-                  modal={{
-                    button: {
-                      label: '',
-                    },
-                  }}
-                  modalClose={closeModal}
-                >
-                  <ModalSupport />
-                </Modal>
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+          <div className="flex flex-wrap gap-4  xl:flex-row">
+            <Controller
+              name="currency"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  styles={customStyles}
+                  options={options.map(option => ({
+                    ...option,
+                    label: option.label,
+                  }))}
+                  isDisabled={isDisabled}
+                  onChange={handleCurrencyChange}
+                  placeholder={payments.chooseYourContribution}
+                  className="mb-[30px] w-full border border-b-2 border-none border-grey-60 xl:w-full"
+                />
               )}
+            />
+
+            <div className="flex w-full flex-wrap justify-between  gap-3 gap-y-[30px]">
+              <Button
+                variant="white"
+                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
+              >
+                {`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+              </Button>
+              <Button
+                variant="white"
+                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
+              >
+                {`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+              </Button>
+              <Button
+                variant="white"
+                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
+              >
+                {`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+              </Button>
+
+              <div className="relative xl:w-full">
+                <input
+                  {...register('otherAmount', {
+                    required: false,
+                    minLength: 0,
+                  })}
+                  type="number"
+                  placeholder={payments.otherAmountText}
+                  onChange={handleDonationAmountChange}
+                  value={donationAmount}
+                  disabled={isDisabled}
+                  className=" h-[54px] w-[150px] gap-4 rounded-[48px]  bg-grey-20 text-center  ring-1 ring-inset ring-accent-primary   ring-offset-0 duration-300  hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full "
+                />
+                {donationAmount && selectedCurrency && (
+                  <span className="absolute h-[26px] w-3 pr-2 xs:bottom-[13px] xs:right-[26px] sm:bottom-[13px] sm:right-[66px] md:bottom-[13px] md:right-[126px] lg:bottom-3 lg:right-[184px] xl:bottom-[13px] xl:right-[242px] 2xl:bottom-3 2xl:right-[268px] 3xl:right-[382px]">
+                    {selectedCurrency.symbol}
+                  </span>
+                )}
+              </div>
             </div>
+            <hr />
+            <div className="w-full lg:block lg:w-full">
+              <Checkbox
+                name="checkbox"
+                description={payments.supportPostAngeles}
+                variantFontWeight="normal"
+                className="mb-[30px]"
+                onChange={handleCheckboxChange}
+              />
+              <div className="mb-[40px]">
+                <input
+                  type="number"
+                  placeholder={isChecked && selectedCurrency ? selectedCurrency?.label : ''}
+                  className="h-[54px] w-[320px] gap-4 rounded-[48px]  bg-grey-20 text-center ring-1   ring-inset ring-accent-primary  ring-offset-0 duration-300  hover:ring-4  sm:w-[440px] md:w-[728px]  lg:w-full  xl:w-full"
+                  onChange={handleInputChange}
+                  onClick={openModal}
+                  value={inputValue}
+                  disabled={isDisabled}
+                />
+                {checked && modalVisible && (
+                  <Modal
+                    modal={{
+                      button: {
+                        label: '',
+                      },
+                    }}
+                    modalClose={closeModal}
+                  >
+                    <ModalSupport />
+                  </Modal>
+                )}
+              </div>
 
-            <Paragraph variant="light" variantFontSize="14">
-              {payments.contributionText}
-            </Paragraph>
+              <Paragraph variant="light" variantFontSize="14">
+                {payments.contributionText}
+              </Paragraph>
 
-            <div className="mt-[30px] flex items-start">
-              <Title variantSize="h5" className="items-center justify-center">
-                {payments.paymentSystemTitle}
-              </Title>
+              <div className="mt-[30px] flex items-start">
+                <Title variantSize="h5" className="items-center justify-center">
+                  {payments.paymentSystemTitle}
+                </Title>
+              </div>
+
+              <BankIcons />
+
+              <Button
+                type="submit"
+                className="w-full p-[10px] "
+                onSubmit={handleSubmit(onSubmit)}
+                disabled={isDisabled}
+              >
+                {payments.supportUsButton}
+              </Button>
             </div>
-
-            <BankIcons />
-
-            <Button type="submit" className="w-full p-[10px] " onSubmit={handleSubmit(onSubmit)} disabled={isDisabled}>
-              {payments.supportUsButton}
-            </Button>
-            
           </div>
-        </div>
-      </form>
-    </FormProvider>
-  </div>
-);
+        </form>
+      </FormProvider>
+    </div>
+  );
 };
 
 export default MonthlyAssistanceForm;
