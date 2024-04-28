@@ -192,9 +192,29 @@
           }
         }
       },
+
       "archiveBtn": {
         "text": "Archiwum",
         "link": "/pl/archive"
+      }
+    },
+    "payments": {
+      "title": "Opłata za materiały dotyczące urazów",
+      "needToCollect": "Musimy zebrać",
+      "sum": "23 549.00",
+      "currency": "UAH",
+      "OneTimeTextButton": "Jednorazowa pomoc",
+      "MonthlyTextButton": "Pomoc miesięczna",
+      "chooseYourContribution": "Wybierz swój wkład",
+      "otherAmountText": "Other amount",
+      "supportPostAngeles": "Support Post Angeles (opcjonalnie)",
+      "contributionText": "To jest Twój wkład w istnienie naszej platformy charytatywnej.",
+      "paymentSystemTitle": "Zapłać za pomocą systemu płatności",
+      "supportUsButton": "Support us",
+      "modal": {
+        "button": {
+          "label": "zamknij przycisk modalny"
+        }
       }
     },
     "ourTeam": {

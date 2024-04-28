@@ -4,7 +4,7 @@ import localFont from 'next/font/local';
 import { Suspense } from 'react';
 import Loading from './loading';
 
-import PopupCookie from '@/components/PopupCookies/PopupСookie';
+import PopupCookie from '@/components/PopupCookies/PopupCookie';
 
 import { getDictionary } from '@/lib/dictionary';
 import './globals.css';
