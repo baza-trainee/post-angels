@@ -1,12 +1,11 @@
-import Image from 'next/image';
-import { useRef, useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
-import { ProjectCardProps } from './ProjectsCard.props';
-import { Title } from '@/components/typography/Title';
-import { Paragraph } from '@/components/typography/Paragraph';
 import { LinkButton } from '@/components/buttons/LinkButton';
-import { Locale } from '@/i18n.config';
+import { Paragraph } from '@/components/typography/Paragraph';
+import { Title } from '@/components/typography/Title';
+import { ProjectCardProps } from './ProjectsCard.props';
 
 export const ProjectCard = (props: ProjectCardProps) => {
   const { all, image, startDate, title, collected, slug, status } = props.attributes;

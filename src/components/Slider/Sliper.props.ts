@@ -1,5 +1,4 @@
 import { Locale } from '@/i18n.config';
-import { ProjectsProps } from '@/sections/Projects/Projects.props';
 
 export interface SliderProps {
   id: string;
@@ -12,6 +11,7 @@ export interface SliderProps {
   isAutoplay?: boolean;
   isGrid?: number;
   isFinished?: boolean;
+  isArchive?: boolean;
   isPagination?: boolean;
   isNumberPagination?: boolean;
   isNavigation?: boolean;

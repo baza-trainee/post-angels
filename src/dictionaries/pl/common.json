@@ -705,6 +705,11 @@
           }
         }
       }
+    },
+    "archive": {
+      "title": "Archiwum naszych",
+      "title1": "projektów",
+      "noProjects": "Brak projektów w archiwum"
     }
   }
 }
