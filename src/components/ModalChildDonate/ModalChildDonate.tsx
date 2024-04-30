@@ -27,7 +27,6 @@ const ModalDonate = ({ lang }: { lang: Locale }) => {
     if (res.status === 'Ok') {
       router.push(res.response);
     }
-    console.log('resp', await response.json());
   };
   return (
     <>
