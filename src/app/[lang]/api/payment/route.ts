@@ -58,6 +58,8 @@ export async function POST(req: Request) {
         productCount: [productCount],
         productPrice: [productPrice],
         merchantAuthType: 'SimpleSignature',
+        // returnUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/callback`,
+        returnUrl: ' http://localhost:3000/api/callback',
       }),
     });
 
