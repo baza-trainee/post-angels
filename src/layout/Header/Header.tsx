@@ -79,6 +79,7 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
                 headerButton={buttons.headerButton}
                 modal={modal}
                 buttonClassName="mr-8 !px-[38px]"
+                lang={lang}
               />
               <Dropdown headerLanguageLabel={buttons.headerLanguageLabel} lang={lang} />
             </div>

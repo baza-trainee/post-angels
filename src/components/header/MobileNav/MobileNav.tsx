@@ -90,7 +90,7 @@ const MobileNav = ({ lang, buttons, headerNav, modal, logo }: MobileNavProps) =>
               </ul>
             </nav>
             {/* donate button*/}
-            <ButtonDonate headerButton={headerButton} modal={modal} />
+            <ButtonDonate headerButton={headerButton} modal={modal} lang={lang} />
           </div>
         </div>
       )}
