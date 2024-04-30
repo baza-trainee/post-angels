@@ -9,7 +9,7 @@ interface MerchantBody {
 export async function POST(req: Request) {
   const reqBody = await req.json();
 
-  const secretKey = 'flk3409refn54t54t*FNJRET';
+  const secretKey = process.env.NEXT_PUBLIC_WAYFORPAY_SECRET_KEY;
   const unixTimeInSeconds = Math.floor(Date.now() / 1000);
   const merchantAccount = process.env.NEXT_PUBLIC_WAYFORPAY_MERCHANT_ACCOUNT;
   const merchantDomainName = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -35,7 +35,7 @@ export async function POST(req: Request) {
 
   const order_keys = Object.keys(merchant);
   const signature_row = order_keys.map(el => merchant[el]).join(';');
-  const signature = crypto.createHmac('md5', secretKey);
+  const signature = crypto.createHmac('md5', secretKey || '');
   signature.update(signature_row);
   const hexsignature = signature.digest('hex');
 
