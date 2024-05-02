@@ -1,10 +1,10 @@
 'use client';
-import { useEffect, MouseEvent } from 'react';
+import { MouseEvent, useEffect } from 'react';
 
-import ClientOnlyPortal from '@/utils/ClientOnlyPortal';
-import { ModalProps } from './Modal.props';
 import { IconButton } from '@/components/buttons/IconButton';
 import { ICONS } from '@/components/icons';
+import ClientOnlyPortal from '@/utils/ClientOnlyPortal';
+import { ModalProps } from './Modal.props';
 
 const Modal = ({ modalClose, children, modal, className, scroll = false }: ModalProps) => {
   const handleBackdropClick = (e: MouseEvent<HTMLDivElement>) => {

@@ -1,41 +1,26 @@
 import { Locale } from '@/i18n.config';
-import { FC } from 'react';
-import crypto from 'crypto';
-import { useRouter } from 'next/navigation';
-// import axios from 'axios';
+import { Title } from '../typography/Title';
+import ModalChildDonateForm from './ModalChildDonateForm/ModalChildDonateForm';
 
 interface OrderBody {
   [key: string]: string | number | string[] | number[]; // Define the properties and their types
 }
 
 const ModalDonate = ({ lang }: { lang: Locale }) => {
-  const router = useRouter();
-  const handelClick = async () => {
-    const response = await fetch(`/${lang}/api/payment`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        order_id: `id-${Date.now()}`,
-        order_desc: 'Благодійний внесок',
-        amount: 100,
-        currency: 'USD',
-      }),
-    });
-    const res = await response.json();
-    if (res.status === 'Ok') {
-      router.push(res.response);
-    }
-  };
   return (
     <>
-      <div className="flex text-3xl font-medium">
-        <div className="text-accent-primary">Підтримати </div>
-        <div className="text-orange">Post Angeles</div>
+      <div className="flex w-[360px] flex-col items-center gap-y-10 px-5 py-24">
+        <Title
+          variantSize="h2"
+          tag="h2"
+          colorVariant="accent"
+          className="flex flex-col text-center"
+        >
+          <span>Підтримати</span>
+          <span className="!text-orange">Post Angeles</span>
+        </Title>
+        <ModalChildDonateForm lang={lang} />
       </div>
-      <div className="">це заглушкааааа</div>
-      <button onClick={handelClick}>Підтримати</button>
     </>
   );
 };

@@ -1,6 +1,5 @@
-import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import axios from 'axios';
+import { NextResponse } from 'next/server';
 
 interface MerchantBody {
   [key: string]: string | number;
