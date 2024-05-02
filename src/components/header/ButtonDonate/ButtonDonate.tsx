@@ -22,6 +22,7 @@ export const ButtonDonate = ({ headerButton, modal, buttonClassName, lang }: But
 
       {isModalOpen && (
         <Modal
+          className="inset:0 w-[768px] px-8 py-10 md:h-[624px]"
           modal={modal}
           modalClose={() => {
             setIsModalOpen(false);
