@@ -159,6 +159,8 @@ export const MonthlyAssistanceForm = ({
     setModalVisible(false);
   };
 
+  
+
   return (
     <div className={className}>
       <FormProvider {...methods}>
@@ -249,6 +251,7 @@ export const MonthlyAssistanceForm = ({
                       },
                     }}
                     modalClose={closeModal}
+                    className='sx:overflow-x-scroll sx:w-[360px] sx:h-auto lg:w-[790px] lg:h-[940px]'
                   >
                     <ModalSupport />
                   </Modal>
