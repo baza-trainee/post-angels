@@ -4,12 +4,15 @@ import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Modal from '@/components/modal/Modal';
 import { PDFView } from '@/components/PDFView/PDFView';
+import { DocumentDataProps } from '@/api/fetchDocuments';
 
 export const FooterDoc = ({
   footerDoc,
   modal,
+  documents,
 }: {
   footerDoc: { href: string; name: string }[];
+  documents: DocumentDataProps[];
   modal: {
     button: {
       label: string;
@@ -20,9 +23,15 @@ export const FooterDoc = ({
   const router = useRouter();
   const pathname = usePathname();
   const document = params.get('document');
-
+  console.log(document);
   const handlerShowModal = () => {
     router.push(pathname, { scroll: false });
+  };
+
+  const getDoc = (path: string, documents: DocumentDataProps[]) => {
+    return documents.filter(
+      el => `${el.attributes.name}${el.attributes.src.data[0].attributes.ext}` === path
+    )[0];
   };
   return (
     <>
@@ -35,8 +44,8 @@ export const FooterDoc = ({
       </ul>
 
       {document && (
-        <Modal modalClose={handlerShowModal} modal={modal} className='px-10 py-10 z-50' scroll>
-          <PDFView document={document} />
+        <Modal modalClose={handlerShowModal} modal={modal} className="z-50 px-10 py-10" scroll>
+          <PDFView documents={getDoc(document, documents)} />
         </Modal>
       )}
     </>
