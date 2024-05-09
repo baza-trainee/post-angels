@@ -1,9 +1,34 @@
 {
   "meta": {
-    "languages": {
-      "uk-UK": "/uk",
-      "en-US": "/en",
-      "pl-PL": "/pl"
+    "metadata": {
+      "title": "Post Angels",
+      "description": "Fundacja charytatywna Post Angels",
+      "base": "https://post-angels.vercel.app/",
+      "keywords": "dobroczynność, pomoc, weterani"
+    },
+    "twitter": {
+      "title": "Post Angels",
+      "card": "otg-img.png",
+      "images": {
+        "url": "/favicon/otg-img.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Fundacja charytatywna Post Angels"
+      },
+      "description": "Fundacja charytatywna Post Angels"
+    },
+    "openGraph": {
+      "images": {
+        "url": "/favicon/otg-img.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Fundacja charytatywna Post Angels"
+      },
+
+      "description": "Fundacja charytatywna Post Angels",
+      "type": "website",
+      "locale": "pl-PL",
+      "title": "Fundacja charytatywna Post Angels"
     }
   }
 }
