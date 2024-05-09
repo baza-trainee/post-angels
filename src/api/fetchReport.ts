@@ -5,9 +5,10 @@ import { getProjects } from './requests/getProjects';
 
 import { Locale } from '@/i18n.config';
 import { getDocuments } from './requests/getDocuments';
+import { getReport } from './requests/getReports';
 
 export interface DocumentsDataType {
-  documents: {
+  reports: {
     data: DocumentDataProps[];
   };
 }
@@ -17,6 +18,7 @@ export interface DocumentDataProps {
   attributes: {
     title: string;
     name: string;
+    date: Date;
     src: {
       data: {
         attributes: {
@@ -24,17 +26,19 @@ export interface DocumentDataProps {
           url: string;
           size: number;
           ext: string;
+          width: number;
+          height: number;
         };
-      }[];
+      };
     };
   };
 }
 
-export const fetchDocuments = cache(async (locale: Locale): Promise<DocumentDataProps[]> => {
+export const fetchReport = cache(async (locale: Locale): Promise<DocumentDataProps[]> => {
   try {
     const data: DocumentsDataType = await request(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/graphql` as string,
-      getDocuments,
+      getReport,
       {
         locale: locale,
       },
@@ -43,7 +47,7 @@ export const fetchDocuments = cache(async (locale: Locale): Promise<DocumentData
       }
     );
 
-    const result = data.documents.data;
+    const result = data.reports.data;
 
     return result;
   } catch (error) {

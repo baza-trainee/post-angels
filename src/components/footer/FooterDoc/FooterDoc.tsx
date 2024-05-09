@@ -23,7 +23,7 @@ export const FooterDoc = ({
   const router = useRouter();
   const pathname = usePathname();
   const document = params.get('document');
-  console.log(document);
+
   const handlerShowModal = () => {
     router.push(pathname, { scroll: false });
   };

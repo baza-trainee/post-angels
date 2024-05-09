@@ -249,6 +249,10 @@
         }
       }
     },
+
+    "report": {
+      "title": "Raporty"
+    },
     "cookie": {
       "popupCookie": {
         "text": "Ta strona korzysta z plików cookies w celu prawidłowego funkcjonowania i ulepszania serwisu. Jeśli wyrażasz zgodę - kliknij OK.",
@@ -285,7 +289,7 @@
         },
         {
           "name": "Raportowanie",
-          "href": "/pl/"
+          "href": "/pl/report"
         }
       ],
       "footerDoc": [
