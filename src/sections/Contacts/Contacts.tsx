@@ -26,8 +26,8 @@ export const Contacts: React.FC<ContactsProps> = async ({ data, lang }) => {
         <div className="saturate-0 transition-all delay-150 hover:saturate-100 md:h-[416px] md:w-[349px] lg:w-[465px] xl:w-[687px] 2xl:h-[468px] 2xl:w-[664px] 3xl:h-[698px] 3xl:w-[1216px]  notMd:hidden">
           <Image
             className="rounded-2xl object-cover"
-            src={Partners}
-            alt={contactsSection.img.alt}
+            src={Partners || ''}
+            alt={contactsSection.img.alt || 'background image'}
             fill
           />
         </div>

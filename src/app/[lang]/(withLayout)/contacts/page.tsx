@@ -1,10 +1,12 @@
 import { fetchContact } from '@/api/fetchContact';
 import { ContactList } from '@/components/ContactList';
+import CustomImage from '@/components/CustomImage/CustomImage';
 import { ICONS } from '@/components/icons';
 import { Title } from '@/components/typography/Title';
 import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import Image from 'next/image';
+import defaultImage from '../../../../../public/images/404.png';
 
 const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { common } = await getDictionary(lang);
@@ -24,12 +26,13 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
           </div>
 
           <div className="relative">
-            <Image
+            <CustomImage
               className="rounded-2xl object-cover object-center saturate-0 transition-all delay-150 hover:saturate-100"
-              src={contactsSection.img.src}
+              src={contactsSection.img.src || ''}
+              alt={contactsSection.img.alt || 'background image'}
               width={990}
               height={740}
-              alt={contactsSection.img.alt}
+              defaultImg="/images/contacts-map.jpg"
             />
             <div className="absolute right-[31%] top-[32%] h-10 w-10 md:h-[60px] md:w-[60px]">
               <ICONS.PRIMARY_LOGO_ICON />

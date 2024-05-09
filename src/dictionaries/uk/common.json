@@ -19,6 +19,10 @@
           "href": "/uk/volunteers"
         },
         {
+          "name": "Ветеранам",
+          "href": "/uk/veterans"
+        },
+        {
           "name": "Контакти",
           "href": "/uk/contacts"
         }
@@ -270,6 +274,10 @@
         {
           "name": "Партнерам",
           "href": "/uk/partners"
+        },
+        {
+          "name": "Ветеранам",
+          "href": "/uk/veterans"
         },
         {
           "name": "Контакти",

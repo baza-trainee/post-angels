@@ -54,8 +54,8 @@ export const FAQ = ({ data, isPreOpen, faq }: FAQProps) => {
             }`}
           >
             <Image
-              src={image.src.data.attributes.url}
-              alt={image.alt}
+              src={image.src.data.attributes.url || ''}
+              alt={image.alt || 'background image'}
               fill
               priority
               sizes="(max-width: 960px) 100vw, 50vw"
