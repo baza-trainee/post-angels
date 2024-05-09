@@ -1,3 +1,5 @@
+import { DocumentDataProps } from '@/api/fetchDocuments';
+
 export interface PDFViewProps {
-    document: string | null;
+  documents: DocumentDataProps;
 }
