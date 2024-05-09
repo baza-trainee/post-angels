@@ -1,11 +1,12 @@
 import dayjs from 'dayjs';
-import Image from 'next/image';
+
 import { useEffect, useRef, useState } from 'react';
 
 import { LinkButton } from '@/components/buttons/LinkButton';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
 import { ProjectCardProps } from './ProjectsCard.props';
+import CustomImage from '@/components/CustomImage/CustomImage';
 
 export const ProjectCard = (props: ProjectCardProps) => {
   const { all, image, startDate, title, collected, slug, status } = props.attributes;
@@ -54,12 +55,13 @@ export const ProjectCard = (props: ProjectCardProps) => {
       <div
         className={`mb-[10px] h-[243px]  rounded-2xl saturate-0 transition-all delay-150 group-hover:saturate-100 sm:h-[282px]  xl:h-[279px] xl:w-full `}
       >
-        <Image
-          src={image.src.data.attributes.url}
-          alt={image.alt}
-          width={image.src.data.attributes.width}
-          height={image.src.data.attributes.height}
+        <CustomImage
+          src={image?.src?.data?.attributes?.url || ''}
+          alt={image?.alt || 'background image'}
+          width={image?.src?.data?.attributes?.width || 200}
+          height={image?.src?.data?.attributes?.height || 150}
           className='object-center" h-full w-full rounded-2xl object-cover'
+          defaultImg="/images/default_img/project.jpg"
         />
       </div>
 

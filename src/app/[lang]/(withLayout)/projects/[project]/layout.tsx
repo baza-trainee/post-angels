@@ -1,10 +1,11 @@
 import { Locale } from '@/i18n.config';
 import { revalidateTag } from 'next/cache';
 import React from 'react';
-import { getDictionary } from '@/lib/dictionary';
+import { getDictionary, getMetadata } from '@/lib/dictionary';
 import { ProjectHero } from '@/sections/ProjectPage/ProjectHero';
 import { fetchOneProject } from '@/api/fetchOneProject';
 import { fetchProjectsSlug } from '@/api/fetchProjectsSlug';
+import { Metadata } from 'next';
 
 export async function generateStaticParams({
   params: { lang },
@@ -22,6 +23,21 @@ export async function generateStaticParams({
     }) || [];
 
   return staticParams;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { project: string; lang: Locale };
+}): Promise<Metadata> {
+  const { project, lang } = params;
+  const { meta } = await getMetadata(lang);
+
+  const title = project.split('_').join(' ');
+  return {
+    title: meta.metadata.title,
+    description: title,
+  };
 }
 
 export default async function ProjectLayout({

@@ -1,8 +1,7 @@
-import Image from 'next/image';
-
 import { Paragraph } from '@/components/typography/Paragraph/Paragraph';
 import { Title } from '@/components/typography/Title/Title';
 import { ParticipantHeroProps } from './ParticipantHero.props';
+import CustomImage from '@/components/CustomImage/CustomImage';
 
 export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
   title,
@@ -25,12 +24,13 @@ export const ParticipantHero: React.FC<ParticipantHeroProps> = ({
         </Paragraph>
       </div>
       <div className="rounded-2xl saturate-0 transition-all delay-150 hover:saturate-100 xl:min-h-[414px] xl:min-w-[686px] 2xl:min-w-[664px] 3xl:min-w-[904px]">
-        <Image
+        <CustomImage
           className="h-full w-full rounded-2xl object-cover object-center"
-          src={img}
-          alt={alt}
+          src={img || ''}
+          alt={alt || 'background image'}
           width={686}
           height={620}
+          defaultImg="/images/participant/partners.jpg"
         />
       </div>
     </div>
