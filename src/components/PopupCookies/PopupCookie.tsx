@@ -3,9 +3,18 @@ import Link from 'next/link';
 import CookieConsent from 'react-cookie-consent';
 import { Paragraph } from '../typography/Paragraph/Paragraph';
 import { PopupCookieProps } from './PopupCookie.props';
+import { LinkButton } from '../buttons/LinkButton';
+import { useState } from 'react';
+import Modal from '../modal/Modal';
+import { PDFView } from '../PDFView';
 
-const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
+const PopupCookie: React.FC<PopupCookieProps> = ({ data, modal, document }) => {
   const { popupCookie } = data;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
   return (
     <div className="relative flex w-full  items-center">
       <CookieConsent
@@ -23,13 +32,14 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
           margin: 0,
           display: 'block',
         }}
+        overlayClasses="!z-[60]"
         contentClasses=""
         containerClasses="!w-[320px] sm:!w-[440px] md:!w-[728px] lg:!w-[960px] xl:!w-[1200px] !bottom-2 rounded-2xl !block p-[15px] sm:p-[32px] xl:!flex xl:gap-x-6 2xl:gap-x-14 2xl:!w-[1360px] 3xl:!w-[1840px]"
         expires={150}
         overlay={true}
         hideOnAccept={true}
         buttonWrapperClasses="my-0 mx-auto text-center"
-        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full md:!w-[372px] lg:!w-[465px]  !mt-4 xl:!mt-0 !bg-orange xl:!w-[236px]"
+        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full md:!w-[372px] lg:!w-[465px]  !mt-4 xl:!mt-0 !bg-orange xl:!w-[236px] hover:!bg-[#FC4100]"
         buttonStyle={{
           padding: '12px',
           margin: 0,
@@ -43,16 +53,34 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
         >
           {popupCookie.text}
         </Paragraph>
-        <Paragraph variant="dark" variantFontSize="16" variantFontWeight="regular">
+        <Paragraph
+          variant="dark"
+          variantFontSize="16"
+          variantFontWeight="regular"
+          className="inline-block"
+        >
           {popupCookie.text1}
-          <Link
-            className="pl-1 font-eUkraine text-base font-medium leading-[160%] text-orange"
-            href="/"
-          >
-            {popupCookie.linkText}
-          </Link>
         </Paragraph>
+        <button
+          className="inline-flex pl-1 font-eUkraine text-base font-medium leading-[160%] text-orange hover:text-[#FC4100]"
+          onClick={() => handleClick()}
+        >
+          {popupCookie.linkText}
+        </button>
       </CookieConsent>
+
+      {isModalOpen && (
+        <Modal
+          modalClose={() => {
+            setIsModalOpen(false);
+          }}
+          modal={modal}
+          className="z-50 px-10 py-10"
+          scroll
+        >
+          <PDFView documents={document} />
+        </Modal>
+      )}
     </div>
   );
 };

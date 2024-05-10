@@ -38,7 +38,7 @@ export const ScrollBtn: FC<ScrollBtnProps> = ({ data }) => {
           <path
             d="M0.7145 13.6484C8.5516 13.6484 10.7908 5.12024 10.7908 0.571837C10.7907 5.34764 13.03 13.6484 20.8672 13.6484"
             stroke="#303030"
-            stroke-width="2.5"
+            strokeWidth="2.5"
           />
         </svg>
         <svg

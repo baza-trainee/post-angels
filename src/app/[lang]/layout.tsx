@@ -8,6 +8,7 @@ import PopupCookie from '@/components/PopupCookies/PopupCookie';
 
 import { getDictionary, getMetadata } from '@/lib/dictionary';
 import './globals.css';
+import { fetchDocuments } from '@/api/fetchDocuments';
 
 const eUkraine = localFont({
   variable: '--font-eUkraine',
@@ -152,15 +153,16 @@ export default async function RootLayout({
 }) {
   const lang = params.lang;
   const { common } = await getDictionary(lang);
-  const { cookie } = common;
-
+  const { cookie, modal } = common;
+  const documents = fetchDocuments(lang);
+  const policy = (await documents).filter(el => el.attributes.name === 'policy')[0];
   return (
     <html lang={lang} className={`${eUkraine.variable} ${eUkraineHead.variable} font-sans`}>
       <body className="relative flex h-screen flex-col">
         <Suspense fallback={<Loading />}>
           {children}
 
-          <PopupCookie data={cookie} />
+          <PopupCookie data={cookie} modal={modal} document={policy} />
           <div id="modal" />
         </Suspense>
       </body>
