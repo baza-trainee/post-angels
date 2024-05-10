@@ -412,3 +412,23 @@ body {
     background-color: theme('colors.grey.60');
   }
 }
+
+@keyframes moveArrow {
+  0% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: translateY(-10px); /* або будь-яке інше значення */
+  }
+
+  66% {
+    transform: translateY(+10px); /* або будь-яке інше значення */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animatingArrow {
+  animation: moveArrow 1s infinite; /* Здійснюємо анімацію зі швидкістю 1 секунда, нескінченно */
+}

@@ -11,7 +11,7 @@ export const Contacts: React.FC<ContactsProps> = async ({ data, lang }) => {
   const contactData = await fetchContact(lang);
   const { contactsSection } = data;
   return (
-    <section className="py-[100px]">
+    <section className="py-[100px]" id="contacts">
       <div className="container flex justify-between md:gap-x-0 2xl:gap-x-[124px]">
         <div>
           <Title tag="h2" variantSize="h2" className="mb-[50px] ">
