@@ -3,9 +3,18 @@ import Link from 'next/link';
 import CookieConsent from 'react-cookie-consent';
 import { Paragraph } from '../typography/Paragraph/Paragraph';
 import { PopupCookieProps } from './PopupCookie.props';
+import { LinkButton } from '../buttons/LinkButton';
+import { useState } from 'react';
+import Modal from '../modal/Modal';
+import { PDFView } from '../PDFView';
 
-const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
+const PopupCookie: React.FC<PopupCookieProps> = ({ data, modal, document }) => {
   const { popupCookie } = data;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsModalOpen(true);
+  };
   return (
     <div className="relative flex w-full  items-center">
       <CookieConsent
@@ -23,6 +32,7 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
           margin: 0,
           display: 'block',
         }}
+        overlayClasses="!z-[60]"
         contentClasses=""
         containerClasses="!w-[320px] sm:!w-[440px] md:!w-[728px] lg:!w-[960px] xl:!w-[1200px] !bottom-2 rounded-2xl !block p-[15px] sm:p-[32px] xl:!flex xl:gap-x-6 2xl:gap-x-14 2xl:!w-[1360px] 3xl:!w-[1840px]"
         expires={150}
@@ -45,14 +55,27 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data }) => {
         </Paragraph>
         <Paragraph variant="dark" variantFontSize="16" variantFontWeight="regular">
           {popupCookie.text1}
-          <Link
+          <button
             className="pl-1 font-eUkraine text-base font-medium leading-[160%] text-orange"
-            href="/"
+            onClick={() => handleClick()}
           >
             {popupCookie.linkText}
-          </Link>
+          </button>
         </Paragraph>
       </CookieConsent>
+
+      {isModalOpen && (
+        <Modal
+          modalClose={() => {
+            setIsModalOpen(false);
+          }}
+          modal={modal}
+          className="z-50 px-10 py-10"
+          scroll
+        >
+          <PDFView documents={document} />
+        </Modal>
+      )}
     </div>
   );
 };
