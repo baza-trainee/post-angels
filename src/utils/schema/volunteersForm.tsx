@@ -41,7 +41,8 @@ export const volunteersForm = (translation: SchemaTypes) => {
       .email(email.errorType)
       .required(email.errorRequired)
       .min(2, email.errorLength)
-      .max(256, email.errorLength),
+      .max(256, email.errorLength)
+      .matches(/^[^@ \t\r\n]+@(?!.*\.(ru|by)\b)[^@ \t\r\n]+\.[^@ \t\r\n]+$/, email.errorType),
     phone: yup.string().required(phone.errorRequired).trim().min(17, phone.errorLength),
 
     telegram: yup
