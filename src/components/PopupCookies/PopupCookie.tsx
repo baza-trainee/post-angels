@@ -39,7 +39,7 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data, modal, document }) => {
         overlay={true}
         hideOnAccept={true}
         buttonWrapperClasses="my-0 mx-auto text-center"
-        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full md:!w-[372px] lg:!w-[465px]  !mt-4 xl:!mt-0 !bg-orange xl:!w-[236px]"
+        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full md:!w-[372px] lg:!w-[465px]  !mt-4 xl:!mt-0 !bg-orange xl:!w-[236px] hover:!bg-[#FC4100]"
         buttonStyle={{
           padding: '12px',
           margin: 0,
@@ -53,15 +53,20 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data, modal, document }) => {
         >
           {popupCookie.text}
         </Paragraph>
-        <Paragraph variant="dark" variantFontSize="16" variantFontWeight="regular">
+        <Paragraph
+          variant="dark"
+          variantFontSize="16"
+          variantFontWeight="regular"
+          className="inline-block"
+        >
           {popupCookie.text1}
-          <button
-            className="pl-1 font-eUkraine text-base font-medium leading-[160%] text-orange"
-            onClick={() => handleClick()}
-          >
-            {popupCookie.linkText}
-          </button>
         </Paragraph>
+        <button
+          className="inline-flex pl-1 font-eUkraine text-base font-medium leading-[160%] text-orange hover:text-[#FC4100]"
+          onClick={() => handleClick()}
+        >
+          {popupCookie.linkText}
+        </button>
       </CookieConsent>
 
       {isModalOpen && (

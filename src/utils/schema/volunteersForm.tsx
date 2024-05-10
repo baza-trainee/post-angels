@@ -42,18 +42,13 @@ export const volunteersForm = (translation: SchemaTypes) => {
       .required(email.errorRequired)
       .min(2, email.errorLength)
       .max(256, email.errorLength),
-    phone: yup
-      .string()
-      .required(phone.errorRequired)
-      .min(10, phone.errorLength)
-      .max(13, phone.errorLength)
-      .matches(/^\+(?!0+$)\d+$/, phone.errorType),
+    phone: yup.string().required(phone.errorRequired).trim().min(17, phone.errorLength),
+
     telegram: yup
       .string()
       .matches(/^[a-zA-Z0-9._@]*$/, telegram.errorType)
       .min(5, telegram.errorLength)
-      .max(32, telegram.errorLength)
-      ,
+      .max(32, telegram.errorLength),
     waysVolunteering: yup
       .object({
         label: yup.string().required(waysVolunteering.errorRequired),

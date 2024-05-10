@@ -448,7 +448,7 @@
           "phone": {
             "errorType": "The value must start with '+' and contain only numbers",
             "errorRequired": "Field is required",
-            "errorLength": "Maximum length is 13 characters"
+            "errorLength": "Incorrect value"
           },
           "companyName": {
             "errorRequired": "Field is required",
@@ -575,7 +575,7 @@
           "phone": {
             "errorType": "The value must start with '+' and contain only numbers",
             "errorRequired": "Field is required",
-            "errorLength": "Maximum length is 13 characters"
+            "errorLength": "Incorrect value"
           },
           "telegram": {
             "errorType": "The value contains invalid characters",

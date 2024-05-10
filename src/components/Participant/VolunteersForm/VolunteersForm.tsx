@@ -40,6 +40,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
   const onSubmit = async (data: FormData) => {
     try {
       setSubmitting(true);
+      console.log(data);
       const response = await fetchVolunteerFormData(lang, {
         name: data.name,
         lastName: data.surname,
@@ -85,6 +86,7 @@ export const VolunteersForm: React.FC<VolunteersFormProps> = ({
               className="w-full lg:w-[465px] xl:w-[480px] 2xl:w-[548px] 3xl:w-[748px]"
             />
           ))}
+
           <SelectInput
             name={waysVolunteering.name}
             title={waysVolunteering.title}
