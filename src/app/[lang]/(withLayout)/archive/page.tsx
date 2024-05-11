@@ -9,7 +9,6 @@ const page = async ({ params: { lang } }: { params: { lang: Locale } }) => {
   const { projects, archive } = common;
 
   const archiveData = await fetchProjects(lang, ['archive']);
-
   return (
     <section className="pt-[100px] xl:pt-[230px]">
       <div className="container relative">
