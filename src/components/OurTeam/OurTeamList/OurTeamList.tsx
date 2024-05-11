@@ -6,6 +6,7 @@ import { TeamMember } from '@/components/OurTeam/TeamMemberCard/TeamMemberCard.p
 
 export const OurTeamList = ({ teamMembers }: { teamMembers: TeamMember[] }) => {
   const checkedTeamMembers = getCheckedMembers(teamMembers);
+
   return (
     <ul className="relative md:flex md:flex-wrap">
       {checkedTeamMembers.map((member: TeamMember, index: number) => (

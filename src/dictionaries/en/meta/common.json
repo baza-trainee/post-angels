@@ -1,9 +1,34 @@
 {
   "meta": {
-    "languages": {
-      "uk-UK": "/uk",
-      "en-US": "/en",
-      "pl-PL": "/pl"
+    "metadata": {
+      "title": "Post Angels",
+      "description": "Charitable Foundation Post Angels",
+      "base": "https://post-angels.vercel.app/",
+      "keywords": "charity, aid, veterans"
+    },
+    "twitter": {
+      "title": "Post Angels",
+      "card": "otg-img.png",
+      "images": {
+        "url": "/favicon/otg-img.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Charitable Foundation Post Angels"
+      },
+      "description": "Charitable Foundation Post Angels"
+    },
+    "openGraph": {
+      "images": {
+        "url": "/favicon/otg-img.png",
+        "width": 1200,
+        "height": 630,
+        "alt": "Charitable Foundation Post Angels"
+      },
+
+      "description": "Charitable Foundation Post Angels",
+      "type": "website",
+      "locale": "en-US",
+      "title": "Charitable Foundation Post Angels"
     }
   }
 }

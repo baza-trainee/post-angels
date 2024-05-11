@@ -3,6 +3,7 @@ import { Locale, i18n } from '@/i18n.config';
 import { getDictionary } from '@/lib/dictionary';
 import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
+import { fetchDocuments } from '@/api/fetchDocuments';
 
 export default async function DashboardLayout({
   children,
@@ -13,11 +14,12 @@ export default async function DashboardLayout({
 }) {
   const { common } = await getDictionary(lang);
   const { header, modal, logo, footer } = common;
+  const documents = await fetchDocuments(lang);
   return (
     <>
       <Header data={header} lang={lang} modal={modal} logo={logo} transparent />
       <main className=" flex-grow ">{children}</main>
-      <Footer data={footer} modal={modal} logo={logo} />
+      <Footer data={footer} modal={modal} logo={logo} documents={documents} />
     </>
   );
 }

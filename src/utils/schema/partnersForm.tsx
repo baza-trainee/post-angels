@@ -39,13 +39,9 @@ export const partnersForm = (translation: SchemaTypes) => {
       .email(email.errorType)
       .required(email.errorRequired)
       .min(2, email.errorLength)
-      .max(256, email.errorLength),
-    phone: yup
-      .string()
-      .required(phone.errorRequired)
-      .min(10, phone.errorLength)
-      .max(13, phone.errorLength)
-      .matches(/^\+(?!0+$)\d+$/, phone.errorType),
+      .max(256, email.errorLength)
+      .matches(/^[^@ \t\r\n]+@(?!.*\.(ru|by)\b)[^@ \t\r\n]+\.[^@ \t\r\n]+$/, email.errorType),
+    phone: yup.string().required(phone.errorRequired).trim().min(17, phone.errorLength),
     companyName: yup
       .string()
       .required(companyName.errorRequired)

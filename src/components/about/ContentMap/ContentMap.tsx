@@ -2,6 +2,7 @@ import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
 import Image from 'next/image';
 import { ContentMapProps } from './ContentMap.props';
+import CustomImage from '@/components/CustomImage/CustomImage';
 
 export const ContentMap = ({ data }: ContentMapProps) => {
   return data.map((object, index) => (
@@ -34,12 +35,13 @@ export const ContentMap = ({ data }: ContentMapProps) => {
       </div>
       {/* image */}
       <div className="relative h-[205px] w-full rounded-2xl saturate-0 transition-all delay-300 hover:saturate-100 sm:h-[282px] md:h-[468px] lg:h-[620px] xl:h-[580px] xl:w-[584px] 2xl:h-[580px] 2xl:w-[664px] 3xl:w-[904px]">
-        <Image
-          src={object.imageSrc}
-          alt={object.imageAlt}
+        <CustomImage
+          src={object.imageSrc || ''}
+          alt={object.imageAlt || 'background image'}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="rounded-2xl object-cover object-center"
+          defaultImg="/images/about/about-us.jpg"
         />
       </div>
     </div>

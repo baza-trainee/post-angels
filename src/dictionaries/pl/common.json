@@ -249,6 +249,10 @@
         }
       }
     },
+
+    "report": {
+      "title": "Raporty"
+    },
     "cookie": {
       "popupCookie": {
         "text": "Ta strona korzysta z plików cookies w celu prawidłowego funkcjonowania i ulepszania serwisu. Jeśli wyrażasz zgodę - kliknij OK.",
@@ -285,7 +289,7 @@
         },
         {
           "name": "Raportowanie",
-          "href": "/pl/"
+          "href": "/pl/report"
         }
       ],
       "footerDoc": [
@@ -446,7 +450,7 @@
           "phone": {
             "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
             "errorRequired": "Pole jest wymagane",
-            "errorLength": "Maksymalna długość wynosi 13 znaków"
+            "errorLength": "Nieprawidłowa wartość"
           },
           "companyName": {
             "errorRequired": "Pole jest wymagane",
@@ -573,7 +577,7 @@
           "phone": {
             "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
             "errorRequired": "Pole jest wymagane",
-            "errorLength": "Maximum length is 13 characters"
+            "errorLength": "Nieprawidłowa wartość"
           },
           "telegram": {
             "errorType": "Wartość zawiera nieprawidłowe znaki",

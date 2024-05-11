@@ -1,6 +1,7 @@
 import Image from 'next/image';
 // import { getBase64, shimmer } from '@/utils';
 import { BannerProps } from './HeroBanner.props';
+import CustomImage from '@/components/CustomImage/CustomImage';
 
 export const HeroBanner: React.FC<BannerProps> = ({ src, alt, ind = 1 }) => (
   <div
@@ -10,13 +11,14 @@ export const HeroBanner: React.FC<BannerProps> = ({ src, alt, ind = 1 }) => (
         : 'bottom-0 left-0'
     } `}
   >
-    <Image
+    <CustomImage
       className="h-full w-full rounded-2xl object-cover object-center"
       width={320}
       height={205}
       priority
-      src={src.data.attributes.url}
-      alt={alt}
+      src={src?.data?.attributes?.url || ''}
+      defaultImg="/images/hero/hero-1.jpg"
+      alt={alt || 'background image'}
       sizes="100wv"
       //   placeholder="blur"
       //   blurDataURL={`data:image/svg+xml;base64,${getBase64(shimmer(700, 475))}`}

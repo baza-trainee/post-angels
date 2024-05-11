@@ -1,7 +1,8 @@
 'use client';
-import Image from 'next/image';
+
 import { Paragraph } from '@/components/typography/Paragraph';
 import { TeamMember } from '@/components/OurTeam/TeamMemberCard/TeamMemberCard.props';
+import CustomImage from '@/components/CustomImage/CustomImage';
 
 export const TeamMemberCard = ({ name, lastName, image, id }: TeamMember) => {
   return (
@@ -10,14 +11,15 @@ export const TeamMemberCard = ({ name, lastName, image, id }: TeamMember) => {
     >
       <div className={`team_image relative`}>
         {!id?.startsWith('default') ? (
-          <Image
+          <CustomImage
             className={`relative h-[326px] w-full rounded-2xl object-cover object-center saturate-0 transition-all delay-150 hover:saturate-100 lg:h-[346px]  xl:h-[326px]  `}
-            src={image.url}
-            alt={image.alt}
+            src={image?.url || ''}
+            alt={image.alt || 'background image'}
             width={320}
             height={273}
             priority
             sizes="100wv"
+            defaultImg="/images/default_img/teammembers.jpg"
           />
         ) : (
           <div className="relative w-full rounded-2xl  bg-box md:h-[326px]  lg:h-[346px]  xl:h-[326px]   "></div>

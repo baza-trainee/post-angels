@@ -4,7 +4,7 @@ import { FooterProps } from './Footer.props';
 import { Logo } from '../Logo/Logo';
 import { FooterDoc } from '@/components/footer/FooterDoc/FooterDoc';
 
-export const Footer: React.FC<FooterProps> = ({ data, logo, modal }) => {
+export const Footer: React.FC<FooterProps> = ({ data, logo, modal, documents }) => {
   const { footerNav, footerDoc, footerCop } = data;
 
   return (
@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ data, logo, modal }) => {
               {footerCop.name}
             </Paragraph>
           </div>
-          <FooterDoc footerDoc={footerDoc} modal={modal} />
+          <FooterDoc footerDoc={footerDoc} modal={modal} documents={documents} />
         </div>
       </div>
     </footer>
