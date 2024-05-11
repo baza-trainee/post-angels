@@ -66,7 +66,6 @@ export const Slider: React.FC<SliderProps> = ({
   }, [isFirstRender, navigationBreakpoints, id]);
 
   const isDeviceLess768px = useBreakpoints().less768px;
-  console.log(data);
 
   const archiveProjectsGridRows =
     (isArchive && isDeviceLess768px) || (isArchive && data.length > 5) ? 1 : isGrid;

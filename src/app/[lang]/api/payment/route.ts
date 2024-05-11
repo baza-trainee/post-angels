@@ -19,6 +19,7 @@ export async function POST(req: Request) {
   const productName = reqBody.order_desc;
   const productCount = '1';
   const productPrice = reqBody.amount;
+  const regularMode = reqBody.regularMode;
 
   const merchant: MerchantBody = {
     merchantAccount: merchantAccount || '',
@@ -54,6 +55,7 @@ export async function POST(req: Request) {
         amount: amount,
         currency: currency,
         productName: [productName],
+        regularMode: regularMode, //! воно активує поле під оплатою для налаштування регулярного платежу
         productCount: [productCount],
         productPrice: [productPrice],
         merchantAuthType: 'SimpleSignature',

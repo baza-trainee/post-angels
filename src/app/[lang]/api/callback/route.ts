@@ -6,13 +6,13 @@ export async function POST(req: NextRequest) {
     const status = formData.get('transactionStatus');
 
     if (status === 'Approved') {
-      const redirectUrl = new URL('http://localhost:3000');
+      const redirectUrl = new URL('http://localhost:3000/');
 
       return NextResponse.redirect(redirectUrl, 302);
     }
     if (status === 'Declined' || status === 'RefundInProcessing') {
       const referer = req.headers;
-      const redirectUrl = new URL('http://localhost:3000');
+      const redirectUrl = new URL('http://localhost:3000/');
 
       return NextResponse.redirect(redirectUrl, 302);
     }

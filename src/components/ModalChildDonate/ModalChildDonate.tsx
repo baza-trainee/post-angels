@@ -12,7 +12,9 @@ interface OrderBody {
 const ModalDonate = ({ lang }: { lang: Locale }) => {
   const router = useRouter();
 
-  const [activeButton, setActiveButton] = useState<string>('Once');
+  const [activeButton, setActiveButton] = useState<string>('once');
+  console.log(activeButton);
+
   const [selectedCurrency, setSelectedCurrency] = useState<{
     value: string;
     label: string;
@@ -20,7 +22,7 @@ const ModalDonate = ({ lang }: { lang: Locale }) => {
   }>({ value: 'USD', label: '$ USD', symbol: '$' });
   const [donationAmount, setDonationAmount] = useState<number>(200);
 
-  const subscriptionOptions = ['Once', 'Monthly'];
+  const subscriptionOptions = ['once', 'monthly'];
   const dotaionOptions = [100, 200, 500];
   const currencyOptions = [
     { value: 'USD', label: '$ USD', symbol: '$' },
@@ -114,6 +116,7 @@ const ModalDonate = ({ lang }: { lang: Locale }) => {
         order_desc: 'Благодійний внесок',
         amount: donationAmount,
         currency: selectedCurrency?.value,
+        regularMode: activeButton,
       }),
     });
     const res = await response.json();
