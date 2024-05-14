@@ -675,11 +675,13 @@
         "schema": {
           "name": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorMin": "Minimum length is 4 characters",
+            "errorType": "The value contains invalid characters"
           },
           "surname": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorMin": "Minimum length is 4 characters",
+            "errorType": "The value contains invalid characters"
           },
           "city": {
             "errorRequired": "Field is required",

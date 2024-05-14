@@ -98,10 +98,12 @@ export interface SchemaTypes {
   name: {
     errorRequired: string;
     errorMin: string;
+    errorType: string;
   };
   surname: {
     errorRequired: string;
     errorMin: string;
+    errorType: string;
   };
   city: {
     errorRequired: string;

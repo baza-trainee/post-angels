@@ -677,11 +677,13 @@
         "schema": {
           "name": {
             "errorRequired": "Pole jest wymagane",
-            "errorMin": "Minimalna długość wynosi 4 znaki"
+            "errorMin": "Minimalna długość wynosi 4 znaki",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "surname": {
             "errorRequired": "Pole jest wymagane",
-            "errorMin": "Minimalna długość wynosi 4 znaki"
+            "errorMin": "Minimalna długość wynosi 4 znaki",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "city": {
             "errorRequired": "Pole jest wymagane",
