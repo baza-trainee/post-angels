@@ -14,6 +14,8 @@ export const partnersForm = (translation: SchemaTypes) => {
     ourOffer,
     descriptionTermsAgreement,
   } = translation;
+  const phoneRegex = /^\+38 (?!000)\d{3} (?!000)\d{3} (?!00)\d{2} (?!00)\d{2}$/;
+  const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐ'’\- ]+$/;
 
   const schema = yup.object({
     name: yup
@@ -21,13 +23,13 @@ export const partnersForm = (translation: SchemaTypes) => {
       .required(name.errorRequired)
       .min(2, name.errorLength)
       .max(30, name.errorLength)
-      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, name.errorType),
+      .matches(nameRegex, name.errorType),
     surname: yup
       .string()
       .required(surname.errorRequired)
       .min(2, surname.errorLength)
       .max(30, surname.errorLength)
-      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, surname.errorType),
+      .matches(nameRegex, surname.errorType),
     city: yup
       .string()
       .required(city.errorRequired)
@@ -41,7 +43,13 @@ export const partnersForm = (translation: SchemaTypes) => {
       .min(2, email.errorLength)
       .max(256, email.errorLength)
       .matches(/^[^@ \t\r\n]+@(?!.*\.(ru|by)\b)[^@ \t\r\n]+\.[^@ \t\r\n]+$/, email.errorType),
-    phone: yup.string().required(phone.errorRequired).trim().min(17, phone.errorLength),
+    phone: yup
+      .string()
+      .required(phone.errorRequired)
+      .matches(phoneRegex, phone.errorType)
+      .trim()
+      .min(17, phone.errorLength),
+
     companyName: yup
       .string()
       .required(companyName.errorRequired)
