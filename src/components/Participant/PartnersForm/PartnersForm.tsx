@@ -39,7 +39,7 @@ export const PartnersForm: React.FC<PartnersFormProps> = ({
   const onSubmit = async (data: FormData) => {
     try {
       setSubmitting(true);
-      console.log(data);
+
       const response = await fetchPartnerFormData(lang, {
         name: data.name,
         lastName: data.surname,

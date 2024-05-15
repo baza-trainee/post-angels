@@ -469,12 +469,15 @@
           },
           "EDRPOU": {
             "errorRequired": "Поле обов'язкове для заповнення",
-            "errorLength": "Мінімальна довжина 8 символа"
+            "errorLength": "Довжина повинна складатися з 8 символів",
+            "errorType": "Значення повинно містити лише цифри"
           },
           "waysSupport": {
             "errorRequired": "Поле обов'язкове для заповнення"
           },
           "ourOffer": {
+            "errorMinLength": "Мінімальна довжина 5 символа",
+            "errorMaxLength": "Максимальна довжина 1000 символа",
             "errorType": "Значення містить некоректні символи"
           },
           "descriptionTermsAgreement": {
@@ -606,7 +609,8 @@
             "errorRequired": "Оберіть відповідне"
           },
           "reasonVolunteering": {
-            "errorLength": "Мінімальна довжина 1000 символа",
+            "errorMinLength": "Мінімальна довжина 5 символа",
+            "errorMaxLength": "Максимальна довжина 1000 символа",
             "errorType": "Значення містить некоректні символи"
           },
           "descriptionPrivacyPolice": {

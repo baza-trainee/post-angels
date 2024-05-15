@@ -66,9 +66,12 @@ export const volunteersForm = (translation: SchemaTypes) => {
       .required(waysVolunteering.errorRequired),
     volunteerCertificate: yup.string().required(volunteerCertificate.errorRequired),
     carAvailability: yup.string().required(carAvailability.errorRequired),
+
     reasonVolunteering: yup
       .string()
-      .max(1000, reasonVolunteering.errorLength)
+      .trim()
+      .min(5, reasonVolunteering.errorMinLength)
+      .max(1000, reasonVolunteering.errorMaxLength)
       .matches(/^[^ёы]*$/, reasonVolunteering.errorType),
     descriptionTermsAgreement: yup
       .boolean()
