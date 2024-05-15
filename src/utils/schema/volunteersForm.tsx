@@ -17,19 +17,21 @@ export const volunteersForm = (translation: SchemaTypes) => {
     descriptionPrivacyPolice,
   } = translation;
 
+  const phoneRegex = /^\+38 (?!000)\d{3} (?!000)\d{3} (?!00)\d{2} (?!00)\d{2}$/;
+  const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐ'’\- ]+$/;
   const schema = yup.object({
     name: yup
       .string()
       .required(name.errorRequired)
       .min(2, name.errorLength)
       .max(30, name.errorLength)
-      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, name.errorType),
+      .matches(nameRegex, name.errorType),
     surname: yup
       .string()
       .required(surname.errorRequired)
       .min(2, surname.errorLength)
       .max(30, surname.errorLength)
-      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, surname.errorType),
+      .matches(nameRegex, surname.errorType),
     city: yup
       .string()
       .required(city.errorRequired)
@@ -41,19 +43,20 @@ export const volunteersForm = (translation: SchemaTypes) => {
       .email(email.errorType)
       .required(email.errorRequired)
       .min(2, email.errorLength)
-      .max(256, email.errorLength),
+      .max(256, email.errorLength)
+      .matches(/^[^@ \t\r\n]+@(?!.*\.(ru|by)\b)[^@ \t\r\n]+\.[^@ \t\r\n]+$/, email.errorType),
     phone: yup
       .string()
       .required(phone.errorRequired)
-      .min(10, phone.errorLength)
-      .max(13, phone.errorLength)
-      .matches(/^\+(?!0+$)\d+$/, phone.errorType),
+      .matches(phoneRegex, phone.errorType)
+      .trim()
+      .min(17, phone.errorLength),
+
     telegram: yup
       .string()
       .matches(/^[a-zA-Z0-9._@]*$/, telegram.errorType)
       .min(5, telegram.errorLength)
-      .max(32, telegram.errorLength)
-      ,
+      .max(32, telegram.errorLength),
     waysVolunteering: yup
       .object({
         label: yup.string().required(waysVolunteering.errorRequired),
@@ -63,9 +66,12 @@ export const volunteersForm = (translation: SchemaTypes) => {
       .required(waysVolunteering.errorRequired),
     volunteerCertificate: yup.string().required(volunteerCertificate.errorRequired),
     carAvailability: yup.string().required(carAvailability.errorRequired),
+
     reasonVolunteering: yup
       .string()
-      .max(1000, reasonVolunteering.errorLength)
+      .trim()
+      .min(5, reasonVolunteering.errorMinLength)
+      .max(1000, reasonVolunteering.errorMaxLength)
       .matches(/^[^ёы]*$/, reasonVolunteering.errorType),
     descriptionTermsAgreement: yup
       .boolean()

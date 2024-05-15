@@ -1,3 +1,5 @@
+import { DocumentDataProps } from '@/api/fetchDocuments';
+
 export interface PopupCookieProps {
   data: {
     popupCookie: {
@@ -7,4 +9,10 @@ export interface PopupCookieProps {
       href: string;
     };
   };
+  modal: {
+    button: {
+      label: string;
+    };
+  };
+  document: DocumentDataProps;
 }

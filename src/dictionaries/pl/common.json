@@ -249,6 +249,10 @@
         }
       }
     },
+
+    "report": {
+      "title": "Raporty"
+    },
     "cookie": {
       "popupCookie": {
         "text": "Ta strona korzysta z plików cookies w celu prawidłowego funkcjonowania i ulepszania serwisu. Jeśli wyrażasz zgodę - kliknij OK.",
@@ -285,7 +289,7 @@
         },
         {
           "name": "Raportowanie",
-          "href": "/pl/"
+          "href": "/pl/report"
         }
       ],
       "footerDoc": [
@@ -446,7 +450,7 @@
           "phone": {
             "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
             "errorRequired": "Pole jest wymagane",
-            "errorLength": "Maksymalna długość wynosi 13 znaków"
+            "errorLength": "Nieprawidłowa wartość"
           },
           "companyName": {
             "errorRequired": "Pole jest wymagane",
@@ -455,12 +459,15 @@
           },
           "EDRPOU": {
             "errorRequired": "Pole jest wymagane",
-            "errorLength": "Minimalna długość wynosi 8 znaków"
+            "errorLength": "Długość musi wynosić 8 znaków",
+            "errorType": "Wartość powinna zawierać tylko cyfry"
           },
           "waysSupport": {
             "errorRequired": "Pole jest wymagane"
           },
           "ourOffer": {
+            "errorMinLength": "Minimalna długość to 5 znaków",
+            "errorMaxLength": "Maksymalna długość to 1000 znaków",
             "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "descriptionTermsAgreement": {
@@ -573,7 +580,7 @@
           "phone": {
             "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
             "errorRequired": "Pole jest wymagane",
-            "errorLength": "Maximum length is 13 characters"
+            "errorLength": "Nieprawidłowa wartość"
           },
           "telegram": {
             "errorType": "Wartość zawiera nieprawidłowe znaki",
@@ -589,7 +596,8 @@
             "errorRequired": "Pole jest wymagane"
           },
           "reasonVolunteering": {
-            "errorLength": "Maksymalna długość wynosi 1000 znaków",
+            "errorMinLength": "Minimalna długość to 5 znaków",
+            "errorMaxLength": "Maksymalna długość to 1000 znaków",
             "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "descriptionTermsAgreement": {
@@ -673,11 +681,13 @@
         "schema": {
           "name": {
             "errorRequired": "Pole jest wymagane",
-            "errorMin": "Minimalna długość wynosi 4 znaki"
+            "errorMin": "Minimalna długość wynosi 4 znaki",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "surname": {
             "errorRequired": "Pole jest wymagane",
-            "errorMin": "Minimalna długość wynosi 4 znaki"
+            "errorMin": "Minimalna długość wynosi 4 znaki",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "city": {
             "errorRequired": "Pole jest wymagane",

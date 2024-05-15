@@ -5,6 +5,7 @@ const config: Config = {
     screens: {
       xs: '360px',
       sm: '480px',
+
       md: '768px',
       lg: '1000px',
       xl: '1280px',
@@ -16,6 +17,23 @@ const config: Config = {
       notXl: { max: '1279.98px' },
     },
     extend: {
+      animation: {
+        bounce: 'bounce 1.5s infinite',
+      },
+
+      keyframes: {
+        bounce: {
+          '0%, 100%': {
+            transform: 'translateY(0%)',
+            transitionTimingFunction: 'cubic-bezier(0.4, 0, 1, 1)',
+          },
+          '50%': {
+            transform: 'translateY(200%)',
+            transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
+      },
+
       container: {
         center: true,
         padding: {

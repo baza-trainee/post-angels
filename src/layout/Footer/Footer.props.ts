@@ -1,3 +1,4 @@
+import { DocumentDataProps } from '@/api/fetchDocuments';
 import { Locale } from '@/i18n.config';
 
 export interface FooterProps {
@@ -25,4 +26,5 @@ export interface FooterProps {
     label: string;
     href: string;
   };
+  documents: DocumentDataProps[];
 }

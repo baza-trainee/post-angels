@@ -5,6 +5,7 @@ import Link from 'next/link';
 export const PartnerCard = ({ attributes }: PartnersSliderProps) => {
   return !attributes.partnerOrgLogo.src ? null : (
     <Link
+      aria-label="link to partner web-site"
       href={attributes.web_link || ''}
       rel="nofollow noreferrer"
       target="_blank"
@@ -15,11 +16,9 @@ export const PartnerCard = ({ attributes }: PartnersSliderProps) => {
         width={attributes.partnerOrgLogo.src.data.attributes.width || 40}
         height={attributes.partnerOrgLogo.src.data.attributes.height || 40}
         priority
-        src={attributes.partnerOrgLogo.src.data.attributes.url}
+        src={attributes?.partnerOrgLogo?.src?.data?.attributes?.url}
         alt={`${attributes.partnerOrgLogo.alt} ${attributes.partnerOrgTitle}`}
         sizes="30wv"
-        //   placeholder="blur"
-        //   blurDataURL={`data:image/svg+xml;base64,${getBase64(shimmer(700, 475))}`}
       />
     </Link>
   );

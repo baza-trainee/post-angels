@@ -30,32 +30,32 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
 
           {/* address afret 1000px */}
           <Link
-            className="hidden gap-x-2 xl:flex"
+            className="hidden gap-x-2 fill-grey-100 hover:fill-orange xl:flex "
             href={contactData.address_link}
             rel="nofollow noreferrer"
             target="_blank"
           >
-            <ICONS.HEADER_LOCATION className="h-6 w-6" />
+            <ICONS.HEADER_LOCATION className="h-6 w-6 fill-inherit" />
             {contactData.address}
           </Link>
           {/* tel number */}
           <Link
             rel="nofollow noreferrer"
             target="_blank"
-            className="flex gap-x-2"
+            className="flex gap-x-2 stroke-grey-100 hover:stroke-orange"
             href={`tel:${contactData.phone}`}
           >
-            <ICONS.HEADER_PHONE className="h-6 w-6" />
+            <ICONS.HEADER_PHONE className="h-6 w-6 stroke-[inherit]" />
             {contactData.phone}
           </Link>
           {/* mail after 1000px */}
           <Link
             rel="nofollow noreferrer"
             target="_blank"
-            className="hidden gap-x-2 xl:flex"
+            className="hidden gap-x-2 fill-grey-100 hover:fill-orange xl:flex"
             href={`mailto:${contactData.email}`}
           >
-            <ICONS.HEADER_MAIL className="h-6 w-6" />
+            <ICONS.HEADER_MAIL className="h-6 w-6 fill-inherit" />
             {contactData.email}
           </Link>
           {/* mobile nav before 1000px */}

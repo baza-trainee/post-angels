@@ -1,9 +1,10 @@
 import { formatTitle } from '@/components/formatTitle';
 import { Paragraph } from '@/components/typography/Paragraph';
 import { Title } from '@/components/typography/Title';
-import Image from 'next/image';
+
 import { FAQ } from '@/components/veterans/FAQ/FAQ';
 import { HelpProps } from './Help.props';
+import CustomImage from '@/components/CustomImage/CustomImage';
 
 export const Help = ({ data, descriptionData, faq }: HelpProps) => {
   const { title, description, image, helps } = data;
@@ -29,14 +30,15 @@ export const Help = ({ data, descriptionData, faq }: HelpProps) => {
         </div>
         {/* photo */}
         <div className="relative h-[205px] w-full rounded-2xl saturate-0 transition-all delay-300 hover:saturate-100 lg:h-[256px] xl:w-[580px] 2xl:w-[664px] 3xl:w-[904px]">
-          <Image
+          <CustomImage
             id={image.id}
             src={image.src.data.attributes.url}
-            alt={image.alt}
+            alt={image.alt || 'background image'}
             fill
             priority
             sizes="(max-width: 960px) 100vw, 50vw"
             className="rounded-2xl object-cover object-center"
+            defaultImg="/images/default_img/veteran_help.png"
           />
         </div>
       </div>
