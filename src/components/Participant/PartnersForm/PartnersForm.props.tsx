@@ -36,48 +36,51 @@ export interface PartnersFormProps {
   buttonText: string;
   schema: {
     name: {
-    errorRequired: string;
-    errorLength: string;
-    errorType: string;
-  };
-  surname: {
-    errorRequired: string;
-    errorLength: string;
-    errorType: string;
-  };
-  city: {
-    errorRequired: string;
-    errorLength: string;
-    errorType: string;
-  };
-  email: {
-    errorType: string;
-    errorRequired: string;
-    errorLength: string;
-  };
-  phone: {
-    errorType: string;
-    errorRequired: string;
-    errorLength: string;
-  };
-  companyName: {
-    errorRequired: string;
-    errorLength: string;
-    errorType: string;
-  };
-  EDRPOU: {
-    errorRequired: string;
-    errorLength: string;
-  };
-  waysSupport: {
-    errorRequired: string;
-  };
-  ourOffer: {
-    errorType: string;
-  };
-  descriptionTermsAgreement: {
-    errorRequired: string;
-  };
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    surname: {
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    city: {
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    email: {
+      errorType: string;
+      errorRequired: string;
+      errorLength: string;
+    };
+    phone: {
+      errorType: string;
+      errorRequired: string;
+      errorLength: string;
+    };
+    companyName: {
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    EDRPOU: {
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    waysSupport: {
+      errorRequired: string;
+    };
+    ourOffer: {
+      errorType: string;
+      errorMinLength: string;
+      errorMaxLength: string;
+    };
+    descriptionTermsAgreement: {
+      errorRequired: string;
+    };
   };
   notice: {
     success: string;
@@ -131,12 +134,15 @@ export interface SchemaTypes {
   EDRPOU: {
     errorRequired: string;
     errorLength: string;
+    errorType: string;
   };
   waysSupport: {
     errorRequired: string;
   };
   ourOffer: {
     errorType: string;
+    errorMinLength: string;
+    errorMaxLength: string;
   };
   descriptionTermsAgreement: {
     errorRequired: string;

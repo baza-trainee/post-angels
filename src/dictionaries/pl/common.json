@@ -459,12 +459,15 @@
           },
           "EDRPOU": {
             "errorRequired": "Pole jest wymagane",
-            "errorLength": "Minimalna długość wynosi 8 znaków"
+            "errorLength": "Długość musi wynosić 8 znaków",
+            "errorType": "Wartość powinna zawierać tylko cyfry"
           },
           "waysSupport": {
             "errorRequired": "Pole jest wymagane"
           },
           "ourOffer": {
+            "errorMinLength": "Minimalna długość to 5 znaków",
+            "errorMaxLength": "Maksymalna długość to 1000 znaków",
             "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "descriptionTermsAgreement": {
@@ -593,7 +596,8 @@
             "errorRequired": "Pole jest wymagane"
           },
           "reasonVolunteering": {
-            "errorLength": "Maksymalna długość wynosi 1000 znaków",
+            "errorMinLength": "Minimalna długość to 5 znaków",
+            "errorMaxLength": "Maksymalna długość to 1000 znaków",
             "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "descriptionTermsAgreement": {

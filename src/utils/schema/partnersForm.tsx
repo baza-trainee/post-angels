@@ -16,6 +16,8 @@ export const partnersForm = (translation: SchemaTypes) => {
   } = translation;
   const phoneRegex = /^\+38 (?!000)\d{3} (?!000)\d{3} (?!00)\d{2} (?!00)\d{2}$/;
   const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐ'’\- ]+$/;
+  const numberRegex = /^\d+$/;
+  const companyRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐ0-9!@#()&^_?+""«»№:“”=–/*.,'’\- ]+$/;
 
   const schema = yup.object({
     name: yup
@@ -55,12 +57,13 @@ export const partnersForm = (translation: SchemaTypes) => {
       .required(companyName.errorRequired)
       .min(2, companyName.errorLength)
       .max(30, companyName.errorLength)
-      .matches(/^[-'a-zA-Zа-яҐґЄєІіЇї\s]*$/, companyName.errorType),
+      .matches(companyRegex, companyName.errorType),
     EDRPOU: yup
       .string()
       .required(EDRPOU.errorRequired)
-      .min(8, EDRPOU.errorLength)
-      .max(30, EDRPOU.errorLength),
+      .matches(numberRegex, EDRPOU.errorType)
+      .length(8, EDRPOU.errorLength),
+
     waysSupport: yup
       .object({
         label: yup.string().required(waysSupport.errorRequired),
@@ -68,7 +71,12 @@ export const partnersForm = (translation: SchemaTypes) => {
       })
       .nonNullable()
       .required(waysSupport.errorRequired),
-    ourOffer: yup.string().matches(/^[^ёы]*$/, ourOffer.errorType),
+    ourOffer: yup
+      .string()
+      .trim()
+      .min(5, ourOffer.errorMinLength)
+      .max(1000, ourOffer.errorMaxLength)
+      .matches(/^[^ёы]*$/, ourOffer.errorType),
     descriptionTermsAgreement: yup
       .boolean()
       .default(false)

@@ -457,12 +457,15 @@
           },
           "EDRPOU": {
             "errorRequired": "Field is required",
-            "errorLength": "Minimum length is 8 characters"
+            "errorLength": "The length must be 8 characters",
+            "errorType": "The value must contain only digits"
           },
           "waysSupport": {
             "errorRequired": "Field is required"
           },
           "ourOffer": {
+            "errorMinLength": "Minimum length is 5 characters",
+            "errorMaxLength": "Maximum length is 1000 characters",
             "errorType": "The value contains invalid characters"
           },
           "descriptionTermsAgreement": {
@@ -591,7 +594,8 @@
             "errorRequired": "Field is required"
           },
           "reasonVolunteering": {
-            "errorLength": "Maximum length is 1000 characters",
+            "errorMinLength": "Minimum length is 5 characters",
+            "errorMaxLength": "Maximum length is 1000 characters",
             "errorType": "The value contains invalid characters"
           },
           "descriptionTermsAgreement": {
