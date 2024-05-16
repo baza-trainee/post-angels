@@ -14,7 +14,7 @@ export const partnersForm = (translation: SchemaTypes) => {
     ourOffer,
     descriptionTermsAgreement,
   } = translation;
-  const phoneRegex = /^\+38 (?!000)\d{3} (?!000)\d{3} (?!00)\d{2} (?!00)\d{2}$/;
+  const phoneRegex = /^\+\d{1,2} (?!000)\d{3} (?!000)\d{3} (?!00)\d{2} (?!00)\d{2}$/;
   const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐ'’\- ]+$/;
   const numberRegex = /^\d+$/;
   const companyRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐ0-9!@#()&^_?+""«»№:“”=–/*.,'’\- ]+$/;
@@ -50,8 +50,7 @@ export const partnersForm = (translation: SchemaTypes) => {
       .required(phone.errorRequired)
       .matches(phoneRegex, phone.errorType)
       .trim()
-      .min(17, phone.errorLength),
-
+      .min(16, phone.errorLength),
     companyName: yup
       .string()
       .required(companyName.errorRequired)

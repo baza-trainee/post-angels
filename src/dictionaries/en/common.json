@@ -381,7 +381,7 @@
             },
             {
               "title": "Phone",
-              "placeholder": "+38 (---) --- -- --",
+              "placeholder": "+- (---) --- -- --",
               "name": "phone",
               "type": "text"
             },
@@ -498,7 +498,7 @@
             },
             {
               "title": "Phone",
-              "placeholder": "+38 (---) --- -- --",
+              "placeholder": "+- (---) --- -- --",
               "name": "phone",
               "type": "text"
             },
@@ -644,7 +644,7 @@
             },
             {
               "title": "Phone",
-              "placeholder": "+38 (---) --- -- --",
+              "placeholder": "+- (---) --- -- --",
               "name": "phone",
               "type": "text"
             }
