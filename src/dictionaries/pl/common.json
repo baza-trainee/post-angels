@@ -258,7 +258,11 @@
         "text": "Ta strona korzysta z plików cookies w celu prawidłowego funkcjonowania i ulepszania serwisu. Jeśli wyrażasz zgodę - kliknij OK.",
         "text1": "Więcej informacji w",
         "linkText": "Polityce Prywatności.",
-        "href": "/"
+        "href": "/",
+        "button_text": {
+          "yes": "Przyjąć",
+          "no": "Odrzucić"
+        }
       }
     },
     "footer": {

@@ -18,8 +18,10 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data, modal, document }) => {
   return (
     <div className="relative flex w-full  items-center">
       <CookieConsent
+        enableDeclineButton
         location="bottom"
-        buttonText="OK"
+        buttonText={popupCookie.button_text.yes}
+        declineButtonText={popupCookie.button_text.no}
         cookieName="cookie"
         style={{
           background: '#F9FAFF',
@@ -38,8 +40,11 @@ const PopupCookie: React.FC<PopupCookieProps> = ({ data, modal, document }) => {
         expires={150}
         overlay={true}
         hideOnAccept={true}
-        buttonWrapperClasses="my-0 mx-auto text-center"
-        buttonClasses="!text-grey-0 !rounded-full !w-[236px] sm:!w-full md:!w-[372px] lg:!w-[465px]  !mt-4 xl:!mt-0 !bg-orange xl:!w-[236px] hover:!bg-[#FC4100]"
+        disableButtonStyles={true}
+        declineButtonClasses="ring-1 hover:ring-2 ring-orange ring-offset-0 text-grey-100  !rounded-full sm:!w-full  lg:!w-[465px] !bg-transparent xl:!w-[236px]"
+        buttonWrapperClasses="my-0 mx-auto text-center gap-x-4 flex-col-reverse md:flex-row-reverse flex xl:flex-col-reverse gap-y-4 !mt-4 xl:!mt-0"
+        buttonClasses="ring-1 ring-offset-0 ring-orange hover:ring-[#FC4100]  text-grey-0 rounded-full  sm:!w-full  lg:!w-[465px]   bg-orange xl:!w-[236px] hover:bg-[#FC4100]"
+        declineButtonStyle={{ padding: '12px', margin: 0 }}
         buttonStyle={{
           padding: '12px',
           margin: 0,

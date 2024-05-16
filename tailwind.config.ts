@@ -63,7 +63,7 @@ const config: Config = {
           hover: '#1A48ED',
           pressed: '#0C31B4',
         },
-        orange: ' #FF551A',
+        orange: '#FF551A',
         green: '#45CF15',
         error: '#E50E0E',
         box: '#e8e8e8',
