@@ -72,16 +72,14 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
         <div className="hidden h-auto items-center justify-between border-b border-grey-60 py-6 xl:flex ">
           <Logo type="dark" logo={logo} />
 
-          <div className="flex items-center gap-6 ">
-            <Navigation headerNav={headerNav} />
-            <div className="flex items-center">
-              <ButtonDonate
-                headerButton={buttons.headerButton}
-                modal={modal}
-                buttonClassName="mr-8 !px-[38px]"
-              />
-              <Dropdown headerLanguageLabel={buttons.headerLanguageLabel} lang={lang} />
-            </div>
+          <Navigation headerNav={headerNav} />
+          <div className="flex items-center">
+            <ButtonDonate
+              headerButton={buttons.headerButton}
+              modal={modal}
+              buttonClassName="mr-[14px] !px-[38px] !w-[222px]"
+            />
+            <Dropdown headerLanguageLabel={buttons.headerLanguageLabel} lang={lang} />
           </div>
         </div>
       </div>

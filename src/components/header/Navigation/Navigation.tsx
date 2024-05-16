@@ -21,7 +21,7 @@ export const Navigation = ({ headerNav }: { headerNav: { name: string; href: str
 
   return (
     <nav>
-      <ul className="flex items-center justify-between gap-5 uppercase  hover:[&>*]:text-orange">
+      <ul className="flex items-center justify-between gap-5 uppercase 2xl:gap-10 3xl:gap-[50px]  hover:[&>*]:text-orange">
         {navLinks}
       </ul>
     </nav>

@@ -1,4 +1,5 @@
-import { ChangeEvent } from "react";
+import { Locale } from '@/i18n.config';
+import { ChangeEvent } from 'react';
 
 export interface InputProps {
   name: string;
@@ -8,4 +9,5 @@ export interface InputProps {
   className?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   value?: string;
+  lang?: Locale;
 }
