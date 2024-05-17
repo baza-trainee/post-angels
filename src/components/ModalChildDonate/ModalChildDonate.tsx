@@ -6,7 +6,7 @@ import { Button } from '../buttons/Button';
 import { Title } from '../typography/Title';
 
 interface OrderBody {
-  [key: string]: string | number | string[] | number[]; // Define the properties and their types
+  [key: string]: string | number | string[] | number[];
 }
 
 const ModalDonate = ({ lang }: { lang: Locale }) => {

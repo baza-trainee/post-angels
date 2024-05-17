@@ -258,7 +258,11 @@
         "text": "Ta strona korzysta z plików cookies w celu prawidłowego funkcjonowania i ulepszania serwisu. Jeśli wyrażasz zgodę - kliknij OK.",
         "text1": "Więcej informacji w",
         "linkText": "Polityce Prywatności.",
-        "href": "/"
+        "href": "/",
+        "button_text": {
+          "yes": "Przyjąć",
+          "no": "Odrzucić"
+        }
       }
     },
     "footer": {
@@ -459,12 +463,15 @@
           },
           "EDRPOU": {
             "errorRequired": "Pole jest wymagane",
-            "errorLength": "Minimalna długość wynosi 8 znaków"
+            "errorLength": "Długość musi wynosić 8 znaków",
+            "errorType": "Wartość powinna zawierać tylko cyfry"
           },
           "waysSupport": {
             "errorRequired": "Pole jest wymagane"
           },
           "ourOffer": {
+            "errorMinLength": "Minimalna długość to 5 znaków",
+            "errorMaxLength": "Maksymalna długość to 1000 znaków",
             "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "descriptionTermsAgreement": {
@@ -593,7 +600,8 @@
             "errorRequired": "Pole jest wymagane"
           },
           "reasonVolunteering": {
-            "errorLength": "Maksymalna długość wynosi 1000 znaków",
+            "errorMinLength": "Minimalna długość to 5 znaków",
+            "errorMaxLength": "Maksymalna długość to 1000 znaków",
             "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "descriptionTermsAgreement": {
@@ -677,11 +685,13 @@
         "schema": {
           "name": {
             "errorRequired": "Pole jest wymagane",
-            "errorMin": "Minimalna długość wynosi 4 znaki"
+            "errorMin": "Minimalna długość wynosi 4 znaki",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "surname": {
             "errorRequired": "Pole jest wymagane",
-            "errorMin": "Minimalna długość wynosi 4 znaki"
+            "errorMin": "Minimalna długość wynosi 4 znaki",
+            "errorType": "Wartość zawiera nieprawidłowe znaki"
           },
           "city": {
             "errorRequired": "Pole jest wymagane",

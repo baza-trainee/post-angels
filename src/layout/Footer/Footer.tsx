@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ data, logo, modal, documents }) 
         <div className="flex items-center justify-between text-base font-normal uppercase text-grey-0 3xl:gap-[148px]">
           <Logo type="light" logo={logo} />
 
-          <ul className="hidden xl:flex xl:gap-[58px] hover:[&>*]:text-orange focus:[&>*]:text-orange">
+          <ul className="hidden xl:flex xl:gap-[46px] 3xl:gap-[130px] hover:[&>*]:text-orange focus:[&>*]:text-orange">
             {footerNav.map(ell => (
               <li key={ell.name}>
                 <Link href={ell.href}>{ell.name}</Link>

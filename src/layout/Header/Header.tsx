@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 import { Navigation } from '@/components/header/Navigation';
 
+import { fetchContact } from '@/api/fetchContact';
 import { ButtonDonate } from '@/components/header/ButtonDonate';
 import { Dropdown } from '@/components/header/Dropdown';
 import MobileNav from '@/components/header/MobileNav/MobileNav';
 import { Logo } from '@/layout/Logo';
 import { HeaderProps } from './Header.props';
-import { fetchContact } from '@/api/fetchContact';
 
 export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, transparent }) => {
   const { headerNav, buttons } = data;
@@ -30,32 +30,32 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
 
           {/* address afret 1000px */}
           <Link
-            className="hidden gap-x-2 xl:flex"
+            className="hidden gap-x-2 fill-grey-100 hover:fill-orange xl:flex "
             href={contactData.address_link}
             rel="nofollow noreferrer"
             target="_blank"
           >
-            <ICONS.HEADER_LOCATION className="h-6 w-6" />
+            <ICONS.HEADER_LOCATION className="h-6 w-6 fill-inherit" />
             {contactData.address}
           </Link>
           {/* tel number */}
           <Link
             rel="nofollow noreferrer"
             target="_blank"
-            className="flex gap-x-2"
+            className="flex gap-x-2 stroke-grey-100 hover:stroke-orange"
             href={`tel:${contactData.phone}`}
           >
-            <ICONS.HEADER_PHONE className="h-6 w-6" />
+            <ICONS.HEADER_PHONE className="h-6 w-6 stroke-[inherit]" />
             {contactData.phone}
           </Link>
           {/* mail after 1000px */}
           <Link
             rel="nofollow noreferrer"
             target="_blank"
-            className="hidden gap-x-2 xl:flex"
+            className="hidden gap-x-2 fill-grey-100 hover:fill-orange xl:flex"
             href={`mailto:${contactData.email}`}
           >
-            <ICONS.HEADER_MAIL className="h-6 w-6" />
+            <ICONS.HEADER_MAIL className="h-6 w-6 fill-inherit" />
             {contactData.email}
           </Link>
           {/* mobile nav before 1000px */}
@@ -72,17 +72,15 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
         <div className="hidden h-auto items-center justify-between border-b border-grey-60 py-6 xl:flex ">
           <Logo type="dark" logo={logo} />
 
-          <div className="flex items-center gap-6 ">
-            <Navigation headerNav={headerNav} />
-            <div className="flex items-center">
-              <ButtonDonate
-                headerButton={buttons.headerButton}
-                modal={modal}
-                buttonClassName="mr-8 !px-[38px]"
-                lang={lang}
-              />
-              <Dropdown headerLanguageLabel={buttons.headerLanguageLabel} lang={lang} />
-            </div>
+          <Navigation headerNav={headerNav} />
+          <div className="flex items-center">
+            <ButtonDonate
+              headerButton={buttons.headerButton}
+              modal={modal}
+              buttonClassName="mr-[14px] !px-[38px] !w-[222px]"
+              lang={lang}
+            />
+            <Dropdown headerLanguageLabel={buttons.headerLanguageLabel} lang={lang} />
           </div>
         </div>
       </div>

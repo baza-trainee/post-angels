@@ -7,6 +7,10 @@ export interface PopupCookieProps {
       text1: string;
       linkText: string;
       href: string;
+      button_text: {
+        yes: string;
+        no: string;
+      };
     };
   };
   modal: {

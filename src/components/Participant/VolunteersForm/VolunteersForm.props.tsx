@@ -46,56 +46,57 @@ export interface VolunteersFormProps {
     name: string;
     description: string;
   };
-  schema:  {
-  name: {
-    errorRequired: string;
-    errorLength: string;
-    errorType: string;
+  schema: {
+    name: {
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    surname: {
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    city: {
+      errorRequired: string;
+      errorLength: string;
+      errorType: string;
+    };
+    email: {
+      errorType: string;
+      errorRequired: string;
+      errorLength: string;
+    };
+    phone: {
+      errorType: string;
+      errorRequired: string;
+      errorLength: string;
+    };
+    telegram: {
+      errorType: string;
+      errorLength: string;
+    };
+    waysVolunteering: {
+      errorRequired: string;
+    };
+    carAvailability: {
+      errorRequired: string;
+    };
+    volunteerCertificate: {
+      errorRequired: string;
+    };
+    reasonVolunteering: {
+      errorMinLength: string;
+      errorMaxLength: string;
+      errorType: string;
+    };
+    descriptionTermsAgreement: {
+      errorRequired: string;
+    };
+    descriptionPrivacyPolice: {
+      errorRequired: string;
+    };
   };
-  surname: {
-    errorRequired: string;
-    errorLength: string;
-    errorType: string;
-  };
-  city: {
-    errorRequired: string;
-    errorLength: string;
-    errorType: string;
-  };
-  email: {
-    errorType: string;
-    errorRequired: string;
-    errorLength: string;
-  };
-  phone: {
-    errorType: string;
-    errorRequired: string;
-    errorLength: string;
-  };
-  telegram: {
-    errorType: string;
-    errorLength: string;
-  };
-  waysVolunteering: {
-    errorRequired: string;
-  };
-  carAvailability: {
-    errorRequired: string;
-  };
-  volunteerCertificate: {
-    errorRequired: string;
-  };
-  reasonVolunteering:{
-    errorType: string;
-    errorLength: string;
-  };
-  descriptionTermsAgreement: {
-    errorRequired: string;
-  };
-  descriptionPrivacyPolice: {
-    errorRequired: string;
-  };
-}
   buttonText: string;
   notice: {
     success: string;
@@ -155,9 +156,10 @@ export interface SchemaTypes {
   volunteerCertificate: {
     errorRequired: string;
   };
-  reasonVolunteering:{
+  reasonVolunteering: {
+    errorMinLength: string;
+    errorMaxLength: string;
     errorType: string;
-    errorLength: string;
   };
   descriptionTermsAgreement: {
     errorRequired: string;

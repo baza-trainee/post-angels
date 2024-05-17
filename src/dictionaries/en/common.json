@@ -256,7 +256,11 @@
         "text": "This website uses cookies for the proper functioning and improvement of the service. If you agree to their use, click OK.",
         "text1": "More information in",
         "linkText": "Privacy Policy.",
-        "href": "/"
+        "href": "/",
+        "button_text": {
+          "yes": "Accept",
+          "no": "Reject"
+        }
       }
     },
     "footer": {
@@ -381,7 +385,7 @@
             },
             {
               "title": "Phone",
-              "placeholder": "+38 (---) --- -- --",
+              "placeholder": "+- (---) --- -- --",
               "name": "phone",
               "type": "text"
             },
@@ -457,12 +461,15 @@
           },
           "EDRPOU": {
             "errorRequired": "Field is required",
-            "errorLength": "Minimum length is 8 characters"
+            "errorLength": "The length must be 8 characters",
+            "errorType": "The value must contain only digits"
           },
           "waysSupport": {
             "errorRequired": "Field is required"
           },
           "ourOffer": {
+            "errorMinLength": "Minimum length is 5 characters",
+            "errorMaxLength": "Maximum length is 1000 characters",
             "errorType": "The value contains invalid characters"
           },
           "descriptionTermsAgreement": {
@@ -495,7 +502,7 @@
             },
             {
               "title": "Phone",
-              "placeholder": "+38 (---) --- -- --",
+              "placeholder": "+- (---) --- -- --",
               "name": "phone",
               "type": "text"
             },
@@ -591,7 +598,8 @@
             "errorRequired": "Field is required"
           },
           "reasonVolunteering": {
-            "errorLength": "Maximum length is 1000 characters",
+            "errorMinLength": "Minimum length is 5 characters",
+            "errorMaxLength": "Maximum length is 1000 characters",
             "errorType": "The value contains invalid characters"
           },
           "descriptionTermsAgreement": {
@@ -640,7 +648,7 @@
             },
             {
               "title": "Phone",
-              "placeholder": "+38 (---) --- -- --",
+              "placeholder": "+- (---) --- -- --",
               "name": "phone",
               "type": "text"
             }
@@ -675,11 +683,13 @@
         "schema": {
           "name": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorMin": "Minimum length is 4 characters",
+            "errorType": "The value contains invalid characters"
           },
           "surname": {
             "errorRequired": "Field is required",
-            "errorMin": "Minimum length is 4 characters"
+            "errorMin": "Minimum length is 4 characters",
+            "errorType": "The value contains invalid characters"
           },
           "city": {
             "errorRequired": "Field is required",
