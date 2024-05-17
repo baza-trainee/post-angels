@@ -55,9 +55,11 @@ export async function POST(req: Request) {
         amount: amount,
         currency: currency,
         productName: [productName],
-        regularMode: regularMode, //! воно активує поле під оплатою для налаштування регулярного платежу
+        regularMode: regularMode,
+        regularAmount: amount,
         productCount: [productCount],
         productPrice: [productPrice],
+        regularOn: 1,
         merchantAuthType: 'SimpleSignature',
         // returnUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/callback`,
         returnUrl: ' http://localhost:3000/uk/api/callback',

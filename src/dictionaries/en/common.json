@@ -722,6 +722,24 @@
       "title": "Archive of our",
       "title1": "projects",
       "noProjects": "There are no projects in the archive"
+    },
+    "donateModal": {
+      "title": "Support",
+      "subscriptionOptions": [
+        {
+          "label": "Once",
+          "value": "once"
+        },
+        {
+          "label": "Monthly",
+          "value": "monthly"
+        }
+      ],
+      "button": {
+        "title": "Donate",
+        "label": "Donate"
+      },
+      "order_desc": "Charitable donation"
     }
   }
 }

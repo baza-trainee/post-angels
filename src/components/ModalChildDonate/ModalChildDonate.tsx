@@ -13,7 +13,6 @@ const ModalDonate = ({ lang }: { lang: Locale }) => {
   const router = useRouter();
 
   const [activeButton, setActiveButton] = useState<string>('once');
-  console.log(activeButton);
 
   const [selectedCurrency, setSelectedCurrency] = useState<{
     value: string;
@@ -134,7 +133,7 @@ const ModalDonate = ({ lang }: { lang: Locale }) => {
           colorVariant="accent"
           className="flex flex-col text-center"
         >
-          <span>Підтримати</span>
+          <span>Support</span>
           <span className="!text-orange">Post Angeles</span>
         </Title>
         <div className="mt-7 flex w-full flex-col gap-y-8">
@@ -159,11 +158,11 @@ const ModalDonate = ({ lang }: { lang: Locale }) => {
           </div>
           <Select
             styles={customStyles}
+            isDisabled={false}
             options={currencyOptions.map(option => ({
               ...option,
               label: option.label,
             }))}
-            isDisabled={false}
             onChange={handleCurrencyChange}
             placeholder={'payments.chooseYourContribution'}
             inputValue={selectedCurrency?.label}
