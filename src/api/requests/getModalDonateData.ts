@@ -6,14 +6,15 @@ export const getModalDonateData = gql`
     $currency: String!,
     $sum: Number!,
     $date: String!
-    ) {
+  ) {
     support-data(
       data: {
         name: $name,
         currency: $currency,
         sum: $sum,
-        date: $date}
-      ) {
+        date: $date
+      }
+    ) {
       data {
         id
       }
