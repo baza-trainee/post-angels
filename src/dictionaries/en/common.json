@@ -725,6 +725,8 @@
     },
     "donateModal": {
       "title": "Support",
+      "currencyPlaceholder": "Choose a currency",
+      "amountPlaceholder": "Input a value",
       "subscriptionOptions": [
         {
           "label": "Once",

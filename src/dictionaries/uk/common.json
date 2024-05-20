@@ -733,6 +733,26 @@
       "title": "Архів наших",
       "title1": "проєктів",
       "noProjects": "Немає жодного проекту в архіві"
+    },
+    "donateModal": {
+      "title": "Підтримка",
+      "currencyPlaceholder": "Виберіть валюту",
+      "amountPlaceholder": "Введіть суму",
+      "subscriptionOptions": [
+        {
+          "label": "Одноразово",
+          "value": "once"
+        },
+        {
+          "label": "Щомісяця",
+          "value": "monthly"
+        }
+      ],
+      "button": {
+        "title": "Підтримати",
+        "label": "Підтримати"
+      },
+      "order_desc": "Благодійний внесок"
     }
   }
 }
