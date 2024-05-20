@@ -12,7 +12,7 @@ export const FormDonate = ({ lang, data }: { lang: Locale; data: ModalDonateProp
     value: string;
     label: string;
     symbol: string;
-  }>({ value: 'USD', label: '$ USD', symbol: '$' });
+  } | null>(null);
   const [donationAmount, setDonationAmount] = useState<number>(200);
   const dotaionOptions = [100, 200, 500];
   const currencyOptions = [
