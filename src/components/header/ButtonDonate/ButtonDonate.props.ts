@@ -12,5 +12,5 @@ export interface ButtonDonateProps {
       label: string;
     };
   };
-  data: ModalDonateProps;
+  modalDonateData: ModalDonateProps;
 }

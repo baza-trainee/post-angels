@@ -18,7 +18,8 @@ export async function POST(req: NextRequest) {
         fetchModalDonateData({
           name: 'Anonymous',
           currency: formData.get('currency') || '',
-          sum: formData.get('amount') || 0,
+          sum: Number(formData.get('amount')) || 0,
+          date: new Date().toISOString(),
         });
       } catch (error) {
         console.error('Failed to send form data to backend:', error);

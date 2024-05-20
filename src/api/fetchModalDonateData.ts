@@ -9,6 +9,7 @@ export const fetchModalDonateData = async (formData: any) => {
       name: formData.name,
       sum: formData.sum,
       currency: formData.currency,
+      date: formData.date,
     },
     {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_POST_API}`,

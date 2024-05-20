@@ -12,7 +12,7 @@ export const ButtonDonate = ({
   modal,
   buttonClassName,
   lang,
-  data,
+  modalDonateData,
 }: ButtonDonateProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export const ButtonDonate = ({
             setIsModalOpen(false);
           }}
         >
-          <ModalChildDonate lang={lang} data={data} />
+          <ModalChildDonate lang={lang} data={modalDonateData} />
         </Modal>
       )}
     </>
