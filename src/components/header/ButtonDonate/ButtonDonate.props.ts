@@ -1,3 +1,4 @@
+import { ModalDonateProps } from '@/components/ModalChildDonate/ModalChildDonate';
 import { Locale } from '@/i18n.config';
 
 export interface ButtonDonateProps {
@@ -11,4 +12,5 @@ export interface ButtonDonateProps {
       label: string;
     };
   };
+  data: ModalDonateProps;
 }

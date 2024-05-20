@@ -1,5 +1,4 @@
 import { Locale } from '@/i18n.config';
-import { getDictionary } from '@/lib/dictionary';
 import { Title } from '../typography/Title';
 import { FormDonate } from './FormDonate';
 
@@ -18,10 +17,7 @@ export interface ModalDonateProps {
   order_desc: string;
 }
 
-const ModalDonate = async ({ lang }: { lang: Locale }) => {
-  const { common } = await getDictionary(lang);
-  const { donateModal } = common;
-
+const ModalDonate = ({ lang, data }: { lang: Locale; data: ModalDonateProps }) => {
   return (
     <>
       <div className="flex flex-col items-center gap-y-[10px] lg:px-10">
@@ -31,10 +27,10 @@ const ModalDonate = async ({ lang }: { lang: Locale }) => {
           colorVariant="accent"
           className="flex flex-col text-center"
         >
-          <span>{donateModal.title}</span>
+          <span>{data.title}</span>
           <span className="!text-orange">Post Angeles</span>
         </Title>
-        <FormDonate lang={lang} data={donateModal} />
+        <FormDonate lang={lang} data={data} />
       </div>
     </>
   );

@@ -7,7 +7,13 @@ import ModalChildDonate from '@/components/ModalChildDonate/ModalChildDonate';
 import Modal from '@/components/modal/Modal';
 import { ButtonDonateProps } from './ButtonDonate.props';
 
-export const ButtonDonate = ({ headerButton, modal, buttonClassName, lang }: ButtonDonateProps) => {
+export const ButtonDonate = ({
+  headerButton,
+  modal,
+  buttonClassName,
+  lang,
+  data,
+}: ButtonDonateProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
@@ -28,7 +34,7 @@ export const ButtonDonate = ({ headerButton, modal, buttonClassName, lang }: But
             setIsModalOpen(false);
           }}
         >
-          <ModalChildDonate lang={lang} />
+          <ModalChildDonate lang={lang} data={data} />
         </Modal>
       )}
     </>
