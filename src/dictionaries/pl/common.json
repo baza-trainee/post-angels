@@ -451,7 +451,7 @@
             "errorLength": "Poprawna długość pola to od 2 do 256 znaków"
           },
           "phone": {
-            "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
+            "errorType": "Nieprawidłowa wartość",
             "errorRequired": "Pole jest wymagane",
             "errorLength": "Nieprawidłowa wartość"
           },
@@ -581,7 +581,7 @@
             "errorLength": "Prawidłowa długość pola wynosi od 2 do 256 znaków"
           },
           "phone": {
-            "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
+            "errorType": "Nieprawidłowa wartość",
             "errorRequired": "Pole jest wymagane",
             "errorLength": "Nieprawidłowa wartość"
           },
@@ -702,7 +702,7 @@
             "errorMin": "Minimalna długość wynosi 4 znaki"
           },
           "phone": {
-            "errorType": "Wartość musi zaczynać się od '+' i zawierać wyłącznie cyfry",
+            "errorType": "Wartość zawiera nieprawidłowe znaki",
             "errorRequired": "Pole jest wymagane",
             "errorMin": "Minimalna długość wynosi 10 znaków"
           },
