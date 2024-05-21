@@ -16,6 +16,6 @@ export const fetchModalDonateData = async (formData: any) => {
     }
   );
 
-  const id = data['support-data'].data.id;
+  const id = data.createSupportData.data.id;
   return console.log(id);
 };
