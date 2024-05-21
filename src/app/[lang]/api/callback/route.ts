@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
           name: 'Anonymous',
           currency: formData.get('currency') || '',
           sum: Number(formData.get('amount')) || 0,
-          date: formData.get('createdDate'),
+          date: new Date().toISOString(),
         });
       } catch (error) {
         console.error('Failed to send form data to backend:', error);
