@@ -15,7 +15,7 @@ export const ContentMap = ({ data }: ContentMapProps) => {
         {/* title */}
         <Title
           variantSize="h2"
-          className={`flex flex-wrap xl:w-[218px] ${
+          className={`flex flex-wrap whitespace-pre xl:w-[218px] ${
             !object.accentTitle ? '!text-accent-primary' : 'text-inherit'
           }`}
         >

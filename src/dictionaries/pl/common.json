@@ -207,10 +207,10 @@
       "MonthlyTextButton": "Pomoc miesięczna",
       "chooseYourContribution": "Wybierz swój wkład",
       "otherAmountText": "Other amount",
-      "supportPostAngeles": "Support Post Angeles (opcjonalnie)",
+      "supportPostAngeles": "Wesprzyj Post Angeles (opcjonalnie)",
       "contributionText": "To jest Twój wkład w istnienie naszej platformy charytatywnej.",
       "paymentSystemTitle": "Zapłać za pomocą systemu płatności",
-      "supportUsButton": "Support us",
+      "supportUsButton": "Wesprzyj nas",
       "modal": {
         "button": {
           "label": "zamknij przycisk modalny"
@@ -325,7 +325,7 @@
       "title": "O nas",
       "content": [
         {
-          "title": "nasza",
+          "title": "nasza ",
           "accentTitle": "misja",
           "text": [
             "Naszą misją jest budowanie prawdziwej społeczności, która pomaga i wspiera się nawzajem w trudnych sytuacjach życiowych. Nas, „Post Angeles”, łączy chęć uczynienia świata lepszym miejscem.",
@@ -346,7 +346,7 @@
         },
         {
           "title": "nasz",
-          "accentTitle": "cel",
+          "accentTitle": " cel",
           "text": [
             "Centrum Wolontariatu POST ANGELES w Los Angeles w Kalifornii to inicjatywa ludzi dobrej woli z Ukrainy i USA, których misją jest zbieranie pomocy humanitarnej dla ofiar rosyjskiej inwazji na Ukrainę.",
             "Jesteśmy oddolną organizacją non-profit 501(c)3 zajmującą się zbieraniem funduszy, gromadzeniem i dostarczaniem pomocy humanitarnej na Ukrainę drogą powietrzną i morską. Nasze centrum wolontariatu mieści się w Los Angeles, a dodatkowe centrum dostaw i centrum wolontariatu we Lwowie na Ukrainie odbiera i dystrybuuje nasze przesyłki wraz z grupą innych zaufanych organizacji charytatywnych. W zbieraniu, przeładunku, sortowaniu, załadunku i pakowaniu do 800 gotowych do wysyłki skrzynek na każdą przesyłkę zaangażowane są dziesiątki osób."
@@ -357,7 +357,7 @@
       ]
     },
     "participant": {
-      "title": "Kwestionariusz",
+      "title": "Kwestionariusz ",
       "notice": {
         "success": "Dane zostały wysłane pomyślnie!",
         "fail": "Wystąpił błąd, proszę spróbować ponownie!"
@@ -484,7 +484,7 @@
           "accentTitle": "dla wolontariusza",
           "text": "Nasza fundacja pragnie zaangażowania wolontariuszy, którzy wspierają naszą misję. Jeśli podzielasz naszą misję, wartości i chcesz przejść przez nasz system, prosimy o wypełnienie tego formularza. Informacje zawarte w tym formularzu zgłoszeniowym są traktowane poufnie i pomogą nam znaleźć dla Ciebie najbardziej satysfakcjonującą pracę wolontariacką. Dziękujemy za zainteresowanie naszą fundacją.",
           "img": "/images/participant/volunteers.jpg",
-          "alt": "Wolontariusze"
+          "alt": "Wolontariusze "
         },
         "form": {
           "inputFields": [
