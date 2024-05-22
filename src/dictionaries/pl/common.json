@@ -110,7 +110,7 @@
           "img": "/images/whatwedo/what-do-1.jpg",
           "alt": "",
           "linkTitle": "Dowiedz się więcej",
-          "href": "fghfh"
+          "href": "/pl/fghfh"
         },
         {
           "title": "Jakość edukacji",
@@ -378,7 +378,7 @@
               "name": "surname",
               "type": "text"
             },
-            { "title": "City", "placeholder": "Wprisz tutaj", "name": "city", "type": "text" },
+            { "title": "Miasto", "placeholder": "Wprisz tutaj", "name": "city", "type": "text" },
             {
               "title": "Email",
               "placeholder": "example@mail.com",
@@ -517,48 +517,48 @@
           ],
           "waysVolunteering": {
             "name": "waysVolunteering",
-            "title": "What areas of volunteering are you willing to consider?",
-            "placeholder": "Select an option",
+            "title": "Jakie obszary wolontariatu jesteś gotów rozważyć?",
+            "placeholder": "Wybierz opcję",
             "options": [
-              { "value": "financialSupport", "label": "Financial support" },
-              { "value": "provisionServices", "label": "Provision services" },
-              { "value": "volunteerWork", "label": "Volunteer work" },
-              { "value": "promotionSupport", "label": "Promotion support" },
-              { "value": "resourceMobilization", "label": "Resource mobilization" },
-              { "value": "consultation", "label": "Training and consultation" },
-              { "value": "other", "label": "Other" }
+              { "value": "financialSupport", "label": "Wsparcie finansowe" },
+              { "value": "provisionServices", "label": "Usługi dostarczania" },
+              { "value": "volunteerWork", "label": "Praca wolontaryjna" },
+              { "value": "promotionSupport", "label": "Wsparcie w promocji" },
+              { "value": "resourceMobilization", "label": "Mobilizacja zasobów" },
+              { "value": "consultation", "label": "Szkolenie i konsultacje" },
+              { "value": "other", "label": "Inne" }
             ]
           },
           "volunteerCertificate": {
             "name": "volunteerCertificate",
-            "title": "Having a volunteer certificate",
+            "title": "Posiadanie certyfikatu wolontariusza",
             "options": [
-              { "name": "true", "value": "Yes", "id": 1 },
-              { "name": "false", "value": "No", "id": 2 }
+              { "name": "true", "value": "Tak", "id": 1 },
+              { "name": "false", "value": "Nie", "id": 2 }
             ]
           },
           "carAvailability": {
             "name": "carAvailability",
-            "title": "Do you have your own car?",
+            "title": "Czy masz własny samochód?",
             "options": [
-              { "name": "true", "value": "Yes", "id": 3 },
-              { "name": "false", "value": "No", "id": 4 }
+              { "name": "true", "value": "Tak", "id": 3 },
+              { "name": "false", "value": "Nie", "id": 4 }
             ]
           },
           "reasonVolunteering": {
             "name": "reasonVolunteering",
-            "title": "Why do you want to be a volunteer? (optional)",
-            "placeholder": "Write here"
+            "title": "Dlaczego chcesz być wolontariuszem? (opcjonalne)",
+            "placeholder": "Wprisz tutaj"
           },
           "descriptionTermsAgreement": {
             "name": "descriptionTermsAgreement",
-            "description": "I agree to the terms of use and consent to the processing of my personal data in accordance with the privacy policy and GDPR."
+            "description": "Zgadzam się na warunki użytkowania i wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z polityką prywatności i RODO."
           },
           "descriptionPrivacyPolice": {
             "name": "descriptionPrivacyPolice",
-            "description": "As a volunteer of our organization, I agree to adhere to internal policies and procedures. I agree that all work I perform is done on a voluntary basis."
+            "description": "Jako wolontariusz naszej organizacji, zgadzam się przestrzegać wewnętrznych polityk i procedur. Zgadzam się, że wszelka praca, którą wykonuję, jest dobrowolna."
           },
-          "buttonText": "Submit"
+          "buttonText": "Zatwierdź"
         },
         "schema": {
           "name": {

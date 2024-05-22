@@ -120,7 +120,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
 
       <ul className="flex flex-col gap-y-5">
         <li>
-          <LinkButton href={`payments/${slug}`} disabled={status === 'completed'}>
+          <LinkButton href={`${lang}/payments/${slug}`} disabled={status === 'completed'}>
             {status === 'completed'
               ? cardData?.projectCard.buttons.finishedBtn.text
               : cardData?.projectCard.buttons.fundBtn.text}
