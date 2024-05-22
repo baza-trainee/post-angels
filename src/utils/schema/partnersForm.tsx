@@ -15,9 +15,9 @@ export const partnersForm = (translation: SchemaTypes) => {
     descriptionTermsAgreement,
   } = translation;
   const phoneRegex = /^\+\d{1,2} (?!000)\d{3} (?!000)\d{3} (?!00)\d{2} (?!00)\d{2}$/;
-  const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐьюяЮЯ'’\- ]+$/;
+  const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐЬьюяЮЯ'’\- ]+$/;
   const numberRegex = /^\d+$/;
-  const companyRegex = /^[a-zA-Zа-щА-ЩіІїЇєьюЮЯяЄґҐ0-9!@#()&^_?+""«»№:“”=–/*.,'’\- ]+$/;
+  const companyRegex = /^[a-zA-Zа-щА-ЩіІїЇєЬьюЮЯяЄґҐ0-9!@#()&^_?+""«»№:“”=–/*.,'’\- ]+$/;
 
   const schema = yup.object({
     name: yup

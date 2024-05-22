@@ -13,7 +13,7 @@ export const veteransForm = (translation: SchemaTypes) => {
     descriptionTermsAgreement,
   } = translation;
   const phoneRegex = /^\+38 (?!000)\d{3} (?!000)\d{3} (?!00)\d{2} (?!00)\d{2}$/;
-  const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐ'’\- ]+$/;
+  const nameRegex = /^[a-zA-Zа-щА-ЩіІїЇєЄґҐьЬюЮяЯ'’\- ]+$/;
 
   const schema = yup.object({
     name: yup
