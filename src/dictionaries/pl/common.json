@@ -215,6 +215,17 @@
         "button": {
           "label": "zamknij przycisk modalny"
         }
+      },
+      "modalSupport": {
+        "title": "Wsparcie Post Angeles",
+        "OnceSupport": "Jednorazowe wsparcie",
+        "MonthlySupport": "Monthly Support",
+        "helpPostAngeles": "Pomoc Post Angeles",
+        "discription1": "Post Angeles jest organizacją charytatywną i nie byłaby w stanie istnieć i pomagać bez Twojego wsparcia.",
+        "discription2": "100% środków przekazanych na projekty charytatywne jest wykorzystywanych wyłącznie na potrzeby tych projektów.",
+        "discription3": "Pomagając nam, umożliwiasz pracę i ulepszanie usług, które pomagają tysiącom ludzi w potrzebie na Ukrainie!",
+        "thanksText": " Jesteśmy bardzo wdzięczni za zaufanie i wsparcie!",
+        "supportBtn": "Wsparcie"
       }
     },
     "ourTeam": {

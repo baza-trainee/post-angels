@@ -1,5 +1,6 @@
 import { DocumentDataProps } from '@/api/fetchDocuments';
 import { Locale } from '@/i18n.config';
+import { ReactNode } from 'react';
 
 export interface FooterProps {
   data: {
@@ -27,4 +28,5 @@ export interface FooterProps {
     href: string;
   };
   documents: DocumentDataProps[];
+  className?:string
 }

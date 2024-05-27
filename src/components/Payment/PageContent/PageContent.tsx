@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
-import { Payments, SchemaTypes } from '../Payments.props';
 import useBreakpoints from '@/utils/useBreakpoints';
 import OneTimeAssistanceForm from '../PaymentForm/OneTimeAssistanceForm/OneTimeAssistanceForm';
 import MonthlyAssistanceForm from '../PaymentForm/MonthlyAssistanceForm/MonthlyAssistanceForm';
+import { PageContentProps } from '@/components/Payment/PageContent/PageContent.props';
 
-const PageContent = ({ payments, schema }: { payments: Payments; schema: SchemaTypes }) => {
+const PageContent = ({dictionary, payments, schema }:PageContentProps) => {
   const { OneTimeTextButton, MonthlyTextButton } = payments;
   const { less1280px, bigger1280px } = useBreakpoints();
   const [activeButton, setActiveButton] = useState('OneTime');
@@ -39,9 +39,8 @@ const PageContent = ({ payments, schema }: { payments: Payments; schema: SchemaT
         </button>
 
         {less1280px && activeButton === 'OneTime' && (
-          <OneTimeAssistanceForm
+          <OneTimeAssistanceForm dictionary={dictionary}
             isDisabled={false}
-            payments={payments}
             schema={schema}
             className="xl:mr-[73px] xl:flex xl:w-1/2 2xl:mr-[73px] 3xl:mr-[93px]"
           />
@@ -49,9 +48,8 @@ const PageContent = ({ payments, schema }: { payments: Payments; schema: SchemaT
       </div>
 
       {less1280px && activeButton === 'Monthly' && (
-        <MonthlyAssistanceForm
+        <MonthlyAssistanceForm dictionary={dictionary}
           isDisabled={false}
-          payments={payments}
           schema={schema}
           className="flex xl:w-1/2  active:xl:border-accent-primary"
         />
@@ -61,13 +59,12 @@ const PageContent = ({ payments, schema }: { payments: Payments; schema: SchemaT
         <div className="flex flex-col justify-between xl:flex-row xl:gap-x-8">
           <OneTimeAssistanceForm
             className="xl:flex xl:w-1/2  2xl:w-[calc(50%_-_74px)] 3xl:w-[calc(50%_-_94px)]"
-            payments={payments}
+            dictionary={dictionary}
             schema={schema}
             isDisabled={activeButton === 'Monthly'}
           />
-          <MonthlyAssistanceForm
+          <MonthlyAssistanceForm dictionary={dictionary}
             className="flex xl:w-1/2  2xl:w-[calc(50%_-_74px)] 3xl:w-[calc(50%_-_94px)]"
-            payments={payments}
             schema={schema}
             isDisabled={activeButton === 'OneTime'}
           />

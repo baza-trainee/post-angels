@@ -20,7 +20,12 @@ const page = async (
   return (
     <div className="container">
       <PageMain projectDataInfo={projects?.attributes} lang={lang} />
-      <PageContent payments={payments} schema={schema} />
+      <PageContent
+        payments={payments}
+        schema={schema}
+        lang={lang}
+        dictionary={common}
+      />
     </div>
   );
 };
