@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     const status = formData.get('transactionStatus');
 
     if (status === 'Approved') {
-      const redirectUrl = new URL('http://localhost:3000/');
+      const redirectUrl = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}`);
       return NextResponse.redirect(redirectUrl, 302);
     }
 
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.error();
       }
 
-      const redirectUrl = new URL('http://localhost:3000/');
+      const redirectUrl = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}`);
       return NextResponse.redirect(redirectUrl, 302);
     }
   } catch (error) {

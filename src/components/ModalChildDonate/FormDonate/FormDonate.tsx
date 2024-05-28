@@ -1,7 +1,6 @@
 import { Locale } from '@/i18n.config';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import Select, { StylesConfig } from 'react-select';
 import { Button } from '../../buttons/Button';
 import { ModalDonateProps } from '../ModalChildDonate';
@@ -20,8 +19,6 @@ export const FormDonate = ({ lang, data }: { lang: Locale; data: ModalDonateProp
     { value: 'USD', label: '$ USD', symbol: '$' },
     { value: 'UAH', label: '₴ UAH', symbol: '₴' },
   ];
-
-  const { control } = useForm();
 
   const handleDonationAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const amount = event.target.value;
@@ -84,7 +81,6 @@ export const FormDonate = ({ lang, data }: { lang: Locale; data: ModalDonateProp
       fontSize: '14px',
       fontWeight: '400',
       outline: 'none',
-      // backgroundColor: 'transparent',
     }),
     indicatorsContainer: (provided, state) => ({
       ...provided,
@@ -192,6 +188,7 @@ export const FormDonate = ({ lang, data }: { lang: Locale; data: ModalDonateProp
           className="w-full md:w-[220px]"
           aria-label={data.button.label}
           onClick={handelClick}
+          disabled={!(selectedCurrency && donationAmount) ?? true}
         >
           {data.button.title}
         </Button>
