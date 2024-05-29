@@ -5,6 +5,7 @@ export interface ModalProps {
   modalClose: () => void;
   scroll?: boolean;
   className?: string;
+  iconClassName?: string;
   modal: {
     button: {
       label: string;

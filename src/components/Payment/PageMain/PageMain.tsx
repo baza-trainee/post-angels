@@ -14,7 +14,8 @@ export const PageMain = async ({
   lang: Locale;
 }) => {
   const { common } = await getDictionary(lang);
-  const { payments } = common;
+  const { payments, logo } = common;
+  
   return (
     <div className="mb-10">
       <div className="mb-5 flex">
@@ -22,10 +23,7 @@ export const PageMain = async ({
           <Logo
             variantSize="big"
             type="dark"
-            logo={{
-              label: '',
-              href: '/',
-            }}
+            logo={logo}
           />
         </div>
 

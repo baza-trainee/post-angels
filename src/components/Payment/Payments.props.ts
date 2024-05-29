@@ -1,3 +1,5 @@
+import { getDictionary } from "@/lib/dictionary";
+
 export interface Payments {
   title: string;
   needToCollect: string;
@@ -21,10 +23,14 @@ export interface Payments {
       errorType?: string;
     };
   };
-  modal: {
+  modal?: {
     button: {
       label: string;
     };
+  };
+  logo?: {
+    label: string;
+    href: string;
   };
 }
 
@@ -34,4 +40,11 @@ export interface SchemaTypes {
     errorLength?: string;
     errorType?: string;
   };
+}
+
+export interface PaymentFormProps {
+  className: string;
+  schema: SchemaTypes;
+  isDisabled: boolean;
+  dictionary: Awaited<ReturnType<typeof getDictionary>>['common'];
 }

@@ -11,24 +11,19 @@ import { Checkbox } from '../../../form/Checkbox';
 import { Paragraph } from '../../../typography/Paragraph';
 import { Title } from '../../../typography/Title';
 import BankIcons from '../../BankIcons/BankIcons';
-import { Payments, SchemaTypes } from '@/components/Payment/Payments.props';
 import Modal from '@/components/modal/Modal';
-import ModalSupport from '../../Modal/ModalChildSupport';
 import { paymentsForm } from '@/utils/schema/paymentFrom';
+import ModalMonthlySupport from '../../Modal/ModalMonthlySupport';
+import  {PaymentFormProps}  from '../../Payments.props';
 
 type FormData = yup.InferType<ReturnType<typeof paymentsForm>>;
 
 export const MonthlyAssistanceForm = ({
   className,
-  payments,
   schema,
   isDisabled,
-}: {
-  className: string;
-  payments: Payments;
-  schema: SchemaTypes;
-  isDisabled: boolean;
-}) => {
+  dictionary,
+}: PaymentFormProps) => {
   const [selectedCurrency, setSelectedCurrency] = useState<{
     value: string;
     label: string;
@@ -39,7 +34,7 @@ export const MonthlyAssistanceForm = ({
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { handleSubmit, reset, control, register, formState } = useForm();
+  const { handleSubmit, reset, control, register } = useForm();
 
   const methods = useForm<FormData>({
     resolver: yupResolver(paymentsForm(schema)),
@@ -64,7 +59,8 @@ export const MonthlyAssistanceForm = ({
       'value' in selectedOption &&
       'label' in selectedOption
     ) {
-      setSelectedCurrency(selectedOption as { value: string; label: string; symbol: string });
+      const selectedCurrency = selectedOption as { value: string; label: string; symbol: string };
+      setSelectedCurrency(selectedCurrency);
     } else {
       setSelectedCurrency(null);
     }
@@ -176,7 +172,7 @@ export const MonthlyAssistanceForm = ({
                   }))}
                   isDisabled={isDisabled}
                   onChange={handleCurrencyChange}
-                  placeholder={payments.chooseYourContribution}
+                  placeholder={dictionary.payments.chooseYourContribution}
                   className="mb-[30px] w-full border border-b-2 border-none border-grey-60 xl:w-full"
                 />
               )}
@@ -209,7 +205,7 @@ export const MonthlyAssistanceForm = ({
                     minLength: 0,
                   })}
                   type="number"
-                  placeholder={payments.otherAmountText}
+                  placeholder={dictionary.payments.otherAmountText}
                   onChange={handleDonationAmountChange}
                   value={donationAmount}
                   disabled={isDisabled}
@@ -226,42 +222,46 @@ export const MonthlyAssistanceForm = ({
             <div className="w-full lg:block lg:w-full">
               <Checkbox
                 name="checkbox"
-                description={payments.supportPostAngeles}
+                description={dictionary.payments.supportPostAngeles}
                 variantFontWeight="normal"
                 className="mb-[30px]"
                 onChange={handleCheckboxChange}
               />
-              <div className="mb-[40px]">
+              <div className="relative mb-[40px]">
                 <input
                   type="number"
-                  placeholder={isChecked && selectedCurrency ? selectedCurrency?.label : ''}
-                  className="h-[54px] w-[320px] gap-4 rounded-[48px]  bg-grey-20 text-center ring-1   ring-inset ring-accent-primary  ring-offset-0 duration-300  hover:ring-4  sm:w-[440px] md:w-[728px]  lg:w-full  xl:w-full"
+                  placeholder={isChecked && selectedCurrency ? selectedCurrency.label : ''}
+                  className="h-[54px] w-[320px] gap-4 rounded-[48px] bg-grey-20 pb-[1px] pl-[84px] ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[440px] md:w-[728px] lg:w-full xl:w-full"
                   onChange={handleInputChange}
                   onClick={openModal}
                   value={inputValue}
                   disabled={isDisabled}
                 />
+                {selectedCurrency && (
+                  <span className="absolute inset-y-0 left-6 flex items-center pr-4">
+                    {selectedCurrency.label}
+                  </span>
+                )}
                 {checked && modalVisible && (
                   <Modal
-                    modal={{
-                      button: {
-                        label: '',
-                      },
-                    }}
+                    modal={dictionary.modal}
+                    scroll={true}
                     modalClose={closeModal}
+                    className="sx:w-[360px] px-1 lg:w-[790px]"
+                    iconClassName="fixed top-[110px] right-28"
                   >
-                    <ModalSupport />
+                    <ModalMonthlySupport dictionary={dictionary} InputValue={setInputValue} />
                   </Modal>
                 )}
               </div>
 
               <Paragraph variant="light" variantFontSize="14">
-                {payments.contributionText}
+                {dictionary.payments.contributionText}
               </Paragraph>
 
               <div className="mt-[30px] flex items-start">
                 <Title variantSize="h5" className="items-center justify-center">
-                  {payments.paymentSystemTitle}
+                  {dictionary.payments.paymentSystemTitle}
                 </Title>
               </div>
 
@@ -273,7 +273,7 @@ export const MonthlyAssistanceForm = ({
                 onSubmit={handleSubmit(onSubmit)}
                 disabled={isDisabled}
               >
-                {payments.supportUsButton}
+                {dictionary.payments.supportUsButton}
               </Button>
             </div>
           </div>

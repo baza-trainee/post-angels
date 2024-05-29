@@ -214,6 +214,17 @@
         "button": {
           "label": "close modal button"
         }
+      },
+      "modalSupport": {
+        "title": "Support Post Angeles",
+        "OnceSupport": "One time support",
+        "MonthlySupport": "Monthly Support",
+        "helpPostAngeles": "Help Post Angeles",
+        "discription1": "Post Angeles is a charitable organization and would not be able to exist and help without your support.",
+        "discription2": "100% of the funds donated to charitable projects are used exclusively for the needs of these projects.",
+        "discription3": "By helping us, you make it possible to work and improve the service that helps thousands of people in need in Ukraine!",
+        "thanksText": " We are very grateful for your trust and support!",
+        "supportBtn": "Support"
       }
     },
     "ourTeam": {
