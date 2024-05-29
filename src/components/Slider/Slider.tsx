@@ -66,7 +66,9 @@ export const Slider: React.FC<SliderProps> = ({
   }, [isFirstRender, navigationBreakpoints, id]);
 
   const isDeviceLess768px = useBreakpoints().less768px;
-  const archiveProjectsGridRows = isArchive && isDeviceLess768px ? 1 : isGrid;
+
+  const archiveProjectsGridRows =
+    (isArchive && isDeviceLess768px) || (isArchive && data.length > 5) ? 1 : isGrid;
 
   return isFirstRender ? null : (
     <Swiper
@@ -79,7 +81,7 @@ export const Slider: React.FC<SliderProps> = ({
       autoplay={isAutoplay ? { delay: 2000, disableOnInteraction: false } : false}
       loop={isLoop}
       loopAddBlankSlides={true}
-      className={className}
+      className={`${className} ${isArchive && data.length > 5 ? 'archivedProjectDoubleRow' : ''}`}
       navigation={isNavigation}
       slidesPerView={slidesPerViewDef}
       style={{ zIndex: 'auto' }}

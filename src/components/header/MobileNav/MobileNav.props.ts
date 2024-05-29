@@ -1,3 +1,4 @@
+import { ModalDonateProps } from '@/components/ModalChildDonate/ModalChildDonate';
 import { Locale } from '@/i18n.config';
 
 export interface MobileNavProps {
@@ -23,4 +24,5 @@ export interface MobileNavProps {
     label: string;
     href: string;
   };
+  modalDonateData: ModalDonateProps;
 }

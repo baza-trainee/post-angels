@@ -3,16 +3,20 @@ import Link from 'next/link';
 
 import { Navigation } from '@/components/header/Navigation';
 
+import { fetchContact } from '@/api/fetchContact';
 import { ButtonDonate } from '@/components/header/ButtonDonate';
 import { Dropdown } from '@/components/header/Dropdown';
 import MobileNav from '@/components/header/MobileNav/MobileNav';
 import { Logo } from '@/layout/Logo';
+import { getDictionary } from '@/lib/dictionary';
 import { HeaderProps } from './Header.props';
-import { fetchContact } from '@/api/fetchContact';
 
 export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, transparent }) => {
   const { headerNav, buttons } = data;
   const contactData = await fetchContact(lang);
+  const { common } = await getDictionary(lang);
+  const { donateModal } = common;
+
   return (
     <header
       id="header"
@@ -65,6 +69,7 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
             buttons={buttons}
             modal={modal}
             logo={logo}
+            modalDonateData={donateModal}
           />
         </div>
 
@@ -77,7 +82,9 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
             <ButtonDonate
               headerButton={buttons.headerButton}
               modal={modal}
+              modalDonateData={donateModal}
               buttonClassName="mr-[14px] !px-[38px] !w-[222px]"
+              lang={lang}
             />
             <Dropdown headerLanguageLabel={buttons.headerLanguageLabel} lang={lang} />
           </div>

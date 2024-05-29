@@ -26,6 +26,8 @@ body {
 .archivedProjects > .swiper-wrapper {
   display: grid;
   grid-auto-flow: column;
+}
+.archivedProjectDoubleRow > .swiper-wrapper {
   @media screen and (min-width: 768px) {
     grid-template-rows: repeat(2, 1fr) !important ;
     grid-row-gap: 50px;

@@ -1,5 +1,6 @@
 'use client';
 
+import { IconButton } from '@/components/buttons/IconButton';
 import { Dropdown } from '@/components/header/Dropdown';
 import { ICONS } from '@/components/icons';
 import { Logo } from '@/layout/Logo';
@@ -8,9 +9,8 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ButtonDonate } from '../ButtonDonate';
 import { MobileNavProps } from './MobileNav.props';
-import { IconButton } from '@/components/buttons/IconButton';
 
-const MobileNav = ({ lang, buttons, headerNav, modal, logo }: MobileNavProps) => {
+const MobileNav = ({ lang, buttons, headerNav, modal, logo, modalDonateData }: MobileNavProps) => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
   const pathname = usePathname();
   const { headerLanguageName, headerButton, headerLanguageLabel, menuOpen, menuClose } = buttons;
@@ -90,7 +90,12 @@ const MobileNav = ({ lang, buttons, headerNav, modal, logo }: MobileNavProps) =>
               </ul>
             </nav>
             {/* donate button*/}
-            <ButtonDonate headerButton={headerButton} modal={modal} />
+            <ButtonDonate
+              headerButton={headerButton}
+              modal={modal}
+              lang={lang}
+              modalDonateData={modalDonateData}
+            />
           </div>
         </div>
       )}

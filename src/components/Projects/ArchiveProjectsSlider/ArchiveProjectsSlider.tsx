@@ -1,9 +1,9 @@
 'use client';
 
-import { ProjectCard } from '@/components/Projects/ProjectCard';
-import { ProjectSliderProps } from '@/components/Projects/ProjectSlider/ProjectSlider.props';
-import { Slider } from '@/components/Slider';
-import classNames from 'classnames';
+import { ProjectCard } from '@/components/Projects/ProjectCard'
+import { ProjectSliderProps } from '@/components/Projects/ProjectSlider/ProjectSlider.props'
+import { Slider } from '@/components/Slider'
+import classNames from 'classnames'
 
 export const ArchiveProjectsSlider = ({
   projectsData,
@@ -26,7 +26,7 @@ export const ArchiveProjectsSlider = ({
         cardData={projects}
         element={ProjectCard}
         lang={lang}
-        isGrid={2}
+        isGrid={1}
         isAutoplay={true}
         slidesPerView={{ mobile: 1, tablet: 2, desktop: 3, desktop3xl: 4 }}
         isLoop={false}
