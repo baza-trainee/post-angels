@@ -21,6 +21,9 @@ export async function POST(req: Request) {
   const productPrice = reqBody.amount;
   const regularMode = reqBody.regularMode;
 
+  //! const bazaAmount = reqBody.bazaAmount;
+  const bazaAmount = '100';
+
   const merchant: MerchantBody = {
     merchantAccount: merchantAccount || '',
     merchantDomainName: merchantDomainName || '',
@@ -61,7 +64,8 @@ export async function POST(req: Request) {
         productPrice: [productPrice],
         regularOn: 1,
         merchantAuthType: 'SimpleSignature',
-        returnUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/callback`,
+        //! returnUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/callback`,
+        returnUrl: `http://localhost:3000/uk/api/callback`,
       }),
     });
 
