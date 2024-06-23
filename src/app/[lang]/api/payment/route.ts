@@ -6,23 +6,33 @@ interface MerchantBody {
 }
 
 export async function POST(req: Request) {
+  const date = new Date();
+  const nextYearDate = new Date(
+    date.getFullYear() + 1,
+    date.getMonth(),
+    date.getDate(),
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds()
+  ).toLocaleDateString('uk-UA');
+
   const reqBody = await req.json();
 
   const secretKey = process.env.NEXT_PUBLIC_WAYFORPAY_SECRET_KEY;
-  const unixTimeInSeconds = Math.floor(Date.now() / 1000);
+  const unixTimeInSeconds = Math.floor(date.getTime() / 1000);
   const merchantAccount = process.env.NEXT_PUBLIC_WAYFORPAY_MERCHANT_ACCOUNT;
   const merchantDomainName = process.env.NEXT_PUBLIC_API_BASE_URL;
   const orderReference = reqBody.order_id;
   const orderDate = unixTimeInSeconds;
-  const amount = reqBody.amount;
+  const regularMode = reqBody.regularMode;
+  const amount =
+    regularMode === 'once' ? reqBody.amount : reqBody.amount + (reqBody.regularAmount ?? 50);
   const currency = reqBody.currency;
   const productName = reqBody.order_desc;
   const productCount = '1';
   const productPrice = reqBody.amount;
-  const regularMode = reqBody.regularMode;
-
-  //! const bazaAmount = reqBody.bazaAmount;
-  const bazaAmount = '100';
+  const regularAmount = regularMode === 'once' ? 0 : reqBody.regularAmount ?? 50;
+  const dateEnd = regularMode === 'once' ? null : nextYearDate;
 
   const merchant: MerchantBody = {
     merchantAccount: merchantAccount || '',
@@ -59,13 +69,13 @@ export async function POST(req: Request) {
         currency: currency,
         productName: [productName],
         regularMode: regularMode,
-        regularAmount: amount,
+        regularAmount: regularAmount,
         productCount: [productCount],
         productPrice: [productPrice],
-        regularOn: 1,
+        regularOn: regularMode === 'once' ? 0 : 1,
+        dateEnd: dateEnd,
         merchantAuthType: 'SimpleSignature',
-        //! returnUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/callback`,
-        returnUrl: `http://localhost:3000/uk/api/callback`,
+        returnUrl: `http://localhost:3000/uk/api/callback`, //! returnUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/callback`,
       }),
     });
 
