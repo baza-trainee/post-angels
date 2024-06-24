@@ -14,7 +14,7 @@ import BankIcons from '../../BankIcons/BankIcons';
 import Modal from '@/components/modal/Modal';
 import { paymentsForm } from '@/utils/schema/paymentFrom';
 import ModalMonthlySupport from '../../Modal/ModalMonthlySupport';
-import  {PaymentFormProps}  from '../../Payments.props';
+import { PaymentFormProps } from '../../Payments.props';
 
 type FormData = yup.InferType<ReturnType<typeof paymentsForm>>;
 
@@ -29,6 +29,7 @@ export const MonthlyAssistanceForm = ({
     label: string;
     symbol: string;
   } | null>(null);
+  const [activeButton, setActiveButton] = useState(null);
   const [donationAmount, setDonationAmount] = useState<string>('');
   const [inputValue, setInputValue] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -43,6 +44,7 @@ export const MonthlyAssistanceForm = ({
   const watch = methods.watch;
   const checked = watch('checkbox');
 
+  const donationOptions = [100, 200, 500];
   const options = [
     { value: 'UAH', label: '₴ UAH', symbol: '₴' },
     { value: 'USD', label: '$ USD', symbol: '$' },
@@ -179,25 +181,20 @@ export const MonthlyAssistanceForm = ({
             />
 
             <div className="flex w-full flex-wrap justify-between  gap-3 gap-y-[30px]">
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
-
+              {donationOptions.map(amount => (
+                <Button
+                  key={amount}
+                  variant="white"
+                  className={`
+       w-[150px] hover:ring-2 hover:ring-accent-primary
+      focus:outline-none focus:ring-2 
+      focus:ring-accent-primary sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]
+      ${activeButton === amount ? ' font-bold' : 'font-medium'}
+    `}
+                >
+                  {`${amount} ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+                </Button>
+              ))}
               <div className="relative xl:w-full">
                 <input
                   {...register('otherAmount', {

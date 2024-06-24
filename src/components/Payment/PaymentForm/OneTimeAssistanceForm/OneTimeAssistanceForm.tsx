@@ -18,23 +18,19 @@ import { PaymentFormProps } from '../../Payments.props';
 
 type FormData = yup.InferType<ReturnType<typeof paymentsForm>>;
 
-const OneTimeAssistanceForm = ({
-  className,
-  schema,
-  isDisabled,
-  dictionary,
-}: PaymentFormProps) => {
+const OneTimeAssistanceForm = ({ className, schema, isDisabled, dictionary }: PaymentFormProps) => {
   const [selectedCurrency, setSelectedCurrency] = useState<{
     value: string;
     label: string;
     symbol: string;
   } | null>(null);
+  const [activeButton, setActiveButton] = useState(null);
   const [donationAmount, setDonationAmount] = useState<string>('');
   const [inputValue, setInputValue] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { handleSubmit, reset, control, register} = useForm();
+  const { handleSubmit, reset, control, register } = useForm();
 
   const methods = useForm<FormData>({
     resolver: yupResolver(paymentsForm(schema)),
@@ -43,6 +39,7 @@ const OneTimeAssistanceForm = ({
   const watch = methods.watch;
   const checked = watch('checkbox');
 
+  const donationOptions = [100, 200, 500];
   const options = [
     { value: 'UAH', label: '₴ UAH', symbol: '₴' },
     { value: 'USD', label: '$ USD', symbol: '$' },
@@ -182,24 +179,20 @@ const OneTimeAssistanceForm = ({
             />
 
             <div className="flex w-full flex-wrap justify-between  gap-3 gap-y-[30px]">
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
+              {donationOptions.map(amount => (
+                <Button
+                  key={amount}
+                  variant="white"
+                  className={`
+       w-[150px] hover:ring-2 hover:ring-accent-primary
+      focus:outline-none focus:ring-2
+      focus:ring-accent-primary sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]
+      ${activeButton === amount ? ' font-bold' : 'font-medium'}
+    `}
+                >
+                  {`${amount} ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+                </Button>
+              ))}
 
               <div className="relative xl:w-full">
                 <input
@@ -250,7 +243,7 @@ const OneTimeAssistanceForm = ({
                     modal={dictionary.modal}
                     scroll={true}
                     modalClose={closeModal}
-                    className="sx:w-[360px] min-h-full px-1  py-10 lg:w-[790px] "
+                    className="sx:w-[360px] px-1 lg:w-[790px] "
                     iconClassName=" fixed top-[110px] right-28"
                   >
                     <ModalOnceSupport dictionary={dictionary} InputValue={setInputValue} />
