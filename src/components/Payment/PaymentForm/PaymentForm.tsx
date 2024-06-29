@@ -1,6 +1,6 @@
 'use client';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import { Controller, FormProvider, useForm } from 'react-hook-form';
 import Select, { StylesConfig } from 'react-select';
 import * as yup from 'yup';
@@ -36,7 +36,7 @@ export const PaymentForm = ({
     symbol: string;
   } | null>(null);
   const [donationAmount, setDonationAmount] = useState<number>(200);
-  const [inputValue, setInputValue] = useState('');
+  const [oneTimeAmount, setOneTimeAmount] = useState<number | undefined>(0);
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -55,8 +55,8 @@ export const PaymentForm = ({
     { value: 'USD', label: '$ USD', symbol: '$' },
   ];
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
+  const handleInputChange = (event: any) => {
+    setOneTimeAmount(event.target.value);
   };
 
   const handleCurrencyChange = (selectedOption: unknown) => {
@@ -252,7 +252,7 @@ export const PaymentForm = ({
                   className="h-[54px] w-[320px] gap-4 rounded-[48px] bg-grey-20 pb-[1px] pl-[84px] ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[440px] md:w-[728px] lg:w-full xl:w-full"
                   onChange={handleInputChange}
                   onClick={openModal}
-                  value={inputValue}
+                  value={oneTimeAmount}
                   disabled={isDisabled}
                 />
                 {selectedCurrency && (
@@ -268,7 +268,7 @@ export const PaymentForm = ({
                     className="sx:w-[360px] px-1 lg:w-[790px]"
                     iconClassName="fixed top-[110px] right-28"
                   >
-                    <ModalMonthlySupport dictionary={dictionary} InputValue={setInputValue} />
+                    <ModalMonthlySupport dictionary={dictionary} InputValue={setOneTimeAmount} />
                   </Modal>
                 )}
               </div>
