@@ -26,12 +26,14 @@ export async function POST(req: Request) {
   const orderDate = unixTimeInSeconds;
   const regularMode = reqBody.regularMode;
   const amount =
-    regularMode === 'once' ? reqBody.amount : reqBody.amount + (reqBody.regularAmount ?? 50);
+    regularMode === 'once'
+      ? parseInt(reqBody.amount)
+      : parseInt(reqBody.amount) + parseInt(reqBody.regularAmount);
   const currency = reqBody.currency;
   const productName = reqBody.order_desc;
   const productCount = '1';
-  const productPrice = reqBody.amount;
-  const regularAmount = regularMode === 'once' ? 0 : reqBody.regularAmount ?? 50;
+  const productPrice = parseInt(reqBody.amount);
+  const regularAmount = regularMode === 'once' ? 0 : parseInt(reqBody.regularAmount);
   const dateEnd = regularMode === 'once' ? null : nextYearDate;
 
   const merchant: MerchantBody = {

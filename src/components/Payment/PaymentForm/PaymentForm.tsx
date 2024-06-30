@@ -36,7 +36,7 @@ export const PaymentForm = ({
     symbol: string;
   } | null>(null);
   const [donationAmount, setDonationAmount] = useState<number>(200);
-  const [oneTimeAmount, setOneTimeAmount] = useState<number | undefined>(0);
+  const [oneTimeAmount, setOneTimeAmount] = useState<number>(0);
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -154,9 +154,10 @@ export const PaymentForm = ({
       body: JSON.stringify({
         order_id: `id-${Date.now()}`,
         order_desc: projectTitle,
-        amount: donationAmount,
+        amount: regularMode === 'once' ? donationAmount + oneTimeAmount ?? 0 : oneTimeAmount,
         currency: selectedCurrency?.value,
         regularMode: regularMode,
+        regularAmount: regularMode === 'once' ? 0 : donationAmount,
       }),
     });
     const res = await response.json();
@@ -260,6 +261,7 @@ export const PaymentForm = ({
                     {selectedCurrency.label}
                   </span>
                 )}
+
                 {checked && modalVisible && (
                   <Modal
                     modal={dictionary.modal}
@@ -288,7 +290,7 @@ export const PaymentForm = ({
               <Button
                 type="submit"
                 className="w-full p-[10px] "
-                onSubmit={handleSubmit(onSubmit)}
+                onClick={handleSubmit(onSubmit)}
                 disabled={!(selectedCurrency && donationAmount && !isDisabled) ?? true}
               >
                 {dictionary.payments.supportUsButton}
