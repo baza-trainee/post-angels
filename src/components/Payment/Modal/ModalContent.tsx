@@ -6,11 +6,9 @@ import { ModalContentProps } from './modal.props';
 
 const ModalContent: React.FC<ModalContentProps> = ({ dictionary, InputValue, setModalVisible }) => {
   const [donationAmount, setDonationAmount] = useState<number>(0);
-  const [isHidden, setIsHidden] = useState<boolean>(false);
 
   const handleButtonClick = (value: number) => {
     InputValue(donationAmount);
-
     setModalVisible(false);
   };
 

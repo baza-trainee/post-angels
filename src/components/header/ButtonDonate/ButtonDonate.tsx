@@ -6,6 +6,7 @@ import { useState } from 'react';
 import ModalChildDonate from '@/components/ModalChildDonate/ModalChildDonate';
 import Modal from '@/components/modal/Modal';
 import { ButtonDonateProps } from './ButtonDonate.props';
+import useBreakpoints from '@/utils/useBreakpoints';
 
 export const ButtonDonate = ({
   headerButton,
@@ -15,6 +16,7 @@ export const ButtonDonate = ({
   modalDonateData,
 }: ButtonDonateProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { bigger1000px } = useBreakpoints();
 
   const handleClick = () => {
     setIsModalOpen(true);
@@ -28,10 +30,10 @@ export const ButtonDonate = ({
 
       {isModalOpen && (
         <Modal
-          className="px-8 py-14 md:h-[624px] md:w-[768px] md:py-12 lg:py-20"
+          className="px-8 py-14 md:h-[624px] md:w-[768px] md:py-12  lg:py-20"
           iconClassName=" right-[20px] top-[20px]  md:right-10"
           modal={modal}
-          scroll
+          scroll={bigger1000px ? false : true}
           modalClose={() => {
             setIsModalOpen(false);
           }}
