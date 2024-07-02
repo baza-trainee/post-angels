@@ -9,6 +9,7 @@ import PopupCookie from '@/components/PopupCookies/PopupCookie';
 import { getDictionary, getMetadata } from '@/lib/dictionary';
 import './globals.css';
 import { fetchDocuments } from '@/api/fetchDocuments';
+import Script from 'next/script';
 
 const eUkraine = localFont({
   variable: '--font-eUkraine',
@@ -164,6 +165,29 @@ export default async function RootLayout({
 
           <PopupCookie data={cookie} modal={modal} document={policy} />
           <div id="modal" />
+          <Script>
+            {` let lastScrollTop = 0;
+        const targetElement = document.getElementById('header');
+        const top_header = document.getElementById('top_header');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                targetElement.classList.remove('xl:translate-y-0');
+                targetElement.classList.add('xl:translate-y-[-60px]');
+                top_header.classList.add('xl:py-4');
+            } else {
+                // Scrolling up
+                targetElement.classList.remove('xl:translate-y-[-60px]');
+                targetElement.classList.add('xl:translate-y-0');
+                top_header.classList.remove('xl:py-4');
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });`}
+          </Script>
         </Suspense>
       </body>
     </html>

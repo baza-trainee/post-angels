@@ -16,6 +16,7 @@ import { Title } from '../../typography/Title';
 import BankIcons from '../BankIcons/BankIcons';
 import ModalMonthlySupport from '../Modal/ModalMonthlySupport';
 import { PaymentFormProps } from '../Payments.props';
+import useBreakpoints from '@/utils/useBreakpoints';
 
 type FormData = yup.InferType<ReturnType<typeof paymentsForm>>;
 
@@ -39,7 +40,7 @@ export const PaymentForm = ({
   const [oneTimeAmount, setOneTimeAmount] = useState<number | undefined>(undefined);
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-
+  const { bigger1280px } = useBreakpoints();
   const { handleSubmit, reset, control, register } = useForm();
 
   const methods = useForm<FormData>({
@@ -281,12 +282,17 @@ export const PaymentForm = ({
                 {checked && modalVisible && (
                   <Modal
                     modal={dictionary.modal}
-                    scroll={true}
+                    scroll={bigger1280px ? false : true}
                     modalClose={closeModal}
-                    className="sx:w-[360px] px-1 lg:w-[790px]"
-                    iconClassName="fixed top-[110px] right-28"
+                    className="h-full max-h-[700px] w-full rounded-2xl py-2  lg:w-[790px] xl:h-[860px] xl:max-h-[940px]"
+                    iconClassName="fixed top-5 !right-[28px] md:!right-[28px]"
+                    overlayClassName="!p-2"
                   >
-                    <ModalMonthlySupport dictionary={dictionary} InputValue={setOneTimeAmount} />
+                    <ModalMonthlySupport
+                      dictionary={dictionary}
+                      setModalVisible={setModalVisible}
+                      InputValue={setOneTimeAmount}
+                    />
                   </Modal>
                 )}
               </div>

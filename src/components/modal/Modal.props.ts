@@ -6,6 +6,7 @@ export interface ModalProps {
   scroll?: boolean;
   className?: string;
   iconClassName?: string;
+  overlayClassName?: string;
   modal: {
     button: {
       label: string;

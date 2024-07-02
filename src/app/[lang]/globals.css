@@ -434,3 +434,7 @@ body {
 .animatingArrow {
   animation: moveArrow 1s infinite; /* Здійснюємо анімацію зі швидкістю 1 секунда, нескінченно */
 }
+
+#pdf-controls {
+  display: none;
+}
