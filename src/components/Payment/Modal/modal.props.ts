@@ -15,4 +15,5 @@ export interface ModalSupportProps {
 export type ModalContentProps = {
   InputValue: (value: number) => void;
   dictionary: Awaited<ReturnType<typeof getDictionary>>['common'];
+  setModalVisible: (modalVisible: boolean) => void;
 };

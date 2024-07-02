@@ -44,7 +44,12 @@ export const FooterDoc = ({
       </ul>
 
       {document && (
-        <Modal modalClose={handlerShowModal} modal={modal} className="z-50 px-10 py-10" scroll>
+        <Modal
+          modalClose={handlerShowModal}
+          modal={modal}
+          className="!inset-x-0 !top-2  z-50 w-full overflow-hidden !px-2 !pt-[40px] md:!pt-[48px]"
+          iconClassName=" right-[20px] top-[20px]  md:right-10"
+        >
           <PDFView documents={getDoc(document, documents)} />
         </Modal>
       )}

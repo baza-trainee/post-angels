@@ -28,8 +28,10 @@ export const ButtonDonate = ({
 
       {isModalOpen && (
         <Modal
-          className="inset:0 w-[768px] px-8 py-10 md:h-[624px]"
+          className="px-8 py-14 md:h-[624px] md:w-[768px] md:py-12 lg:py-20"
+          iconClassName=" right-[20px] top-[20px]  md:right-10"
           modal={modal}
+          scroll
           modalClose={() => {
             setIsModalOpen(false);
           }}

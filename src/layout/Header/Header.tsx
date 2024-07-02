@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
   return (
     <header
       id="header"
-      className={`fixed inset-x-0 top-0 z-50 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         transparent ? 'backdrop-blur-[3px]' : 'bg-grey-20'
       }  font-eUkraineHead text-base font-normal`}
     >
@@ -74,7 +74,10 @@ export const Header: React.FC<HeaderProps> = async ({ data, lang, modal, logo, t
         </div>
 
         {/* Top Nav */}
-        <div className="hidden h-auto items-center justify-between border-b border-grey-60 py-6 xl:flex ">
+        <div
+          id="top_header"
+          className="hidden h-auto items-center justify-between border-b border-grey-60 py-6 xl:flex "
+        >
           <Logo type="dark" logo={logo} />
 
           <Navigation headerNav={headerNav} />
