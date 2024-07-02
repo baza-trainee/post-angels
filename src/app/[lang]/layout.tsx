@@ -165,14 +165,20 @@ export default async function RootLayout({
 
           <PopupCookie data={cookie} modal={modal} document={policy} />
           <div id="modal" />
-          <Script>
-            {`
+          <Script
+            id="scroll-handler"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                    let lastScrollTop = 0;
                     window.addEventListener('load', () => {
-                        let lastScrollTop = 0;
                         const targetElement = document.getElementById('header');
                         const top_header = document.getElementById('top_header');
 
-                        if (!targetElement || !top_header) return;
+                        if (!targetElement || !top_header) {
+                            console.error('Target elements not found');
+                            return;
+                        }
 
                         window.addEventListener('scroll', () => {
                             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -192,8 +198,9 @@ export default async function RootLayout({
                             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
                         });
                     });
-                `}
-          </Script>
+                `,
+            }}
+          />
         </Suspense>
       </body>
     </html>
