@@ -36,8 +36,8 @@ export const PaymentForm = ({
     label: string;
     symbol: string;
   } | null>(null);
-  const [donationAmount, setDonationAmount] = useState<number>(200);
-  const [oneTimeAmount, setOneTimeAmount] = useState<number>(0);
+  const [donationAmount, setDonationAmount] = useState<number | undefined>(undefined);
+  const [oneTimeAmount, setOneTimeAmount] = useState<number | undefined>(undefined);
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const { bigger1280px } = useBreakpoints();
@@ -56,8 +56,13 @@ export const PaymentForm = ({
     { value: 'USD', label: '$ USD', symbol: '$' },
   ];
 
-  const handleInputChange = (event: any) => {
-    setOneTimeAmount(event.target.value);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const amount = event.target.value;
+    if (parseInt(amount) >= 0) {
+      setOneTimeAmount(parseInt(amount));
+    } else {
+      setOneTimeAmount(0);
+    }
   };
 
   const handleCurrencyChange = (selectedOption: unknown) => {
@@ -155,7 +160,8 @@ export const PaymentForm = ({
       body: JSON.stringify({
         order_id: `id-${Date.now()}`,
         order_desc: projectTitle,
-        amount: regularMode === 'once' ? donationAmount + oneTimeAmount ?? 0 : oneTimeAmount,
+        amount:
+          regularMode === 'once' ? (donationAmount ?? 0) + (oneTimeAmount ?? 0) : oneTimeAmount,
         currency: selectedCurrency?.value,
         regularMode: regularMode,
         regularAmount: regularMode === 'once' ? 0 : donationAmount,
@@ -203,6 +209,7 @@ export const PaymentForm = ({
                 <label className="flex cursor-pointer items-center gap-x-2" key={amount}>
                   <input
                     type="checkbox"
+                    disabled={isDisabled}
                     checked={donationAmount === amount}
                     onChange={() => setDonationAmount(amount)}
                     className="hidden"
@@ -210,6 +217,8 @@ export const PaymentForm = ({
                   <div
                     className={`w-[150px] rounded-[32px] py-[14px] text-center text-accent-primary ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px] ${
                       donationAmount === amount ? 'ring-4' : ''
+                    } ${
+                      isDisabled ? 'cursor-default !text-grey-50 ring-grey-50 hover:!ring-1' : ''
                     }`}
                   >
                     {`${amount} ${selectedCurrency ? selectedCurrency.symbol : ''}`}
@@ -228,7 +237,9 @@ export const PaymentForm = ({
                   onChange={handleDonationAmountChange}
                   value={donationAmount}
                   disabled={isDisabled}
-                  className=" h-[54px] w-[150px] gap-4 rounded-[48px] bg-grey-20 text-center ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full"
+                  className={`h-[54px] w-[150px] gap-4 rounded-[48px] bg-grey-20 text-center ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full  ${
+                    isDisabled ? '  !text-grey-50 ring-1 ring-grey-50 hover:!ring-1' : ''
+                  }`}
                 />
                 {donationAmount && selectedCurrency && (
                   <span className="absolute h-[26px] w-3 pr-2 xs:bottom-[13px] xs:right-[26px] sm:bottom-[13px] sm:right-[66px] md:bottom-[13px] md:right-[126px] lg:bottom-3 lg:right-[184px] xl:bottom-[13px] xl:right-[242px] 2xl:bottom-3 2xl:right-[268px] 3xl:right-[382px]">
@@ -244,14 +255,19 @@ export const PaymentForm = ({
                 name="checkbox"
                 description={dictionary.payments.supportPostAngeles}
                 variantFontWeight="normal"
-                className="mb-[30px]"
+                isDisabled={isDisabled}
+                className={`mb-[30px] ${
+                  isDisabled ? 'pointer-events-none cursor-not-allowed' : ''
+                }`}
                 onChange={handleCheckboxChange}
               />
               <div className="relative mb-[40px]">
                 <input
                   type="number"
                   placeholder={isChecked && selectedCurrency ? selectedCurrency.label : ''}
-                  className="h-[54px] w-[320px] gap-4 rounded-[48px] bg-grey-20 pb-[1px] pl-[84px] ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[440px] md:w-[728px] lg:w-full xl:w-full"
+                  className={`h-[54px] w-[320px] gap-4 rounded-[48px] bg-grey-20 pb-[1px] pl-[84px] ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[440px] md:w-[728px] lg:w-full xl:w-full${
+                    isDisabled ? 'cursor-default !text-grey-50 ring-grey-50 hover:!ring-1' : ''
+                  }  ${oneTimeAmount ? 'ring-4' : ''} `}
                   onChange={handleInputChange}
                   onClick={openModal}
                   value={oneTimeAmount}
