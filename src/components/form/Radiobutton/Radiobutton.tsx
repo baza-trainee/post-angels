@@ -41,9 +41,9 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
                 />
                 <div>
                   {field.value === name ? (
-                    <ICONS.CHECK_TRUE className="h-6 w-6" />
+                    <ICONS.CHECK_TRUE className="h-6 w-6 fill-accent-primary stroke-accent-primary" />
                   ) : (
-                    <ICONS.CHECK_FALSE className="h-6 w-6" />
+                    <ICONS.CHECK_FALSE className="h-6 w-6 stroke-accent-primary" />
                   )}
                 </div>
                 <p>{value}</p>
@@ -51,7 +51,7 @@ export const Radiobutton: React.FC<RadiobuttonProps> = ({
             ))}
           </div>
           {fieldState.error && (
-            <p className="absolute w-full bottom-[-26px] text-[13px] font-eUkraine font-normal text-error">
+            <p className="absolute bottom-[-26px] w-full font-eUkraine text-[13px] font-normal text-error">
               {fieldState.error.message}
             </p>
           )}

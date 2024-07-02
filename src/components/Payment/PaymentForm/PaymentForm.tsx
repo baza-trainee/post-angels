@@ -217,7 +217,7 @@ export const PaymentForm = ({
                     className={`w-[150px] rounded-[32px] py-[14px] text-center text-accent-primary ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px] ${
                       donationAmount === amount ? 'ring-4' : ''
                     } ${
-                      isDisabled ? 'cursor-not-allowed !text-grey-50 ring-grey-50 hover:ring-1' : ''
+                      isDisabled ? 'cursor-default !text-grey-50 ring-grey-50 hover:!ring-1' : ''
                     }`}
                   >
                     {`${amount} ${selectedCurrency ? selectedCurrency.symbol : ''}`}
@@ -236,8 +236,8 @@ export const PaymentForm = ({
                   onChange={handleDonationAmountChange}
                   value={donationAmount}
                   disabled={isDisabled}
-                  className={`h-[54px] w-[150px] gap-4 rounded-[48px] bg-grey-20 text-center ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full ${
-                    isDisabled ? 'cursor-not-allowed !text-grey-50 ring-grey-50 hover:ring-1' : ''
+                  className={`h-[54px] w-[150px] gap-4 rounded-[48px] bg-grey-20 text-center ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full  ${
+                    isDisabled ? '  !text-grey-50 ring-1 ring-grey-50 hover:!ring-1' : ''
                   }`}
                 />
                 {donationAmount && selectedCurrency && (
@@ -254,16 +254,19 @@ export const PaymentForm = ({
                 name="checkbox"
                 description={dictionary.payments.supportPostAngeles}
                 variantFontWeight="normal"
-                className={`mb-[30px] ${isDisabled ? 'cursor-not-allowed' : ''}`}
+                isDisabled={isDisabled}
+                className={`mb-[30px] ${
+                  isDisabled ? 'pointer-events-none cursor-not-allowed' : ''
+                }`}
                 onChange={handleCheckboxChange}
               />
               <div className="relative mb-[40px]">
                 <input
                   type="number"
                   placeholder={isChecked && selectedCurrency ? selectedCurrency.label : ''}
-                  className={`h-[54px] w-[320px] gap-4 rounded-[48px] bg-grey-20 pb-[1px] pl-[84px] ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[440px] md:w-[728px] lg:w-full xl:w-full ${
-                    isDisabled ? 'cursor-not-allowed !text-grey-50 ring-grey-50 hover:ring-1' : ''
-                  }`}
+                  className={`h-[54px] w-[320px] gap-4 rounded-[48px] bg-grey-20 pb-[1px] pl-[84px] ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[440px] md:w-[728px] lg:w-full xl:w-full${
+                    isDisabled ? 'cursor-default !text-grey-50 ring-grey-50 hover:!ring-1' : ''
+                  }  ${oneTimeAmount ? 'ring-4' : ''} `}
                   onChange={handleInputChange}
                   onClick={openModal}
                   value={oneTimeAmount}

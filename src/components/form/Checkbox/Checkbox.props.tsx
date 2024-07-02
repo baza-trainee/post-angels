@@ -6,4 +6,5 @@ export interface CheckboxProps {
   className?: string;
   variantFontWeight?: 'normal' | 'medium';
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  isDisabled?: boolean;
 }

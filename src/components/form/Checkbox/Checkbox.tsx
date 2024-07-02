@@ -11,6 +11,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   description,
   variantFontWeight = 'normal',
   className,
+  isDisabled,
 }) => {
   const { control } = useFormContext();
 
@@ -23,24 +24,37 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           className={cn(
             'relative flex flex-col gap-2 font-eUkraine text-base leading-[160%] text-grey-80',
             {
+              ['pointer-events-none']: isDisabled,
               ['font-regular']: variantFontWeight == 'normal',
               ['font-medium']: variantFontWeight == 'medium',
             }
           )}
         >
           <div className={cn('flex flex-row gap-[21px]', className)}>
-            <input className="hidden" type="checkbox" {...field} />
+            <input className={`hidden `} type="checkbox" {...field} />
             <div>
               {field.value ? (
-                <ICONS.CHECK_TRUE className="h-6 w-6" />
+                <ICONS.CHECK_TRUE
+                  className={cn(
+                    'h-6 w-6 ',
+                    isDisabled
+                      ? 'fill-grey-60 stroke-grey-60'
+                      : 'fill-accent-primary stroke-accent-primary'
+                  )}
+                />
               ) : (
-                <ICONS.CHECK_FALSE className="h-6 w-6" />
+                <ICONS.CHECK_FALSE
+                  className={cn(
+                    'h-6 w-6 ',
+                    isDisabled ? ' first:stroke-grey-60' : 'stroke-accent-primary'
+                  )}
+                />
               )}
             </div>
             <p>{description}</p>
           </div>
           {fieldState.error && (
-            <p className="absolute bottom-[-26px] pl-[45px] text-[13px] font-eUkraine font-normal text-error">
+            <p className="absolute bottom-[-26px] pl-[45px] font-eUkraine text-[13px] font-normal text-error">
               {fieldState.error.message}
             </p>
           )}
