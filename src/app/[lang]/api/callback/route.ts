@@ -26,7 +26,8 @@ export async function POST(req: NextRequest) {
         return NextResponse.error();
       }
 
-      const redirectUrl = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}`);
+      //! const redirectUrl = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}`);
+      const redirectUrl = new URL('http://localhost:3000/uk');
       return NextResponse.redirect(redirectUrl, 302);
     }
   } catch (error) {

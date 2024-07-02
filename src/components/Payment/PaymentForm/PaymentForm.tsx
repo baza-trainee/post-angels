@@ -1,40 +1,46 @@
 'use client';
-import { StylesConfig } from 'react-select';
-import Select from 'react-select';
-import { useForm, Controller, FormProvider } from 'react-hook-form';
-import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
+import { Controller, FormProvider, useForm } from 'react-hook-form';
+import Select, { StylesConfig } from 'react-select';
+import * as yup from 'yup';
 
-import { Button } from '../../../buttons/Button';
-import { Checkbox } from '../../../form/Checkbox';
-import { Paragraph } from '../../../typography/Paragraph';
-import { Title } from '../../../typography/Title';
-import BankIcons from '../../BankIcons/BankIcons';
 import Modal from '@/components/modal/Modal';
-import { paymentsForm } from '../../../../utils/schema/paymentFrom';
-import ModalOnceSupport from '../../Modal/ModalOnceSupport';
-import { PaymentFormProps } from '../../Payments.props';
+import { Locale } from '@/i18n.config';
+import { paymentsForm } from '@/utils/schema/paymentFrom';
+import { useRouter } from 'next/navigation';
+import { Button } from '../../buttons/Button';
+import { Checkbox } from '../../form/Checkbox';
+import { Paragraph } from '../../typography/Paragraph';
+import { Title } from '../../typography/Title';
+import BankIcons from '../BankIcons/BankIcons';
+import ModalMonthlySupport from '../Modal/ModalMonthlySupport';
+import { PaymentFormProps } from '../Payments.props';
 
 type FormData = yup.InferType<ReturnType<typeof paymentsForm>>;
 
-const OneTimeAssistanceForm = ({
+export const PaymentForm = ({
   className,
   schema,
   isDisabled,
   dictionary,
-}: PaymentFormProps) => {
+  lang,
+  projectTitle,
+  regularMode,
+}: PaymentFormProps & { lang: Locale; projectTitle: string; regularMode: string }) => {
+  const router = useRouter();
+
   const [selectedCurrency, setSelectedCurrency] = useState<{
     value: string;
     label: string;
     symbol: string;
   } | null>(null);
-  const [donationAmount, setDonationAmount] = useState<string>('');
-  const [inputValue, setInputValue] = useState('');
+  const [donationAmount, setDonationAmount] = useState<number | undefined>(undefined);
+  const [oneTimeAmount, setOneTimeAmount] = useState<number | undefined>(undefined);
   const [isChecked, setIsChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { handleSubmit, reset, control, register} = useForm();
+  const { handleSubmit, reset, control, register } = useForm();
 
   const methods = useForm<FormData>({
     resolver: yupResolver(paymentsForm(schema)),
@@ -43,13 +49,19 @@ const OneTimeAssistanceForm = ({
   const watch = methods.watch;
   const checked = watch('checkbox');
 
+  const dotaionOptions = [100, 200, 500];
   const options = [
     { value: 'UAH', label: '₴ UAH', symbol: '₴' },
     { value: 'USD', label: '$ USD', symbol: '$' },
   ];
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const amount = event.target.value;
+    if (parseInt(amount) >= 0) {
+      setOneTimeAmount(parseInt(amount));
+    } else {
+      setOneTimeAmount(0);
+    }
   };
 
   const handleCurrencyChange = (selectedOption: unknown) => {
@@ -61,9 +73,6 @@ const OneTimeAssistanceForm = ({
     ) {
       const selectedCurrency = selectedOption as { value: string; label: string; symbol: string };
       setSelectedCurrency(selectedCurrency);
-      if (inputValue) {
-        setInputValue(`${inputValue} ${selectedCurrency.label}`);
-      }
     } else {
       setSelectedCurrency(null);
     }
@@ -71,14 +80,10 @@ const OneTimeAssistanceForm = ({
 
   const handleDonationAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const amount = event.target.value;
-    if (
-      !isNaN(parseFloat(amount)) &&
-      parseFloat(amount) >= 0 &&
-      Number.isInteger(parseFloat(amount))
-    ) {
-      setDonationAmount(amount);
+    if (parseInt(amount) >= 0) {
+      setDonationAmount(parseInt(amount));
     } else {
-      setDonationAmount('');
+      setDonationAmount(0);
     }
   };
 
@@ -145,9 +150,26 @@ const OneTimeAssistanceForm = ({
     }),
   };
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data: any) => {
+    const response = await fetch(`/${lang}/api/payment`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        order_id: `id-${Date.now()}`,
+        order_desc: projectTitle,
+        amount:
+          regularMode === 'once' ? (donationAmount ?? 0) + (oneTimeAmount ?? 0) : oneTimeAmount,
+        currency: selectedCurrency?.value,
+        regularMode: regularMode,
+        regularAmount: regularMode === 'once' ? 0 : donationAmount,
+      }),
+    });
+    const res = await response.json();
+    if (res.status === 'Ok') {
+      router.push(res.response);
+    }
   };
 
   const openModal = () => {
@@ -182,29 +204,31 @@ const OneTimeAssistanceForm = ({
             />
 
             <div className="flex w-full flex-wrap justify-between  gap-3 gap-y-[30px]">
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`100 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`200 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
-              <Button
-                variant="white"
-                className="relative w-[150px] border-none ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px]"
-              >
-                {`500 ${selectedCurrency ? selectedCurrency.symbol : ''}`}
-              </Button>
+              {dotaionOptions.map(amount => (
+                <label className="flex cursor-pointer items-center gap-x-2" key={amount}>
+                  <input
+                    type="checkbox"
+                    disabled={isDisabled}
+                    checked={donationAmount === amount}
+                    onChange={() => setDonationAmount(amount)}
+                    className="hidden"
+                  />
+                  <div
+                    className={`w-[150px] rounded-[32px] py-[14px] text-center text-accent-primary ring-1 ring-inset ring-accent-primary ring-offset-0 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px] xl:w-[170px] 3xl:w-[200px] ${
+                      donationAmount === amount ? 'ring-4' : ''
+                    } ${
+                      isDisabled ? 'cursor-default !text-grey-50 ring-grey-50 hover:!ring-1' : ''
+                    }`}
+                  >
+                    {`${amount} ${selectedCurrency ? selectedCurrency.symbol : ''}`}
+                  </div>
+                </label>
+              ))}
 
               <div className="relative xl:w-full">
                 <input
                   {...register('otherAmount', {
-                    required: false,
+                    required: true,
                     minLength: 0,
                   })}
                   type="number"
@@ -212,7 +236,9 @@ const OneTimeAssistanceForm = ({
                   onChange={handleDonationAmountChange}
                   value={donationAmount}
                   disabled={isDisabled}
-                  className=" h-[54px] w-[150px] gap-4 rounded-[48px]  bg-grey-20 text-center  ring-1 ring-inset ring-accent-primary   ring-offset-0 duration-300  hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full "
+                  className={`h-[54px] w-[150px] gap-4 rounded-[48px] bg-grey-20 text-center ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[210px] md:w-[349px] lg:w-[465px]  xl:w-full  ${
+                    isDisabled ? '  !text-grey-50 ring-1 ring-grey-50 hover:!ring-1' : ''
+                  }`}
                 />
                 {donationAmount && selectedCurrency && (
                   <span className="absolute h-[26px] w-3 pr-2 xs:bottom-[13px] xs:right-[26px] sm:bottom-[13px] sm:right-[66px] md:bottom-[13px] md:right-[126px] lg:bottom-3 lg:right-[184px] xl:bottom-[13px] xl:right-[242px] 2xl:bottom-3 2xl:right-[268px] 3xl:right-[382px]">
@@ -221,23 +247,29 @@ const OneTimeAssistanceForm = ({
                 )}
               </div>
             </div>
+
             <hr />
             <div className="w-full lg:block lg:w-full">
               <Checkbox
                 name="checkbox"
                 description={dictionary.payments.supportPostAngeles}
                 variantFontWeight="normal"
-                className="mb-[30px]"
+                isDisabled={isDisabled}
+                className={`mb-[30px] ${
+                  isDisabled ? 'pointer-events-none cursor-not-allowed' : ''
+                }`}
                 onChange={handleCheckboxChange}
               />
               <div className="relative mb-[40px]">
                 <input
                   type="number"
                   placeholder={isChecked && selectedCurrency ? selectedCurrency.label : ''}
-                  className="h-[54px] w-[320px] gap-4 rounded-[48px]  bg-grey-20 pb-[1px] pl-[84px] ring-1   ring-inset ring-accent-primary  ring-offset-0 duration-300  hover:ring-4  sm:w-[440px] md:w-[728px]  lg:w-full  xl:w-full"
+                  className={`h-[54px] w-[320px] gap-4 rounded-[48px] bg-grey-20 pb-[1px] pl-[84px] ring-1 ring-inset ring-accent-primary ring-offset-0 duration-300 hover:ring-4 sm:w-[440px] md:w-[728px] lg:w-full xl:w-full${
+                    isDisabled ? 'cursor-default !text-grey-50 ring-grey-50 hover:!ring-1' : ''
+                  }  ${oneTimeAmount ? 'ring-4' : ''} `}
                   onChange={handleInputChange}
                   onClick={openModal}
-                  value={inputValue}
+                  value={oneTimeAmount}
                   disabled={isDisabled}
                 />
                 {selectedCurrency && (
@@ -245,15 +277,16 @@ const OneTimeAssistanceForm = ({
                     {selectedCurrency.label}
                   </span>
                 )}
+
                 {checked && modalVisible && (
                   <Modal
                     modal={dictionary.modal}
                     scroll={true}
                     modalClose={closeModal}
-                    className="sx:w-[360px] min-h-full px-1  py-10 lg:w-[790px] "
-                    iconClassName=" fixed top-[110px] right-28"
+                    className="sx:w-[360px] px-1 lg:w-[790px]"
+                    iconClassName="fixed top-[110px] right-28"
                   >
-                    <ModalOnceSupport dictionary={dictionary} InputValue={setInputValue} />
+                    <ModalMonthlySupport dictionary={dictionary} InputValue={setOneTimeAmount} />
                   </Modal>
                 )}
               </div>
@@ -273,8 +306,8 @@ const OneTimeAssistanceForm = ({
               <Button
                 type="submit"
                 className="w-full p-[10px] "
-                onSubmit={handleSubmit(onSubmit)}
-                disabled={isDisabled}
+                onClick={handleSubmit(onSubmit)}
+                disabled={!(selectedCurrency && donationAmount && !isDisabled) ?? true}
               >
                 {dictionary.payments.supportUsButton}
               </Button>
@@ -286,4 +319,4 @@ const OneTimeAssistanceForm = ({
   );
 };
 
-export default OneTimeAssistanceForm;
+export default PaymentForm;
