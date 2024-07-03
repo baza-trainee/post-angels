@@ -167,7 +167,7 @@ export default async function RootLayout({
           <div id="modal" />
           <Script
             id="scroll-handler"
-            strategy="beforeInteractive"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                     let lastScrollTop = 0;
