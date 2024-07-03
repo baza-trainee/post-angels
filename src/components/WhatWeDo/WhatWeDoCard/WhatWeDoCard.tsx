@@ -21,6 +21,7 @@ export const WhatWeDoCard = ({ data }: { data: WhatWeDoCardProps }) => {
             src={data.img}
             alt={data.alt || 'background image'}
             fill
+            priority
             sizes="(max-width: 768px) 100vw, 50vw"
             className="rounded-2xl object-cover"
           />

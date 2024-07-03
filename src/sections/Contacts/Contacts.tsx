@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-import { ContactsProps } from './Contacts.props';
 import { ContactList } from '@/components/ContactList/';
 import { Title } from '@/components/typography/Title';
+import { ContactsProps } from './Contacts.props';
 
-import Partners from '../../../public/images/contacts.png';
 import { fetchContact } from '@/api/fetchContact';
+import Partners from '../../../public/images/contacts.png';
 
 export const Contacts: React.FC<ContactsProps> = async ({ data, lang }) => {
   const contactData = await fetchContact(lang);
@@ -23,12 +23,14 @@ export const Contacts: React.FC<ContactsProps> = async ({ data, lang }) => {
           <ContactList data={contactData} />
         </div>
 
-        <div className="saturate-0 transition-all delay-150 hover:saturate-100 md:h-[416px] md:w-[349px] lg:w-[465px] xl:w-[687px] 2xl:h-[468px] 2xl:w-[664px] 3xl:h-[698px] 3xl:w-[1216px]  notMd:hidden">
+        <div className="relative saturate-0 transition-all delay-150 hover:saturate-100 md:h-[416px] md:w-[349px] lg:w-[465px] xl:w-[687px] 2xl:h-[468px] 2xl:w-[664px] 3xl:h-[698px] 3xl:w-[1216px] notMd:hidden">
           <Image
-            className="rounded-2xl object-cover"
             src={Partners || ''}
             alt={contactsSection.img.alt || 'background image'}
             fill
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="rounded-2xl object-cover"
           />
         </div>
       </div>
