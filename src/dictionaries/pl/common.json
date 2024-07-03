@@ -203,29 +203,29 @@
       "needToCollect": "Musimy zebrać",
       "sum": "23 549.00",
       "currency": "UAH",
-      "OneTimeTextButton": "Jednorazowa pomoc",
+      "OneTimeTextButton": "Pomoc jednorazowa",
       "MonthlyTextButton": "Pomoc miesięczna",
-      "chooseYourContribution": "Wybierz swój wkład",
-      "otherAmountText": "Other amount",
-      "supportPostAngeles": "Support Post Angeles (opcjonalnie)",
-      "contributionText": "To jest Twój wkład w istnienie naszej platformy charytatywnej.",
+      "chooseYourContribution": "Wybierz valutę",
+      "otherAmountText": "Inna kwota",
+      "supportPostAngeles": "Wsparcie Post Angeles (opcjonalnie)",
+      "contributionText": "To jest Twój wkład w istnienie naszej platformy humanitarnej.",
       "paymentSystemTitle": "Zapłać za pomocą systemu płatności",
-      "supportUsButton": "Support us",
+      "supportUsButton": "Wpłać",
       "modal": {
         "button": {
-          "label": "zamknij przycisk modalny"
+          "label": "zamknij menu modalne"
         }
       },
       "modalSupport": {
         "title": "Wsparcie Post Angeles",
-        "OnceSupport": "Jednorazowe wsparcie",
-        "MonthlySupport": "Monthly Support",
+        "OnceSupport": "Pomoc jednorazowa",
+        "MonthlySupport": "Pomoc miesięczna",
         "helpPostAngeles": "Pomoc Post Angeles",
         "discription1": "Post Angeles jest organizacją charytatywną i nie byłaby w stanie istnieć i pomagać bez Twojego wsparcia.",
         "discription2": "100% środków przekazanych na projekty charytatywne jest wykorzystywanych wyłącznie na potrzeby tych projektów.",
         "discription3": "Pomagając nam, umożliwiasz pracę i ulepszanie usług, które pomagają tysiącom ludzi w potrzebie na Ukrainie!",
         "thanksText": " Jesteśmy bardzo wdzięczni za zaufanie i wsparcie!",
-        "supportBtn": "Wsparcie"
+        "supportBtn": "Wpłać"
       }
     },
     "ourTeam": {
