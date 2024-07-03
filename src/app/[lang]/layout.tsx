@@ -11,6 +11,7 @@ import './globals.css';
 import { fetchDocuments } from '@/api/fetchDocuments';
 
 import ScrollHandlerScript from '@/layout/Script/HeaderScript';
+import Script from 'next/script';
 
 const eUkraine = localFont({
   variable: '--font-eUkraine',
@@ -166,7 +167,7 @@ export default async function RootLayout({
 
           <PopupCookie data={cookie} modal={modal} document={policy} />
           <div id="modal" />
-          <ScrollHandlerScript />
+          <Script src="/script.js" strategy="afterInteractive" />
         </Suspense>
       </body>
     </html>
