@@ -167,7 +167,7 @@ export default async function RootLayout({
 
           <PopupCookie data={cookie} modal={modal} document={policy} />
           <div id="modal" />
-          <Script src="/script.js" strategy="beforeInteractive" />
+          <Script src="/script.js" strategy="afterInteractive" />
         </Suspense>
       </body>
     </html>
