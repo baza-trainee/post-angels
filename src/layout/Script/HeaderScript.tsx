@@ -45,6 +45,10 @@ const ScrollHandlerScript = () => {
   return (
     <Script
       id="scroll-handler"
+      strategy="lazyOnload"
+      onLoad={() => {
+        console.log('Script has loaded');
+      }}
       dangerouslySetInnerHTML={{
         __html: `
                 let lastScrollTop = 0;
