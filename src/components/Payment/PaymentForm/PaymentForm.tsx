@@ -8,6 +8,7 @@ import * as yup from 'yup';
 import Modal from '@/components/modal/Modal';
 import { Locale } from '@/i18n.config';
 import { paymentsForm } from '@/utils/schema/paymentFrom';
+import useBreakpoints from '@/utils/useBreakpoints';
 import { useRouter } from 'next/navigation';
 import { Button } from '../../buttons/Button';
 import { Checkbox } from '../../form/Checkbox';
@@ -16,7 +17,6 @@ import { Title } from '../../typography/Title';
 import BankIcons from '../BankIcons/BankIcons';
 import ModalMonthlySupport from '../Modal/ModalMonthlySupport';
 import { PaymentFormProps } from '../Payments.props';
-import useBreakpoints from '@/utils/useBreakpoints';
 
 type FormData = yup.InferType<ReturnType<typeof paymentsForm>>;
 
@@ -115,7 +115,6 @@ export const PaymentForm = ({
       ...provided,
       cursor: 'pointer',
     }),
-
     indicatorSeparator: provided => ({
       ...provided,
       display: 'none',
@@ -151,7 +150,7 @@ export const PaymentForm = ({
     }),
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async () => {
     const response = await fetch(`/${lang}/api/payment`, {
       method: 'POST',
       headers: {
@@ -314,6 +313,7 @@ export const PaymentForm = ({
                 className="w-full p-[10px] "
                 onClick={handleSubmit(onSubmit)}
                 disabled={!(selectedCurrency && donationAmount && !isDisabled) ?? true}
+                aria-label={dictionary.payments.supportUsButton}
               >
                 {dictionary.payments.supportUsButton}
               </Button>
