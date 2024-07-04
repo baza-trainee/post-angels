@@ -10,9 +10,6 @@ import { getDictionary, getMetadata } from '@/lib/dictionary';
 import './globals.css';
 import { fetchDocuments } from '@/api/fetchDocuments';
 
-import ScrollHandlerScript from '@/layout/Script/HeaderScript';
-import Script from 'next/script';
-
 const eUkraine = localFont({
   variable: '--font-eUkraine',
   src: [
@@ -167,7 +164,6 @@ export default async function RootLayout({
 
           <PopupCookie data={cookie} modal={modal} document={policy} />
           <div id="modal" />
-          <script src="/script.js" />
         </Suspense>
       </body>
     </html>
