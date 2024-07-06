@@ -15,13 +15,18 @@ export const ContentMap = ({ data }: ContentMapProps) => {
         {/* title */}
         <Title
           variantSize="h2"
-          className={`flex flex-wrap xl:w-[218px] ${
-            !object.accentTitle ? '!text-accent-primary' : 'text-inherit'
-          }`}
+          className={`flex flex-wrap xl:w-[218px]
+
+            
+            ${!object.accentTitle ? '!text-accent-primary' : 'text-inherit'}`}
         >
           {object.title}
           <br />
-          {object.accentTitle ? <span>{object.accentTitle}</span> : null}
+          {object.accentTitle ? (
+            <span className={`ml-2 ${index === 0 ? 'xl:ml-0' : 'xl:ml-2'}`}>
+              {object.accentTitle}
+            </span>
+          ) : null}
         </Title>
         {/* text */}
 
