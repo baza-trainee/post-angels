@@ -6,9 +6,9 @@ import Loading from './loading';
 
 import PopupCookie from '@/components/PopupCookies/PopupCookie';
 
+import { fetchDocuments } from '@/api/fetchDocuments';
 import { getDictionary, getMetadata } from '@/lib/dictionary';
 import './globals.css';
-import { fetchDocuments } from '@/api/fetchDocuments';
 
 const eUkraine = localFont({
   variable: '--font-eUkraine',
@@ -90,8 +90,7 @@ export async function generateMetadata({
       canonical: process.env.NEXT_PUBLIC_URL + '/uk',
       languages: {
         'en-US': '/en',
-        'pt-PT': '/pt',
-        'lt-LT': '/lt',
+        'pl-PL': '/pl',
       },
     },
     keywords: metadata.keywords,
